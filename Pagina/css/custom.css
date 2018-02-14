@@ -11,6 +11,11 @@ navbar, .navbar-dark{
     background-color:#343a40;
 }
 
+.img-fluid{
+    height: 15%;
+    max-width: 50%;
+    padding: 10px;
+}
 .dropdown-menu .sub-menu {
     left: 100%;
     position: absolute;
@@ -48,3 +53,44 @@ navbar, .navbar-dark{
     top: 11px;
     left: -6px;
 }
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery-large {
+    position: sticky;
+    top: -5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+}
+
+div.gallery-large:hover{
+    border: 3px solid #777;
+}
+
+div.gallery-large img{
+    width: 100%;
+    height: auto;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
