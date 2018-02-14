@@ -1,6 +1,24 @@
-footer,footer a, .jumbotron{
-    background-color: slategray;
-    color: whitesmoke;
+.jumbotron{
+    background-color: whitesmoke;
+    color: gray;
+}
+
+a{
+    color: gray;
+}
+a:hover{
+    color: darkgray;
+}
+
+p{
+  color: darkgray !important;
+}
+
+h1{
+  color: gray;
+}
+h2{
+  color: gray;
 }
 
 .dropdown:hover{
