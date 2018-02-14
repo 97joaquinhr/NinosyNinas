@@ -1,5 +1,15 @@
 /* CSS para el gestor de contenidos */
 
+
+/*
+FONTS
+
+font-family: 'Exo', sans-serif;
+font-family: 'Jaldi', sans-serif;
+font-family: 'Fjalla One', sans-serif;
+*/
+
+
 h1 {
 	font-family: 'Fjalla One', sans-serif;
 }
@@ -25,7 +35,7 @@ body {
 }
 
 .shadow {
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7), 0 0 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 .box {
@@ -64,4 +74,10 @@ body {
 
 .box:hover::after {
     opacity: 1;
+}
+
+#page-content-wrapper {
+	background-color: white !important;
+    overflow: auto;
+	height: calc(100vh - 64px - 0.50rem);
 }
