@@ -2,7 +2,7 @@
 include("html/partials/_header.html");
 //include("html/donar.html");
 ?>
-
+<!--Esto va en el html pero no lo he metido porque quiero visualizarlo rapido-->
     
 <div id="page-content-wrapper">  
     <div class="row wrapper">
@@ -11,6 +11,7 @@ include("html/partials/_header.html");
                 <div class="wrapper">
                     <h2>Donar via PayPal</h2>
                     <br>
+                    <!--Boton para donar en paypal-->
                     <button type="button" class="btn btn-primary">Dona</button>
                     <br>
                     <br>
