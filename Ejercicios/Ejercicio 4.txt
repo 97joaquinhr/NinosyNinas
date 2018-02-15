@@ -1,0 +1,28 @@
+Cliente(_RFCC_,Razón Social,Domicilio)
+Pk-> RFCC
+Fk-> No tiene
+Ak-> Razón Social
+Facturas(_NoFac_,Fecha,Status,RFCC)
+Pk-> NoFactura
+Fk-> RFCC
+Ak-> (NoFactura,Fecha)
+Productos(_CBarras_,Nombre,Descripción,Precio,Existencia)
+Pk -> CBarras
+Fk -> No tiene
+Ak -> (CBarras,Nombre)
+Proveedor(_RFCP_,Razón Social,Domicilio,Contacto)
+Pk -> RFCP
+Fk -> No tiene
+Ak -> (Razón Social)
+
+Venta(_NoFactura_,_CBarras_,Cantidad)
+Pk -> (NoFactura,CBarras)
+Fk1 -> (NoFactura)
+Fk2 -> (CBarras)
+Ak -> (NoFacturas,CBarras,Cantidad)
+Surte(_RFCP_,_CBarras_,Fecha,Cantidad)
+Pk -> RFCP,CBarras
+Fk1 -> RFCP
+Fk2 -> CBarras
+Ak -> (RFCP,CBarras,Fecha)
+
