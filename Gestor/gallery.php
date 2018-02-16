@@ -208,7 +208,7 @@ include("html/partials/_header.html")?>
 
 
             <!-- /#page-content-wrapper -->
-            <footer class="bg-light mt-4 footer">
+            <footer class="bg-light mt-4 footer" style="position: absolute;">
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-6">

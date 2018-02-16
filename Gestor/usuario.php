@@ -97,22 +97,21 @@ include("html/partials/_header.html")?>
                     Podría ser dark o secondary-->
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Agregar Usuario</button>
 
-
-                <!-- /#page-content-wrapper -->
-                <footer class="bg-light mt-4 footer">
-                    <div class="container-fluid py-4">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <span class="text-muted">Hecho con el editor <strong>Brackets</strong> - <a href="http://brackets.io/">http://brackets.io/</a></span>
-                            </div>
-                            <div class="col-md-3"></div>
-                            <div class="col-md-3 text-right align-self-end">
-                                Por <strong>Within Systems</strong>
-                            </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+            <footer class="bg-light mt-4 footer" style="position: absolute;">
+                <div class="container-fluid py-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="text-muted">Hecho con el editor <strong>Brackets</strong> - <a href="http://brackets.io/">http://brackets.io/</a></span>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3 text-right align-self-end">
+                            Por <strong>Within Systems</strong>
                         </div>
                     </div>
-                </footer>
-            </div>
+                </div>
+            </footer>
 
         </div>
 
