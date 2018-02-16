@@ -80,6 +80,7 @@ body {
 	background-color: white !important;
     overflow: auto;
 	height: calc(100vh - 64px - 0.50rem);
+<<<<<<< HEAD
 	overflow-x: hidden;
 }
 
@@ -150,3 +151,20 @@ div.show-image button.delete {
   background-color: #efefef;
   text-align: center;
 }
+
+.gj-calendar {
+<<<<<<< HEAD
+	z-index: 2000 !important;
+}
+
+.gj-calendar-table {
+	z-index: 2000 !important;
+}
+=======
+    z-index: 2000 !important;
+}
+
+.gj-calendar-table {
+    z-index: 2000 !important;
+}
+>>>>>>> 7f39897f854b08525852a61864dc12089a85e63e

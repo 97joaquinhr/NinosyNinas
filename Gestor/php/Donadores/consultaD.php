@@ -67,8 +67,8 @@ include("../../partials/_header.html");?>
           Editar
         </a>
     </div>
-</div>
 <?php
 include("../../partials/_footer.html");
 ?>
+</div>
 

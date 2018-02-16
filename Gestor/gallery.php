@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Gestor/gallery.html
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -66,10 +67,10 @@
                     <a href="news.html"><i class="far fa-newspaper mr-4 fa-fw"></i>Noticias</a>
                 </li>
                 <li>
-                    <a href="#"><i class="far fa-calendar-alt mr-4 fa-fw"></i>Eventos</a>
+                    <a href="events.html"><i class="far fa-calendar-alt mr-4 fa-fw"></i>Eventos</a>
                 </li>
                 <li>
-                    <a href="#" class="active"><i class="fas fa-images mr-4 fa-fw"></i>Galería</a>
+                    <a href="gallery.html" class="active"><i class="fas fa-images mr-4 fa-fw"></i>Galería</a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-user-circle mr-4 fa-fw"></i>Usuarios</a>
@@ -77,6 +78,10 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+=======
+<?php
+include("html/partials/_header.html")?>
+>>>>>>> 7f39897f854b08525852a61864dc12089a85e63e:Gestor/gallery.php
 
         <!-- Page Content -->
         <div id="page-content-wrapper" class="shadow">
@@ -104,58 +109,28 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="show-image">
-                                                <a href="#" onclick="preview()"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
-                                                <input class="select form-check-input shadow" type="checkbox" value="">
-                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
-                                                <input class="select form-check-input shadow" type="checkbox" value="">
-                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
-                                                <input class="select form-check-input shadow" type="checkbox" value="">
-                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
-                                                <input class="select form-check-input shadow" type="checkbox" value="">
-                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
@@ -164,28 +139,28 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
@@ -194,28 +169,58 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="show-image">
-                                                <img src="gallery/1.jpg" class="img img-thumbnail">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
+                                                <input class="select form-check-input shadow" type="checkbox" value="">
+                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="show-image">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
+                                                <input class="select form-check-input shadow" type="checkbox" value="">
+                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="show-image">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
+                                                <input class="select form-check-input shadow" type="checkbox" value="">
+                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="show-image">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
+                                                <input class="select form-check-input shadow" type="checkbox" value="">
+                                                <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="show-image">
+                                                <a href="javascript:preview();"><img src="gallery/1.jpg" class="img img-thumbnail"></a>
                                                 <input class="select form-check-input shadow" type="checkbox" value="">
                                                 <button onclick="showDelete()" class="delete btn btn-danger shadow"><i class='fas fa-trash-alt'></i></button>
                                             </div>
@@ -226,6 +231,51 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
+                            <!-- Example Notifications Card-->
+                            <div class="card mb-3">
+                              <div class="card-header">
+                                <i class="fas fa-history"></i> Reciente</div>
+                              <div class="list-group list-group-flush small">
+                                <a class="list-group-item list-group-item-action" href="#">
+                                  <div class="media">
+                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                                    <div class="media-body">
+                                      <strong>Juan Pablo</strong> agrego una nueva imagen.
+                                      <div class="text-muted smaller">Hoy a las 5:43 PM - Hace 5 minutos</div>
+                                    </div>
+                                  </div>
+                                </a>
+                                <a class="list-group-item list-group-item-action" href="#">
+                                  <div class="media">
+                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                                    <div class="media-body">
+                                      <strong>Samantha King</strong> agrego una nueva imagen.
+                                      <div class="text-muted smaller">Hoy a las 4:37 PM - Hace 1 minutos</div>
+                                    </div>
+                                  </div>
+                                </a>
+                                <a class="list-group-item list-group-item-action" href="#">
+                                  <div class="media">
+                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                                    <div class="media-body">
+                                      <strong>Jeffery Wellings</strong> agrego una nueva imagen.
+                                      <div class="text-muted smaller">Hoy a las 4:31 PM - Hace 1 minutos</div>
+                                    </div>
+                                  </div>
+                                </a>
+                                <a class="list-group-item list-group-item-action" href="#">
+                                  <div class="media">
+                                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
+                                    <div class="media-body">
+                                      <i class="fa fa-code-fork"></i>
+                                      <strong>Monica Dennis</strong> agrego una nueva imagen.
+                                      <div class="text-muted smaller">Hoy a las 3:54 PM - Hace 2 minutos</div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                            </div>
                         </div>
                     </div>
 
@@ -255,6 +305,25 @@
 
     </div>
     <!-- /#wrapper -->
+
+    <div id="preview" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-images"></i> 00000001.jpg</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img img-fluid" src="gallery/1.jpg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="delete" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -303,32 +372,7 @@
         </div>
     </div>
 
-    <div id="preview" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-images"></i> 00000001.jpg</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button onclick="performClick('theFile');" class="btn btn-outline-secondary" type="button">Buscar</button>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                    <input type="file" id="theFile" class="sr-only">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Subir</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
     <!-- Bootstrap core JavaScript

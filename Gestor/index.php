@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Gestor/index.html
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -66,7 +67,7 @@
                     <a href="news.html"><i class="far fa-newspaper mr-4 fa-fw"></i>Noticias</a>
                 </li>
                 <li>
-                    <a href="#"><i class="far fa-calendar-alt mr-4 fa-fw"></i>Eventos</a>
+                    <a href="events.html"><i class="far fa-calendar-alt mr-4 fa-fw"></i>Eventos</a>
                 </li>
                 <li>
                     <a href="gallery.html"><i class="fas fa-images mr-4 fa-fw"></i>Galería</a>
@@ -77,6 +78,10 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+=======
+<?php
+include("html/partials/_header.html")?>
+>>>>>>> 7f39897f854b08525852a61864dc12089a85e63e:Gestor/index.php
 
         <!-- Page Content -->
         <div id="page-content-wrapper" class="shadow">

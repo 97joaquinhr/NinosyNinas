@@ -1,3 +1,7 @@
+<<<<<<< HEAD:Gestor/news.php
+<?php
+include("html/partials/_header.html")?>
+=======
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -13,6 +17,7 @@
         <!-- Custom CSS -->
         <link href="css/manager.css" rel="stylesheet">
         <link href="vendor/simple-sidebar/css/simple-sidebar.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz|Exo:800|Jaldi:700|Source+Sans+Pro:300" rel="stylesheet">
@@ -64,13 +69,13 @@
                     <a href="#"><div class="container-fluid"><img src="images/logo.png" class="img img-fluid" alt=""></div></a>
                 </li>
                 <li>
-                    <a href="#" class="active"><i class="fas fa-tachometer-alt mr-4 fa-fw"></i>Dashboard</a>
+                    <a href="#"><i class="fas fa-tachometer-alt mr-4 fa-fw"></i>Dashboard</a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-id-card mr-4 fa-fw"></i>Donadores</a>
                 </li>
                 <li>
-                    <a href="#"><i class="far fa-newspaper mr-4 fa-fw"></i>Noticias</a>
+                    <a href="#" class="active"><i class="far fa-newspaper mr-4 fa-fw"></i>Noticias</a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-images mr-4 fa-fw"></i>Galería</a>
@@ -93,6 +98,24 @@
                  <div class="row">
                      <div class="col-8 col-lg-9">
                          <div class="card text-center">
+                             <div class="card">
+                                <div class="card-block">
+                                    <div class="card-title"></div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="usr">Título:</label>
+                                            <input type="text" class="form-control" id="usr" placeholder="NOTICIA123">
+                                        </div>
+                                        <label for="comment">Noticia:</label>
+                                        <textarea class="form-control" rows="5" id="titulo-noticia" placeholder="¿Qué opinas?¿Quieres informar algo?"></textarea>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="button" class="btn btn-primary">Subir</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                             </div>
+                             <p></p>
                              <div class="card-header">
                                  Búsqueda
                              </div>
@@ -105,8 +128,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td colspan="2">Candidatos a la presidencia</td>
+                                    <tr data-toggle="modal" data-target="#myModal">
+                                        <td colspan="2">Precampañas 2018</td>
                                         <td>13/02/18</td>
                                     </tr>
                                     <tr>
@@ -135,7 +158,7 @@
                          </div>
                      </div>
                  </div>
-
+            
             <!-- /#page-content-wrapper -->
             <footer class="bg-light mt-4">
                 <div class="container-fluid py-4">
@@ -151,9 +174,66 @@
                 </div>
             </footer>
         </div>
-
     </div>
     <!-- /#wrapper -->
+    
+    <!-- Modal Consultar -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Precampañas 2018</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <img class="img-thumbnail" src="http://cdn2.excelsior.com.mx/media/styles/imagen_portada_grande/public/pictures/2018/02/15/1861056.jpg" class="img-thumbnail" alt="Elecciones 2018">
+                    <p><strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br>
+                    74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló
+                        que Anaya se centró más en</p>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Más Info..</button>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Editar -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="form-group">
+                <label for="comment">Título:</label>
+                <textarea class="form-control" rows="5" id="titulo-noticia" value="Precampañas 2018" placeholder="Precampañas 2018"></textarea>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body modal-scrollable">
+            <div class="form-group">
+                <label for="comment">Contenido:</label>
+                <textarea class="form-control" rows="5" id="titulo-noticia" value="<strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br>
+                    74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señalóque Anaya se centró más en" placeholder="PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue máspropositivo74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló que Anaya se centró más en"></textarea>
+            </div>                                                                      
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
 	================================================== -->
