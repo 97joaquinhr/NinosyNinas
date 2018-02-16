@@ -80,7 +80,6 @@ body {
 	background-color: white !important;
     overflow: auto;
 	height: calc(100vh - 64px - 0.50rem);
-<<<<<<< HEAD
 	overflow-x: hidden;
 }
 
