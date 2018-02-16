@@ -1,8 +1,4 @@
-
-<?php
-include("html/partials/_header.html")?>
-
-
+<?php include("html/partials/_header.html")?>
         <!-- Page Content -->
         <div id="page-content-wrapper" class="shadow">
             <div class="container-fluid">

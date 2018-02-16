@@ -1,5 +1,4 @@
-<?php
-include("html/partials/_header.html")?>
+<?php include("html/partials/_header.html")?>
 
 
         <div id="page-content-wrapper" class="shadow">
@@ -71,7 +70,7 @@ include("html/partials/_header.html")?>
                         </div>
                       </div>
                     </a>
-                      
+
                     <a class="list-group-item list-group-item-action" href="#">
                       <div class="media">
                         <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/45x45" alt="">
@@ -96,10 +95,10 @@ include("html/partials/_header.html")?>
                 <!--BOTON AGREGAR USUARIO
                     Podría ser dark o secondary-->
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Agregar Usuario</button>
-                
-                
+
+
                 <footer class="bg-light mt-4">
-                  <div class="footer">  
+                  <div class="footer">
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-6">
@@ -114,15 +113,15 @@ include("html/partials/_header.html")?>
                     </div>
             </footer>
             </div>
-            
-        </div>
-        
-    </div>
-    
 
-    
+        </div>
+
+    </div>
+
+
+
 </body>
-    
+
 <div class="modal fade" id="agregarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -131,7 +130,7 @@ include("html/partials/_header.html")?>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>   
+      </div>
         <div class="modal-body">
         <form>
           <div class="form-group">
@@ -162,7 +161,7 @@ include("html/partials/_header.html")?>
       </div>
     </div>
 </div>
-    
+
     <!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->

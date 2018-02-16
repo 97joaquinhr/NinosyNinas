@@ -1,6 +1,4 @@
-
-<?php
-include("html/partials/_header.html")?>
+<?php include("html/partials/_header.html")?>
 
 
         <!-- Page Content -->
@@ -74,7 +72,7 @@ include("html/partials/_header.html")?>
                          </div>
                      </div>
                  </div>
-            
+
             <!-- /#page-content-wrapper -->
             <footer class="bg-light mt-4">
                 <div class="container-fluid py-4">
@@ -92,7 +90,7 @@ include("html/partials/_header.html")?>
         </div>
     </div>
     <!-- /#wrapper -->
-    
+
     <!-- Modal Consultar -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -122,7 +120,7 @@ include("html/partials/_header.html")?>
             </div>
         </div>
     </div>
-    
+
     <!-- Modal Editar -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -141,7 +139,7 @@ include("html/partials/_header.html")?>
                 <label for="comment">Contenido:</label>
                 <textarea class="form-control" rows="5" id="titulo-noticia" value="<strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br>
                     74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señalóque Anaya se centró más en" placeholder="PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue máspropositivo74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló que Anaya se centró más en"></textarea>
-            </div>                                                                      
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
