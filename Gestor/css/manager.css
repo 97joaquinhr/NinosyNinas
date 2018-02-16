@@ -10,7 +10,7 @@ font-family: 'Fjalla One', sans-serif;
 */
 
 
-h1 {
+h1, h2 {
 	font-family: 'Fjalla One', sans-serif;
 }
 
@@ -80,4 +80,63 @@ body {
 	background-color: white !important;
     overflow: auto;
 	height: calc(100vh - 64px - 0.50rem);
+	overflow-x: hidden;
+}
+
+.card-body-icon {
+  position: absolute;
+  z-index: 0;
+  top: -25px;
+  right: -25px;
+  font-size: 5rem;
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;
+	padding-top: 15px;
+}
+div.show-image:hover img{
+    opacity:0.8;
+}
+div.show-image input,
+div.show-image:hover button {
+    display: block;
+}
+div.show-image button {
+    position:absolute;
+    display:none;
+}
+div.show-image input.select {
+    top: 21px;
+    left: 33px;
+}
+div.show-image button.delete {
+    bottom: 8px;
+    right: 8px;
+}
+
+#gestor-galeria {
+	overflow-y: auto;
+	height: 40vh;
+}
+
+.tooltip {
+	left: 12px !important;
+}
+
+// support custom file inputs
+.custom-file-name:after {
+  content: attr(data-content) !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
 }
