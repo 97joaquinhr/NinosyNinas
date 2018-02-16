@@ -3,3 +3,7 @@ $('.dropdown-toggle').click(function() {
     	window.location.href = location;
 		return false;
 	});
+
+$('#datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+});
