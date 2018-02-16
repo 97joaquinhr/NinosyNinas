@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Gestor/gallery.html
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -77,6 +78,10 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+=======
+<?php
+include("html/partials/_header.html")?>
+>>>>>>> 7f39897f854b08525852a61864dc12089a85e63e:Gestor/gallery.php
 
         <!-- Page Content -->
         <div id="page-content-wrapper" class="shadow">

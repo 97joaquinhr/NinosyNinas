@@ -61,7 +61,8 @@ include("../../partials/_header.html");?>
                 <a href="consultaD.php" class="btn btn-secondary">Cancelar</a>
             </form>
     </div>
-</div>             
 <?php
 include("../../partials/_footer.html");
 ?>
+
+</div>             

@@ -152,9 +152,18 @@ div.show-image button.delete {
 }
 
 .gj-calendar {
+<<<<<<< HEAD
 	z-index: 2000 !important;
 }
 
 .gj-calendar-table {
 	z-index: 2000 !important;
 }
+=======
+    z-index: 2000 !important;
+}
+
+.gj-calendar-table {
+    z-index: 2000 !important;
+}
+>>>>>>> 7f39897f854b08525852a61864dc12089a85e63e
