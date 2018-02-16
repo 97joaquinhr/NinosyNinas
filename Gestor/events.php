@@ -20,8 +20,8 @@ include("html/partials/_header.html")?>
                                         </div>
                                         <div class="col">
                                             <div class="float-right">
-                                                <button onclick="showDelete()" type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar selección"><i class="fas fa-trash-alt"></i></button>
-                                                <button onclick="showAdd()" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Agregar nuevo archivo"><i class="fas fa-plus"></i></button>
+                                                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar evento"><i class="fas fa-trash-alt"></i></button>
+                                                <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Agregar nuevo evento"><i class="fas fa-plus"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -107,75 +107,6 @@ include("html/partials/_header.html")?>
 
     </div>
     <!-- /#wrapper -->
-
-    <div id="preview" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-images"></i> 00000001.jpg</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img class="img img-fluid" src="gallery/1.jpg">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="delete" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-bell"></i> Alerta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Seguro que quieres eliminar?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="add" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-images"></i> Agregar imagen</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button onclick="performClick('theFile');" class="btn btn-outline-secondary" type="button">Buscar</button>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3">
-                    <input type="file" id="theFile" class="sr-only">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Subir</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 
     <!-- Bootstrap core JavaScript
 	================================================== -->
