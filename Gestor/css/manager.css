@@ -140,3 +140,8 @@ div.show-image button.delete {
   overflow: hidden;
   padding: 0.5rem 1rem;
 }
+
+.gj-calendar {
+	z-index: 1000;
+	position: relative;
+}
