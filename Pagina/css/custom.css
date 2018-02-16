@@ -96,5 +96,17 @@ div.desc {
 #galleria{
     background-color: aliceblue
 }
-
-
+/*#page-content-wrapper {
+	background-color: white !important;
+    overflow: auto;
+	height: calc(100vh - 64px - 0.50rem);
+}*/
+.wrapper
+{
+    width:90%;
+    margin: 0px auto;
+    padding: 10px 10px;
+}
+.modal{
+    color: #0f0d0d;
+}
