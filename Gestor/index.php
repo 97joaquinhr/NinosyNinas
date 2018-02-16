@@ -356,7 +356,7 @@ include("html/partials/_header.html")?>
             </div>
 
             <!-- /#page-content-wrapper -->
-            <footer class="bg-light mt-4">
+            <footer class="bg-light mt-4 footer">
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-6">
@@ -364,7 +364,7 @@ include("html/partials/_header.html")?>
                         </div>
                         <div class="col-md-3"></div>
                         <div class="col-md-3 text-right align-self-end">
-                            Por <strong>Juan Pablo Pino</strong>
+                            Por <strong>Within Systems</strong>
                         </div>
                     </div>
                 </div>

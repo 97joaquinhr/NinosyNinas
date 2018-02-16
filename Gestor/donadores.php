@@ -91,21 +91,20 @@ include("html/partials/_header.html")?>
                     </div>
                 </div>
 
-                <footer class="bg-light mt-4">
-                  <div class="footer">
-                <div class="container-fluid py-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <span class="text-muted">Hecho con el editor <strong>Brackets</strong> | <a href="http://brackets.io/">http://brackets.io/</a></span>
-                        </div>
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3 text-right align-self-end">
-                            Por <strong>Within Systems</strong>
+                <!-- /#page-content-wrapper -->
+                <footer class="bg-light mt-4 footer">
+                    <div class="container-fluid py-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="text-muted">Hecho con el editor <strong>Brackets</strong> - <a href="http://brackets.io/">http://brackets.io/</a></span>
+                            </div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 text-right align-self-end">
+                                Por <strong>Within Systems</strong>
+                            </div>
                         </div>
                     </div>
-                </div>
-                    </div>
-            </footer>
+                </footer>
             </div>
 
         </div>
