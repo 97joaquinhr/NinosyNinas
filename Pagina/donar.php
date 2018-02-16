@@ -6,8 +6,8 @@ include("html/partials/_header.html");
     
 <div id="page-content-wrapper">  
     <div class="row wrapper">
-        <div class="col-sm">
-            <div class="jumbotron">
+        <div class="col-sm-4 col-lg-6">
+            <div class="card">
                 <div class="wrapper">
                     <h2>Donar via PayPal</h2>
                     <br>
@@ -20,8 +20,8 @@ include("html/partials/_header.html");
                 </div>
             </div>
         </div>
-        <div class="col-sm">
-            <div class="jumbotron">
+        <div class="col-sm-4 col-lg-6">
+            <div class="card">
                 <div class="wrapper">
                     <h2>Regístrate como donador</h2>
                     <br>
