@@ -5459,6 +5459,8 @@ button.close {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1rem;
+  overflow: auto !important;
+  height: 340px !important;
 }
 
 .modal-footer {

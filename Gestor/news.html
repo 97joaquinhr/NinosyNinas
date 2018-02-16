@@ -13,6 +13,7 @@
         <!-- Custom CSS -->
         <link href="css/manager.css" rel="stylesheet">
         <link href="vendor/simple-sidebar/css/simple-sidebar.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz|Exo:800|Jaldi:700|Source+Sans+Pro:300" rel="stylesheet">
@@ -167,7 +168,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <img src="http://cdn2.excelsior.com.mx/media/styles/imagen_portada_grande/public/pictures/2018/02/15/1861056.jpg" class="img-thumbnail" alt="Elecciones 2018">
+                    <img class="img-thumbnail" src="http://cdn2.excelsior.com.mx/media/styles/imagen_portada_grande/public/pictures/2018/02/15/1861056.jpg" class="img-thumbnail" alt="Elecciones 2018">
                     <p><strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br>
                     74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló
                         que Anaya se centró más en</p>
@@ -189,67 +190,20 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <div class="form-group">
+                <label for="comment">Título:</label>
+                <textarea class="form-control" rows="5" id="titulo-noticia" value="Precampañas 2018" placeholder="Precampañas 2018"></textarea>
+            </div>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>
-              <p>1</p>                                                                          
+          <div class="modal-body modal-scrollable">
+            <div class="form-group">
+                <label for="comment">Contenido:</label>
+                <textarea class="form-control" rows="5" id="titulo-noticia" value="<strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br>
+                    74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señalóque Anaya se centró más en" placeholder="PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue máspropositivo74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló que Anaya se centró más en"></textarea>
+            </div>                                                                      
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
