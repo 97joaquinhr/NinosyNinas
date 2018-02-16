@@ -20,13 +20,13 @@ include("html/partials/_header.html")?>
                         <div class="media-body">
                             <div class="row">
                                 <div class="col-sm">
-                                    <strong>Nombre:</strong> Jaun Ramon
+                                    <strong>Nombre:</strong> Juan Carlos Garzón Rincón Gallardo
                                 </div>
                                 <div class="col-sm">
-                                    <strong>Telefono:</strong> 442 250 2651
+                                    <strong>Telefono:</strong> 442 235 5641
                                 </div>
                                 <div class="col-sm">
-                                    <strong>Email</strong> email@email.com
+                                    <strong>Email</strong> jgarzon@marhnos.com.mx
                                 </div>
                             </div>
                             <strong>Registrado desde: </strong> 12/12/1999

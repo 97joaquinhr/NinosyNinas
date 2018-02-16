@@ -383,6 +383,9 @@ include("html/partials/_header.html")?>
 	<script src="vendor/simple-sidebar/js/simple-sidebar-toggle.js"></script>
 	<script src="vendor/chart.js/js/Chart.bundle.js"></script>
 	<script src="js/sb-admin-charts.js"></script>
+    <script>
+        $("#id-dashboard").addClass("active");
+    </script>
 
 </body>
 
