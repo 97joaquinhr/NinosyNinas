@@ -4,7 +4,7 @@ include("../../partials/_header.html");?>
     <!-- Navbar -->
     <!--Falta cambiar muchas cosas-->
     <div class="container-fluid">
-        <h1>Editar donador</h1>        
+        <h1>Editar donador</h1>
             <form>
                 <div class="form-group">
                     <label for="nombre">Nombre(s)</label>
@@ -65,4 +65,8 @@ include("../../partials/_header.html");?>
 include("../../partials/_footer.html");
 ?>
 
-</div>             
+<script>
+    $("#id-donadores").addClass("active");
+</script>
+
+</div>

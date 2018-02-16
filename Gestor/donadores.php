@@ -16,7 +16,7 @@ include("html/partials/_header.html")?>
                   <div class="list-group list-group-flush small">
                     <a class="list-group-item list-group-item-action" href="php/Donadores/consultaD.php">
                       <div class="media">
-                        
+
                         <div class="media-body">
                             <div class="row">
                                 <div class="col-sm">
@@ -69,7 +69,7 @@ include("html/partials/_header.html")?>
                         </div>
                       </div>
                     </a>
-                      
+
                     <a class="list-group-item list-group-item-action" href="#">
                       <div class="media">
                         <div class="media-body">
@@ -90,9 +90,9 @@ include("html/partials/_header.html")?>
                     </a>
                     </div>
                 </div>
-                
+
                 <footer class="bg-light mt-4">
-                  <div class="footer">  
+                  <div class="footer">
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-6">
@@ -107,17 +107,17 @@ include("html/partials/_header.html")?>
                     </div>
             </footer>
             </div>
-            
+
         </div>
-        
+
     </div>
-    
 
-    
+
+
 </body>
-    
 
-    
+
+
     <!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -127,4 +127,8 @@ include("html/partials/_header.html")?>
 	<script src="vendor/simple-sidebar/js/simple-sidebar-toggle.js"></script>
 	<script src="vendor/chart.js/js/Chart.bundle.js"></script>
 	<script src="js/sb-admin-charts.js"></script>
+
+    <script>
+        $("#id-donadores").addClass("active");
+    </script>
 </html>

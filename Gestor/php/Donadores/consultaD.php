@@ -60,7 +60,7 @@ include("../../partials/_header.html");?>
               <tr>
               <th scope="row">Uso CFDI</th>
               <td>G03</td>
-            </tr>        
+            </tr>
           </tbody>
         </table>
         <a class="btn btn-primary" href="editarD.php" role="button">
@@ -70,5 +70,8 @@ include("../../partials/_header.html");?>
 <?php
 include("../../partials/_footer.html");
 ?>
-</div>
 
+<script>
+    $("#id-donadores").addClass("active");
+</script>
+</div>
