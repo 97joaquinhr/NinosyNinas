@@ -150,3 +150,11 @@ div.show-image button.delete {
   background-color: #efefef;
   text-align: center;
 }
+
+.gj-calendar {
+	z-index: 2000 !important;
+}
+
+.gj-calendar-table {
+	z-index: 2000 !important;
+}
