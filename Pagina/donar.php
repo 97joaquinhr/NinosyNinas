@@ -14,10 +14,9 @@ include("html/partials/_header.html");
                     <h2 class="card-title">Donar via PayPal</h2>
                     <br>
                     <!--Boton para donar en paypal-->
-                    <button type="button" class="btn btn-primary">Dona</button>
+                    <button type="button" class="btn btn-primary">Donar</button>
                     <br>
                     <br>
-
                     <p class="card-text">Donación única a través de tu cuenta de paypal</p>
                 </div>
             </div>        
@@ -31,8 +30,10 @@ include("html/partials/_header.html");
                 <a class="btn btn-primary" href="php/registrarDonador.php" role="button">
                   Regístrate
                 </a>
-
+                <br>
+                <br>
                 <p class="card-text py">Nos pondremos en contacto contigo en cuanto termines tu registro</p>
+                <br>
             
                 </div>
             </div>
