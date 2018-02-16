@@ -84,7 +84,12 @@
             <h1>Usuarios</h1>
                 <div class="card mb-3">
                   <div class="card-header">
-                    <i class="fa fa-bell-o"></i>Usuarios Actuales</div>
+                    <i class="fa fa-bell-o"></i>Usuarios Actuales
+                         <form class="form-inline">
+                             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                             <button class="btn btn-secondary" type="submit">Buscar</button>
+                        </form>
+                    </div>
                   <div class="list-group list-group-flush small">
                     <a class="list-group-item list-group-item-action" href="#">
                       <div class="media">
@@ -167,10 +172,11 @@
                 </div>
                 <!--BOTON AGREGAR USUARIO
                     Podría ser dark o secondary-->
-                <button type="button" class="btn btn-secondary" id="Agregar">Agregar Usuario</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Agregar Usuario</button>
                 
                 
                 <footer class="bg-light mt-4">
+                  <div class="footer">  
                 <div class="container-fluid py-4">
                     <div class="row">
                         <div class="col-md-6">
@@ -182,6 +188,7 @@
                         </div>
                     </div>
                 </div>
+                    </div>
             </footer>
             </div>
             
@@ -192,7 +199,42 @@
 
     
 </body>
-
+    
+<div class="modal fade" id="agregarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>   
+        <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Nombre y Apellido:</label>
+            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">Telefono:</label>
+            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="recipient-name">
+              <div class="py-2"></div>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button"     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   ROL
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Editor</a>
+                    <a class="dropdown-item" href="#">Administrador</a>
+                    <a class="dropdown-item" href="#">Financiero</a>
+                </div>
+              </div>
+        </div>
+    </form>
+        </div>
+      </div>
+    </div>
+</div>
     
     <!-- Bootstrap core JavaScript
 	================================================== -->
