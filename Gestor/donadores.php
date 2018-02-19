@@ -156,7 +156,7 @@ include("html/partials/_header.html")?>
 
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-primary" href="editarD.php" role="button">Editar</a>
+                    <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Editar</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
