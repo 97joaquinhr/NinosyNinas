@@ -83,16 +83,30 @@ body {
 	overflow-x: hidden;
 }
 
-.card-body-icon {
+.card-body-icon-r {
   position: absolute;
   z-index: 0;
   top: -25px;
   right: -25px;
   font-size: 5rem;
+  color: #fff;
   -webkit-transform: rotate(15deg);
   -ms-transform: rotate(15deg);
   transform: rotate(15deg);
 }
+
+.card-body-icon-l {
+  position: absolute;
+  z-index: 0;
+  top: -25px;
+  left: -10px;
+  font-size: 5rem;
+  color: #fff;
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
 
 div.show-image {
     position: relative;
@@ -157,4 +171,23 @@ div.show-image button.delete {
 
 .gj-calendar-table {
 	z-index: 2000 !important;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
 }

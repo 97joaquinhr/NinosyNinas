@@ -117,27 +117,39 @@ include("html/partials/_header.html")?>
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="fas fa-id-card mr-4 fa-fw"></i> Consultar Dondador</h5>
+                    <h5 class="modal-title">Juan Carlos Garzón Rincón</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
+                    <div class="row px-3">
                         <div class="col">
-                            <div class="card">
-                                <div class="card-header">Juan Carlos Garzón Rincón</div>
-                                <ul class="list-group list-group-flush">
-            						<li class="list-group-item"><strong>RFC</strong><span class="card-text float-right">GARJ500112MP4</span></li>
-            						<li class="list-group-item"><strong>Correo</strong><span class="card-text float-right">jgarzon@marhnos.com.mx</span></li>
-            						<li class="list-group-item"><strong>Dirección</strong><span class="card-text float-right">Calle Laureles #221, Colonia Jurica, 76060, Querétaro.</span></li>
-            						<li class="list-group-item"><strong>Teléfono</strong><span class="card-text float-right">+52 (442) 235 5641</span></li>
-            						<li class="list-group-item"><strong>Fecha de Nacimiento</strong><span class="card-text float-right">12/01/1950</span></li>
-            						<li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right">Tarjeta</span><span class="badge badge-primary mx-1 float-right">Transferencia</span></li>
-            						<li class="list-group-item"><strong>Número</strong><span class="card-text float-right">5491 3888 7544 7025</span></li>
-            						<li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right">Blah blah blah...</span></li>
-            					</ul>
-                                <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header bg-primary text-white">
+                                            <strong>Datos de Contacto</strong>
+                                            <div class="card-body-icon-r">
+                                                <i class="fas fa-id-card fa-fw"></i>
+                                            </div>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                    						<li class="list-group-item"><strong>Correo</strong><span class="card-text float-right">jgarzon@marhnos.com.mx</span></li>
+                    						<li class="list-group-item"><strong>Dirección</strong><span class="card-text float-right">Calle Laureles #221, Colonia Jurica, 76060, Querétaro.</span></li>
+                    						<li class="list-group-item"><strong>Teléfono</strong><span class="card-text float-right">+52 (442) 235 5641</span></li>
+                    						<li class="list-group-item"><strong>Fecha de Nacimiento</strong><span class="card-text float-right">12/01/1950</span></li>
+                    					</ul>
+                                        <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center my-4 py-4">
+                                    <span>
+                                        <button type="button" class="btn btn-primary btn-circle btn-xl shadow"><i class="fas fa-envelope"></i></button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
@@ -149,13 +161,21 @@ include("html/partials/_header.html")?>
             					</ul>
                                 <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                             </div>
+                            <div class="card mt-4">
+                                <div class="card-header">Datos de Donación</div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right">GARJ500112MP4</span></li>
+                                    <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right">Tarjeta</span><span class="badge badge-primary mx-1 float-right">Transferencia</span></li>
+            						<li class="list-group-item"><strong>Número</strong><span class="card-text float-right">5491 3888 7544 7025</span></li>
+            						<li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right">Blah blah blah...</span></li>
+            					</ul>
+                                <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                            </div>
                         </div>
                     </div>
-
-
-
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
                     <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Editar</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
