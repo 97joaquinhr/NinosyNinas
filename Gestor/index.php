@@ -11,7 +11,7 @@ include("html/partials/_header.html")?>
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-primary o-hidden h-100">
                             <div class="card-body">
-                                <div class="card-body-icon">
+                                <div class="card-body-icon-r">
                                     <i class="fa fa-fw fa-comments"></i>
                                 </div>
                                 <div class="mr-5"><span class="badge badge-dark">9</span> Nuevos Comentarios!</div>
@@ -25,7 +25,7 @@ include("html/partials/_header.html")?>
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-warning o-hidden h-100">
                             <div class="card-body">
-                                <div class="card-body-icon">
+                                <div class="card-body-icon-r">
                                     <i class="fas fa-fw fa-id-card"></i>
                                 </div>
                                 <div class="mr-5"><span class="badge badge-dark">10</span> Donadores por validar!</div>
@@ -39,7 +39,7 @@ include("html/partials/_header.html")?>
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-success o-hidden h-100">
                             <div class="card-body">
-                                <div class="card-body-icon">
+                                <div class="card-body-icon-r">
                                     <i class="far fa-newspaper"></i>
                                 </div>
                                 <div class="mr-5"><span class="badge badge-dark">5</span> Noticias nuevas!</div>
@@ -53,7 +53,7 @@ include("html/partials/_header.html")?>
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card text-white bg-danger o-hidden h-100">
                             <div class="card-body">
-                                <div class="card-body-icon">
+                                <div class="card-body-icon-r">
                                     <i class="far fa-calendar-alt"></i>
                                 </div>
                                 <div class="mr-5"><span class="badge badge-dark">2</span> Eventos este mes!</div>

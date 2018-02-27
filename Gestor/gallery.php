@@ -19,7 +19,7 @@ include("html/partials/_header.html")?>
                                         </div>
                                         <div class="col">
                                             <div class="float-right">
-                                                <button onclick="showDelete()" type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar selección"><i class="fas fa-trash-alt"></i></button>
+                                                <button onclick="showDelete()" type="button" class="btn btn-danger mx-3" data-toggle="tooltip" data-placement="top" title="Eliminar elementos seleccionados"><i class="fas fa-trash-alt"></i></button>
                                                 <button onclick="showAdd()" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Agregar nuevo archivo"><i class="fas fa-plus"></i></button>
                                             </div>
                                         </div>
