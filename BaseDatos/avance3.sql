@@ -163,14 +163,8 @@ BULK INSERT equipo07.equipo07.[UsoCFDI]
          ROWTERMINATOR = '\n'
       )
 
-BULK INSERT equipo07.equipo07.[MetodoPago]
-   FROM 'e:\wwwroot\equipo07\MetodoPago.csv'
-   WITH 
-      (
-         CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
-         ROWTERMINATOR = '\n'
-      )
+SELECT *
+FROM UsoCFDI
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores]
@@ -182,9 +176,18 @@ BULK INSERT equipo07.equipo07.[Donadores]
          ROWTERMINATOR = '\n'
       )
 
+BULK INSERT equipo07.equipo07.[MetodoPago]
+   FROM 'e:\wwwroot\equipo07\MetodoPago.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
 SET DATEFORMAT dmy;
-BULK INSERT equipo07.equipo07.[Rol]
-   FROM 'e:\wwwroot\equipo07\Rol.csv'
+BULK INSERT equipo07.equipo07.[PlantillaDeCorreo]
+   FROM 'e:\wwwroot\equipo07\PlantillaDeCorreo.csv'
    WITH 
       (
          CODEPAGE = 'ACP',
@@ -203,8 +206,68 @@ BULK INSERT equipo07.equipo07.[Funcion]
       )
 
 SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Rol]
+   FROM 'e:\wwwroot\equipo07\Rol.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Usuario]
-   FROM 'e:\wwwroot\equipo07\Usuarios.csv'
+   FROM 'e:\wwwroot\equipo07\Usuario.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Noticia]
+   FROM 'e:\wwwroot\equipo07\Noticias.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Comentario]
+   FROM 'e:\wwwroot\equipo07\Comentarios.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[ArchivoMultimedia]
+   FROM 'e:\wwwroot\equipo07\ArchivosMultimedia.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Thumbnail]
+   FROM 'e:\wwwroot\equipo07\Thumbnail.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Evento]
+   FROM 'e:\wwwroot\equipo07\evento.csv'
    WITH 
       (
          CODEPAGE = 'ACP',
@@ -224,7 +287,37 @@ BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
-   FROM 'e:\wwwroot\equipo07\Donadores_MetodoPago.csv'
+   FROM 'e:\wwwroot\equipo07\Donadres_MetodoPago.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Rol_Funcion]
+   FROM 'e:\wwwroot\equipo07\Rol_Funcion.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Usuario_Rol]
+   FROM 'e:\wwwroot\equipo07\Usuario_Rol.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Usuario_Noticia]
+   FROM 'e:\wwwroot\equipo07\Usuario_Noticias.csv'
    WITH 
       (
          CODEPAGE = 'ACP',
