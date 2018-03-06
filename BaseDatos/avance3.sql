@@ -171,6 +171,7 @@ BULK INSERT equipo07.equipo07.[MetodoPago]
          FIELDTERMINATOR = ',',
          ROWTERMINATOR = '\n'
       )
+
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores]
    FROM 'e:\wwwroot\equipo07\donadores.csv'
@@ -181,3 +182,52 @@ BULK INSERT equipo07.equipo07.[Donadores]
          ROWTERMINATOR = '\n'
       )
 
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Rol]
+   FROM 'e:\wwwroot\equipo07\Rol.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Funcion]
+   FROM 'e:\wwwroot\equipo07\Funcion.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Usuario]
+   FROM 'e:\wwwroot\equipo07\Usuarios.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
+   FROM 'e:\wwwroot\equipo07\donadores_usoCFDI.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
+
+SET DATEFORMAT dmy;
+BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
+   FROM 'e:\wwwroot\equipo07\Donadores_MetodoPago.csv'
+   WITH 
+      (
+         CODEPAGE = 'ACP',
+         FIELDTERMINATOR = ',',
+         ROWTERMINATOR = '\n'
+      )
