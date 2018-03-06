@@ -1,3 +1,13 @@
+--RELACIONES N-N
+
+drop TABLE Donadores_UsoCFDI;
+drop TABLE Donadores_MetodoPago;
+drop TABLE Rol_Funcion;
+drop TABLE Usuario_Rol;
+drop TABLE Usuario_Noticia;
+
+--TABLAS
+
 drop TABLE UsoCFDI;
 drop TABLE Donadores;
 drop TABLE MetodoPago;
@@ -10,14 +20,6 @@ drop TABLE Comentario;
 drop TABLE ArchivoMultimedia;
 drop TABLE Thumbnail;
 drop TABLE Evento;
-
---RELACIONES N-N
-
-drop TABLE Donadores_UsoCFDI;
-drop TABLE Donadores_MetodoPago;
-drop TABLE Rol_Funcion;
-drop TABLE Usuario_Rol;
-drop TABLE Usuario_Noticia;
 
 --------------------------------------Table creation----------------------------------------------
 
@@ -178,3 +180,4 @@ BULK INSERT equipo07.equipo07.[Donadores]
          FIELDTERMINATOR = ',',
          ROWTERMINATOR = '\n'
       )
+
