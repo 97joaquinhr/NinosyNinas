@@ -155,26 +155,28 @@ Fecha DATETIME
 ---------------------------------------------DB FILL--------------------------------------------
 
 BULK INSERT equipo07.equipo07.[UsoCFDI]
-   FROM 'e:\wwwroot\equipo07\usoCFDI.csv'
+   FROM 'e:\wwwroot\equipo07\usoCFDI.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
 SELECT *
-FROM UsoCFDI
+FROM Donadores
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores]
-   FROM 'e:\wwwroot\equipo07\donadores.csv'
+   FROM 'e:\wwwroot\equipo07\donadores.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
+
+INSERT into Donadores values ('JEZWVAE2GBG0V','Kelsi','Quinn','Paul',24/10/2003,'634 Apple Turnpike,Birmingham,MA,42258',4102079027,'kquinn200@nniuqislek.net','Maestro',1)
 
 BULK INSERT equipo07.equipo07.[MetodoPago]
    FROM 'e:\wwwroot\equipo07\MetodoPago.csv'
@@ -245,7 +247,7 @@ BULK INSERT equipo07.equipo07.[Comentario]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
+SET DATEFORMAT mdy;
 BULK INSERT equipo07.equipo07.[ArchivoMultimedia]
    FROM 'e:\wwwroot\equipo07\ArchivosMultimedia.csv'
    WITH 
@@ -287,7 +289,7 @@ BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
-   FROM 'e:\wwwroot\equipo07\Donadres_MetodoPago.csv'
+   FROM 'e:\wwwroot\equipo07\Donadores_MetodoPago.csv'
    WITH 
       (
          CODEPAGE = 'ACP',
