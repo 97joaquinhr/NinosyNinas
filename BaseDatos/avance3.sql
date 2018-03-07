@@ -76,7 +76,7 @@ Validado bit
 
 CREATE TABLE MetodoPago
 (
-IdMetodo varchar(20) not null constraint pkIdMetodo PRIMARY KEY,
+IdMetodo char(3) not null constraint pkIdMetodo PRIMARY KEY,
 Descripcion text
 )
 
@@ -157,7 +157,7 @@ Fecha DATETIME
 
 CREATE TABLE Donadores_MetodoPago
 (
-IdMetodo varchar(20) not null constraint fkIdMetodo FOREIGN KEY references MetodoPago(IdMetodo),
+IdMetodo char(3) not null constraint fkIdMetodo FOREIGN KEY references MetodoPago(IdMetodo),
 Email varchar(254) not null constraint fkCorreo FOREIGN KEY references Donadores(Email),
 Fecha DATETIME,
 Observaciones text
