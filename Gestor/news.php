@@ -148,6 +148,14 @@ include("html/partials/_header.html")?>
                     </div>
                     <label for="comment"><h4>Contenido:</h4></label>
                     <textarea class="form-control" rows="5" id="titulo-noticia" placeholder="¿Qué opinas?¿Quieres informar algo?"></textarea>
+                    <h4>Agregar Imágen?</h4>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button onclick="performClick('theFile');" class="btn btn-outline-secondary" type="button">Buscar</button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <input type="file" id="theFile" class="sr-only">
                 </div>
 
                 <!-- Modal footer -->

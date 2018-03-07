@@ -274,7 +274,6 @@ include("html/partials/_header.html")?>
                         </div>
                         <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                     </div>
-                    <div class="input-group mb-3">
                     <input type="file" id="theFile" class="sr-only">
                 </div>
                 <div class="modal-footer">
