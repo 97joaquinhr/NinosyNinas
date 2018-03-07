@@ -347,6 +347,9 @@ BULK INSERT equipo07.equipo07.[Usuario_Noticia]
          ROWTERMINATOR = '\n'
       )
 
+
+---error en la primera celda de los siguientes campos, por eso hicimos un insert manual
+---ojala lo podamos resolver en asesoría con ricardo, creemos que son errores en nuestros .tsv
 insert into Donadores values('JEZWVAE2GBG0V','Kelsi','Quinn','Paul','10/24/2003','634 Apple Turnpike,Birmingham,MA,42258','4102079027','kquinn200@nniuqislek.net','Maestro',1);
 insert into Funcion values('F001','Registrar noticia');
 insert into Rol values('R01','Administrador');
@@ -362,5 +365,3 @@ insert into Rol_Funcion values('F001','R01');
 SELECT *
 FROM sys.tables;
 
-SELECT *
-FROM MetodoPago
