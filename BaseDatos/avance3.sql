@@ -361,3 +361,6 @@ insert into Rol_Funcion values('F001','R01');
 
 SELECT *
 FROM sys.tables;
+
+SELECT *
+FROM MetodoPago

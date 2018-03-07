@@ -2,7 +2,7 @@ SELECT D.Nombre, M.Descripcion
 FROM Donadores D, Donadores_MetodoPago Dm, MetodoPago M
 WHERE D.Email=Dm.Email
 AND Dm.IdMetodo=M.IdMetodo
-AND M.IdMetodo LIKE 'Tarjeta'
+AND M.Descripcion = 'Tarjeta%'
 AND D.Ocupacion LIKE 'Maestro'
 
 SELECT F.Nombre
