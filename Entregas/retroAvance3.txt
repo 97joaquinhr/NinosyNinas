@@ -1,0 +1,13 @@
+Todo tiene que estar en español
+Los botones tienen que estar en la misma posición de cancelar y guardar
+Mantener el mismo lenguaje, contraseña, clave, password
+Boton de eliminar está muy cerca
+Quitar numero de cuenta
+Misma tipografía y tamaño de fuente tiene que ser consistente
+Consistencia de colores
+Contacto con la diseñadora
+Información actual de la empresa: editable
+Fotografías reales de los eventos
+Hosting
+Checar de nuevo pruebas
+Actualizar artefactos de ingeniería

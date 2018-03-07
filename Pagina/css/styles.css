@@ -22,6 +22,14 @@ footer,footer a, .jumbotron{
     color: #FFFFFF !important;
 }
 
+.card-login {
+    max-width: 25rem;
+}
+
+.card-register {
+    max-width: 40rem;
+}
+
 h1 {
     color: gray;
 }

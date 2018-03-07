@@ -1,3 +1,7 @@
+.center-vertical {
+  top: 25vh;
+}
+
 .card-login {
   max-width: 25rem;
 }
