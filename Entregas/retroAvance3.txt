@@ -10,4 +10,4 @@ Información actual de la empresa: editable
 Fotografías reales de los eventos
 Hosting
 Checar de nuevo pruebas
-Actualizar artefactos de ingeniería
+Actualizar artefactos de ingeniería.
