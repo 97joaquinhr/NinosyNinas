@@ -1,25 +1,56 @@
 --RELACIONES N-N
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Donadores_UsoCFDI')
+	drop TABLE Donadores_UsoCFDI;
 
-drop TABLE Donadores_UsoCFDI;
-drop TABLE Donadores_MetodoPago;
-drop TABLE Rol_Funcion;
-drop TABLE Usuario_Rol;
-drop TABLE Usuario_Noticia;
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Donadores_MetodoPago')
+	drop TABLE Donadores_MetodoPago;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Rol_Funcion')
+	drop TABLE Rol_Funcion;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Usuario_Rol')
+	drop TABLE Usuario_Rol;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Usuario_Noticia')
+	drop TABLE Usuario_Noticia;
 
 --TABLAS
 
-drop TABLE UsoCFDI;
-drop TABLE Donadores;
-drop TABLE MetodoPago;
-drop TABLE PlantillaDeCorreo;
-drop TABLE Funcion;
-drop TABLE Rol;
-drop TABLE Usuario;
-drop TABLE Noticia;
-drop TABLE Comentario;
-drop TABLE ArchivoMultimedia;
-drop TABLE Thumbnail;
-drop TABLE Evento;
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'UsoCFDI')
+	drop TABLE UsoCFDI;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Donadores')
+	drop TABLE Donadores;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'MetodoPago')
+	drop TABLE MetodoPago;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'PlantillaDeCorreo')
+	drop TABLE PlantillaDeCorreo;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Funcion')
+	drop TABLE Funcion;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Rol')
+	drop TABLE Rol;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Usuario')
+	drop TABLE Usuario;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Noticia')
+	drop TABLE Noticia;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Comentario')
+	drop TABLE Comentario;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ArchivoMultimedia')
+	drop TABLE ArchivoMultimedia;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Thumbnail')
+	drop TABLE Thumbnail;
+
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Evento')
+	drop TABLE Evento;
 
 --------------------------------------Table creation----------------------------------------------
 
@@ -126,7 +157,7 @@ Fecha DATETIME
 
 CREATE TABLE Donadores_MetodoPago
 (
-IdMetodo char(20) not null constraint fkIdMetodo FOREIGN KEY references MetodoPago(IdMetodo),
+IdMetodo varchar(20) not null constraint fkIdMetodo FOREIGN KEY references MetodoPago(IdMetodo),
 Email varchar(254) not null constraint fkCorreo FOREIGN KEY references Donadores(Email),
 Fecha DATETIME,
 Observaciones text
@@ -162,9 +193,6 @@ BULK INSERT equipo07.equipo07.[UsoCFDI]
          FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
-
-SELECT *
-FROM rol
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores]
@@ -319,10 +347,6 @@ BULK INSERT equipo07.equipo07.[Usuario_Noticia]
          ROWTERMINATOR = '\n'
       )
 
-select * from evento
-
-SELECT *
-FROM sys.tables
 insert into Donadores values('JEZWVAE2GBG0V','Kelsi','Quinn','Paul','10/24/2003','634 Apple Turnpike,Birmingham,MA,42258','4102079027','kquinn200@nniuqislek.net','Maestro',1);
 insert into Funcion values('F001','Registrar noticia');
 insert into Rol values('R01','Administrador');
@@ -334,3 +358,6 @@ tempus vel. Maecenas facilisis porta nisl, non congue urna porta vitae.
 In vehicula tincidunt massa nec tempus. Duis sagittis pulvinar nisl et 
 feugiat. Aliquam erat volutpat. Quisque ut odio massa.');
 insert into Rol_Funcion values('F001','R01');
+
+SELECT *
+FROM sys.tables;
