@@ -7,31 +7,10 @@ include("html/partials/_header.html")?>
         <div id="page-content-wrapper" class="shadow">
             <!-- Navbar -->
             <div class="container-fluid">
-                 <h1>NOTICIAS <i class="fas fa-search"></i></h1>
-                 <div class="row">
-                     <div class="col-8 col-lg-9"><hr/></div>
-                 </div>
+                 <h2>Noticias</h2>
                  <div class="row">
                      <div class="col-8 col-lg-9">
-                         <div class="card text-center">
-                             <div class="card">
-                                <div class="card-block">
-                                    <div class="card-title"></div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="usr">Título:</label>
-                                            <input type="text" class="form-control" id="usr" placeholder="NOTICIA123">
-                                        </div>
-                                        <label for="comment">Noticia:</label>
-                                        <textarea class="form-control" rows="5" id="titulo-noticia" placeholder="¿Qué opinas?¿Quieres informar algo?"></textarea>
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="button" class="btn btn-primary">Subir</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    </div>
-                                </div>
-                             </div>
-                             <p></p>
+                         <div class="card mb-3">
                              <div class="card-header">
                                  Búsqueda
                              </div>
@@ -59,13 +38,13 @@ include("html/partials/_header.html")?>
                                 </tbody>
                                 </table>
                              </div>
-                             <div class="card-footer"></div>
                          </div>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva Publicación</button>
                      </div>
                      <div class="col-4 col-lg-3">
                          <div class="card text-center">
                              <div class="card-header">
-                                 RECIENTE
+                                 Reciente
                              </div>
                              <div class="card-body">
                                  <img class="img-fluid" alt="tweets" src="http://www.ashokraja.me/image.axd?picture=image_thumb_24.png"></img>
@@ -76,7 +55,7 @@ include("html/partials/_header.html")?>
                  </div>
 
              <!-- /#page-content-wrapper -->
-             <footer class="bg-light mt-4 footer">
+             <footer class="bg-light mt-4 footer" style="position: absolute;">
                  <div class="container-fluid py-4">
                      <div class="row">
                          <div class="col-md-6">
@@ -149,6 +128,36 @@ include("html/partials/_header.html")?>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="newArticle">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Nueva Noticia</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="usr"><h4>Título:</h4></label>
+                        <input type="text" class="form-control" id="usr" placeholder="NOTICIA123">
+                    </div>
+                    <label for="comment"><h4>Contenido:</h4></label>
+                    <textarea class="form-control" rows="5" id="titulo-noticia" placeholder="¿Qué opinas?¿Quieres informar algo?"></textarea>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Subir</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript
