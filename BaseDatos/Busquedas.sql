@@ -11,4 +11,4 @@ WHERE F.IdFuncion=Rf.IdFuncion
 AND R.IdRol=Rf.IdRol
 AND U.Username=Ur.Username
 AND R.IdRol=Ur.IdRol
-AND U.Username LIKE 'Marcelo'
+AND U.Username LIKE 'Joaquin'
