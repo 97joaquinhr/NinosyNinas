@@ -39,19 +39,19 @@ FechadeNacimiento DATETIME,
 Direccion text,
 Telefono varchar(15),
 Email varchar(254) not null constraint pkEmail PRIMARY KEY,
-Ocupacion varchar(100),
+Ocupacion text,
 Validado bit
 )
 
 CREATE TABLE MetodoPago
 (
-IdMetodo char(20) not null constraint pkIdMetodo PRIMARY KEY,
+IdMetodo varchar(20) not null constraint pkIdMetodo PRIMARY KEY,
 Descripcion text
 )
 
 CREATE TABLE PlantillaDeCorreo
 (
-IdCorreo char(4) not null constraint pkIdCorreo PRIMARY KEY,
+IdCorreo char(6) not null constraint pkIdCorreo PRIMARY KEY,---habia error porque estaba en 4 en vez de 6
 Asunto varchar(50),
 Contenido text,
 Fecha DATETIME
@@ -119,8 +119,8 @@ Descripcion text
 
 CREATE TABLE Donadores_UsoCFDI
 (
-IdCFDI char(3) not null constraint fkIdCFDI FOREIGN KEY references UsoCFDI(IdCFDI),
 Email varchar(254) not null constraint fkEmail FOREIGN KEY references Donadores(Email),
+IdCFDI char(3) not null constraint fkIdCFDI FOREIGN KEY references UsoCFDI(IdCFDI),
 Fecha DATETIME
 )
 
@@ -164,7 +164,7 @@ BULK INSERT equipo07.equipo07.[UsoCFDI]
       )
 
 SELECT *
-FROM Donadores
+FROM rol
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores]
@@ -172,7 +172,7 @@ BULK INSERT equipo07.equipo07.[Donadores]
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = '\t',
+         FIELDTERMINATOR = '\t', ---error con acentos
          ROWTERMINATOR = '\n'
       )
 
@@ -270,22 +270,23 @@ BULK INSERT equipo07.equipo07.[Evento]
          FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
-
+set dateformat mdy
 BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
-   FROM 'e:\wwwroot\equipo07\donadores_usoCFDI.csv'
+   FROM 'e:\wwwroot\equipo07\donadores_usoCFDI.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
+set dateformat mdy
 BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
-   FROM 'e:\wwwroot\equipo07\Donadores_MetodoPago.csv'
+   FROM 'e:\wwwroot\equipo07\donadores_MetodoPago.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
@@ -308,7 +309,7 @@ BULK INSERT equipo07.equipo07.[Usuario_Rol]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
+SET DATEFORMAT mdy;
 BULK INSERT equipo07.equipo07.[Usuario_Noticia]
    FROM 'e:\wwwroot\equipo07\Usuario_Noticias.csv'
    WITH 
@@ -317,3 +318,19 @@ BULK INSERT equipo07.equipo07.[Usuario_Noticia]
          FIELDTERMINATOR = ',',
          ROWTERMINATOR = '\n'
       )
+
+select * from evento
+
+SELECT *
+FROM sys.tables
+insert into Donadores values('JEZWVAE2GBG0V','Kelsi','Quinn','Paul','10/24/2003','634 Apple Turnpike,Birmingham,MA,42258','4102079027','kquinn200@nniuqislek.net','Maestro',1);
+insert into Funcion values('F001','Registrar noticia');
+insert into Rol values('R01','Administrador');
+insert into evento values('E001','Duis bibendum','1/2/2016','Purépero',
+'Vivamus semper arcu et urna eleifend dapibus. Fusce porta pretium sodales. 
+Phasellus eget luctus velit. Phasellus in aliquet ex. Pellentesque consequat 
+consectetur odio, ut ultricies diam 
+tempus vel. Maecenas facilisis porta nisl, non congue urna porta vitae. 
+In vehicula tincidunt massa nec tempus. Duis sagittis pulvinar nisl et 
+feugiat. Aliquam erat volutpat. Quisque ut odio massa.');
+insert into Rol_Funcion values('F001','R01');
