@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-fluid center-vertical">
+    <div class="container">
+        <h1 class="display-4">Bienvenido <?=$user?></h1>
+        <p class="lead">
+            <?php
+            echodate("d/m/Y");
+            echo date('H:i');
+            $var = date('H:i');
+            getRol($user);
+            ?>
+        </p>
+    </div>
+</div>
