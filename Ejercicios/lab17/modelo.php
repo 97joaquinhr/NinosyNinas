@@ -1,6 +1,6 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost:8089","root","","Tienda");
+        $mysql = mysqli_connect("localhost:8089","root","","rbac");
         $mysql->set_charset("utf8");
         return $mysql;
     }
@@ -14,8 +14,8 @@
         if ($db != NULL) {
 
             //Specification of the SQL query
-            $query='SELECT nombre FROM usuarios WHERE nombre="'.$user.
-                '" AND passwd="'.$passwd.'"';
+            $query='SELECT Id_Usuario FROM usuario WHERE Id_Usuario="'.$user.
+                '" AND Contrasena="'.$passwd.'"';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
@@ -28,6 +28,50 @@
                 return true;
             }
             return false;
+        }
+        return false;
+    }
+
+    function getRol($user) {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Id_Rol FROM roles_usuario WHERE Id_Usuario ="'.$user.'"';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $rol = "";
+             // cycle to explode every line of the results
+            if ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $rol = $fila['Id_Rol'];
+            }
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return $rol;
+        }
+        return false;
+    }
+
+    function getPrivilegios($user) {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Id_Privilegio FROM roles_usuario u, roles_privilegios p WHERE u.Id_Rol = p.Id_Rol AND Id_Usuario="'.$user.'"';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $privilegios = array();
+            // cycle to explode every line of the results
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $privilegios[] = $fila['Id_Privilegio'];
+            }
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return $privilegios;
         }
         return false;
     }
