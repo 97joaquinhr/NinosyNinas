@@ -90,7 +90,7 @@ include("html/partials/_header.html")?>
                     </a>
                     </div>
                 </div>
-
+                <button data-toggle="modal" data-target="#new" class="btn btn-primary">Nuevo registro</button>
             </div>
             <!-- /#page-content-wrapper -->
             <footer class="bg-light mt-4 footer" style="position: absolute;">
@@ -252,6 +252,86 @@ include("html/partials/_header.html")?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                        <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="new" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre(s)</label>
+                                    <input class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Juan Carlos">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                    <label for="apellidoP">Apellido paterno</label>
+                                    <input class="form-control" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Garzón">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidoM">Apellido materno</label>
+                                    <input class="form-control" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Rincón Gallardo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rfc">RFC</label>
+                                    <input class="form-control" id="rfc" aria-describedby="rfcHelp" placeholder="GARJ500112MP4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailD">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="direccion">Direccion</label>
+                                    <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="Calle Laureles #221, Colonia Jurica, 76060, Querétaro.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono o Celular</label>
+                                    <input class="form-control" id="telefono" aria-describedby="telefonoHelp" placeholder="442 235 5641">
+                                </div>
+                                <label for="fechaN">Fecha de nacimiento</label>
+                                <input id="datepicker" placeholder="12/01/1950">
+                                <label for="MetodoPago">Metodo de pago</label>
+                                <select class="form-control">
+                                    <option>Tarjeta de crédito</option>
+                                    <option>Transferencia</option>
+                                    <option>Cheque</option>
+                                    <option>Otro</option>
+                                </select>
+                                <div class="form-group">
+                                    <label for="numeroC">Número de cuenta</label>
+                                    <input class="form-control" id="numeroC" aria-describedby="numeroCHelp" placeholder="5491 3888 7544 7025">
+                                </div>
+                                <div class="form-group">
+                                    <label for="observaciones">Observaciones</label>
+                                    <input class="form-control" id="observaciones" aria-describedby="observacionesHelp" placeholder="Fecha de vencimiento: 06/18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="usoCFDI">Uso CFDI</label>
+                                    <input class="form-control" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
                         <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
