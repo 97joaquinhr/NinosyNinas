@@ -176,8 +176,6 @@ BULK INSERT equipo07.equipo07.[Donadores]
          ROWTERMINATOR = '\n'
       )
 
-INSERT into Donadores values ('JEZWVAE2GBG0V','Kelsi','Quinn','Paul',24/10/2003,'634 Apple Turnpike,Birmingham,MA,42258',4102079027,'kquinn200@nniuqislek.net','Maestro',1)
-
 BULK INSERT equipo07.equipo07.[MetodoPago]
    FROM 'e:\wwwroot\equipo07\MetodoPago.csv'
    WITH 
@@ -187,17 +185,16 @@ BULK INSERT equipo07.equipo07.[MetodoPago]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
+SET DATEFORMAT mdy;
 BULK INSERT equipo07.equipo07.[PlantillaDeCorreo]
-   FROM 'e:\wwwroot\equipo07\PlantillaDeCorreo.csv'
+   FROM 'e:\wwwroot\equipo07\PlantillaDeCorreo.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Funcion]
    FROM 'e:\wwwroot\equipo07\Funcion.csv'
    WITH 
@@ -207,7 +204,6 @@ BULK INSERT equipo07.equipo07.[Funcion]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Rol]
    FROM 'e:\wwwroot\equipo07\Rol.csv'
    WITH 
@@ -217,7 +213,6 @@ BULK INSERT equipo07.equipo07.[Rol]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Usuario]
    FROM 'e:\wwwroot\equipo07\Usuario.csv'
    WITH 
@@ -229,11 +224,11 @@ BULK INSERT equipo07.equipo07.[Usuario]
 
 SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Noticia]
-   FROM 'e:\wwwroot\equipo07\Noticias.csv'
+   FROM 'e:\wwwroot\equipo07\Noticias.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
@@ -257,7 +252,6 @@ BULK INSERT equipo07.equipo07.[ArchivoMultimedia]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Thumbnail]
    FROM 'e:\wwwroot\equipo07\Thumbnail.csv'
    WITH 
@@ -267,17 +261,16 @@ BULK INSERT equipo07.equipo07.[Thumbnail]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
+SET DATEFORMAT mdy;
 BULK INSERT equipo07.equipo07.[Evento]
-   FROM 'e:\wwwroot\equipo07\evento.csv'
+   FROM 'e:\wwwroot\equipo07\evento.tsv'
    WITH 
       (
          CODEPAGE = 'ACP',
-         FIELDTERMINATOR = ',',
+         FIELDTERMINATOR = '\t',
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
    FROM 'e:\wwwroot\equipo07\donadores_usoCFDI.csv'
    WITH 
@@ -287,7 +280,6 @@ BULK INSERT equipo07.equipo07.[Donadores_UsoCFDI]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
    FROM 'e:\wwwroot\equipo07\Donadores_MetodoPago.csv'
    WITH 
@@ -297,7 +289,6 @@ BULK INSERT equipo07.equipo07.[Donadores_MetodoPago]
          ROWTERMINATOR = '\n'
       )
 
-SET DATEFORMAT dmy;
 BULK INSERT equipo07.equipo07.[Rol_Funcion]
    FROM 'e:\wwwroot\equipo07\Rol_Funcion.csv'
    WITH 
