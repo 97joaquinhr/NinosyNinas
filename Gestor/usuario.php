@@ -4,7 +4,7 @@ include("html/partials/_header.html")?>
 
         <div id="page-content-wrapper" class="shadow">
             <div class="container-fluid">
-            <h1>Usuarios</h1>
+            <h2>Usuarios</h2>
                 <div class="card mb-3">
                   <div class="card-header">
                     <i class="fa fa-bell-o"></i>Usuarios Actuales
@@ -139,23 +139,24 @@ include("html/partials/_header.html")?>
             <input type="text" class="form-control" id="recipient-name">
             <label for="recipient-name" class="col-form-label">Email:</label>
             <input type="text" class="form-control" id="recipient-name">
-            <label for="recipient-name" class="col-form-label">Login:</label>
-            <input type="text" class="form-control" id="recipient-name">
             <label for="recipient-name" class="col-form-label">Password:</label>
             <input type="text" class="form-control" id="recipient-name">
               <div class="py-2"></div>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button"     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   ROL
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Editor</a>
-                    <a class="dropdown-item" href="#">Administrador</a>
-                    <a class="dropdown-item" href="#">Financiero</a>
-                </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Rol</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Editor</option>
+                  <option>Administrador</option>
+                  <option>Financiero</option>
+                </select>
               </div>
         </div>
     </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         </div>
       </div>
     </div>

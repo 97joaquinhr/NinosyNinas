@@ -10,12 +10,12 @@ font-family: 'Fjalla One', sans-serif;
 */
 
 
-h1, h2 {
+h2 {
 	font-family: 'Fjalla One', sans-serif;
 }
 
 body {
-	padding-top: 0px;
+	padding-top: 2.5rem;
 }
 
 .navbar {
@@ -79,7 +79,7 @@ body {
 #page-content-wrapper {
 	background-color: white !important;
     overflow: auto;
-	height: calc(100vh - 64px - 0.50rem);
+	height: calc(100vh - 72px - 2.50rem);
 	overflow-x: hidden;
 }
 
@@ -190,4 +190,12 @@ div.show-image button.delete {
     text-align: center;
     font-size: 12px;
     line-height: 1.42857;
+}
+
+.card-login {
+  max-width: 25rem;
+}
+
+.card-register {
+  max-width: 40rem;
 }
