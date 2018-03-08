@@ -1,6 +1,6 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost:8089","root","","rbac");
+        $mysql = mysqli_connect("localhost","root","","rbac");
         $mysql->set_charset("utf8");
         return $mysql;
     }
@@ -54,12 +54,12 @@
         return false;
     }
 
-    function getPrivilegios($user) {
+    function getPrivilegios($rol) {
         $db = connect();
         if ($db != NULL) {
 
             //Specification of the SQL query
-            $query='SELECT Id_Privilegio FROM roles_usuario u, roles_privilegios p WHERE u.Id_Rol = p.Id_Rol AND Id_Usuario="'.$user.'"';
+            $query='SELECT Id_Privilegio FROM roles_privilegios WHERE Id_Rol="'.$rol.'"';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);

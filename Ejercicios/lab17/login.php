@@ -10,7 +10,9 @@
     } else if (login($_POST["usuario"], $_POST["password"]) ) {
         unset($_SESSION["error"]);
         $_SESSION["usuario"] = $_POST["usuario"];
+        $_SESSION["rol"] = getRol($_SESSION["usuario"]);
         $user = $_SESSION["usuario"];
+        $rol = $_SESSION["rol"];
         include("partials/_header.html");
         include("partials/_panel.html");
         include("partials/_footer.html");
