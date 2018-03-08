@@ -76,6 +76,93 @@
         return false;
     }
 
+    function getPrivilegiosNav($privilegios) {
+        $html = "";
+        foreach ($privilegios as &$id_privilegio) {
+            switch ($id_privilegio) {
+                case 'AgregarAreaTrabajo':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=AgregarAreaTrabajo">Agregar Area Trabajo</a>';
+                    break;
+                case 'AgregarPrivilegios':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=AgregarPrivilegios">Agregar Privilegios</a>';
+                    break;
+                case 'AgregarSeccion':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=AgregarSeccion">Agregar Seccion</a>';
+                    break;
+                case 'CrearUsuario':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=CrearUsuario">Crear Usuario</a>';
+                    break;
+                case 'EliminarAreaTrabajo':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=EliminarAreaTrabajo">Eliminar Area Trabajo</a>';
+                    break;
+                case 'EliminarSeccion':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=EliminarSeccion">Eliminar Seccion</a>';
+                    break;
+                case 'EliminarUsuario':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=EliminarUsuario">Eliminar Usuario</a>';
+                    break;
+                case 'HabilitarPersonal':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=HabilitarPersonal">Habilitar Personal</a>';
+                    break;
+                case 'InformacionPersonal':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=InformacionPersonal">Informacion Personal</a>';
+                    break;
+                case 'ModificarCliente':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=ModificarCliente">Modificar Cliente</a>';
+                    break;
+                case 'ModificarInformacionPersonal':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=ModificarInformacionPersonal">Modificar Informacion Personal</a>';
+                    break;
+                case 'NuevaTransaccion':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=NuevaTransaccion">Nueva Transaccion</a>';
+                    break;
+                case 'RealizarSubConsultas':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=RealizarSubConsultas">Realizar Sub Consultas</a>';
+                    break;
+                case 'TransaccionesRealizadas':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=TransaccionesRealizadas">Transacciones Realizadas</a>';
+                    break;
+                case 'VisualizarAreaTrabajo':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=VisualizarAreaTrabajo">Visualizar Area Trabajo</a>';
+                    break;
+                case 'VisualizarCuenta':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=VisualizarCuenta">Visualizar Cuenta</a>';
+                    break;
+                case 'VisualizarPersonalHabilitado':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=VisualizarPersonalHabilitado">Visualizar Personal Habilitado</a>';
+                    break;
+                case 'VisualizarUsuariosRegistrados':
+                    $html .= '<a class="dropdown-item" href="consultas.php?p=VisualizarUsuariosRegistrados">Visualizar Usuarios Registrados</a>';
+                    break;
+
+
+                default:
+                    # code...
+                    break;
+            }
+        }
+        echo $html;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //var_dump(login('lalo', 'hockey'));
     //var_dump(login('joaquin', 'basket'));
     //var_dump(login('cesar', 'basket'));
