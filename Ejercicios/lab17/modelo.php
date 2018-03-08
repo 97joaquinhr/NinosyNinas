@@ -134,11 +134,6 @@
                 case 'VisualizarUsuariosRegistrados':
                     $html .= '<a class="dropdown-item" href="consultas.php?p=VisualizarUsuariosRegistrados">Visualizar Usuarios Registrados</a>';
                     break;
-
-
-                default:
-                    # code...
-                    break;
             }
         }
         echo $html;
