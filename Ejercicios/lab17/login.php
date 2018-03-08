@@ -4,7 +4,7 @@
 
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
-        include("partials/_header.html");\
+        include("partials/_header.html");
         include("partials/_panel.html");
         include("partials/_footer.html");
     } else if (login($_POST["usuario"], $_POST["password"]) ) {
