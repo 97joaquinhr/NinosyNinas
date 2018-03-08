@@ -7,6 +7,7 @@
         $rol = $_SESSION["rol"];
         $privilegios = $_SESSION["privilegios"];
         include("partials/_header.html");
+        include("partials/_nav.html");
         include("partials/_panel.html");
         include("partials/_footer.html");
     } else if (login($_POST["usuario"], $_POST["password"]) ) {
@@ -18,6 +19,7 @@
         $rol = $_SESSION["rol"];
         $privilegios = $_SESSION["privilegios"];
         include("partials/_header.html");
+        include("partials/_nav.html");
         include("partials/_panel.html");
         include("partials/_footer.html");
     } else {

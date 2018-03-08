@@ -59,7 +59,7 @@
         if ($db != NULL) {
 
             //Specification of the SQL query
-            $query='SELECT Id_Privilegio FROM roles_privilegios WHERE Id_Rol="'.$rol.'"';
+            $query='SELECT DISTINCT Id_Privilegio FROM roles_privilegios WHERE Id_Rol="'.$rol.'"';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
@@ -74,6 +74,15 @@
             return $privilegios;
         }
         return false;
+    }
+
+    function getPrivilegiosNav2($privilegios) {
+        $html = "";
+        foreach ($privilegios as &$id_privilegio) {
+            $nombre = preg_replace('/(?<!\ )[A-Z]/', ' $0', $id_privilegio);
+            $html.= '<a class="dropdown-item" href="consultas.php?p='.$id_privilegio.'">'.$nombre.'</a>';
+        }
+        echo $html;
     }
 
     function getPrivilegiosNav($privilegios) {
