@@ -4,6 +4,8 @@
 
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
+        $rol = $_SESSION["rol"];
+        $privilegios = $_SESSION["privilegios"];
         include("partials/_header.html");
         include("partials/_panel.html");
         include("partials/_footer.html");
