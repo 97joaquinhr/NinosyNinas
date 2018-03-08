@@ -11,3 +11,4 @@ Fotografías reales de los eventos
 Hosting
 Checar de nuevo pruebas
 Actualizar artefactos de ingeniería.
+Variables en ingles o en español

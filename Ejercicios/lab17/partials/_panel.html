@@ -3,11 +3,12 @@
         <h1 class="display-4">Bienvenido <?=$user?></h1>
         <p class="lead">
             <?php
-            echodate("d/m/Y");
-            echo date('H:i');
+            echo date("d/m/Y");
+            echo ' '.date('H:i');
             $var = date('H:i');
-            getRol($user);
+            echo '<br>'.$rol;
             ?>
         </p>
+        <button href="logout.php" >Desconectar</button>
     </div>
 </div>
