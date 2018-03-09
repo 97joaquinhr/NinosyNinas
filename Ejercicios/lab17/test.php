@@ -3,10 +3,8 @@
 require_once("modelo.php");
 echo getRol('A00000001');
 
-$privilegios = getPrivilegios('A00000001');
-foreach ($privilegios as $priv) {
-    echo $priv;
-    echo "\n";
-}
+$privilegios = getPrivilegios(getRol('A00000001'));
+
+print_r($privilegios);
 
 ?>

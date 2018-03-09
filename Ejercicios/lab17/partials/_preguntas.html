@@ -1,11 +1,22 @@
-<div class="card">
-    <div class="card-header">Preguntas</div>
-    <div class="card-body">
-        
-    </div>
+<div class="container">
+    <div class="card">
+        <div class="card-header">Preguntas</div>
+        <div class="card-body">
+            <p><strong>¿En qué consiste el acceso basado en roles?</strong><br>
+            [1] Es una función de seguridad que restringe el acceso de los usuarios a ciertas actividades que están disponibles para el superusuario.<br>
+            <strong>Investiga y describe 6 sistemas, 3 conocidos que empleen RBAC y 3 desconocidos que no, junto con su funcionamiento general.</strong><br>
+            <br>
+            <strong>Beneficios y desventajas de este modelo.</strong><br>
+            El modelo es bastante flexible</p>
+            <p><strong>Referencias</strong><br>
+            [1] https://docs.oracle.com/cd/E24842_01/html/E23286/rbac-1.html<br>
+            [2]</p>
+        </div>
+
         <?php if (isset($_SESSION["error"])): ?>
             <div class="card-footer">
                 <span class="text-danger"><?=$_SESSION["error"] ?></span>
             </div>
         <?php endif; ?>
+    </div>
 </div>

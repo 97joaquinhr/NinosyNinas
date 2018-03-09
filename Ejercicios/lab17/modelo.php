@@ -54,12 +54,12 @@
         return false;
     }
 
-    function getPrivilegios($user) {
+    function getPrivilegios($rol) {
         $db = connect();
         if ($db != NULL) {
 
             //Specification of the SQL query
-            $query='SELECT Id_Privilegio FROM roles_usuario u, roles_privilegios p WHERE u.Id_Rol = p.Id_Rol AND Id_Usuario="'.$user.'"';
+            $query='SELECT DISTINCT Id_Privilegio FROM roles_privilegios WHERE Id_Rol="'.$rol.'"';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
@@ -75,6 +75,28 @@
         }
         return false;
     }
+
+    function getPrivilegiosNav($privilegios) {
+        $html = "";
+        foreach ($privilegios as &$id_privilegio) {
+            $nombre = preg_replace('/(?<!\ )[A-Z]/', ' $0', $id_privilegio);
+            $html.= '<a class="dropdown-item" href="consultas.php?p='.$id_privilegio.'">'.$nombre.'</a>';
+        }
+        echo $html;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //var_dump(login('lalo', 'hockey'));
     //var_dump(login('joaquin', 'basket'));
