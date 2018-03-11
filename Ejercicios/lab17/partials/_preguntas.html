@@ -4,13 +4,61 @@
         <div class="card-body">
             <p><strong>¿En qué consiste el acceso basado en roles?</strong><br>
             [1] Es una función de seguridad que restringe el acceso de los usuarios a ciertas actividades que están disponibles para el superusuario.<br>
+            <br>
             <strong>Investiga y describe 6 sistemas, 3 conocidos que empleen RBAC y 3 desconocidos que no, junto con su funcionamiento general.</strong><br>
             <br>
-            <strong>Beneficios y desventajas de este modelo.</strong><br>
-            El modelo es bastante flexible</p>
+            USAN RBAC <br>
+            <hr>
+            -- [2] Proteción civil Qro, ya que tiene una vista diferente si es accesado con un usuario dirente y dependiendo del usuario tiene diferentes permisos<br>
+            -- [3] FB, ya que para modificar ciertos aspectos es necesario acceder con un diferente usuario, así como para acceder a la modificación de una cuenta específica y los roles en las páginas creadas en FB.<br>
+            -- [4] Blackboard, ya que dependiendo del rol del usuario se obtiene una vista diferente (profesores, alumnos y administradores)<br>
+            <br>
+            NO USAN RBAC <br>
+            <hr>
+            -- [5] Fundación Niños y Niñas, es una página de html montada en un servidor, solo existe un usuario general<br>
+            -- [6]<br>
+            -- [7]<br>
+            <br>
+            <strong>Beneficios y desventajas de este modelo.</strong>[8]<br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Beneficios</h5>
+                            <p class="card-text">
+                            1.- Protección de usuarios<br>
+                            2.- Control de acceso eficiente<br>
+                            3.- Cumplimiento de regulaciones de protección de datos<br>
+                            4.- Reducción de costos en tareas administrativas<br>
+                            5.- Administración de usuarios y recursos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Desventajas</h5>
+                            <p class="card-text">
+                            1.- Riesgos de robo de autenticación<br>
+                            2.- Los fallos en la autenticación afecta todas las aplicaciones integradas.<br>
+                            3.- Requiere trabajo muy detallado y especifíco
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </p>
             <p><strong>Referencias</strong><br>
             [1] https://docs.oracle.com/cd/E24842_01/html/E23286/rbac-1.html<br>
-            [2]</p>
+            [2] https://www.proteccioncivilqro.gob.mx/index/index.php<br>
+            [3] https://www.quora.com/How-does-Facebook-implement-access-control-at-a-high-level-or-large-scale-how-do-they-determine-that-which-one-is-allowed-to-see-and-in-what-ways-is-this-model-different-from-traditional-filesystem-OS-style-ACL <br>
+            [4] miscursos.tec.mx<br>
+            [5] ninosyninas.org<br>
+            [6] <br>
+            [7] <br>
+            [8] http://web.usbmed.edu.co/usbmed/fing/v3n1/v3n1a3.pdf
+            </p>
         </div>
 
         <?php if (isset($_SESSION["error"])): ?>
