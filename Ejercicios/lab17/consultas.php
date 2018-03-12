@@ -30,19 +30,7 @@
         } else {
             
         }        
-        include("partials/_consultas.html");
-        
-        switch ($_SESSION["Consulta"]){
-            
-            case 'MT':
-                getMTransaccion($_POST["Min"],$_POST["Max"]);
-                break;
-           
-            default:
-                break;
-                
-        }
-        
+        include("partials/_consultas.html");        
         include("partials/_footer.html");
     } else {
         header("location:index.php");

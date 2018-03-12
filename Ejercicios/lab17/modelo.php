@@ -359,12 +359,12 @@
         return false;
     }
 
-    function getTTipo() {
+    function getCuentas($nombre) {
         $db = connect();
         if ($db != NULL) {
 
             //Specification of the SQL query
-            $query='SELECT * FROM Usuarios';
+            $query='SELECT * FROM Usuarios WHERE Nombre LIKE'.$nombre.'';
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
