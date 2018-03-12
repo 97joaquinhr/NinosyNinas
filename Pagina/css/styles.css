@@ -2,6 +2,10 @@ footer,footer a, .jumbotron{
     background-color: whitesmoke;
     color: gray;
 }
+* {
+    font-size: 100%;
+    font-family: "Myriad Pro";
+}
 
 #azul {
     background-color: #59B7FF !important;
@@ -12,8 +16,14 @@ footer,footer a, .jumbotron{
 #rosa {
     background-color: #FF5964 !important;
 }
-#gris {
-    background-color: #FFFFFF !important;
+.bg-gray {
+    background-color: #dadada !important;
+}
+.bg-white {
+    background-color: #ffffff !important;
+}
+.text-white {
+    color: #ffffff !important;
 }
 #verde {
     background-color: #62DC6E !important;
@@ -22,16 +32,28 @@ footer,footer a, .jumbotron{
     color: #FFFFFF !important;
 }
 
+.bg-cyan {
+    background-color: #00b2bf !important;
+}
+
+.bg-pink {
+    background-color: #e2418d !important;
+}
+
+.text-cyan {
+    color: #00b2bf !important;
+}
+
+.text-pink {
+    color: #e2418d !important;
+}
+
 .card-login {
     max-width: 25rem;
 }
 
 .card-register {
     max-width: 40rem;
-}
-
-h1 {
-    color: gray;
 }
 
 .dropdown:hover{
@@ -127,3 +149,4 @@ div.desc {
 #galleria{
     background-color: aliceblue
 }
+
