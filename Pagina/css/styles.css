@@ -4,7 +4,8 @@ footer,footer a, .jumbotron{
 }
 * {
     font-size: 100%;
-    font-family: "Myriad Pro";
+    font-family: "Microsoft Sans Serif";
+    color: #636363;
 }
 
 #azul {
@@ -46,6 +47,34 @@ footer,footer a, .jumbotron{
 
 .text-pink {
     color: #e2418d !important;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.transparent {
+    opacity: 0.95;
+}
+
+.number1 {
+    z-index: 4;
+}
+.number2 {
+    z-index: 3;
+}
+.right {
+    right: 0%;
+}
+
+.round {
+    border-radius: 10px;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .card-login {
