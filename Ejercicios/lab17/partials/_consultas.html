@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4"><?=$nombre?></h1>
+        <div class="dropdown">
+            <button type="button" class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" data-toggle="modal" data-target="#MT">Monto de transacción</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#TN">Transacciones por nombre</a>
+                <a class="dropdown-item" onclick="cambiarMonto('PF')">Personal habilitado por fechas</a>
+                <a class="dropdown-item" onclick="cambiarMonto('AT')">Áreas de trabajo</a>
+                <a class="dropdown-item" onclick="cambiarMonto('TT')">Transacciones por tipo</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#C">Información de cuenta por nombre</a>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<div class="container" id="ConsultaSession"></div>
+
+<div class="modal fade" id="MT">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Montos</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Monto mínimo</label>
+                    <input name="Min" class="form-control" id="MontMin" type="number" placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Monto máximo</label>
+                    <input name="Max" class="form-control" id="MontMax" type="number" placeholder="500">
+                </div>
+                <input name="submit" value="Enviar" type="submit" class="btn btn-primary" onclick="cambiarMonto('MT')">
+            </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="TN">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">TRANSACCIONES</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST">
+                <div class="form-group">
+                    <label for="NombreTN">Nombre de Usuario</label>
+                    <input name="Nombre" class="form-control" id="NombreTN" type="text" placeholder="Daniel">
+                </div>
+                <input name="submit2" value="Enviar" type="submit" class="btn btn-primary" onclick="cambiarMonto('TN')">
+            </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="C">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">INFORMACION DE LA CUENTA</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form method="POST">
+                <div class="form-group">
+                    <label for="NombreTN">Nombre de Usuario</label>
+                    <input name="Nombre" class="form-control" id="NombreC" type="text" placeholder="Daniel">
+                </div>
+                <input name="submit2" value="Enviar" type="submit" class="btn btn-primary" onclick="cambiarMonto('C')">
+            </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

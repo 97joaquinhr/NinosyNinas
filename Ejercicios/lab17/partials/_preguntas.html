@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>LAB 17: RBAC</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/custom.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+
+
+
+    <body class="bg-dark">
+        
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Preguntas</div>
+            <div class="card-body">
+                <p><strong>¿En qué consiste el acceso basado en roles?</strong><br>
+                [1] Es una función de seguridad que restringe el acceso de los usuarios a ciertas actividades que están disponibles para el superusuario.<br>
+                <br>
+                <strong>Investiga y describe 6 sistemas, 3 conocidos que empleen RBAC y 3 desconocidos que no, junto con su funcionamiento general.</strong><br>
+                <br>
+                USAN RBAC <br>
+                <hr>
+                -- [2] Proteción civil Qro, ya que tiene una vista diferente si es accesado con un usuario dirente y dependiendo del usuario tiene diferentes permisos<br>
+                -- [3] FB, ya que para modificar ciertos aspectos es necesario acceder con un diferente usuario, así como para acceder a la modificación de una cuenta específica y los roles en las páginas creadas en FB.<br>
+                -- [4] Blackboard, ya que dependiendo del rol del usuario se obtiene una vista diferente (profesores, alumnos y administradores)<br>
+                <br>
+                NO USAN RBAC <br>
+                <hr>
+                -- [5] Fundación Niños y Niñas, es una página de html montada en un servidor, solo existe un usuario general<br>
+                -- [6] Software para Windows 95, es una página html que no utiliza sesiones<br>
+                -- [7] Info CERN, que no hace uso mas que de links para cambiar de páginas<br>
+                <br>
+                <strong>Beneficios y desventajas de este modelo.</strong>[8]<br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Beneficios</h5>
+                                <p class="card-text">
+                                1.- Protección de usuarios<br>
+                                2.- Control de acceso eficiente<br>
+                                3.- Cumplimiento de regulaciones de protección de datos<br>
+                                4.- Reducción de costos en tareas administrativas<br>
+                                5.- Administración de usuarios y recursos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Desventajas</h5>
+                                <p class="card-text">
+                                1.- Riesgos de robo de autenticación<br>
+                                2.- Los fallos en la autenticación afecta todas las aplicaciones integradas.<br>
+                                3.- Requiere trabajo muy detallado y especifíco
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </p>
+                <p><strong>Referencias</strong><br>
+                [1] https://docs.oracle.com/cd/E24842_01/html/E23286/rbac-1.html<br>
+                [2] https://www.proteccioncivilqro.gob.mx/index/index.php<br>
+                [3] https://www.quora.com/How-does-Facebook-implement-access-control-at-a-high-level-or-large-scale-how-do-they-determine-that-which-one-is-allowed-to-see-and-in-what-ways-is-this-model-different-from-traditional-filesystem-OS-style-ACL <br>
+                [4] miscursos.tec.mx<br>
+                [5] ninosyninas.org<br>
+                [6] http://www.telcom.es/privado/softww95.html<br>
+                [7] http://info.cern.ch/hypertext/WWW/TheProject.html<br>
+                [8] http://web.usbmed.edu.co/usbmed/fing/v3n1/v3n1a3.pdf
+                </p>
+            </div>
+
+            <?php if (isset($_SESSION["error"])): ?>
+                <div class="card-footer">
+                    <span class="text-danger"><?=$_SESSION["error"] ?></span>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/smooth-scroll.js"></script>
+        <script src="../js/file_input.js"></script>
+    </body>
+</html>
+

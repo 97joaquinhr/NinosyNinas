@@ -10,6 +10,11 @@ function preview() {
     $('#preview').modal('show')
 }
 
+function edit() {
+    $('#preview').modal('hide');
+    $('#edit').modal('show');
+}
+
 function performClick(elemId) {
    var elem = document.getElementById(elemId);
    if(elem && document.createEvent) {

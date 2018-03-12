@@ -1,0 +1,17 @@
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Bienvenido <?=$user?></h1>
+            <p class="lead">
+                <?php
+                echo date("d/m/Y");
+                echo ' '.date('H:i');
+                $var = date('H:i');
+                echo '<br>'.$rol;
+                ?>
+            </p>
+            <a class="btn btn-primary" href="logout.php" >Desconectar</a>
+        </div>
+    </div>
+</div>

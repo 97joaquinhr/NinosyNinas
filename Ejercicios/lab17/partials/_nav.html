@@ -1,0 +1,34 @@
+<div class="container py-4 mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow">
+        <a class="navbar-brand" href="index.php">Within Systems</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <span class="mr-auto"></span>
+            <ul class="navbar-nav">
+                <!-- User is logged in -->
+                <?php if(isset($_SESSION["usuario"])): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opciones</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php getPrivilegiosNav($privilegios); ?>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$user?></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="logout.php">Desconectar</a>
+                        </div>
+                    </li>
+                <?php endif; ?>
+                <!-- User is not logged in -->
+                <?php if(!isset($_SESSION["usuario"])): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="inicio.php">Iniciar Sesión</a>
+                </li>
+                <?php endif;?>
+            </ul>
+        </div>
+    </nav>
+</div>
