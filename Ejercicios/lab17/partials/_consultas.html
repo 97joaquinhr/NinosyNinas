@@ -5,12 +5,12 @@
             <button type="button" class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" data-toggle="modal" data-target="#MT">Monto de transacción</a>
-                <a class="dropdown-item" data-toggle="modal" data-target="#TN">Transacciones por nombre</a>
-                <a class="dropdown-item" href="#">Personal habilitado por fechas</a>
-                <a class="dropdown-item" href="#">Áreas de trabajo</a>
-                <a class="dropdown-item" href="#">Transacciones por tipo</a>
-                <a class="dropdown-item" href="#">Información de cuenta por nombre</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#MT" onclick="cambiarMonto('MT')">Monto de transacción</a>
+                <a class="dropdown-item" data-toggle="modal" data-target="#TN" onclick="cambiarMonto('TN')">Transacciones por nombre</a>
+                <a class="dropdown-item" href="#" onclick="cambiarMonto('PF')">Personal habilitado por fechas</a>
+                <a class="dropdown-item" href="#" onclick="cambiarMonto('AT')">Áreas de trabajo</a>
+                <a class="dropdown-item" href="#" onclick="cambiarMonto('TT')">Transacciones por tipo</a>
+                <a class="dropdown-item" href="#" onclick="cambiarMonto('C')">Información de cuenta por nombre</a>
             </div>
         </div>        
     </div>
@@ -38,8 +38,7 @@
                     <input name="Max" class="form-control" id="MontMax" type="number" placeholder="500">
                 </div>
                 <input name="submit" value="Enviar" type="submit" class="btn btn-primary">
-            <div id="MT"></div>
-            <?php $_SESSION['Consulta'] = 'MT'?>
+            <div id="MTdiv"></div>
             </form>
       </div>
 
@@ -70,6 +69,7 @@
                     <input name="Nombre" class="form-control" id="NombreTN" type="text" placeholder="Daniel">
                 </div>
                 <input name="submit2" value="Enviar" type="submit" class="btn btn-primary">
+            <?php $_SESSION['Consulta'] = 'TN'?>
             </form>
       </div>
 

@@ -359,7 +359,7 @@
         return false;
     }
 
-    function getTTipo() {
+    function getCuentas() {
         $db = connect();
         if ($db != NULL) {
 
