@@ -1,6 +1,6 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","rbac", 8889);
+        $mysql = mysqli_connect("localhost","root","","rbac");
         $mysql->set_charset("utf8");
         return $mysql;
     }
