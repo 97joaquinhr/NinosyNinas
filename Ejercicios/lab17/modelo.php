@@ -240,6 +240,178 @@
         return false;
     }
 
+    function getPersonalF() {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Nombre,Fecha FROM usuario U, trabajadores T, trabajadores_areatrabajo TA WHERE U.Id_Usuario=T.Id_Usuario AND T.Id_Usuario=TA.Id_Usuario';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Nombre</th>
+                                        <th>Fecha</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $TN .= '        
+                                        <tr>
+                                        <td>'.$fila["Nombre"].'</td>
+                                        <td>'.$fila["Fecha"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $TN.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
+    function getATrabajo() {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Id_AreaTrabajo FROM areatrabajo';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Id_AreaTrabajo</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $TN .= '        
+                                        <tr>
+                                        <td>'.$fila["Id_AreaTrabajo"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $TN.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
+    function getTTipo() {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Tipo FROM transaccion';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Tipo de Trasaccion</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $TN .= '        
+                                        <tr>
+                                        <td>'.$fila["Tipo"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $TN.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
+    function getTTipo() {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT * FROM Usuarios';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Id_Usuario</th>
+                                        <th>Nombre</th>
+                                        <th>Apellidos</th>
+                                        <th>Creado en</th>
+                                        <th>Nacimiento</th>
+                                        <th>Balance</th>
+                                        <th>Contraseña</th>
+                                        <th>Habilitado</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $TN .= '        
+                                        <tr>
+                                        <td>'.$fila["Id_Usuario"].'</td>
+                                        <td>'.$fila["Nombre"].'</td>
+                                        <td>'.$fila["Apellidos"].'</td>
+                                        <td>'.$fila["Fecha_Creacion"].'</td>
+                                        <td>'.$fila["Fecha_Nacimiento"].'</td>
+                                        <td>'.$fila["Balance"].'</td>
+                                        <td>'.$fila["Contrasena"].'</td>
+                                        <td>'.$fila["Habilitado"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $TN.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
 
         //var_dump(login('lalo', 'hockey'));
         //var_dump(login('joaquin', 'basket'));
