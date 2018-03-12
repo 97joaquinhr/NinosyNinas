@@ -5,6 +5,7 @@
 
     if(isset($_SESSION["usuario"])) {
         $p = $_GET["p"];
+        $_SESSION["Consulta"]='default';
         $nombre = preg_replace('/(?<!\ )[A-Z]/', ' $0', $p);
         $user = $_SESSION["usuario"];
         $rol = $_SESSION["rol"];
@@ -28,8 +29,20 @@
             }
         } else {
             
-        }
+        }        
         include("partials/_consultas.html");
+        
+        switch ($_SESSION["Consulta"]){
+            
+            case 'MT':
+                getMTransaccion($_POST["Min"],$_POST["Max"]);
+                break;
+           
+            default:
+                break;
+                
+        }
+        
         include("partials/_footer.html");
     } else {
         header("location:index.php");

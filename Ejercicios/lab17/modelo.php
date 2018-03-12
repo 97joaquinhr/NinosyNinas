@@ -161,6 +161,85 @@
         return true;
     }
 
+        function getMTransaccion($min, $max) {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Fecha,Monto FROM usuario_transaccion WHERE Monto between '.$min.' and '.$max.' ORDER BY Monto ASC';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $MT = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Fecha</th>
+                                        <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                    $MT .= '        
+                                        <tr>
+                                        <td>'.$fila["Fecha"].'</td>
+                                        <td>'.$fila["Monto"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $MT.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
+    function getTNombre($nombre) {
+        $db = connect();
+        if ($db != NULL) {
+
+            //Specification of the SQL query
+            $query='SELECT Id_Us-Trans,Nombre FROM usuario_transaccion T, Usuario U WHERE U.Id_Usuario = T.Id_Usuario AND Nombre='.$nombre.'';
+            $query;
+             // Query execution; returns identifier of the result group
+            $results = $db->query($query);
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                        <th>Id Transaccion</th>
+                                        <th>Usuario</th>
+                                        </tr>
+                                    </thead>
+                                    </tbody>';
+            
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                                                // Options: MYSQLI_NUM to use only numeric indexes
+                                                // MYSQLI_ASSOC to use only name (string) indexes
+                                                // MYSQLI_BOTH, to use both
+                    $TN .= '        
+                                        <tr>
+                                        <td>'.$fila["Id_Us-Trans"].'</td>
+                                        <td>'.$fila["Nombre"].'</td>
+                                        </tr>';
+            }
+                        
+            echo $TN.'</tbody>
+                                </table>
+                            </div></div>';
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;            
+        }
+        return false;
+    }
+
 
         //var_dump(login('lalo', 'hockey'));
         //var_dump(login('joaquin', 'basket'));
