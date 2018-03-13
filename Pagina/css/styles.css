@@ -8,6 +8,32 @@ footer,footer a, .jumbotron{
     color: #636363;
 }
 
+a:hover {
+    opacity: 0.80 !important;
+}
+
+a:active {
+    opacity: 0.50 !important;
+    transform: translateY(4px) !important;
+}
+
+a:hover {
+    color: #636363;
+}
+
+.trans:hover {
+    background-color: #a83169 !important;
+}
+
+.botrosa:hover {
+    background-color: #a83169 !important;
+}
+
+.botrosa:active {
+    background-color: #832653 !important;
+    transform: translateY(4px);
+}
+
 #azul {
     background-color: #59B7FF !important;
 }
@@ -72,7 +98,7 @@ footer,footer a, .jumbotron{
 }
 
 .round {
-    border-radius: 1px;
+    border-radius: 5px;
 }
 
 .sticky {
@@ -181,5 +207,52 @@ div.desc {
 
 #galleria{
     background-color: aliceblue
+}
+
+.asog {
+    color: #fff;
+    text-align: center;
+    background-image: url(http://tobiasahlin.com/images/typesource/mountains.jpg);
+    background-size: cover;
+    background-color: #f0ae93;
+    font-family: PT Sans, sans-serif;
+    line-height: 3em;
+    padding-top: 9em;
+    padding-bottom: 10em;
+}
+
+.asog-r1 {
+    text-transform: uppercase;
+    font-size: 13em;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.asog-r2 {
+    font-family: Lora, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.7em;
+    display: inline-block;
+    position: relative;
+    mix-blend-mode: overlay;
+}
+
+.asog-r2:before,
+.asog-r2:after {
+    background: url(/images/typesource/leaves.svg) no-repeat center center/2.5em 0.7em;
+    content: "";
+    left: -3em;
+    top: -0.3em;
+    position: absolute;
+    width: 2.5em;
+    height: 1.5em;
+}
+
+.asog-r2:after {
+    left: auto;
+    right: -3em;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
