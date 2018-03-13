@@ -19,7 +19,7 @@ include("html/partials/_header.html")?>
                                     <div class="col">
                                         <div class="float-right">
                                             <button type="button" class="btn btn-danger mx-3" data-toggle="tooltip" data-placement="top" title="Eliminar evento">Eliminar <i class="fas fa-trash-alt"></i></button>
-                                            <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Agregar nuevo evento">Agregar <i class="fas fa-plus"></i></button>
+                                            <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Agregar nuevo evento">Agregar <i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
                                 </div>

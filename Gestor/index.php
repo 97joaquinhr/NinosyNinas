@@ -39,11 +39,11 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Correo Electrónico</label>
-                            <input name="usuario" class="form-control" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input name="usuario" class="form-control" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="ejemplo@mail.com">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Contraseña</label>
-                            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+                            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="******">
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -54,7 +54,7 @@
                     </form>
                     <a class="btn btn-primary btn-block" href="dashboard.php">Enviar</a>
                     <div class="text-center">
-                        <a class="d-block small mt-3" href="forgot-password.html">Olvidaste tu clave?</a>
+                        <a class="d-block small mt-3" href="forgot-password.html">Olvidé mi contraseña</a>
                     </div>
                 </div>
             </div>
