@@ -41,6 +41,10 @@ footer,footer a, .jumbotron{
     background-color: #e2418d !important;
 }
 
+.bg-purple {
+    background-color: #663f86 !important;
+}
+
 .text-cyan {
     color: #00b2bf !important;
 }
@@ -68,7 +72,7 @@ footer,footer a, .jumbotron{
 }
 
 .round {
-    border-radius: 10px;
+    border-radius: 1px;
 }
 
 .sticky {

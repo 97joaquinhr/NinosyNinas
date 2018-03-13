@@ -23,7 +23,7 @@ include("html/partials/_header.html");
                         <h2 class="card-title">Donar via PayPal</h2>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text">Donación única a través de tu cuenta de paypal</p>
-                        <button type="button " class="btn bg-pink text-white">Donar</button>
+                        <button type="button" class="btn bg-pink text-white shadow">Donar</button>
                     </div>
                 </div>
                 <div class="card shadow round" style="width: 18rem;">
@@ -31,7 +31,7 @@ include("html/partials/_header.html");
                         <h2 class="card-title">Regístrate como donador</h2>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text">Nos pondremos en contacto contigo en cuanto termines tu registro</p>
-                        <a class="btn bg-pink text-white" href="php/registrarDonador.php" role="button">Regístrate</a>
+                        <a class="btn bg-pink text-white shadow" href="php/registrarDonador.php" role="button">Regístrate</a>
                     </div>
                 </div>
             </div>
