@@ -95,7 +95,7 @@ include("html/partials/_header.html")?>
                 </div>
                 <!--BOTON AGREGAR USUARIO
                     Podría ser dark o secondary-->
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Agregar Usuario</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Nuevo usuario</button>
 
             </div>
             <!-- /#page-content-wrapper -->
@@ -125,7 +125,7 @@ include("html/partials/_header.html")?>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -155,7 +155,7 @@ include("html/partials/_header.html")?>
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
         </div>
       </div>

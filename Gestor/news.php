@@ -39,7 +39,7 @@ include("html/partials/_header.html")?>
                                 </table>
                              </div>
                          </div>
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva Publicación</button>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva publicación</button>
                      </div>
                      <div class="col-4 col-lg-3">
                          <div class="card text-center">
@@ -160,7 +160,7 @@ include("html/partials/_header.html")?>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Subir</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
 

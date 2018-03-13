@@ -163,7 +163,6 @@ include("html/partials/_header.html")?>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right">GARJ500112MP4</span></li>
                                     <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right">Tarjeta</span><span class="badge badge-primary mx-1 float-right">Transferencia</span></li>
-            						<li class="list-group-item"><strong>Número</strong><span class="card-text float-right">5491 3888 7544 7025</span></li>
             						<li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right">Blah blah blah...</span></li>
             					</ul>
                                 <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
@@ -172,7 +171,7 @@ include("html/partials/_header.html")?>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button><!-- Hay que moverlo a la derecha -->
                     <button type="button" class="btn btn-primary" onclick="edit()">Editar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
