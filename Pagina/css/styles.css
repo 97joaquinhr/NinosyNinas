@@ -4,7 +4,7 @@ footer,footer a, .jumbotron{
 }
 * {
     font-size: 100%;
-    font-family: "Microsoft Sans Serif";
+    font-family: 'Open Sans';
     color: #636363;
 }
 
@@ -55,8 +55,8 @@ a:hover {
 #verde {
     background-color: #62DC6E !important;
 }
-#letragris{
-    color: #FFFFFF !important;
+.text-gray{
+    color: #636363; !important;
 }
 
 .bg-cyan {
