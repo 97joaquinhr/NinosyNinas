@@ -173,7 +173,7 @@ include("html/partials/_header.html")?>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button><!-- Hay que moverlo a la derecha -->
                     <button type="button" class="btn btn-primary" onclick="edit()">Editar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -252,7 +252,7 @@ include("html/partials/_header.html")?>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
                         <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
 
                 </form>
@@ -332,7 +332,7 @@ include("html/partials/_header.html")?>
                     </div>
                     <div class="modal-footer">
                         <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
 
                 </form>
