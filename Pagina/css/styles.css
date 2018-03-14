@@ -4,7 +4,7 @@ footer,footer a, .jumbotron{
 }
 * {
     font-size: 100%;
-    font-family: "Microsoft Sans Serif";
+    font-family: 'Quicksand';
     color: #636363;
 }
 
@@ -46,6 +46,9 @@ a:hover {
 .bg-gray {
     background-color: #dadada !important;
 }
+.bg-gray2 {
+    background-color: #b4b4b4 !important;
+}
 .bg-white {
     background-color: #ffffff !important;
 }
@@ -55,8 +58,8 @@ a:hover {
 #verde {
     background-color: #62DC6E !important;
 }
-#letragris{
-    color: #FFFFFF !important;
+.text-gray{
+    color: #636363; !important;
 }
 
 .bg-cyan {
