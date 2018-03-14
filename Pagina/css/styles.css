@@ -4,7 +4,7 @@ footer,footer a, .jumbotron{
 }
 * {
     font-size: 100%;
-    font-family: 'Open Sans';
+    font-family: 'Quicksand';
     color: #636363;
 }
 
@@ -45,6 +45,9 @@ a:hover {
 }
 .bg-gray {
     background-color: #dadada !important;
+}
+.bg-gray2 {
+    background-color: #b4b4b4 !important;
 }
 .bg-white {
     background-color: #ffffff !important;
