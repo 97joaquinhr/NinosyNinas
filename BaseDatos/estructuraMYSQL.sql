@@ -98,17 +98,17 @@ IdNoticia char(5)
 
 CREATE TABLE IF NOT EXISTS ArchivoMultimedia
 (
-Filepath varchar(765) not null,
+Filepath varchar(254) not null,
 PRIMARY KEY (Filepath),
 Nombre varchar(50),
 Fecha DATETIME,
 IdNoticia char(5),
-ThumbnailUrl varchar(765)
+ThumbnailUrl varchar(254)
 );
 
 CREATE TABLE IF NOT EXISTS Thumbnail
 (
-Thurl varchar(765) not null,
+Thurl varchar(254) not null,
 PRIMARY KEY (Thurl)
 );
 
@@ -180,109 +180,109 @@ Fecha DATETIME
 );
 
 
-load data local infile 'C:/Users/joaqu/public_html/usoCFDI.tsv' into table usoCFDI
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/usoCFDI.tsv' into table usoCFDI
 
 fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/donadores.tsv' into table donadores
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/donadores.tsv' into table donadores
 
 fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/MetodoPago.csv' into table MetodoPago
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/MetodoPago.csv' into table MetodoPago
 
 fields terminated by ','
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/PlantillaDeCorreo.tsv' into table PlantillaDeCorreo
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/PlantillaDeCorreo.tsv' into table PlantillaDeCorreo
 
 fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/Funcion.csv' into table Funcion
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/Rol.csv' into table Rol
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/Usuario.csv' into table Usuario
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/Noticias.tsv' into table Noticia
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Funcion.tsv' into table Funcion
 
 fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/Comentarios.csv' into table Comentario
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/ArchivosMultimedia.csv' into table ArchivoMultimedia
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/Thumbnail.csv' into table Thumbnail
-
-fields terminated by ','
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/evento.tsv' into table evento
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Rol.tsv' into table Rol
 
 fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/donadores_usoCFDI.tsv' into table donadores_usoCFDI
-
-fields terminated by '\t'
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/donadores_usoCFDI.tsv' into table donadores_usoCFDI
-
-fields terminated by '\t'
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/donadores_MetodoPago.tsv' into table donadores_MetodoPago
-
-fields terminated by '\t'
-
-lines terminated by '\n';
-
-load data local infile 'C:/Users/joaqu/public_html/Rol_Funcion.csv' into table Rol_Funcion
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Usuario.csv' into table Usuario
 
 fields terminated by ','
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/Usuario_Rol.csv' into table Usuario_Rol
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Noticias.tsv' into table Noticia
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Comentarios.csv' into table Comentario
 
 fields terminated by ','
 
 lines terminated by '\n';
 
-load data local infile 'C:/Users/joaqu/public_html/Usuario_Noticias.csv' into table Usuario_Noticias
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/ArchivosMultimedia.tsv' into table ArchivoMultimedia
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Thumbnail.csv' into table Thumbnail
+
+fields terminated by ','
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/evento.tsv' into table evento
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/donadores_usoCFDI.tsv' into table donadores_usoCFDI
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/donadores_usoCFDI.tsv' into table donadores_usoCFDI
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/donadores_MetodoPago.tsv' into table donadores_MetodoPago
+
+fields terminated by '\t'
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Rol_Funcion.csv' into table Rol_Funcion
+
+fields terminated by ','
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Usuario_Rol.csv' into table Usuario_Rol
+
+fields terminated by ','
+
+lines terminated by '\n';
+
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Usuario_Noticias.csv' into table Usuario_Noticia
 
 fields terminated by ','
 
@@ -294,7 +294,7 @@ lines terminated by '\n';
 insert into Donadores values('JEZWVAE2GBG0V','Kelsi','Quinn','Paul','10/24/2003','634 Apple Turnpike,Birmingham,MA,42258','4102079027','kquinn200@nniuqislek.net','Maestro',1);
 insert into Funcion values('F001','Registrar noticia');
 insert into Rol values('R01','Administrador');
-insert into evento values('E001','Duis bibendum','1/2/2016','Pur�pero',
+insert into evento values('E001','Duis bibendum','1/2/2016','Purepero',
 'Vivamus semper arcu et urna eleifend dapibus. Fusce porta pretium sodales. 
 Phasellus eget luctus velit. Phasellus in aliquet ex. Pellentesque consequat 
 consectetur odio, ut ultricies diam 
