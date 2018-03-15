@@ -192,7 +192,7 @@ fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/MetodoPago.csv' into table MetodoPago
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/MetodoPago.tsv' into table MetodoPago
 
 fields terminated by ','
 
