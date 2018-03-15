@@ -232,7 +232,7 @@ body, #sidenav, .social {
 
 .asog-r1 {
     text-transform: uppercase;
-    font-size: 15vw;
+    font-size: 9em !important;
     font-weight: 700;
     line-height: 1.1em;
     overflow: hidden;
@@ -313,6 +313,3 @@ body, #sidenav, .social {
     height: 200px;
     width: 200px;
 }
-
-
->>>>>>> cesar/avance

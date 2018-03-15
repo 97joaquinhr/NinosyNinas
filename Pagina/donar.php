@@ -31,7 +31,7 @@ include("html/partials/_header.html");
                         <h2 class="card-title">Regístrate como donador</h2>
                         <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text">Nos pondremos en contacto contigo en cuanto termines tu registro</p>
-                        <a class="btn bg-pink text-white shadow botrosa" href="php/registrarDonador.php" role="button">Regístrate</a>
+                        <a class="btn bg-pink text-white shadow botrosa" href="registrarDonador.php" role="button">Regístrate</a>
                     </div>
                 </div>
             </div>
