@@ -13,10 +13,7 @@ include("html/partials/_header.html");
             <div class="card-deck">
                 <div class="card shadow round" style="width: 18rem;">
                     <div class="card-header">
-                        <br>
-                        <strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong>
-                        <br>
-                        <br>
+                        <h2>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</h2>
                     </div>
                     <div class="card-body">
                         <div class="row">
