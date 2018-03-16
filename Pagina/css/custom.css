@@ -121,8 +121,7 @@ div.desc {
   background-color: #efefef;
   text-align: center;
 }
-<<<<<<< HEAD
-=======
+
 
 body {
     padding-top: 20px;
@@ -312,4 +311,10 @@ body, #sidenav, .social {
 #drop {
     height: 200px;
     width: 200px;
+}
+
+#fade {
+	z-index: 1000;
+	margin-top: 11em;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0)); /* Standard syntax (must be last) */
 }
