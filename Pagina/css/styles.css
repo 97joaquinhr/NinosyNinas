@@ -125,12 +125,6 @@ a:hover {
 navbar, .navbar-dark{
     background-color:#343a40;
 }
-
-.img-fluid{
-    height: 15%;
-    max-width: 50%;
-    padding: 10px;
-}
 .dropdown-menu .sub-menu {
     left: 100%;
     position: absolute;
@@ -257,5 +251,16 @@ div.desc {
     right: -3em;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+
+#drop {
+    height: 200px;
+    width: 200px;
+}
+
+#fade {
+	z-index: 1000;
+	margin-top: 5em;
+    background: linear-gradient(rgba(218,218,218,1), rgba(218,218,218,1), rgba(218,218,218,0)); /* Standard syntax (must be last) */
 }
 
