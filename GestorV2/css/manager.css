@@ -1,0 +1,206 @@
+/* CSS para el gestor de contenidos */
+
+
+/*
+FONTS
+
+font-family: 'Exo', sans-serif;
+font-family: 'Jaldi', sans-serif;
+font-family: 'Fjalla One', sans-serif;
+*/
+
+
+h2 {
+	font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+	padding-top: 2.5rem;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+.shadow {
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.7), 0 0 15px 0 rgba(0, 0, 0, 0.3);
+}
+
+.box {
+	position: relative;
+	display: inline-block;
+	left: 10%;
+	width: 80%;
+	height: 100%;
+	background-color: #343a40;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	border-radius: 5px;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box::after {
+	content: "";
+	border-radius: 5px;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.box:hover {
+	-webkit-transform: scale(1.25, 1.25);
+	transform: scale(1.25, 1.25);
+}
+
+.box:hover::after {
+    opacity: 1;
+}
+
+#page-content-wrapper {
+	background-color: white !important;
+    overflow: auto;
+	height: calc(100vh - 72px - 2.50rem);
+	overflow-x: hidden;
+}
+
+#user, #sidebar-wrapper {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.card-body-icon-r {
+  position: absolute;
+  z-index: 0;
+  top: -25px;
+  right: -25px;
+  font-size: 5rem;
+  color: #fff;
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+.card-body-icon-l {
+  position: absolute;
+  z-index: 0;
+  top: -25px;
+  left: -10px;
+  font-size: 5rem;
+  color: #fff;
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+
+div.show-image {
+    position: relative;
+    float:left;
+    margin:5px;
+	padding-top: 15px;
+}
+div.show-image:hover img{
+    opacity:0.8;
+}
+div.show-image input,
+div.show-image:hover button {
+    display: block;
+}
+div.show-image button {
+    position:absolute;
+    display:none;
+}
+div.show-image input.select {
+    top: 21px;
+    left: 33px;
+}
+div.show-image button.delete {
+    bottom: 8px;
+    right: 8px;
+}
+
+#gestor-galeria {
+	overflow-y: auto;
+	height: 40vh;
+}
+
+.tooltip {
+	left: 12px !important;
+}
+
+// support custom file inputs
+.custom-file-name:after {
+  content: attr(data-content) !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* padding: 1rem;
+  background-color: #efefef;
+  text-align: center; */
+}
+
+.gj-calendar {
+	z-index: 2000 !important;
+}
+
+.gj-calendar-table {
+	z-index: 2000 !important;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.card-login {
+  max-width: 25rem;
+}
+
+.card-register {
+  max-width: 40rem;
+}
