@@ -12,10 +12,16 @@ include("html/partials/_header.html");
         <div class="container-fluid">
             <div class="card-deck">
                 <div class="card shadow round" style="width: 18rem;">
+                    <div class="card-header">
+                        <br>
+                        <strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong>
+                        <br>
+                        <br>
+                    </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <p><strong>PRECAMPAÑAS: ATAQUES MÁS QUE PROPUESTAS; 35% piensa que AMLO fue más propositivo</strong><br><br><br>
+                                <p>
                                     74% Considera que fueron de poca o nula utilidad para conocer a los abanderados de los partidos; 45% señaló
                                     que Anaya se centró más en México.
                                     <br><br>
@@ -28,9 +34,6 @@ include("html/partials/_header.html");
                                     Vivamus facilisis condimentum malesuada. Proin mauris libero, faucibus sit amet leo nec, ornare dictum libero. Nulla nec ex condimentum, facilisis magna nec, tempor dui. Aliquam eu eros a tellus bibendum dignissim non in sem. Phasellus pulvinar vehicula leo, vitae tempor nulla pulvinar ut. Ut ut mauris vel felis dapibus porttitor. Fusce tincidunt ullamcorper ultrices. Morbi semper blandit lacus aliquam imperdiet. Phasellus elementum cursus tempor. Suspendisse euismod varius justo, eget semper massa porta efficitur. Maecenas sit amet suscipit lorem. Sed ultricies libero purus, id hendrerit magna ullamcorper interdum. Suspendisse semper consectetur felis et porttitor.
                                     <br><br>
                                     Proin lobortis ante enim, et hendrerit dui pellentesque ac. Nullam id augue quam. Nam lacinia tellus ipsum, eu congue libero eleifend id. Nam auctor erat est, ac dignissim neque sodales sed. Vivamus feugiat ex laoreet lectus faucibus commodo. Nam vel varius sapien. Cras vestibulum mi sit amet ligula sodales auctor. Proin placerat auctor dui et tincidunt. Donec maximus nisi vel enim porta, vel mattis dolor congue. Sed tempus, ligula non efficitur vulputate, est enim lacinia elit, sit amet sagittis nulla nisi eget nisl. Vestibulum rutrum laoreet arcu, eu facilisis turpis. Mauris ultrices blandit libero, at sollicitudin lectus consectetur ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-
-
                                 </p>
                             </div>
                             <div class="col">
