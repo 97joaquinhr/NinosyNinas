@@ -14,7 +14,6 @@ a:hover {
 
 a:active {
     opacity: 0.50 !important;
-    transform: translateY(4px) !important;
 }
 
 a:hover {
@@ -31,7 +30,6 @@ a:hover {
 
 .botrosa:active {
     background-color: #832653 !important;
-    transform: translateY(4px);
 }
 
 #azul {
@@ -214,13 +212,13 @@ div.desc {
     background-color: #f0ae93;
     font-family: PT Sans, sans-serif;
     line-height: 3em;
-    padding-top: 9em;
-    padding-bottom: 10em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .asog-r1 {
     text-transform: uppercase;
-    font-size: 13em;
+    font-size: 10em;
     font-weight: 700;
     line-height: 1.1em;
 }
