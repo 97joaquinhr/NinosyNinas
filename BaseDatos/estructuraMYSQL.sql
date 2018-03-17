@@ -192,9 +192,9 @@ fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/MetodoPago.csv' into table MetodoPago
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/MetodoPago.tsv' into table MetodoPago
 
-fields terminated by ','
+fields terminated by '\t'
 
 lines terminated by '\n';
 
@@ -216,9 +216,9 @@ fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Usuario.csv' into table Usuario
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/usuarios.tsv' into table Usuario
 
-fields terminated by ','
+fields terminated by '\t'
 
 lines terminated by '\n';
 
@@ -270,9 +270,9 @@ fields terminated by '\t'
 
 lines terminated by '\n';
 
-load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Rol_Funcion.csv' into table Rol_Funcion
+load data local infile 'C:/xampp/htdocs/NinosyNinas/BaseDatos/Cehesesves/Rol_Funcion.tsv' into table Rol_Funcion
 
-fields terminated by ','
+fields terminated by '\t'
 
 lines terminated by '\n';
 
