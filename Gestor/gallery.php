@@ -1,4 +1,3 @@
-
 <?php
 include("html/partials/_header.html")?>
 

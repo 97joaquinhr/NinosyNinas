@@ -9,16 +9,18 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>LAB 13: Sesiones</title>
+        <title>Niños y Niñas de México A.C.</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="css/manager.css" rel="stylesheet">
+        <link href="css/general.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand|Roboto" rel="stylesheet">
 
         <!-- Font Awesome -->
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -32,7 +34,7 @@
 
     <body class="bg-dark">
         <div class="container mx-auto">
-            <div class="card card-login mx-auto mt-5">
+            <div class="card card-login mx-auto mt-2">
                 <div class="card-header">Iniciar Sesión</div>
                 <div class="card-body">
                     <img src="images/logo_notext.png" class="img img-fluid">
