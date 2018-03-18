@@ -1,6 +1,6 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost:8089","root","","ninosyninas");
+        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
         return $mysql;
     }

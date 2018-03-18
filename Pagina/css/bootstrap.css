@@ -3750,6 +3750,10 @@ tbody.collapse.show {
   color: #868e96;
 }
 
+.nav-link.white {
+  color: #fff;
+}
+
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
