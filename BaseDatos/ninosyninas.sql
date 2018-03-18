@@ -117,7 +117,7 @@ CREATE TABLE `donadores` (
 
 INSERT INTO `donadores` (`RFC`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `FechadeNacimiento`, `Direccion`, `Telefono`, `Email`, `Ocupacion`, `Validado`) VALUES
 ('I009FN0RQ3S0K', 'Aubrey', 'Bates', 'Ramos', '1998-09-26 00:00:00', '960 Chocolate Turnpike,Anchorage,MO,17977', '6997079161', 'abates592@setabyerbua.net', 'Bombero', b'1'),
-('M619B3PK17FJH', 'Alicia', 'Hill', 'Luna', '1981-08-09 00:00:00', '201 North Sunrise Loop,Oxford,CA,01690', '3715611615', 'ahill609@llihaicila.biz', 'DiseÃ±ador', b'1'),
+('M619B3PK17FJH', 'Alicia', 'Hill', 'Luna', '1981-08-09 00:00:00', '201 North Sunrise Loop,Oxford,CA,01690', '3715611615', 'ahill609@llihaicila.biz', 'Diseñador', b'1'),
 ('RHS2WC3FCGDRQ', 'Ashton', 'Paul', 'Nguyen', '1994-10-15 00:00:00', '824 Sweet Avenue,Winchester,IA,51315', '3277992185', 'apaul46@luapnothsa.net', 'Obrero', b'1'),
 ('LLQ47FMEJJM2B', 'Amanda', 'Watkins', 'Adams', '1942-11-20 00:00:00', '116 East 4th Way,Greenville,IN,54621', '2073775162', 'awatkins182@sniktawadnama.biz', 'Empleado', b'1'),
 ('KI26DFUTI55S3', 'Brandi', 'Elliott', 'Oconnor', '1954-10-25 00:00:00', '476 Mahogany Lane,New Haven,ID,48836', '3622658843', 'belliott903@ttoilleidnarb.biz', 'Maestro', b'1'),
@@ -130,18 +130,18 @@ INSERT INTO `donadores` (`RFC`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, 
 ('U1G1PTNVM6XFB', 'Callie', 'Munoz', 'Thornton', '1950-12-02 00:00:00', '692 Hickory Highway,Fort Worth,WV,23583', '5874321177', 'cmunoz134@zonumeillac.net', 'Profesor', b'1'),
 ('7NBU24Y5V5PA0', 'Colton', 'Nguyen', 'Terry', '1989-07-02 00:00:00', '401 North Melon Street,New Haven,LA,66755', '9227372565', 'cnguyen676@neyugnnotloc.net', 'Maestro', b'1'),
 ('1I4PY3ACP8N26', 'Connor', 'Peterson', 'Klein', '1961-01-17 00:00:00', '496 Willow Turnpike,Westminster,WV,82316', '2152341881', 'cpeterson979@nosretepronnoc.net', 'Bombero', b'1'),
-('0J39CR0BABTGX', 'Chad', 'Rowe', 'Elliott', '1951-03-03 00:00:00', '246 North Washington Highway,Jackson,PA,47655', '4275955057', 'crowe302@ewordahc.net', 'DiseÃ±ador', b'1'),
+('0J39CR0BABTGX', 'Chad', 'Rowe', 'Elliott', '1951-03-03 00:00:00', '246 North Washington Highway,Jackson,PA,47655', '4275955057', 'crowe302@ewordahc.net', 'Diseñador', b'1'),
 ('ITBCAIQT8YZYH', 'Devin', 'Mcdaniel', 'Mcguire', '1952-04-12 00:00:00', '170 South Hickory Garden,Norman,NV,11208', '9974974697', 'dmcdaniel380@leinadcmnived.org', 'Obrero', b'1'),
 ('6JJSQKJL662B2', 'Esther', 'Oconnor', 'Munoz', '1945-07-11 00:00:00', '613 Coolidge Terrace,Aurora,VA,02550', '7067766049', 'eoconnor522@ronnocorehtse.net', 'Obrero', b'1'),
-('20IZVB37GCYZE', 'Forrest', 'Adkins', 'Porter', '1956-03-19 00:00:00', '49 Buchanan Boulevard,Frisco,OK,22381', '7733597384', 'fadkins923@snikdatserrof.biz', 'DiseÃ±ador', b'1'),
+('20IZVB37GCYZE', 'Forrest', 'Adkins', 'Porter', '1956-03-19 00:00:00', '49 Buchanan Boulevard,Frisco,OK,22381', '7733597384', 'fadkins923@snikdatserrof.biz', 'Diseñador', b'1'),
 ('1E8KLTZQA9OLJ', 'Fabian', 'Thornton', 'Medina', '1941-08-18 00:00:00', '730 Truman Place,Tempe,NV,28307', '3567793066', 'fthornton47@notnrohtnaibaf.net', 'Bombero', b'1'),
 ('O0RQQFZP7Q11B', 'Geoffrey', 'Mitchell', 'Clarke', '1958-06-13 00:00:00', '836 South 6th Garden,Port St. Lucie,VA,57248', '9266217944', 'gmitchell133@llehctimyerffoeg.net', 'Maestro', b'1'),
 ('A435X8Q7ABAJK', 'Heather', 'Bowman', 'Watkins', '1977-08-08 00:00:00', '685 North Willow Highway,Killeen,RI,64005', '6235394796', 'hbowman225@namwobrehtaeh.biz', 'Obrero', b'1'),
 ('X4ZEP9CQ2J53T', 'Haley', 'Gomez', 'Lang', '1983-12-29 00:00:00', '752 Coolidge Circle,Garland,MN,85039', '3299349901', 'hgomez561@zemogyelah.com', 'Profesor', b'1'),
-('XBL6Q1I8NRSPV', 'India', 'Adams', 'Griffith', '1945-08-27 00:00:00', '845 Harrison Way,Antioch,ME,34648', '9278714277', 'iadams847@smadaaidni.com', 'DiseÃ±ador', b'1'),
+('XBL6Q1I8NRSPV', 'India', 'Adams', 'Griffith', '1945-08-27 00:00:00', '845 Harrison Way,Antioch,ME,34648', '9278714277', 'iadams847@smadaaidni.com', 'Diseñador', b'1'),
 ('N01RIVBP0R3BN', 'Ian', 'Mcguire', 'Patton', '1943-12-19 00:00:00', '154 South Ford Boulevard,Escondido,NH,13389', '9024806221', 'imcguire589@eriugcmnai.net', 'Obrero', b'1'),
 ('I3TD9V0V8VBCJ', 'Justice', 'Griffith', 'Mcguire', '1941-02-25 00:00:00', '308 Buchanan Highway,San Antonio,TX,80071', '6749131598', 'jgriffith19@htiffirgecitsuj.net', 'Maestro', b'1'),
-('CMFXBGLMV8RY9', 'Joseph', 'Klein', 'Adkins', '1972-01-31 00:00:00', '48 Watermelon Way,Ontario,DC,11259', '7156314715', 'jklein369@nielkhpesoj.org', 'DiseÃ±ador', b'1'),
+('CMFXBGLMV8RY9', 'Joseph', 'Klein', 'Adkins', '1972-01-31 00:00:00', '48 Watermelon Way,Ontario,DC,11259', '7156314715', 'jklein369@nielkhpesoj.org', 'Diseñador', b'1'),
 ('CQR2IKW9B5MOW', 'Jordan', 'Lang', 'Parker', '1979-06-09 00:00:00', '552 Guava Place,Sunnyvale,WA,61354', '8444620163', 'jlang288@gnalnadroj.org', 'Doctor', b'1'),
 ('SQZGZQ4DGXJI1', 'Jonathan', 'Munoz', 'Watkins', '1953-08-11 00:00:00', '1 Cleveland Expressway,Athens,TX,65009', '6357228533', 'jmunoz155@zonumnahtanoj.org', 'Empresario', b'1'),
 ('ZQ2TISAYZCKGB', 'Joshua', 'Patton', 'Hardy', '1937-10-13 00:00:00', '905 Jefferson Way,Visalia,CT,23066', '7555751043', 'jpatton359@nottapauhsoj.biz', 'Obrero', b'1'),
@@ -156,15 +156,15 @@ INSERT INTO `donadores` (`RFC`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, 
 ('L13X67HBN0XY8', 'Marcos', 'Figueroa', 'Quinn', '1937-04-26 00:00:00', '842 Vine Garden,Chattanooga,HI,23893', '2889474828', 'mfigueroa269@aoreugifsocram.com', 'Empleado', b'1'),
 ('UK85K9PVH40V1', 'Mia', 'Ross', 'Munoz', '1946-12-09 00:00:00', '520 Sunset Garden,Corpus Christi,AR,42551', '3314242161', 'mross991@ssoraim.net', 'Doctor', b'1'),
 ('8HECC9HYL7PZJ', 'Mercedes', 'Steele', 'Gilbert', '1955-02-28 00:00:00', '652 South Mountain Expressway,Oklahoma City,MS,14596', '9017515228', 'msteele252@eleetssedecrem.org', 'Doctor', b'1'),
-('5MXY74KAHZJ3L', 'Pedro', 'Cross', 'Harrington', '1985-08-18 00:00:00', '490 North Hickory Drive,Kansas City ,IL,00450', '9679332420', 'pcross184@ssorcordep.biz', 'PolÃ­tico', b'1'),
+('5MXY74KAHZJ3L', 'Pedro', 'Cross', 'Harrington', '1985-08-18 00:00:00', '490 North Hickory Drive,Kansas City ,IL,00450', '9679332420', 'pcross184@ssorcordep.biz', 'Polí­tico', b'1'),
 ('VC2Z7Z7Y9I4LR', 'Reed', 'Ayala', 'Bates', '1935-11-09 00:00:00', '439 Buchanan Loop,Anaheim,FL,84149', '5095250080', 'rayala461@alayadeer.com', 'Bombero', b'1'),
 ('ZYFWLWRPWFR2J', 'Ramon', 'Ramos', 'Pierce', '1992-06-06 00:00:00', '128 Ash Lane,Fremont,CA,13276', '8382702587', 'rramos192@somarnomar.org', 'Empleado', b'1'),
 ('DA8HGBEWM9T0Q', 'Sasha', 'Mcguire', 'Ross', '1959-10-01 00:00:00', '641 Van Buren Circle,Dayton,NY,29698', '3503194456', 'smcguire509@eriugcmahsas.net', 'Bombero', b'1'),
 ('L1YBTTPQMIQHW', 'Skyler', 'Porter', 'Mcdaniel', '1966-01-10 00:00:00', '736 West Watermelon Drive,Fayetteville,TX,14556', '5484795187', 'sporter881@retroprelyks.org', 'Obrero', b'1'),
 ('6IOB09WPH1DUD', 'Sonia', 'Terry', 'Cross', '1989-07-15 00:00:00', '253 Banana Place,Denver,NC,42627', '8586867341', 'sterry223@yrretainos.org', 'Bombero', b'1'),
 ('WEFMGOFYU8ED5', 'Talia', 'Brady', 'Mitchell', '1973-11-28 00:00:00', '684 Van Buren Street,Odessa,NJ,89086', '3915879438', 'tbrady527@ydarbailat.com', 'Obrero', b'1'),
-('1RHSPI5K4AC5O', 'Trey', 'Harrington', 'Malone', '1985-01-07 00:00:00', '79 West Taylor Way,Dallas,NH,13686', '7616407327', 'tharrington995@notgnirrahyert.net', 'PolÃ­tico', b'1'),
-('QDUXCGMIW8I77', 'Ty', 'Parker', 'Wilson', '1976-11-19 00:00:00', '719 Adams Highway,Tempe,KY,18904', '7284930051', 'tparker145@rekrapyt.net', 'DiseÃ±ador', b'1'),
+('1RHSPI5K4AC5O', 'Trey', 'Harrington', 'Malone', '1985-01-07 00:00:00', '79 West Taylor Way,Dallas,NH,13686', '7616407327', 'tharrington995@notgnirrahyert.net', 'Polí­tico', b'1'),
+('QDUXCGMIW8I77', 'Ty', 'Parker', 'Wilson', '1976-11-19 00:00:00', '719 Adams Highway,Tempe,KY,18904', '7284930051', 'tparker145@rekrapyt.net', 'Diseñador', b'1'),
 ('5OZGGGUJIGCCO', 'Walter', 'Clarke', 'Steele', '1969-10-04 00:00:00', '397 East Johnson Garden,Lafayette,NE,03416', '7629536456', 'wclarke48@ekralcretlaw.com', 'Doctor', b'1');
 
 -- --------------------------------------------------------
@@ -470,9 +470,9 @@ INSERT INTO `noticia` (`IdNoticia`, `Titulo`, `Cuerpo`, `Fecha`) VALUES
 -- Table structure for table `plantilladecorreo`
 --
 
-CREATE TABLE `plantilladecorreo` (
-  `IdCorreo` char(6) NOT NULL,
-  `Asunto` varchar(50) DEFAULT NULL,
+CREATE TABLE `plantilladecorreo` 
+(  `IdCorreo` char(6) NOT NULL,
+  `Asunto` text,
   `Contenido` text,
   `Fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -509,9 +509,9 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`IdRol`, `Nombre`) VALUES
-('ï»¿', 'Administrador'),
+('R01', 'Administrador'),
 ('R02', 'Editor general'),
-('R03', 'FotografÃ­a'),
+('R03', 'Fotografía'),
 ('R04', 'Eventos'),
 ('R05', 'Noticias'),
 ('R06', 'Roles');
@@ -558,7 +558,29 @@ INSERT INTO `rol_funcion` (`IdFuncion`, `IdRol`) VALUES
 ('F010', 'R06'),
 ('F011', 'R06'),
 ('F012', 'R06'),
-('F013', 'R06');
+('F013', 'R06'),
+('F001', 'R01'),
+('F002', 'R01'),
+('F003', 'R01'),
+('F004', 'R01'),
+('F005', 'R01'),
+('F006', 'R01'),
+('F007', 'R01'),
+('F008', 'R01'),
+('F009', 'R01'),
+('F010', 'R01'),
+('F011', 'R01'),
+('F012', 'R01'),
+('F013', 'R01'),
+('F014', 'R01'),
+('F015', 'R01'),
+('F016', 'R01'),
+('F017', 'R01'),
+('F018', 'R01'),
+('F019', 'R01'),
+('F020', 'R01'),
+('F021', 'R01'),
+('F022', 'R01');
 
 -- --------------------------------------------------------
 
@@ -575,7 +597,7 @@ CREATE TABLE `thumbnail` (
 --
 
 INSERT INTO `thumbnail` (`Thurl`) VALUES
-('ï»¿thurl/ipsum1.jpg'),
+('thurl/ipsum1.jpg'),
 ('thurl/ipsum10.jpg'),
 ('thurl/ipsum11.jpg'),
 ('thurl/ipsum12.jpg'),
@@ -641,25 +663,27 @@ INSERT INTO `usocfdi` (`IdCFDI`, `Nombre`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `Username` varchar(10) NOT NULL,
-  `Pswd` varchar(20) DEFAULT NULL
+  `Email` varchar(254) NOT NULL,
+  `Pswd` varchar(20) DEFAULT NULL,
+  `Nombre` varchar(250) DEFAULT Null,
+  `Telefono` varchar(20) DEFAULT Null
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`Username`, `Pswd`) VALUES
-('admon', 'nomad4123'),
-('Angelica', 'abcdef'),
-('cesar', 'sa=9asd'),
-('dagoberto', '123sada'),
-('jaunpi', 'ipnuaj'),
-('Joaquin', 'asdasfas'),
-('lalo', 'hockey'),
-('marcelo', '1+92as'),
-('peponks', 'jajaxd345'),
-('Suzana', '123456');
+INSERT INTO `usuario` (`Email`, `Pswd`,`Nombre`,`Telefono`) VALUES
+('admon@mail.com', 'nomad4123','admon','(108) 136-6273'),
+('angelica@mail.com', 'abcdef','Angelica','(244) 148-0331'),
+('cesar@mail.com', 'sa=9asd','cesar','(515) 336-7754'),
+('dagoberto@mail.com', '123sada','dagoberto','(334) 303-8323'),
+('jaunpi@mail.com', 'ipnuaj','jaunpi','(617) 476-2078'),
+('joaquin@mail.com', 'asdasfas','Joaquin','(935) 529-7241'),
+('lalo@mail.com', 'hockey','lalo','(395) 467-2922'),
+('marcelo@mail.com', '1+92as','marcelo','(513) 740-9459'),
+('peponks@mail.com', 'jajaxd345','peponks','(686) 119-7904'),
+('suzana@mail.com', '123456','Suzana','(314) 122-0754');
 
 -- --------------------------------------------------------
 
@@ -669,7 +693,7 @@ INSERT INTO `usuario` (`Username`, `Pswd`) VALUES
 
 CREATE TABLE `usuario_noticia` (
   `IdNoticia` char(5) NOT NULL,
-  `Username` varchar(10) NOT NULL,
+  `Email` varchar(254) NOT NULL,
   `Fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -677,16 +701,16 @@ CREATE TABLE `usuario_noticia` (
 -- Dumping data for table `usuario_noticia`
 --
 
-INSERT INTO `usuario_noticia` (`IdNoticia`, `Username`, `Fecha`) VALUES
-('N0001', 'Joaquin', '2018-01-01 00:00:00'),
-('N0002', 'Suzana', '2018-02-01 00:00:00'),
-('N0003', 'Marcelo', '2018-03-01 00:00:00'),
-('N0004', 'Cesar', '2018-04-01 00:00:00'),
-('N0005', 'Peponks', '2018-05-01 00:00:00'),
-('N0006', 'dagoberto', '2018-06-01 00:00:00'),
-('N0008', 'Cesar', '2018-08-01 00:00:00'),
-('N0009', 'Marcelo', '2018-09-01 00:00:00'),
-('N0010', 'Joaquin', '2018-10-01 00:00:00');
+INSERT INTO `usuario_noticia` (`IdNoticia`, `Email`, `Fecha`) VALUES
+('N0001', 'joaquin@mail.com', '2018-01-01 00:00:00'),
+('N0002', 'suzana@mail.com', '2018-02-01 00:00:00'),
+('N0003', 'marcelo@mail.com', '2018-03-01 00:00:00'),
+('N0004', 'cesar@mail.com', '2018-04-01 00:00:00'),
+('N0005', 'peponks@mail.com', '2018-05-01 00:00:00'),
+('N0006', 'dagoberto@mail.com', '2018-06-01 00:00:00'),
+('N0008', 'cesar@mail.com', '2018-08-01 00:00:00'),
+('N0009', 'marcelo@mail.com', '2018-09-01 00:00:00'),
+('N0010', 'joaquin@mail.com', '2018-10-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -695,7 +719,7 @@ INSERT INTO `usuario_noticia` (`IdNoticia`, `Username`, `Fecha`) VALUES
 --
 
 CREATE TABLE `usuario_rol` (
-  `Username` varchar(10) NOT NULL,
+  `Email` varchar(254) NOT NULL,
   `IdRol` char(3) NOT NULL,
   `Fecha` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -704,13 +728,165 @@ CREATE TABLE `usuario_rol` (
 -- Dumping data for table `usuario_rol`
 --
 
-INSERT INTO `usuario_rol` (`Username`, `IdRol`, `Fecha`) VALUES
-('Angelica', 'R02', '2018-01-09 00:00:00'),
-('dagoberto', 'R03', '2018-01-11 00:00:00'),
-('marcelo', 'R06', '2018-01-12 00:00:00'),
-('jaunpi', 'R05', '2018-01-14 00:00:00'),
-('lalo', 'R04', '2018-01-16 00:00:00'),
-('peponks', 'R04', '2018-01-17 00:00:00');
+INSERT INTO `usuario_rol` (`Email`, `IdRol`, `Fecha`) VALUES
+('angelica@mail.com', 'R02', '2018-01-09 00:00:00'),
+('dagoberto@mail.com', 'R03', '2018-01-11 00:00:00'),
+('marcelo@mail.com', 'R06', '2018-01-12 00:00:00'),
+('jaunpi@mail.com', 'R05', '2018-01-14 00:00:00'),
+('lalo@mail.com', 'R04', '2018-01-16 00:00:00'),
+('peponks@mail.com', 'R04', '2018-01-17 00:00:00'),
+('suzana@mail.com', 'R01', '2018-02-17 00:00:00');
+
+CREATE TABLE `mision` (
+  `IdMision` char(3) NOT NULL,
+  `Mision` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `mision` (`IdMision`, `Mision`) VALUES
+('m01', 'Generamos un programa de formación integral con las niñas, niños y adolescentes que junto con su famlia han hecho de la calle su lugar de trabajo; para desarrollar sus capacidades básicas y construir alternativas que les permitan mejorar sus oportunidades de vida.');
+
+
+
+CREATE TABLE `vision` (
+  `IdVision` char(3) NOT NULL,
+  `Vision` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `vision` (`IdVision`, `Vision`) VALUES
+('v01', 'Queremos ser un espacio en donde niños y niñas que viven en condiciones adversas por la marginación, encuentren opciones de desarrollo intelectual, emocional y social. Una oportunidad que les facilite una mejor calidad de vida y una opción laboral distinta a la calle.');
+
+CREATE TABLE `objetivo` (
+  `IdObjetivo` char(3) NOT NULL,
+  `Objetivo` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `objetivo` (`IdObjetivo`, `Objetivo`) VALUES
+('o01', 'Llevar a cabo con los niños en situación de calle, un programa de desarrollo integral, que promueva alternativas, disminuya su marginación y mejore sus condiciones de vida.'),
+('o02', 'Fomentar el acceso a alguna modalidad educativa para toda la familia.'),
+('o03', 'Sensibilizar y difundir en nuestra sociedad la importancia de participar en la formación y desarrollo de los niños que trabajan en la calle, así como el respeto y dignificación de éstos.'),
+('o04', 'Promover acciones que les permitan a estas familias el acceso a bienes y servicios públicos.');
+
+CREATE TABLE `areadeatencion` (
+  `IdArea` char(3) NOT NULL,
+  `Nombre` text,
+  `Descripcion` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `areadeatencion` (`IdArea`, `Nombre`,`Descripcion`) VALUES
+('a01','Area de Promoción Social','Nutrición, alimentación y seguimiento de peso y talla. Salud preventiva y atención en nuestro centro y en diferentes instituciones de salud pública. Acceso a Servicios de salud pública: Hospitalización, Esquema de Vacunación, Desparacitación, Salud Bucal, Cartilla de la Mujer, Detección temprana de cáncer, seguimiento de Embarazo y salud Reproductiva. Asesoría legal, familiar, psicológica y/o educativa para niños y padres. Apoyo para transporte. Talleres de capacitación.'),
+('a02','Area de educacion','Nos enfocamos dentro de ésta area a apoyar y fortalecer el aceso a alguna modalidad educativa para toda la familia. Motivamos el interés tanto de los niños como de los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.'),
+('a03','Area de desarrollo institucional','Promovemos el desarrollo, la sustentabilidad y la transparencia institucional, mediante la difusión y publicidad de la organización. Promovemos el fortalecimiento Institucional a través de relaciones con Fundaciones e Instituciones Gubernamentales y Civiles. 
+Estamos autorizados para expedir recibos deducibles de impuestos'),
+('a04','Voluntariado y servicio social','Funcionamos en gran parte gracias a las personas que nos brindan su tiempo, así como materiales y alimentos para apoyar nuestra labor. 
+Contamos con alumnos de diversas instituciones que realizan su servicio social apoyando los programas de educación. Si quieres formar parte de nuestro equipo de trabajo, no dudes en ponerte en contacto con nosotros.');
+
+CREATE TABLE `logro` (
+  `IdLogro` char(4) NOT NULL,
+  `Logro` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `logro` (`IdLogro`, `Logro`) VALUES
+('l001','A más de 12 años de labores, atendemos a 104 niños de 35 familias, impactamos a 189 personas desde nuestros diferentes programas.'),
+('l002','El 100% de los niños está inscrito en alguna modalidad eductavia oficial.'),
+('l003','El 100% de los niños lleva un seguimiento del esquema de vacunación oficial.'),
+('l004','Se da seguimiento de peso y talla a 40 niños, apoyándolos con una papilla reforzada.'),
+('l005','Se desparasita al 100% de los niños cada 6 meses.'),
+('l006','Atendemos un promedio de 35 consultas médicas por mes.'),
+('l007','29 madres de familia se han capacitado en nuestros talleres.'),
+('l008','Contamos con un edificio propio y un vehículo.');
+
+CREATE TABLE `benefactor` (
+  `IdBenefactor` char(4) NOT NULL,
+  `Nombre` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `benefactor` (`IdBenefactor`, `Nombre`) VALUES
+('B001','Ganaderos Productores de Leche Pura S.A. de C.V.'),
+('B002','Sistema Municipal DIF'),
+('B003','Polipro S.A. de C.V.'),
+('B004','Gastronomía la Palapa'),
+('B005','Laboratorio Corregidora'),
+('B006','Ganaderos Asociados de Querétaro'),
+('B007','Marquesado de Guadalupe'),
+('B008','Adex S.C.'),
+('B009','Rutilo Mancera Ortíz'),
+('B010','Linter Impresoras S.A de C.V.'),
+('B011','Lupeqsa S.A. de C.V.'),
+('B012','Manuel Orvañanos'),
+('B013','María Rosa Rodríguez'),
+('B014','Manuel González Juaristi'),
+('B015','Eduardo Trujillo'),
+('B016','Beatriz de Rubín'),
+('B017','Ana Gómez'),
+('B018','Sistema Estatal DIF'),
+('B019','Leche Querétaro');
+
+CREATE TABLE `contacto` (
+  `IdContacto` char(4) NOT NULL,
+  `Direccion` text,
+  `Nombre` text,
+  `Telefono` varchar(20) default null,
+  `Email` varchar(254) default null,
+  `Cuenta` varchar(50) default null,
+  `NumeroCuenta` varchar(20) default null,
+  `Banco` varchar(35) default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `contacto` (`IdContacto`, `Direccion`,`Nombre`,`Telefono`,`Email`,`Cuenta`,`NumeroCuenta`,`Banco`) VALUES
+('c001','Francisco González de Cosio 109 
+Col. San Francisquito 
+CP 76040','Susana Vargas','442 182 79 87','ninosyninasdemexico@yahoo.com','Niños y Niñas de Méxio A.C.','0101426486','Bancomer');
+
+CREATE TABLE `nosotros` (
+  `IdNosotros` char(4) NOT NULL,
+  `Titulo` text,
+  `Subtitulo` text,
+  `TextoPrincipal` text,
+  `TextoSecundario` text default null,
+  `Fecha` datetime default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `nosotros` (`IdNosotros`, `Titulo`,`Subtitulo`,`TextoPrincipal`,`TextoSecundario`,`Fecha`) VALUES
+('No01','Nosotros','¿Quienes somos?','Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven muchos niños y sus familias, al hacer de la calle, su lugar de trabajo.','Nos constituimos legalmente como una asociación civil sin fines de lucro, e iniciamos operaciones en Querétaro en 1998. Contamos con un equipo base de trabajo, responsable del desarrollo de los programas. Nos organizamos a través de un patronato, cuya tarea es velar por el buen funcionamiento de la institución.','1998-12-12 00:00:00');
+
+CREATE TABLE `patronato` (
+  `IdPatronato` char(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `patronato` (`IdPatronato`) VALUES
+('P001');
+
+CREATE TABLE `miembro_patronato` (
+  `IdMiembro` char(5) NOT NULL,
+  `IdPatronato` char(4) NOT NULL,
+  `Fecha` datetime default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `miembro_patronato` (`IdMiembro`,`IdPatronato`,`Fecha`) VALUES
+('P001','Mi01','2018-12-12 00:00:00'),
+('P001','Mi02','2018-12-12 00:00:00');
+
+CREATE TABLE `miembro` (
+  `IdMiembro` char(5) NOT NULL,
+  `Nombre` text,
+  `Sexo` varchar(10) default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `miembro` (`IdMiembro`,`Nombre`,`Sexo`) VALUES
+('Mi01','Ana María Larragain González','Mujer'),
+('Mi02','José Luís Martínez Diez','Hombre');
+
+
+
+
+
 
 --
 -- Indexes for dumped tables
@@ -807,20 +983,20 @@ ALTER TABLE `usocfdi`
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Username`);
+  ADD PRIMARY KEY (`Email`);
 
 --
 -- Indexes for table `usuario_noticia`
 --
 ALTER TABLE `usuario_noticia`
   ADD KEY `fkIdNoticia_UN` (`IdNoticia`),
-  ADD KEY `fkUsername_UN` (`Username`);
+  ADD KEY `fkEmail_UN` (`Email`);
 
 --
 -- Indexes for table `usuario_rol`
 --
 ALTER TABLE `usuario_rol`
-  ADD KEY `fkUsername_UR` (`Username`),
+  ADD KEY `fkEmail_UR` (`Email`),
   ADD KEY `fkIdRol_UR` (`IdRol`);
 
 --
@@ -853,16 +1029,67 @@ ALTER TABLE `rol_funcion`
 --
 ALTER TABLE `usuario_noticia`
   ADD CONSTRAINT `fkIdNoticia_UN` FOREIGN KEY (`IdNoticia`) REFERENCES `noticia` (`IdNoticia`),
-  ADD CONSTRAINT `fkUsername_UN` FOREIGN KEY (`Username`) REFERENCES `usuario` (`Username`);
+  ADD CONSTRAINT `fkEmail_UN` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
 
 --
 -- Constraints for table `usuario_rol`
 --
 ALTER TABLE `usuario_rol`
   ADD CONSTRAINT `fkIdRol_UR` FOREIGN KEY (`IdRol`) REFERENCES `rol` (`IdRol`),
-  ADD CONSTRAINT `fkUsername_UR` FOREIGN KEY (`Username`) REFERENCES `usuario` (`Username`);
-COMMIT;
+  ADD CONSTRAINT `fkEmail_UR` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
 
+ALTER TABLE `mision`
+	ADD PRIMARY KEY(`IdMision`);
+
+
+
+
+ALTER TABLE `vision`
+	ADD PRIMARY KEY(`IdVision`);
+
+
+
+ALTER TABLE `objetivo`
+	ADD PRIMARY KEY(`IdObjetivo`);
+
+
+
+ALTER TABLE `areadeatencion`
+	ADD PRIMARY KEY(`IdArea`);
+
+
+
+
+ALTER TABLE `logro`
+	ADD PRIMARY KEY(`IdLogro`);
+
+
+
+ALTER TABLE `benefactor`
+	ADD PRIMARY KEY(`IdBenefactor`);
+
+
+ALTER TABLE `contacto`
+	ADD PRIMARY KEY(`IdContacto`);
+
+ALTER TABLE `nosotros`
+	ADD PRIMARY KEY(`IdNosotros`);
+
+ALTER TABLE `patronato`
+	ADD PRIMARY KEY(`IdPatronato`);
+ALTER TABLE `miembro_patronato`
+	ADD KEY `fkIdPatronato_MP` (`IdPatronato`),
+ 	ADD KEY `fkIdMiembro_MP` (`IdMiembro`);
+
+ALTER TABLE `miembro`
+	ADD PRIMARY KEY(`IdMiembro`);
+
+ALTER TABLE `miembro_patronato`
+  ADD CONSTRAINT `fkIdPatronato_MP` FOREIGN KEY (`IdPatronato`) REFERENCES `patronato` (`IdPatronato`),
+  ADD CONSTRAINT `fkIdMiembro_MP` FOREIGN KEY (`IdMiembro`) REFERENCES `miembro` (`IdMiembro`);
+
+
+COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
