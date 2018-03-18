@@ -3,6 +3,12 @@
 
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
+        $nombre = $_SESSION["nombre"];
+        $rol = $_SESSION["rol"];
+        $funciones = $_SESSION["funciones"];
+        $view = "dashboard";
+
+
         // Head and body tag
         include("partials/_header.html");
         // Top Navbar
@@ -17,8 +23,12 @@
         include("partials/_footer.html");
         // Tag to close content wrapper
         include("partials/_page_content_wrapper_end.html");
-        // Additional Scripts can be included here
-        include("partials/_dashboard_js.html");
+        include("partials/_common_js.html");
+        // Additional Scripts and Modals can be included here
+        echo   '<script src="vendor/chart.js/js/Chart.bundle.js"></script>
+                <script src="js/sb-admin-charts.js"></script>
+                <script src="https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
+                <script src="js/comportamiento.js"></script>';
         // Required Scripts and end of file
         include("partials/_end.html");
     } else {
