@@ -9,81 +9,11 @@
             </form>
         </div>
         <div class="list-group list-group-flush small">
-            <a class="list-group-item list-group-item-action" href="javascript: preview();">
-                <div class="media">
-
-                    <div class="media-body">
-                        <div class="row">
-                            <div class="col-sm">
-                                <strong>Nombre:</strong> Juan Carlos Garzón Rincón Gallardo
-                            </div>
-                            <div class="col-sm">
-                                <strong>Telefono:</strong> 442 235 5641
-                            </div>
-                            <div class="col-sm">
-                                <strong>Email</strong> jgarzon@marhnos.com.mx
-                            </div>
-                        </div>
-                        <strong>Registrado desde: </strong> 12/12/1999
-                    </div>
-                </div>
-            </a>
-            <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                    <div class="media-body">
-                        <div class="row">
-                            <div class="col-sm">
-                                <strong>Nombre:</strong> Jaun Ramon
-                            </div>
-                            <div class="col-sm">
-                                <strong>Telefono:</strong> 442 250 2651
-                            </div>
-                            <div class="col-sm">
-                                <strong>Email</strong> email@email.com
-                            </div>
-                        </div>
-                        <strong>Registrado desde: </strong> 12/12/1999
-                    </div>
-                </div>
-            </a>
-            <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                    <div class="media-body">
-                        <div class="row">
-                            <div class="col-sm">
-                                <strong>Nombre:</strong> Jaun Ramon
-                            </div>
-                            <div class="col-sm">
-                                <strong>Telefono:</strong> 442 250 2651
-                            </div>
-                            <div class="col-sm">
-                                <strong>Email</strong> email@email.com
-                            </div>
-                        </div>
-                        <strong>Registrado desde: </strong> 12/12/1999
-                    </div>
-                </div>
-            </a>
-
-            <a class="list-group-item list-group-item-action" href="#">
-                <div class="media">
-                    <div class="media-body">
-                        <div class="row">
-                            <div class="col-sm">
-                                <strong>Nombre:</strong> Jaun Ramon
-                            </div>
-                            <div class="col-sm">
-                                <strong>Telefono:</strong> 442 250 2651
-                            </div>
-                            <div class="col-sm">
-                                <strong>Email</strong> email@email.com
-                            </div>
-                        </div>
-                        <strong>Registrado desde: </strong> 12/12/1999
-                    </div>
-                </div>
-            </a>
+            <?php
+                getDonadores();
+            ?>
+            <button data-toggle="modal" data-target="#new" class="btn btn-primary">Nuevo registro</button>
         </div>
     </div>
-    <button data-toggle="modal" data-target="#new" class="btn btn-primary">Nuevo registro</button>
+
 </div>

@@ -72,6 +72,10 @@ a:hover {
     background-color: #663f86 !important;
 }
 
+.bg-purple-light {
+    background-color: #404040 !important;
+}
+
 .text-cyan {
     color: #00b2bf !important;
 }
