@@ -856,6 +856,23 @@ CREATE TABLE `nosotros` (
 INSERT INTO `nosotros` (`IdNosotros`, `Titulo`,`Subtitulo`,`TextoPrincipal`,`TextoSecundario`,`Fecha`) VALUES
 ('No01','Nosotros','¿Quienes somos?','Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven muchos niños y sus familias, al hacer de la calle, su lugar de trabajo.','Nos constituimos legalmente como una asociación civil sin fines de lucro, e iniciamos operaciones en Querétaro en 1998. Contamos con un equipo base de trabajo, responsable del desarrollo de los programas. Nos organizamos a través de un patronato, cuya tarea es velar por el buen funcionamiento de la institución.','1998-12-12 00:00:00');
 
+
+CREATE TABLE `miembro` (
+  `IdMiembro` char(4) NOT NULL,
+  `Nombre` text,
+  `Sexo` varchar(10) default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `miembro` (`IdMiembro`,`Nombre`,`Sexo`) VALUES
+('Mi01','Ana María Larragain González','Mujer'),
+('Mi02','José Luís Martínez Diez','Hombre'),
+('Mi03','Enrique Rubín Colea','Hombre'),
+('Mi04','Beatriz López Venero','Mujer'),
+('Mi05','Angélica Malagón Paulín','Mujer'),
+('Mi06','Ana Isabel Niembro González','Mujer'),
+('Mi07','María Rosa Rodríguez Segón','Mujer');
+
+
 CREATE TABLE `patronato` (
   `IdPatronato` char(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -863,25 +880,51 @@ CREATE TABLE `patronato` (
 INSERT INTO `patronato` (`IdPatronato`) VALUES
 ('P001');
 
+CREATE TABLE `puesto` (
+  `IdPuesto` char(4) NOT NULL,
+  `Nombre` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `puesto` (`IdPuesto`,`Nombre`) VALUES
+('Pu01','Presidente'),
+('Pu02','Tesorero'),
+('Pu03','Secretario'),
+('Pu04','Vocal');
+
+CREATE TABLE `miembro_puesto` (
+  `IdMiembro` char(4) NOT NULL,
+  `IdPuesto` char(4) NOT NULL,
+  `Fecha` datetime default null
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `miembro_puesto` (`IdMiembro`,`IdPuesto`,`Fecha`) VALUES
+('Mi01','Pu01','2018-01-01 00:00:00'),
+('Mi02','Pu03','2018-01-01 00:00:00'),
+('Mi03','Pu02','2018-01-01 00:00:00'),
+('Mi04','Pu04','2018-01-01 00:00:00'),
+('Mi05','Pu04','2018-01-01 00:00:00'),
+('Mi06','Pu04','2018-01-01 00:00:00'),
+('Mi07','Pu04','2018-01-01 00:00:00');
+
+
 CREATE TABLE `miembro_patronato` (
-  `IdMiembro` char(5) NOT NULL,
+  `IdMiembro` char(4) NOT NULL,
   `IdPatronato` char(4) NOT NULL,
   `Fecha` datetime default null
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `miembro_patronato` (`IdMiembro`,`IdPatronato`,`Fecha`) VALUES
-('P001','Mi01','2018-12-12 00:00:00'),
-('P001','Mi02','2018-12-12 00:00:00');
+('Mi01','P001','2018-01-01 00:00:00'),
+('Mi02','P001','2018-01-01 00:00:00'),
+('Mi03','P001','2018-01-01 00:00:00'),
+('Mi04','P001','2018-01-01 00:00:00'),
+('Mi05','P001','2018-01-01 00:00:00'),
+('Mi06','P001','2018-01-01 00:00:00'),
+('Mi07','P001','2018-01-01 00:00:00');
 
-CREATE TABLE `miembro` (
-  `IdMiembro` char(5) NOT NULL,
-  `Nombre` text,
-  `Sexo` varchar(10) default null
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `miembro` (`IdMiembro`,`Nombre`,`Sexo`) VALUES
-('Mi01','Ana María Larragain González','Mujer'),
-('Mi02','José Luís Martínez Diez','Hombre');
+
 
 
 
@@ -1003,41 +1046,6 @@ ALTER TABLE `usuario_rol`
 -- Constraints for dumped tables
 --
 
---
--- Constraints for table `donadores_metodopago`
---
-ALTER TABLE `donadores_metodopago`
-  ADD CONSTRAINT `fkEmail_DM` FOREIGN KEY (`Email`) REFERENCES `donadores` (`Email`),
-  ADD CONSTRAINT `fkIdMetodo_DM` FOREIGN KEY (`IdMetodo`) REFERENCES `metodopago` (`IdMetodo`);
-
---
--- Constraints for table `donadores_usocfdi`
---
-ALTER TABLE `donadores_usocfdi`
-  ADD CONSTRAINT `fkEmail_DU` FOREIGN KEY (`Email`) REFERENCES `donadores` (`Email`),
-  ADD CONSTRAINT `fkIdCFDI_DU` FOREIGN KEY (`IdCFDI`) REFERENCES `usocfdi` (`IdCFDI`);
-
---
--- Constraints for table `rol_funcion`
---
-ALTER TABLE `rol_funcion`
-  ADD CONSTRAINT `fkIdFuncion_RF` FOREIGN KEY (`IdFuncion`) REFERENCES `funcion` (`IdFuncion`),
-  ADD CONSTRAINT `fkIdRol_RF` FOREIGN KEY (`IdRol`) REFERENCES `rol` (`IdRol`);
-
---
--- Constraints for table `usuario_noticia`
---
-ALTER TABLE `usuario_noticia`
-  ADD CONSTRAINT `fkIdNoticia_UN` FOREIGN KEY (`IdNoticia`) REFERENCES `noticia` (`IdNoticia`),
-  ADD CONSTRAINT `fkEmail_UN` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
-
---
--- Constraints for table `usuario_rol`
---
-ALTER TABLE `usuario_rol`
-  ADD CONSTRAINT `fkIdRol_UR` FOREIGN KEY (`IdRol`) REFERENCES `rol` (`IdRol`),
-  ADD CONSTRAINT `fkEmail_UR` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
-
 ALTER TABLE `mision`
 	ADD PRIMARY KEY(`IdMision`);
 
@@ -1077,16 +1085,66 @@ ALTER TABLE `nosotros`
 
 ALTER TABLE `patronato`
 	ADD PRIMARY KEY(`IdPatronato`);
-ALTER TABLE `miembro_patronato`
-	ADD KEY `fkIdPatronato_MP` (`IdPatronato`),
- 	ADD KEY `fkIdMiembro_MP` (`IdMiembro`);
 
 ALTER TABLE `miembro`
 	ADD PRIMARY KEY(`IdMiembro`);
 
+ALTER TABLE `puesto`
+	ADD PRIMARY KEY(`IdPuesto`);
+
+ALTER TABLE `miembro_puesto`
+	ADD KEY `fkIdMiembro_MPu` (`IdMiembro`),
+	ADD KEY `fkIdPuesto_MPu` (`IdPuesto`);
+
 ALTER TABLE `miembro_patronato`
-  ADD CONSTRAINT `fkIdPatronato_MP` FOREIGN KEY (`IdPatronato`) REFERENCES `patronato` (`IdPatronato`),
-  ADD CONSTRAINT `fkIdMiembro_MP` FOREIGN KEY (`IdMiembro`) REFERENCES `miembro` (`IdMiembro`);
+	ADD KEY `fkIdMiembro_MP` (`IdMiembro`),
+	ADD KEY `fkIdPatronato_MP` (`IdPatronato`);
+ 	
+
+--
+-- Constraints for table `donadores_metodopago`
+--
+ALTER TABLE `donadores_metodopago`
+  ADD CONSTRAINT `fkEmail_DM` FOREIGN KEY (`Email`) REFERENCES `donadores` (`Email`),
+  ADD CONSTRAINT `fkIdMetodo_DM` FOREIGN KEY (`IdMetodo`) REFERENCES `metodopago` (`IdMetodo`);
+
+--
+-- Constraints for table `donadores_usocfdi`
+--
+ALTER TABLE `donadores_usocfdi`
+  ADD CONSTRAINT `fkEmail_DU` FOREIGN KEY (`Email`) REFERENCES `donadores` (`Email`),
+  ADD CONSTRAINT `fkIdCFDI_DU` FOREIGN KEY (`IdCFDI`) REFERENCES `usocfdi` (`IdCFDI`);
+
+--
+-- Constraints for table `rol_funcion`
+--
+ALTER TABLE `rol_funcion`
+  ADD CONSTRAINT `fkIdFuncion_RF` FOREIGN KEY (`IdFuncion`) REFERENCES `funcion` (`IdFuncion`),
+  ADD CONSTRAINT `fkIdRol_RF` FOREIGN KEY (`IdRol`) REFERENCES `rol` (`IdRol`);
+
+--
+-- Constraints for table `usuario_noticia`
+--
+ALTER TABLE `usuario_noticia`
+  ADD CONSTRAINT `fkIdNoticia_UN` FOREIGN KEY (`IdNoticia`) REFERENCES `noticia` (`IdNoticia`),
+  ADD CONSTRAINT `fkEmail_UN` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
+
+--
+-- Constraints for table `usuario_rol`
+--
+ALTER TABLE `usuario_rol`
+  ADD CONSTRAINT `fkIdRol_UR` FOREIGN KEY (`IdRol`) REFERENCES `rol` (`IdRol`),
+  ADD CONSTRAINT `fkEmail_UR` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`);
+
+
+ALTER TABLE `miembro_puesto`
+  ADD CONSTRAINT `fkIdMiembro_MPu` FOREIGN KEY (`IdMiembro`) REFERENCES `miembro` (`IdMiembro`),
+  ADD CONSTRAINT `fkIdPuesto_MPu` FOREIGN KEY (`IdPuesto`) REFERENCES `puesto` (`IdPuesto`);
+
+
+ALTER TABLE `miembro_patronato`
+  ADD CONSTRAINT `fkIdMiembro_MP` FOREIGN KEY (`IdMiembro`) REFERENCES `miembro` (`IdMiembro`),
+  ADD CONSTRAINT `fkIdPatronato_MP` FOREIGN KEY (`IdPatronato`) REFERENCES `patronato` (`IdPatronato`);
 
 
 COMMIT;
