@@ -157,7 +157,7 @@ function getDonadores() {
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-            $html .= '                   
+            $html .= '
                             <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].'">
                              <div class="media-body">
                               <div class="row">
@@ -171,8 +171,8 @@ function getDonadores() {
                                     <strong>Email</strong> '.$fila["Email"].'
                                 </div>
                             </div>
-                            <strong>Registrado desde: </strong> 12/12/1999 
-                            </div> 
+                            <strong>Registrado desde: </strong> 12/12/1999
+                            </div>
                             </a>';
         }
 
