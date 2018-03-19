@@ -170,7 +170,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $MT = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $MT = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -179,22 +179,22 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-                    $MT .= '        
+                    $MT .= '
                                         <tr>
                                         <td>'.$fila["Fecha"].'</td>
                                         <td>'.$fila["Monto"].'</td>
                                         </tr>';
             }
-                        
+
             echo $MT.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
@@ -208,7 +208,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -217,25 +217,25 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $TN .= '        
+                    $TN .= '
                                         <tr>
                                         <td>'.$fila["Id_Us-Trans"].'</td>
                                         <td>'.$fila["Nombre"].'</td>
                                         </tr>';
             }
-                        
+
             echo $TN.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
@@ -249,7 +249,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -258,25 +258,25 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $TN .= '        
+                    $TN .= '
                                         <tr>
                                         <td>'.$fila["Nombre"].'</td>
                                         <td>'.$fila["Fecha"].'</td>
                                         </tr>';
             }
-                        
+
             echo $TN.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
@@ -290,7 +290,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -298,24 +298,24 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $TN .= '        
+                    $TN .= '
                                         <tr>
                                         <td>'.$fila["Id_AreaTrabajo"].'</td>
                                         </tr>';
             }
-                        
+
             echo $TN.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
@@ -329,7 +329,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -337,24 +337,24 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $TN .= '        
+                    $TN .= '
                                         <tr>
                                         <td>'.$fila["Tipo"].'</td>
                                         </tr>';
             }
-                        
+
             echo $TN.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
@@ -368,7 +368,7 @@
             $query;
              // Query execution; returns identifier of the result group
             $results = $db->query($query);
-            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">           
+            $TN = '<div class="container"><div class="jumbotron jumbotron-fluid bg-light">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
@@ -383,12 +383,12 @@
                                         </tr>
                                     </thead>
                                     </tbody>';
-            
+
             while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
                                                 // Options: MYSQLI_NUM to use only numeric indexes
                                                 // MYSQLI_ASSOC to use only name (string) indexes
                                                 // MYSQLI_BOTH, to use both
-                    $TN .= '        
+                    $TN .= '
                                         <tr>
                                         <td>'.$fila["Id_Usuario"].'</td>
                                         <td>'.$fila["Nombre"].'</td>
@@ -400,14 +400,14 @@
                                         <td>'.$fila["Habilitado"].'</td>
                                         </tr>';
             }
-                        
+
             echo $TN.'</tbody>
                                 </table>
                             </div></div>';
             // it releases the associated results
             mysqli_free_result($results);
             disconnect($db);
-            return true;            
+            return true;
         }
         return false;
     }
