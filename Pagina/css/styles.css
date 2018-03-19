@@ -272,6 +272,10 @@ div.desc {
   background-color: #e9ecef;
 }
 
+.nav-link.white {
+  color: #fff;
+}
+
 #drop {
     height: 200px;
     width: 200px;
