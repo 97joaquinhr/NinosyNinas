@@ -158,68 +158,68 @@
                 </button>
             </div>
 
-            <form>
+            <form method="POST" action="addDonador.php">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="nombre">Nombre(s)</label>
-                                <input class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Juan Carlos">
+                                <input class="form-control" name="nombre" id="nombre" aria-describedby="nombreHelp" placeholder="Juan Carlos">
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
-                                <label for="apellidoP">Apellido paterno</label>
-                                <input class="form-control" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Garzón">
+                                    <label for="apellidoP">Apellido paterno</label>
+                                    <input class="form-control" name="apellidoP" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Garzón">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="apellidoM">Apellido materno</label>
-                                <input class="form-control" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Rincón Gallardo">
+                                <input class="form-control" name="apellidoM" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Rincón Gallardo">
                             </div>
                             <div class="form-group">
                                 <label for="rfc">RFC</label>
-                                <input class="form-control" id="rfc" aria-describedby="rfcHelp" placeholder="GARJ500112MP4">
+                                <input class="form-control" name="rfc" id="rfc" aria-describedby="rfcHelp" placeholder="GARJ500112MP4">
                             </div>
                             <div class="form-group">
                                 <label for="emailD">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx">
+                                <input type="email" class="form-control" name="email" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ocupacion">Ocupacion</label>
+                                <input type="text" class="form-control" id="ocupacion" name="ocupacion" aria-describedby="ocupacionHelp" placeholder="Bombero">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="direccion">Direccion</label>
-                                <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="Calle Laureles #221, Colonia Jurica, 76060, Querétaro.">
+                                <input class="form-control" id="direccion" name="direccion" aria-describedby="direccionHelp" placeholder="Calle Laureles #221, Colonia Jurica, 76060, Querétaro.">
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono o Celular</label>
-                                <input class="form-control" id="telefono" aria-describedby="telefonoHelp" placeholder="442 235 5641">
+                                <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" placeholder="442 235 5641">
                             </div>
                             <label for="fechaN">Fecha de nacimiento</label>
-                            <input id="datepicker" placeholder="12/01/1950">
-                            <label for="MetodoPago">Metodo de pago</label>
-                            <select class="form-control">
-                                <option>Tarjeta de crédito</option>
-                                <option>Transferencia</option>
-                                <option>Cheque</option>
-                                <option>Otro</option>
+                            <input type="date"  name="fechaN" id="fechaN" placeholder="12/01/1950">
+                            <label for="metodoPago">Metodo de pago</label>
+                            <select class="form-control" name="metodoPago" id="MetodoPago">
+                                <option value="M0">Tarjeta de crédito</option>
+                                <option value="M02">Transferencia</option>
+                                <option value="M03">Cheque</option>
+                                <option value="M04">Otro</option>
                             </select>
                             <div class="form-group">
-                                <label for="numeroC">Número de cuenta</label>
-                                <input class="form-control" id="numeroC" aria-describedby="numeroCHelp" placeholder="5491 3888 7544 7025">
-                            </div>
-                            <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
-                                <input class="form-control" id="observaciones" aria-describedby="observacionesHelp" placeholder="Fecha de vencimiento: 06/18">
+                                <input class="form-control" id="observaciones" name="observaciones" aria-describedby="observacionesHelp" placeholder="Fecha de vencimiento: 06/18">
                             </div>
                             <div class="form-group">
                                 <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                                <input class="form-control" name="cfdi" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
+                    <button class="btn btn-primary" role="submit" type="submit">Guardar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
 
