@@ -679,7 +679,7 @@ INSERT INTO `usuario` (`Email`, `Pswd`,`Nombre`,`Telefono`) VALUES
 ('angelica@mail.com', 'abcdef','Angelica','(244) 148-0331'),
 ('cesar@mail.com', 'sa=9asd','cesar','(515) 336-7754'),
 ('dagoberto@mail.com', '123sada','dagoberto','(334) 303-8323'),
-('jaunpi@mail.com', 'ipnuaj','jaunpi','(617) 476-2078'),
+('juanpi@mail.com', 'ipnuaj','juanpi','(617) 476-2078'),
 ('joaquin@mail.com', 'asdasfas','Joaquin','(935) 529-7241'),
 ('lalo@mail.com', 'hockey','lalo','(395) 467-2922'),
 ('marcelo@mail.com', '1+92as','marcelo','(513) 740-9459'),
@@ -733,9 +733,12 @@ INSERT INTO `usuario_rol` (`Email`, `IdRol`, `Fecha`) VALUES
 ('angelica@mail.com', 'R02', '2018-01-09 00:00:00'),
 ('dagoberto@mail.com', 'R03', '2018-01-11 00:00:00'),
 ('marcelo@mail.com', 'R06', '2018-01-12 00:00:00'),
-('jaunpi@mail.com', 'R05', '2018-01-14 00:00:00'),
+('juanpi@mail.com', 'R05', '2018-01-14 00:00:00'),
 ('lalo@mail.com', 'R04', '2018-01-16 00:00:00'),
-('peponks@mail.com', 'R04', '2018-01-17 00:00:00'),
+('peponks@mail.com', 'R06', '2018-01-17 00:00:00'),
+('admon@mail.com', 'R01', '2015-01-17 00:00:00'),
+('cesar@mail.com', 'R02', '2014-01-17 00:00:00'),
+('joaquin@mail.com', 'R04', '2018-01-17 00:00:00'),
 ('suzana@mail.com', 'R01', '2018-02-17 00:00:00');
 
 CREATE TABLE `mision` (
