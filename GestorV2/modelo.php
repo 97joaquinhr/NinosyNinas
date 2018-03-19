@@ -152,8 +152,9 @@
 function getDonadores() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, Email, Validado FROM donadores WHERE Validado = 1 ORDER BY Nombre ASC LIMIT 10 ';
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 10 ';
         $results = $db->query($query);
+
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
@@ -171,7 +172,7 @@ function getDonadores() {
                                     <strong>Email</strong> '.$fila["Email"].'
                                 </div>
                             </div>
-                            <strong>Registrado desde: </strong> 12/12/1999 
+                            <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
                             </div> 
                             </a>';
         }
