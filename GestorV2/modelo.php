@@ -152,32 +152,34 @@
 function getDonadores() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 10 ';
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 5 ';
         $results = $db->query($query);
 
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-            $html .= '                   
-                            <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].'">
-                             <div class="media-body">
-                              <div class="row">
-                                <div class="col-sm">
-                                    <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
-                                </div>
-                                <div class="col-sm">
-                                    <strong>Telefono:</strong> '.$fila["Telefono"].'
-                                </div>
-                                <div class="col-sm">
-                                    <strong>Email</strong> '.$fila["Email"].'
-                                </div>
-                            </div>
-                            <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
-                            </div> 
-                            </a>';
+            $html .= '
+<a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].'">
+    <div class="media">
+        <div class="media-body">
+            <div class="row">
+                <div class="col-sm">
+                    <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
+                </div>
+                <div class="col-sm">
+                    <strong>Telefono:</strong> '.$fila["Telefono"].'
+                </div>
+                <div class="col-sm">
+                    <strong>Email</strong> '.$fila["Email"].'
+                </div>
+            </div>
+            <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
+        </div>
+    </div>
+</a>';
         }
 
-        echo $html.'</div></div></a>';
+        echo $html;
         // it releases the associated results
         mysqli_free_result($results);
         disconnect($db);

@@ -24,7 +24,7 @@
         // Tag to close content wrapper
         include("partials/_page_content_wrapper_end.html");
         // Additional Scripts and Modals can be included here
-        include("partials/_noticias_modals.html");
+        include("partials/_usuario_modals.html");
         include("partials/_common_js.html");
         echo   '<script src="https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
                 <script src="js/comportamiento.js"></script>
