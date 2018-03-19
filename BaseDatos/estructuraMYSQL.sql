@@ -1,4 +1,4 @@
-drop table if exists Donadores_UsoCFDI;
+drop table if exists donadores_usocfdi;
 drop table if exists Donadores_MetodoPago;
 drop table if exists Rol_Funcion;
 drop table if exists Usuario_Rol;

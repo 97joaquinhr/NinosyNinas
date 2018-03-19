@@ -624,6 +624,7 @@ INSERT INTO `thumbnail` (`Thurl`) VALUES
 -- Table structure for table `usocfdi`
 --
 
+
 CREATE TABLE `usocfdi` (
   `IdCFDI` char(3) NOT NULL,
   `Nombre` text
