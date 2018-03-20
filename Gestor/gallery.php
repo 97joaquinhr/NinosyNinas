@@ -1,4 +1,3 @@
-
 <?php
 include("html/partials/_header.html")?>
 
@@ -18,7 +17,7 @@ include("html/partials/_header.html")?>
                                     <div class="col">
                                         <div class="float-right">
                                             <button onclick="showDelete()" type="button" class="btn btn-danger mx-3" data-toggle="tooltip" data-placement="top" title="Eliminar elementos seleccionados">Eliminar <i class="fas fa-trash-alt"></i></button>
-                                            <button onclick="showAdd()" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Agregar nuevo archivo">Agregar <i class="fas fa-plus"></i></button>
+                                            <button onclick="showAdd()" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Agregar nuevo archivo">Agregar <i class="fas fa-plus"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -277,7 +276,7 @@ include("html/partials/_header.html")?>
                     <input type="file" id="theFile" class="sr-only">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Subir</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

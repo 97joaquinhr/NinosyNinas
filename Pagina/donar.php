@@ -18,35 +18,22 @@ include("html/partials/_header.html");
         <br>
         <div class="container-fluid">
             <div class="card-deck">
-            <div class="card px-6">
-                <div class="card-block">
-                    <div class="container">
+                <div class="card shadow round" style="width: 18rem;">
+                    <div class="card-body">
                         <h2 class="card-title">Donar via PayPal</h2>
-                        <br>
-                        <!--Boton para donar en paypal-->
-                        <button type="button " class="btn btn-primary">Donar</button>
-                        <br>
-                        <br>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
                         <p class="card-text">Donación única a través de tu cuenta de paypal</p>
+                        <button type="button" class="btn bg-pink text-white shadow botrosa">Donar</button>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-block ">
-                    <div class="container">
-                    <h2 class="card-title">Regístrate como donador</h2>
-                    <br>
-                    <!-- Button trigger modal -->
-                    <a class="btn btn-primary" href="php/registrarDonador.php" role="button">
-                      Regístrate
-                    </a>
-                    <br>
-                    <br>
-                    <p class="card-text py">Nos pondremos en contacto contigo en cuanto termines tu registro</p>
-                    <br>
+                <div class="card shadow round" style="width: 18rem;">
+                    <div class="card-body">
+                        <h2 class="card-title">Regístrate como donador</h2>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text">Nos pondremos en contacto contigo en cuanto termines tu registro</p>
+                        <a class="btn bg-pink text-white shadow botrosa" href="registrarDonador.php" role="button">Regístrate</a>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
         <br>

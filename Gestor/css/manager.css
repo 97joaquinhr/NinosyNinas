@@ -8,10 +8,17 @@ font-family: 'Exo', sans-serif;
 font-family: 'Jaldi', sans-serif;
 font-family: 'Fjalla One', sans-serif;
 */
+body {
+    font-family: 'Quicksand' !important;
+}
 
+a {
+    font-family: 'Quicksand' !important;
+}
 
 h2 {
-	font-family: 'Fjalla One', sans-serif;
+	font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
 }
 
 body {

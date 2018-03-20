@@ -9,16 +9,18 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>LAB 13: Sesiones</title>
+        <title>Niños y Niñas de México A.C.</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="css/manager.css" rel="stylesheet">
+        <link href="css/general.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Saira+Condensed|Yanone+Kaffeesatz" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand|Roboto" rel="stylesheet">
 
         <!-- Font Awesome -->
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
@@ -32,18 +34,18 @@
 
     <body class="bg-dark">
         <div class="container mx-auto">
-            <div class="card card-login mx-auto mt-5">
+            <div class="card card-login mx-auto mt-2">
                 <div class="card-header">Iniciar Sesión</div>
                 <div class="card-body">
                     <img src="images/logo_notext.png" class="img img-fluid">
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Correo Electrónico</label>
-                            <input name="usuario" class="form-control" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input name="usuario" class="form-control" id="exampleInputEmail1" type="text" aria-describedby="emailHelp" placeholder="ejemplo@mail.com">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Contraseña</label>
-                            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+                            <input name="password" class="form-control" id="exampleInputPassword1" type="password" placeholder="******">
                         </div>
                         <div class="form-group">
                             <div class="form-check">
@@ -54,7 +56,7 @@
                     </form>
                     <a class="btn btn-primary btn-block" href="dashboard.php">Enviar</a>
                     <div class="text-center">
-                        <a class="d-block small mt-3" href="forgot-password.html">Olvidaste tu clave?</a>
+                        <a class="d-block small mt-3" href="forgot-password.html">Olvidé mi contraseña</a>
                     </div>
                 </div>
             </div>

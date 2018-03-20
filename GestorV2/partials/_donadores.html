@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <h2>Donadores</h2>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bell-o"></i>Donadores
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-secondary" type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="list-group list-group-flush small">
+            <?php
+                getDonadores();
+            ?>
+            <button data-toggle="modal" data-target="#new" class="btn btn-primary">Nuevo registro</button>
+        </div>
+    </div>
+
+</div>
