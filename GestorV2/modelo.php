@@ -1,7 +1,7 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-        //$mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
+        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
         return $mysql;
     }
