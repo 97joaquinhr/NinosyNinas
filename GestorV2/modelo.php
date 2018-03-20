@@ -152,14 +152,21 @@
 function getDonadores() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 10 ';
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 1 
+                ORDER BY Nombre ASC 
+                LIMIT 10 ';
         $results = $db->query($query);
 
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
             $html .= '                   
-                            <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'">
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
                              <div class="media-body">
                               <div class="row">
                                 <div class="col-sm">
@@ -239,4 +246,78 @@ function addRol($idRol, $Nombre){
         }
         return false;
 }
+function getDonadorInfo($email){
+  $html = '<div id="donadorInfo" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Juan Carlos Garzón Rincón</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row px-3">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <strong>Datos de Contacto</strong>
+                                        <div class="card-body-icon-r">
+                                            <i class="fas fa-id-card fa-fw"></i>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><strong>Correo</strong><span id="prev_email" class="card-text float-right">jgarzon@marhnos.com.mx</span></li>
+                                        <li class="list-group-item"><strong>Dirección</strong><span class="card-text float-right">Calle Laureles #221, Colonia Jurica, 76060, Querétaro.</span></li>
+                                        <li class="list-group-item"><strong>Teléfono</strong><span class="card-text float-right">+52 (442) 235 5641</span></li>
+                                        <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span class="card-text float-right">12/01/1950</span></li>
+                                    </ul>
+                                    <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center my-4 py-4">
+                                <span>
+                                    <button type="button" class="btn btn-primary btn-circle btn-xl shadow"><i class="fas fa-envelope"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">UsoCFDI</div>
+                            <div class="card-body">Registro de preferencias de donación</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>G03</strong><span class="card-text float-right">Alimentos</span></li>
+                            </ul>
+                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header">Datos de Donación</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right">GARJ500112MP4</span></li>
+                                <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right">Tarjeta</span><span class="badge badge-primary mx-1 float-right">Transferencia</span></li>
+                                <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right">Blah blah blah...</span></li>
+                            </ul>
+                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button><!-- Hay que moverlo a la derecha -->
+                <button type="button" class="btn btn-primary" onclick="edit()">Editar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+';
+
+  echo $html;
+    }
+
 ?>
