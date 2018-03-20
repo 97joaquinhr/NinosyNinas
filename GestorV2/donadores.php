@@ -20,7 +20,7 @@
         // Content
         include("partials/_donadores.html");
         // Content Footer
-        include("partials/_footer.html");
+      //  include("partials/_footer.html");
         // Tag to close content wrapper
         include("partials/_page_content_wrapper_end.html");
         // Additional Scripts and Modals can be included here
