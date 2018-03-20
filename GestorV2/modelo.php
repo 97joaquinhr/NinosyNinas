@@ -1,8 +1,15 @@
 <?php
     function connect() {
-        //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        $env = "prod";
+        if ($env == "dev") {
+            $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
+        } else if ($env == "prod") {
+            $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        }
+
+
         $mysql->set_charset("utf8");
+
         return $mysql;
     }
 
@@ -270,7 +277,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, Telefono, Email FROM Usuario ORDER BY Nombre ASC';
+        $query='SELECT Nombre, Telefono, Email FROM usuario ORDER BY Nombre ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -292,9 +299,11 @@ function getUsuarios() {
 
 function getNoticias() {
     $db = connect();
+
     if ($db != NULL) {
-        $query='SELECT Titulo, Fecha FROM Noticia';
+        $query='SELECT Titulo, Fecha FROM noticia';
         $sql = $db->query($query);
+
 
         $result = mysqli_query($db,$query);
         disconnect($db);
