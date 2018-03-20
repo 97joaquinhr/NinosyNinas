@@ -1,7 +1,7 @@
 <?php
     function connect() {
-        //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        $mysql = mysqli_connect("localhost","root","","ninos");
+        //$mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
         return $mysql;
     }
@@ -324,4 +324,40 @@ function getNoticias() {
     return false;
 }
 
+
+function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel,$ocupacion, $idMetodo,$obs){
+        $db = connect();
+        if($db != NULL){
+            $query = 'UPDATE donadores
+                      SET Nombre = "'.$nombre.'",
+                      ApellidoPaterno = "'.$apellidoPaterno.'",
+                      ApellidoMaterno = "'.$apellidoMaterno.'",
+                      FechadeNacimiento = "'.$fechaN.'",
+                      Direccion = "'.$dir.'",
+                      Telefono = "'.$tel.'",
+                      Email = "'.$email.'",
+                      Ocupacion = "'.$ocupacion.'"
+                      WHERE Email = "'.$email.'" ';
+
+//            $query2 = 'UPDATE donadores_metodopago
+//                        SET IdMetodo = "'.$idMetodo.'",
+//                        Email = "'.$email.'",
+//                        Observaciones = "'.$obs.'"
+//                        WHERE Email = "'.$email.'"';
+//            if (mysqli_query($db, $query2)) {
+//                echo "Record 2 updated successfully";
+//            } else {
+//                echo "Error updating record 2: " . mysqli_error($db);
+//            }
+
+            if (mysqli_query($db, $query)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($db);
+            }
+
+
+
+        }
+}
 ?>
