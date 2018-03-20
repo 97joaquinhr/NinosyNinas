@@ -582,41 +582,6 @@ INSERT INTO `rol_funcion` (`IdFuncion`, `IdRol`) VALUES
 ('F021', 'R01'),
 ('F022', 'R01');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `thumbnail`
---
-
-CREATE TABLE `thumbnail` (
-  `Thurl` varchar(254) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `thumbnail`
---
-
-INSERT INTO `thumbnail` (`Thurl`) VALUES
-('thurl/ipsum1.jpg'),
-('thurl/ipsum10.jpg'),
-('thurl/ipsum11.jpg'),
-('thurl/ipsum12.jpg'),
-('thurl/ipsum13.jpg'),
-('thurl/ipsum14.jpg'),
-('thurl/ipsum15.jpg'),
-('thurl/ipsum16.jpg'),
-('thurl/ipsum17.jpg'),
-('thurl/ipsum18.jpg'),
-('thurl/ipsum19.jpg'),
-('thurl/ipsum2.jpg'),
-('thurl/ipsum20.jpg'),
-('thurl/ipsum3.jpg'),
-('thurl/ipsum4.jpg'),
-('thurl/ipsum5.jpg'),
-('thurl/ipsum6.jpg'),
-('thurl/ipsum7.jpg'),
-('thurl/ipsum8.jpg'),
-('thurl/ipsum9.jpg');
 
 -- --------------------------------------------------------
 
@@ -1013,12 +978,6 @@ ALTER TABLE `rol`
 ALTER TABLE `rol_funcion`
   ADD KEY `fkIdFuncion_RF` (`IdFuncion`),
   ADD KEY `fkIdRol_RF` (`IdRol`);
-
---
--- Indexes for table `thumbnail`
---
-ALTER TABLE `thumbnail`
-  ADD PRIMARY KEY (`Thurl`);
 
 --
 -- Indexes for table `usocfdi`
