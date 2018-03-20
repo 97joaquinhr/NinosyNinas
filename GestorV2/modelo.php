@@ -197,22 +197,28 @@ function getDonadores() {
 function getDonadores2() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC';
-        $sql = $db->query($query);
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 1 
+                ORDER BY Nombre ASC ';
 
-        $result = mysqli_query($db,$query);
-        disconnect($db);
+        $results = $db->query($query);
+        $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class=''>";
-                echo "<td>" . $row["Nombre"] . " " . $row["ApellidoPaterno"] . " " . $row["ApellidoMaterno"] . "</td>";
-                echo "<td>" . $row["Telefono"] . "</td>";
-                echo "<td>" . $row["Email"] . "</td>";
-                echo "<td>" . $row["Fecha"] . "</td>";
-                echo "</tr>";
+            while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+                $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
+                 <td>'. $row["Telefono"] .'</td>
+                 <td>'. $row["Email"] .'</td>
+                 <td>'. $row["Fecha"] .'</td>
+                 </tr>';
             }
-        }
+        echo $html;
+        disconnect($db);
         return true;
     }
     return false;

@@ -1,5 +1,22 @@
-function generateModal(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI,RFC, metodo, obs){
+var email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs;
 
+
+
+function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs){
+    this.email = email;
+    this.nombre = nombre;
+    this.apellidoP = apellidoP;
+    this.apellidoM = apellidoM;
+    this.tel = tel;
+    this.dir =dir;
+    this.fechaN = fechaN;
+    this.idCFDI = idCFDI;
+    this.RFC = RFC;
+    this.metodo = metodo;
+    this.obs = obs;
+    generateModal();
+}
+function generateModal(){
     document.getElementById('prev_nom').innerHTML = nombre + ' ' +apellidoP + ' ' +apellidoM;
     document.getElementById('prev_email').innerHTML = email;
     document.getElementById('prev_dir').innerHTML = dir;
@@ -9,8 +26,20 @@ function generateModal(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, id
     document.getElementById('prev_RFC').innerHTML = RFC;
     document.getElementById('prev_metodo').innerHTML = metodo;
     document.getElementById('prev_obs').innerHTML = obs;
-   // document.getElementById('prev_cfDesc').innerHTML = cfDesc;
 
+}
+
+function generateEdit(){
+    $('input[name="ed_nom"]').val(nombre);
+    $('input[name="ed_apellidoP"]').val(apellidoP);
+    $('input[name="ed_apellidoM"]').val(apellidoM);
+    $('input[name="ed_RFC"]').val(RFC);
+    $('input[name="ed_email"]').val(email);
+    $('input[name="ed_dir"]').val(dir);
+    $('input[name="ed_tel"]').val(tel);
+    $('input[name="ed_fechaN"]').val(fechaN);
+    $('input[name="ed_obs"]').val(obs);
+    $('input[name="ed_usoCFDI"]').val(idCFDI);
 
 }
 
