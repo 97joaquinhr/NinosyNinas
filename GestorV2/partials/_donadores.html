@@ -33,6 +33,75 @@
             <button data-toggle="modal" data-target="#new" class="btn btn-primary">Nuevo registro</button>
         </div>
     </div>
+
+</div>
+<div id="donadorInfo" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="prev_nom"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row px-3">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <strong>Datos de Contacto</strong>
+                                        <div class="card-body-icon-r">
+                                            <i class="fas fa-id-card fa-fw"></i>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><strong>Correo</strong><span id="prev_email" class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Dirección</strong><span id="prev_dir"  class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Teléfono</strong><span id="prev_tel" class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span id="prev_fechaN" class="card-text float-right"></span></li>
+                                    </ul>
+                                    <div class="card-footer small text-muted">creado en: </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center my-4 py-4">
+                                <span>
+                                    <button type="button" class="btn btn-primary btn-circle btn-xl shadow"><i class="fas fa-envelope"></i></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">UsoCFDI</div>
+                            <div class="card-body">Registro de preferencias de donación</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong id="prev_usoCFDI"></strong><span class="card-text float-right" id="prev_cfDesc"></span></li>
+                            </ul>
+                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header">Datos de Donación</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right" id="prev_RFC"></span></li>
+                                <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right" id="prev_metodo"></span>
+                                <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right" id="prev_obs"></span></li>
+                            </ul>
+                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button><!-- Hay que moverlo a la derecha -->
+                <button type="button" class="btn btn-primary" onclick="edit()">Editar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="js/ajax.js"></script>
 

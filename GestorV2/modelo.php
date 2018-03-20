@@ -153,28 +153,33 @@
 function getDonadores() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 5 ';
+
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 1 
+                ORDER BY Nombre ASC 
+                LIMIT 10 ';
         $results = $db->query($query);
 
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-            $html .= '
-                        <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].' id="'.$fila["Email"].'">
-                            <div class="media">
-                                <div class="media-body">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
-                                        </div>
-                                        <div class="col-sm">
-                                            <strong>Telefono:</strong> '.$fila["Telefono"].'
-                                        </div>
-                                        <div class="col-sm">
-                                            <strong>Email</strong> '.$fila["Email"].'
-                                        </div>
-                                    </div>
-                                    <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
+
+            $html .= '                   
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+                             <div class="media-body">
+                              <div class="row">
+                                <div class="col-sm">
+                                    <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
+                                </div>
+                                <div class="col-sm">
+                                    <strong>Telefono:</strong> '.$fila["Telefono"].'
+                                </div>
+                                <div class="col-sm">
+                                    <strong>Email</strong> '.$fila["Email"].'
                                 </div>
                             </div>
                         </a>';
@@ -267,6 +272,7 @@ function addRol($idRol, $Nombre){
         return false;
 }
 
+
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
@@ -311,4 +317,5 @@ function getNoticias() {
     }
     return false;
 }
+
 ?>
