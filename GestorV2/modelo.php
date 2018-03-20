@@ -1,6 +1,7 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
+        //$mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
         return $mysql;
     }
@@ -159,30 +160,54 @@ function getDonadores() {
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
             $html .= '
-<a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].' id="'.$fila["Email"].'">
-    <div class="media">
-        <div class="media-body">
-            <div class="row">
-                <div class="col-sm">
-                    <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
-                </div>
-                <div class="col-sm">
-                    <strong>Telefono:</strong> '.$fila["Telefono"].'
-                </div>
-                <div class="col-sm">
-                    <strong>Email</strong> '.$fila["Email"].'
-                </div>
-            </div>
-            <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
-        </div>
-    </div>
-</a>';
+                        <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].' id="'.$fila["Email"].'">
+                            <div class="media">
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
+                                        </div>
+                                        <div class="col-sm">
+                                            <strong>Telefono:</strong> '.$fila["Telefono"].'
+                                        </div>
+                                        <div class="col-sm">
+                                            <strong>Email</strong> '.$fila["Email"].'
+                                        </div>
+                                    </div>
+                                    <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
+                                </div>
+                            </div>
+                        </a>';
         }
 
         echo $html;
         // it releases the associated results
         mysqli_free_result($results);
         disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function getDonadores2() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        disconnect($db);
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class=''>";
+                echo "<td>" . $row["Nombre"] . " " . $row["ApellidoPaterno"] . " " . $row["ApellidoMaterno"] . "</td>";
+                echo "<td>" . $row["Telefono"] . "</td>";
+                echo "<td>" . $row["Email"] . "</td>";
+                echo "<td>" . $row["Fecha"] . "</td>";
+                echo "</tr>";
+            }
+        }
         return true;
     }
     return false;
@@ -240,5 +265,50 @@ function addRol($idRol, $Nombre){
             return true;
         }
         return false;
+}
+
+function getUsuarios() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Nombre, Telefono, Email FROM Usuario ORDER BY Nombre ASC';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        disconnect($db);
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class=''>";
+                echo "<td>" . $row["Nombre"] . "</td>";
+                echo "<td>" . $row["Telefono"] . "</td>";
+                echo "<td>" . $row["Email"] . "</td>";
+                echo "</tr>";
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+function getNoticias() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Titulo, Fecha FROM Noticia';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        disconnect($db);
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<tr class='' data-toggle=\"modal\" data-target=\"#myModal\">";
+                echo "<td>" . $row["Titulo"] . "</td>";
+                echo "<td>" . $row["Fecha"] . "</td>";
+                echo "</tr>";
+            }
+        }
+        return true;
+    }
+    return false;
 }
 ?>

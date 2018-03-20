@@ -1,13 +1,12 @@
 <?php
     session_start();
-
+    require_once("modelo.php");
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
         $nombre = $_SESSION["nombre"];
         $rol = $_SESSION["rol"];
         $funciones = $_SESSION["funciones"];
         $view = "usuario";
-
 
         // Head and body tag
         include("partials/_header.html");
@@ -36,3 +35,5 @@
         header("location: index.php");
     }
 ?>
+
+

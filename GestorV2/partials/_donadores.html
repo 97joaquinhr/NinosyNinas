@@ -6,15 +6,28 @@
                 <div class="card-header">
                     <i class="fa fa-bell-o"></i>Donadores
                     <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-secondary" type="submit">Buscar</button>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
                     </form>
                 </div>
-                <div class="list-group list-group-flush small">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Registrado Desde</th>
+                    </tr>
+                    </thead>
+                    <tbody id="myTable">
+                    <?php getDonadores2();?>
+                    </tbody>
+                </table>
+                <div class="list-group list-group-flush small" id="myDIV">
                     <?php
                         getDonadores();
                     ?>
                 </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             </div>
         </div>
     </div>
