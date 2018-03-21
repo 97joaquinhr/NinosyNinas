@@ -1,5 +1,8 @@
-function showDelete(filepath) {
-    $('#delete').modal('show')
+function showDelete(nombre) {
+    var boton = "<a href='eliminar_galeria.php?q=" + nombre + "' class='btn btn-danger'>Eliminar</button>"
+    $('#del_nombre').html(nombre);
+    $('#del_button').html(boton);
+    $('#delete').modal('show');
 }
 
 function showAdd() {
@@ -12,11 +15,6 @@ function preview(filepath, nombre) {
     $('#prev_nombre').html(nombre);
     $('#preview').modal('show');
 
-}
-
-function edit() {
-    $('#preview').modal('hide');
-    $('#edit').modal('show');
 }
 
 function performClick(elemId) {
