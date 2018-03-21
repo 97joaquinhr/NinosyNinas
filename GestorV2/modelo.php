@@ -1,7 +1,7 @@
 <?php
     function connect() {
-        $mysql = mysqli_connect("localhost","root","","ninos");
-        //$mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        //$mysql = mysqli_connect("localhost","root","","ninos");
+        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
         return $mysql;
     }
@@ -325,7 +325,7 @@ function getNoticias() {
 }
 
 
-function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel,$ocupacion, $idMetodo,$obs){
+function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel,$ocupacion, $idMetodo,$obs, $idCfdi){
         $db = connect();
         if($db != NULL){
             $query = 'UPDATE donadores
@@ -339,21 +339,25 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
                       Ocupacion = "'.$ocupacion.'"
                       WHERE Email = "'.$email.'" ';
 
-            $query2 = ' 
-                        SET FOREIGN_KEY_CHECKS=0
-                        UPDATE donadores_metodopago
-                        
-                        Observaciones = "'.$obs.'"
-                        WHERE Email = "'.$email.'"
-                        SET FOREIGN_KEY_CHECKS=1
+            $query2 = 'UPDATE donadores_metodopago
+                       SET Observaciones = "'.$obs.'",
+                       IdMetodo = "'.$idMetodo.'"
+                       WHERE Email = "'.$email.'"';
 
-                        ';
+            $query3 = 'UPDATE donadores_usocfdi
+                       SET IdCFDI = "'.$idCfdi.'"
+                       ';
+
+            if (mysqli_query($db, $query3)) {
+                echo "Record 3 updated successfully";
+            } else {
+                echo "Error updating record 3: " . mysqli_error($db);
+            }
             if (mysqli_query($db, $query2)) {
                 echo "Record 2 updated successfully";
             } else {
                 echo "Error updating record 2: " . mysqli_error($db);
             }
-
             if (mysqli_query($db, $query)) {
                 echo "Record updated successfully";
             } else {

@@ -1,4 +1,5 @@
 <?php
     require_once ("modelo.php");
-    modificarDonador('ahill609@llihaicila.biz','AAAAAA', 'AAAAA', 'AAAAA','1999/01/01', 'Mi casa', '4422813518', 'ES GORDO0', 'M10','LE GUSTA LA NUTELLA');
-?>
+    modificarDonador($_POST["ed_email"],$_POST["ed_nom"], $_POST["ed_apellidoP"], $_POST["ed_apellidoM"],$_POST["ed_fechaN"], $_POST["ed_dir"], $_POST["ed_tel"], 'ES GORDO0', 'M03',$_POST["ed_obs"],$_POST["ed_usoCFDI"]);
+    header("Location: donadores.php");
+    ?>
