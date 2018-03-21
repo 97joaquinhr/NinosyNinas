@@ -368,4 +368,35 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
 
         }
 }
+
+function eliminarDonador($email){
+        $db = connect();
+    if($db!= NULL){
+        $query = 'DELETE FROM donadores
+                       WHERE Email = $email ';
+
+        $query2 = 'DELETE FROM donadores_metodopago
+                       WHERE Email = $email ';
+
+        $query3 = 'DELETE FROM donadores_usocfdi
+                       WHERE Email = $email ';
+
+        if (mysqli_query($db, $query3)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query2)) {
+            echo "Record 2 updated successfully";
+        } else {
+            echo "Error updating record 2: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($db);
+        }
+
+    }
+}
 ?>

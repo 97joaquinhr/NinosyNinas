@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Eliminar</button>
+                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar">Eliminar</button>
                 <button type="button" data-target="#edit" data-toggle="modal" class="btn btn-primary" onclick="generateEdit()">Editar</button>
             </div>
         </div>
@@ -217,6 +217,24 @@
                 </div>
 
             </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirmar-borrar" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                ¿Borrar?
+            </div>
+            <div class="modal-body">
+                ¿Estas seguro que quieres eliminar este registro de la base de datos?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Borrar</button>
+                <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+            </div>
         </div>
     </div>
 </div>
