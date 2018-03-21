@@ -338,32 +338,31 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
     return false;
 }
 
-function make_thumb($file, $dest, $desired_width) {
+function make_thumb($file, $dest) {
+
     $what = getimagesize($file);
-    $file_name = basename($file);
+    print_r($what);
+//    echo $what["width"] . $what["height"];
     switch(strtolower($what['mime'])){
         case 'image/png':
             $img = imagecreatefrompng($file);
-            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
-            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
-            header('Content-Type: image/png');
+
         break;
         case 'image/jpeg':
             $img = imagecreatefromjpeg($file);
-            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
-            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
-            header('Content-Type: image/jpeg');
+
         break;
         case 'image/gif':
             $img = imagecreatefromgif($file);
-            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
-            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
-            header('Content-Type: image/gif');
         break;
         default: die();
     }
-    imagejpeg($new,"uploads/gallery/thumbnails/test.jpg");
+    $new = imagecreatetruecolor(320,180);
+    imagecopyresampled($new,$img,0,0,0,0,
+        320,180, $what[0],$what[1]);
+    imagejpeg($new,$dest);
     imagedestroy($new);
+    return true;
 
 }
 ?>
