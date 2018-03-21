@@ -1,10 +1,11 @@
 <?php
-function connect() {
-    //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-    $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
-    $mysql->set_charset("utf8");
-    return $mysql;
-}
+
+    function connect() {
+        //$mysql = mysqli_connect("localhost","root","","ninos");
+        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        $mysql->set_charset("utf8");
+        return $mysql;
+    }
 
 function disconnect($mysql) {
     mysqli_close($mysql);
@@ -153,28 +154,33 @@ function getFunciones($rol) {
 function getDonadores() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC LIMIT 5 ';
+
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 1 
+                ORDER BY Nombre ASC 
+                LIMIT 10 ';
         $results = $db->query($query);
 
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-            $html .= '
-                        <a class="list-group-item list-group-item-action" data-toggle="modal" data-target="#donadorInfo" name="'.$fila["Email"].' id="'.$fila["Email"].'">
-                            <div class="media">
-                                <div class="media-body">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
-                                        </div>
-                                        <div class="col-sm">
-                                            <strong>Telefono:</strong> '.$fila["Telefono"].'
-                                        </div>
-                                        <div class="col-sm">
-                                            <strong>Email</strong> '.$fila["Email"].'
-                                        </div>
-                                    </div>
-                                    <strong>Registrado desde: </strong>  '.$fila["Fecha"].'
+
+            $html .= '                   
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+                             <div class="media-body">
+                              <div class="row">
+                                <div class="col-sm">
+                                    <strong>Nombre:</strong> '.$fila["Nombre"].' '." ".'  '.$fila["ApellidoPaterno"].' '." ".' '.$fila["ApellidoMaterno"].'
+                                </div>
+                                <div class="col-sm">
+                                    <strong>Telefono:</strong> '.$fila["Telefono"].'
+                                </div>
+                                <div class="col-sm">
+                                    <strong>Email</strong> '.$fila["Email"].'
                                 </div>
                             </div>
                         </a>';
@@ -192,22 +198,28 @@ function getDonadores() {
 function getDonadores2() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha FROM donadores d, donadores_metodopago dm WHERE d.Email=dm.Email AND Validado = 1 ORDER BY Nombre ASC';
-        $sql = $db->query($query);
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 1 
+                ORDER BY Nombre ASC ';
 
-        $result = mysqli_query($db,$query);
-        disconnect($db);
+        $results = $db->query($query);
+        $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class=''>";
-                echo "<td>" . $row["Nombre"] . " " . $row["ApellidoPaterno"] . " " . $row["ApellidoMaterno"] . "</td>";
-                echo "<td>" . $row["Telefono"] . "</td>";
-                echo "<td>" . $row["Email"] . "</td>";
-                echo "<td>" . $row["Fecha"] . "</td>";
-                echo "</tr>";
+            while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+                $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
+                 <td>'. $row["Telefono"] .'</td>
+                 <td>'. $row["Email"] .'</td>
+                 <td>'. $row["Fecha"] .'</td>
+                 </tr>';
             }
-        }
+        echo $html;
+        disconnect($db);
         return true;
     }
     return false;
@@ -267,6 +279,7 @@ function addRol($idRol, $Nombre){
     }
     return false;
 }
+
 
 function getUsuarios() {
     $db = connect();
@@ -456,5 +469,79 @@ function make_thumb($file, $dest) {
     imagedestroy($new);
     return true;
 
+
+function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel,$ocupacion, $idMetodo,$obs, $idCfdi){
+        $db = connect();
+        if($db != NULL){
+            $query = 'UPDATE donadores
+                      SET Nombre = "'.$nombre.'",
+                      ApellidoPaterno = "'.$apellidoPaterno.'",
+                      ApellidoMaterno = "'.$apellidoMaterno.'",
+                      FechadeNacimiento = "'.$fechaN.'",
+                      Direccion = "'.$dir.'",
+                      Telefono = "'.$tel.'",
+                      Email = "'.$email.'",
+                      Ocupacion = "'.$ocupacion.'"
+                      WHERE Email = "'.$email.'" ';
+
+            $query2 = 'UPDATE donadores_metodopago
+                       SET Observaciones = "'.$obs.'",
+                       IdMetodo = "'.$idMetodo.'"
+                       WHERE Email = "'.$email.'"';
+
+            $query3 = 'UPDATE donadores_usocfdi
+                       SET IdCFDI = "'.$idCfdi.'"
+                       ';
+
+            if (mysqli_query($db, $query3)) {
+                echo "Record 3 updated successfully";
+            } else {
+                echo "Error updating record 3: " . mysqli_error($db);
+            }
+            if (mysqli_query($db, $query2)) {
+                echo "Record 2 updated successfully";
+            } else {
+                echo "Error updating record 2: " . mysqli_error($db);
+            }
+            if (mysqli_query($db, $query)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($db);
+            }
+
+
+
+        }
+}
+
+function eliminarDonador($email){
+        $db = connect();
+    if($db!= NULL){
+        $query = 'DELETE FROM donadores
+                       WHERE Email = $email ';
+
+        $query2 = 'DELETE FROM donadores_metodopago
+                       WHERE Email = $email ';
+
+        $query3 = 'DELETE FROM donadores_usocfdi
+                       WHERE Email = $email ';
+
+        if (mysqli_query($db, $query3)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query2)) {
+            echo "Record 2 updated successfully";
+        } else {
+            echo "Error updating record 2: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($db);
+        }
+
+    }
 }
 ?>
