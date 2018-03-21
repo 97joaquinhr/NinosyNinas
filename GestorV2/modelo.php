@@ -339,16 +339,20 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
                       Ocupacion = "'.$ocupacion.'"
                       WHERE Email = "'.$email.'" ';
 
-//            $query2 = 'UPDATE donadores_metodopago
-//                        SET IdMetodo = "'.$idMetodo.'",
-//                        Email = "'.$email.'",
-//                        Observaciones = "'.$obs.'"
-//                        WHERE Email = "'.$email.'"';
-//            if (mysqli_query($db, $query2)) {
-//                echo "Record 2 updated successfully";
-//            } else {
-//                echo "Error updating record 2: " . mysqli_error($db);
-//            }
+            $query2 = ' 
+                        SET FOREIGN_KEY_CHECKS=0
+                        UPDATE donadores_metodopago
+                        
+                        Observaciones = "'.$obs.'"
+                        WHERE Email = "'.$email.'"
+                        SET FOREIGN_KEY_CHECKS=1
+
+                        ';
+            if (mysqli_query($db, $query2)) {
+                echo "Record 2 updated successfully";
+            } else {
+                echo "Error updating record 2: " . mysqli_error($db);
+            }
 
             if (mysqli_query($db, $query)) {
                 echo "Record updated successfully";
