@@ -442,7 +442,8 @@ function getGaleriaPagina() {
     return false;
 }
 
-function make_thumb($file, $dest) {
+function make_thumb($file, $dest)
+{
 
     $what = getimagesize($file);
     print_r($what);
@@ -468,29 +469,30 @@ function make_thumb($file, $dest) {
     imagejpeg($new, $dest);
     imagedestroy($new);
     return true;
+}
 
-
-function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel,$ocupacion, $idMetodo,$obs, $idCfdi){
+    function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi)
+    {
         $db = connect();
-        if($db != NULL){
+        if ($db != NULL) {
             $query = 'UPDATE donadores
-                      SET Nombre = "'.$nombre.'",
-                      ApellidoPaterno = "'.$apellidoPaterno.'",
-                      ApellidoMaterno = "'.$apellidoMaterno.'",
-                      FechadeNacimiento = "'.$fechaN.'",
-                      Direccion = "'.$dir.'",
-                      Telefono = "'.$tel.'",
-                      Email = "'.$email.'",
-                      Ocupacion = "'.$ocupacion.'"
-                      WHERE Email = "'.$email.'" ';
+                      SET Nombre = "' . $nombre . '",
+                      ApellidoPaterno = "' . $apellidoPaterno . '",
+                      ApellidoMaterno = "' . $apellidoMaterno . '",
+                      FechadeNacimiento = "' . $fechaN . '",
+                      Direccion = "' . $dir . '",
+                      Telefono = "' . $tel . '",
+                      Email = "' . $email . '",
+                      Ocupacion = "' . $ocupacion . '"
+                      WHERE Email = "' . $email . '" ';
 
             $query2 = 'UPDATE donadores_metodopago
-                       SET Observaciones = "'.$obs.'",
-                       IdMetodo = "'.$idMetodo.'"
-                       WHERE Email = "'.$email.'"';
+                       SET Observaciones = "' . $obs . '",
+                       IdMetodo = "' . $idMetodo . '"
+                       WHERE Email = "' . $email . '"';
 
             $query3 = 'UPDATE donadores_usocfdi
-                       SET IdCFDI = "'.$idCfdi.'"
+                       SET IdCFDI = "' . $idCfdi . '"
                        ';
 
             if (mysqli_query($db, $query3)) {
@@ -510,38 +512,39 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
             }
 
 
-
         }
-}
-
-function eliminarDonador($email){
-        $db = connect();
-    if($db!= NULL){
-        $query = 'DELETE FROM donadores
-                       WHERE Email = $email ';
-
-        $query2 = 'DELETE FROM donadores_metodopago
-                       WHERE Email = $email ';
-
-        $query3 = 'DELETE FROM donadores_usocfdi
-                       WHERE Email = $email ';
-
-        if (mysqli_query($db, $query3)) {
-            echo "Record 3 updated successfully";
-        } else {
-            echo "Error updating record 3: " . mysqli_error($db);
-        }
-        if (mysqli_query($db, $query2)) {
-            echo "Record 2 updated successfully";
-        } else {
-            echo "Error updating record 2: " . mysqli_error($db);
-        }
-        if (mysqli_query($db, $query)) {
-            echo "Record updated successfully";
-        } else {
-            echo "Error updating record: " . mysqli_error($db);
-        }
-
     }
-}
+
+    function eliminarDonador($email)
+    {
+        $db = connect();
+        if ($db != NULL) {
+            $query = 'DELETE FROM donadores
+                       WHERE Email = $email ';
+
+            $query2 = 'DELETE FROM donadores_metodopago
+                       WHERE Email = $email ';
+
+            $query3 = 'DELETE FROM donadores_usocfdi
+                       WHERE Email = $email ';
+
+            if (mysqli_query($db, $query3)) {
+                echo "Record 3 updated successfully";
+            } else {
+                echo "Error updating record 3: " . mysqli_error($db);
+            }
+            if (mysqli_query($db, $query2)) {
+                echo "Record 2 updated successfully";
+            } else {
+                echo "Error updating record 2: " . mysqli_error($db);
+            }
+            if (mysqli_query($db, $query)) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . mysqli_error($db);
+            }
+
+        }
+    }
+
 ?>
