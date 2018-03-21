@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once("modelo.php");
 
     if(isset($_SESSION["usuario"]) ) {
         $user = $_SESSION["usuario"];
@@ -28,7 +29,7 @@
         include("partials/_common_js.html");
         echo   '<script src="https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
                 <script src="js/comportamiento.js"></script>
-                <script src="js/modals.js"></script>';
+                <script src="js/modals_gallery.js"></script>';
         echo   '<script src="js/file_input.js"></script>';
         // Required Scripts and end of file
         include("partials/_end.html");

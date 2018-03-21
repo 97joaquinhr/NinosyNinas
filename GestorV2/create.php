@@ -7,11 +7,8 @@
         if(isset($_POST["nombre"]) != NULL ) {
             unset($_SESSION["error_archivo"]);
             $target_dir = "uploads/gallery/";
-            $target_file = $target_dir  . time() . $_POST["nombre"] . "."
-                . strtolower(pathinfo(
-                    basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION)
-                );//espaciado para comprension, lo puedes regresar a la normalidad
-            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"] . ".jpg";//no necesita terminar en .jpg o algo?
+            $target_file = $target_dir  . time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
+            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"].".jpg";
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
@@ -31,7 +28,7 @@
                 $uploadOk = 0;
             }
             // Check file size
-            if ($_FILES["imagen"]["size"] > 20000000) {
+            if ($_FILES["imagen"]["size"] > 2000000) {
                 $_SESSION["error_archivo"] =  "El archivo es demasiado grande.";
                 $uploadOk = 0;
             }
