@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("modelo.php");
-    if(isset($_SESSION["usuario"]) ) {
+    if(isset($_SESSION["usuario"]) && ($_SESSION["rol"] == "R01" || $_SESSION["rol"] == "R02" || $_SESSION["rol"] == "R06")) {
         $user = $_SESSION["usuario"];
         $nombre = $_SESSION["nombre"];
         $rol = $_SESSION["rol"];
@@ -35,5 +35,3 @@
         header("location: index.php");
     }
 ?>
-
-
