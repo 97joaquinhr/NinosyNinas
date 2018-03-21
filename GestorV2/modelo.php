@@ -311,4 +311,59 @@ function getNoticias() {
     }
     return false;
 }
+
+function registrarImagen($url, $nombre, $id_noticia, $t_url) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query='INSERT INTO archivomultimedia (Filepath,Nombre,IdNoticia,ThumbnailUrl) VALUES (?,?,?,?) ';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("ssss", $url, $nombre, $id_noticia, $t_url)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+         // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function make_thumb($file, $dest, $desired_width) {
+    $what = getimagesize($file);
+    $file_name = basename($file);
+    switch(strtolower($what['mime'])){
+        case 'image/png':
+            $img = imagecreatefrompng($file);
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/png');
+        break;
+        case 'image/jpeg':
+            $img = imagecreatefromjpeg($file);
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/jpeg');
+        break;
+        case 'image/gif':
+            $img = imagecreatefromgif($file);
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/gif');
+        break;
+        default: die();
+    }
+    imagejpeg($new,"uploads/gallery/thumbnails/test.jpg");
+    imagedestroy($new);
+
+}
 ?>
