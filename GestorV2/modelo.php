@@ -353,8 +353,8 @@ function getGaleriaGestor() {
                 echo '
                 <div class="col">
                     <div class="show-image">
-                        <a href="javascript:preview('.$row['Filepath'].');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                        <button onclick="showDelete('.$row['Filepath'].')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
+                        <a href="javascript:preview(\"'.$row['Filepath'].'\",\"'.$row['Nombre']'.\");"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                        <button onclick="showDelete(\"'.$row['Filepath'].'\")" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>';
                 $i++;

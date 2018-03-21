@@ -7,10 +7,10 @@ function showAdd() {
 }
 
 function preview(filepath, nombre) {
-    $('#preview').modal('show');
     var imagen = "<img class='img img-fluid' src='" + filepath + "'>";
     $('#prev_imagen').html(imagen);
-    $('#prev_nombre').text(nombre);
+    $('#prev_nombre').html(nombre);
+    $('#preview').modal('show');
 
 }
 
