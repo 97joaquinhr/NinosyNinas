@@ -216,6 +216,7 @@ function getDonadores2() {
 function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direccion,$telefono, $ocupacion,$validado, $mp,$observaciones,$cfdi){
     $db = connect();
     if ($db != NULL) {
+        //Deberiamos usar prepared staments pare evitar SQL Injection
         $query = 'INSERT INTO `donadores`(`Email`,`RFC`,`Nombre`, `ApellidoPaterno`,`ApellidoMaterno`,`FechadeNacimiento`, `Direccion`,`Telefono`,`Ocupacion`,`Validado`)
                       VALUES ("'.$email.'", "'.$rfc.'", "'.$nombre.'", "'.$apellidoP.'", "'.$apellidoM.'", "'.$fechaN.'","'.$direccion.'","'.$telefono.'","'.$ocupacion.'","'.$validado.'")';
 
@@ -338,31 +339,64 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
     return false;
 }
 
-function make_thumb($file, $dest) {
+function getGaleriaGestor() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Filepath, ThumbnailUrl FROM archivomultimedia';
+        $sql = $db->query($query);
 
+        $result = mysqli_query($db,$query);
+        $i = 0;
+        echo '<div class="row">';
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo '
+                <div class="col">
+                    <div class="show-image">
+                        <a href="javascript:preview('.$row['Filepath'].');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                        <button onclick="showDelete('.$row['Filepath'].')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>';
+                $i++;
+                if ($i == 4) {
+                    echo '</div><div class="row">';
+                    $i = 0;
+                }
+            }
+        }
+        echo '</div>';
+        mysqli_free_result($result);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function make_thumb($file, $dest, $desired_width) {
     $what = getimagesize($file);
-    print_r($what);
-//    echo $what["width"] . $what["height"];
+    $file_name = basename($file);
     switch(strtolower($what['mime'])){
         case 'image/png':
             $img = imagecreatefrompng($file);
-
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/png');
         break;
         case 'image/jpeg':
             $img = imagecreatefromjpeg($file);
-
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/jpeg');
         break;
         case 'image/gif':
             $img = imagecreatefromgif($file);
+            $new = imagecreatetruecolor(100, 100*$what["height"]/$what["width"]);
+            imagecopy($new,$img,0,0,0,0,$what["height"],$what["width"]);
+            header('Content-Type: image/gif');
         break;
         default: die();
     }
-    $new = imagecreatetruecolor(320,180);
-    imagecopyresampled($new,$img,0,0,0,0,
-        320,180, $what[0],$what[1]);
-    imagejpeg($new,$dest);
+    imagejpeg($new,"uploads/gallery/thumbnails/test.jpg");
     imagedestroy($new);
-    return true;
-
 }
 ?>
