@@ -1,5 +1,6 @@
-function showDelete(filepath) {
-    $('#delete').modal('show')
+function showDelete(nombre) {
+    $('#del_nombre').html(nombre);
+    $('#delete').modal('show');
 }
 
 function showAdd() {
@@ -7,16 +8,11 @@ function showAdd() {
 }
 
 function preview(filepath, nombre) {
-    $('#preview').modal('show');
     var imagen = "<img class='img img-fluid' src='" + filepath + "'>";
     $('#prev_imagen').html(imagen);
-    $('#prev_nombre').text(nombre);
+    $('#prev_nombre').html(nombre);
+    $('#preview').modal('show');
 
-}
-
-function edit() {
-    $('#preview').modal('hide');
-    $('#edit').modal('show');
 }
 
 function performClick(elemId) {
