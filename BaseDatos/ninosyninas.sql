@@ -582,41 +582,6 @@ INSERT INTO `rol_funcion` (`IdFuncion`, `IdRol`) VALUES
 ('F021', 'R01'),
 ('F022', 'R01');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `thumbnail`
---
-
-CREATE TABLE `thumbnail` (
-  `Thurl` varchar(254) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `thumbnail`
---
-
-INSERT INTO `thumbnail` (`Thurl`) VALUES
-('thurl/ipsum1.jpg'),
-('thurl/ipsum10.jpg'),
-('thurl/ipsum11.jpg'),
-('thurl/ipsum12.jpg'),
-('thurl/ipsum13.jpg'),
-('thurl/ipsum14.jpg'),
-('thurl/ipsum15.jpg'),
-('thurl/ipsum16.jpg'),
-('thurl/ipsum17.jpg'),
-('thurl/ipsum18.jpg'),
-('thurl/ipsum19.jpg'),
-('thurl/ipsum2.jpg'),
-('thurl/ipsum20.jpg'),
-('thurl/ipsum3.jpg'),
-('thurl/ipsum4.jpg'),
-('thurl/ipsum5.jpg'),
-('thurl/ipsum6.jpg'),
-('thurl/ipsum7.jpg'),
-('thurl/ipsum8.jpg'),
-('thurl/ipsum9.jpg');
 
 -- --------------------------------------------------------
 
@@ -679,7 +644,7 @@ INSERT INTO `usuario` (`Email`, `Pswd`,`Nombre`,`Telefono`) VALUES
 ('angelica@mail.com', 'abcdef','Angelica','(244) 148-0331'),
 ('cesar@mail.com', 'sa=9asd','cesar','(515) 336-7754'),
 ('dagoberto@mail.com', '123sada','dagoberto','(334) 303-8323'),
-('jaunpi@mail.com', 'ipnuaj','jaunpi','(617) 476-2078'),
+('juanpi@mail.com', 'ipnuaj','juanpi','(617) 476-2078'),
 ('joaquin@mail.com', 'asdasfas','Joaquin','(935) 529-7241'),
 ('lalo@mail.com', 'hockey','lalo','(395) 467-2922'),
 ('marcelo@mail.com', '1+92as','marcelo','(513) 740-9459'),
@@ -733,9 +698,12 @@ INSERT INTO `usuario_rol` (`Email`, `IdRol`, `Fecha`) VALUES
 ('angelica@mail.com', 'R02', '2018-01-09 00:00:00'),
 ('dagoberto@mail.com', 'R03', '2018-01-11 00:00:00'),
 ('marcelo@mail.com', 'R06', '2018-01-12 00:00:00'),
-('jaunpi@mail.com', 'R05', '2018-01-14 00:00:00'),
+('juanpi@mail.com', 'R05', '2018-01-14 00:00:00'),
 ('lalo@mail.com', 'R04', '2018-01-16 00:00:00'),
-('peponks@mail.com', 'R04', '2018-01-17 00:00:00'),
+('peponks@mail.com', 'R06', '2018-01-17 00:00:00'),
+('admon@mail.com', 'R01', '2015-01-17 00:00:00'),
+('cesar@mail.com', 'R02', '2014-01-17 00:00:00'),
+('joaquin@mail.com', 'R04', '2018-01-17 00:00:00'),
 ('suzana@mail.com', 'R01', '2018-02-17 00:00:00');
 
 CREATE TABLE `mision` (
@@ -1010,12 +978,6 @@ ALTER TABLE `rol`
 ALTER TABLE `rol_funcion`
   ADD KEY `fkIdFuncion_RF` (`IdFuncion`),
   ADD KEY `fkIdRol_RF` (`IdRol`);
-
---
--- Indexes for table `thumbnail`
---
-ALTER TABLE `thumbnail`
-  ADD PRIMARY KEY (`Thurl`);
 
 --
 -- Indexes for table `usocfdi`
