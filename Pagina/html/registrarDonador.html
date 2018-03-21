@@ -4,7 +4,7 @@
         <div class="card card-register mx-auto mt-5 shadow">
             <div class="card-header">Registro de Donador</div>
             <div class="card-body">
-                <form action="addDonador.php" method="post">
+                <form action="addDonador.php" method="post" onsubmit="return validateForm()" name="DonadorRecurrente">
                     <div class="form-group">
                         <label for="emailD">Correo electronico *</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
