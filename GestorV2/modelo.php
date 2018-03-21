@@ -397,6 +397,37 @@ function getGaleriaGestor() {
     }
     return false;
 }
+function getGaleriaPagina() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        $i = 0;
+        echo '<div class="row">';
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo '
+                <div class="col">
+                    <div class="show-image">
+                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                    </div>
+                </div>';
+                $i++;
+                if ($i == 4) {
+                    echo '</div><div class="row">';
+                    $i = 0;
+                }
+            }
+        }
+        echo '</div>';
+        mysqli_free_result($result);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
 
 function make_thumb($file, $dest) {
 
