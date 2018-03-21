@@ -1,154 +1,154 @@
 <?php
-    function connect() {
-        //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
-        $mysql->set_charset("utf8");
-        return $mysql;
-    }
+function connect() {
+    //$mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
+    $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+    $mysql->set_charset("utf8");
+    return $mysql;
+}
 
-    function disconnect($mysql) {
-        mysqli_close($mysql);
-    }
+function disconnect($mysql) {
+    mysqli_close($mysql);
+}
 
-    function login($email, $passwd) {
-        $db = connect();
-        if ($db != NULL) {
+function login($email, $passwd) {
+    $db = connect();
+    if ($db != NULL) {
 
-            // insert command specification
-            $query="SELECT email FROM usuario WHERE Email = ? AND Pswd = ?";
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("ss", $email, $passwd)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Get results
-            $results = $statement->get_result();
-
-            if (mysqli_num_rows($results) > 0)  {
-                // it releases the associated results
-                mysqli_free_result($results);
-                disconnect($db);
-                return true;
-            }
-            disconnect($db);
-            return false;
+        // insert command specification
+        $query="SELECT email FROM usuario WHERE Email = ? AND Pswd = ?";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
+        // Binding statement params
+        if (!$statement->bind_param("ss", $email, $passwd)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        disconnect($db);
         return false;
     }
+    return false;
+}
 
-    function getNombre($email) {
-        $db = connect();
-        if ($db != NULL) {
+function getNombre($email) {
+    $db = connect();
+    if ($db != NULL) {
 
-            // insert command specification
-            $query="SELECT nombre FROM usuario WHERE Email = ?";
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("s", $email)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Get results
-            $results = $statement->get_result();
-            $nombre = "";
-            if (mysqli_num_rows($results) > 0)  {
-                // it releases the associated results
-                if ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-                    $nombre = $fila['nombre'];
-                }
-                mysqli_free_result($results);
-                disconnect($db);
-                return $nombre;
-            }
-            disconnect($db);
-            return false;
+        // insert command specification
+        $query="SELECT nombre FROM usuario WHERE Email = ?";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
+        // Binding statement params
+        if (!$statement->bind_param("s", $email)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+        $nombre = "";
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            if ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $nombre = $fila['nombre'];
+            }
+            mysqli_free_result($results);
+            disconnect($db);
+            return $nombre;
+        }
+        disconnect($db);
         return false;
     }
+    return false;
+}
 
-    function getRol($email) {
-        $db = connect();
-        if ($db != NULL) {
-            // insert command specification
-            $query="SELECT IdRol FROM usuario_rol WHERE Email = ?";
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("s", $email)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Get results
-            $results = $statement->get_result();
-            $rol = "";
-            if (mysqli_num_rows($results) > 0)  {
-                // it releases the associated results
-                if ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-                    $rol = $fila['IdRol'];
-                }
-                mysqli_free_result($results);
-                disconnect($db);
-                return $rol;
-            }
-            disconnect($db);
-            return false;
+function getRol($email) {
+    $db = connect();
+    if ($db != NULL) {
+        // insert command specification
+        $query="SELECT IdRol FROM usuario_rol WHERE Email = ?";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
+        // Binding statement params
+        if (!$statement->bind_param("s", $email)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+        $rol = "";
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            if ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $rol = $fila['IdRol'];
+            }
+            mysqli_free_result($results);
+            disconnect($db);
+            return $rol;
+        }
+        disconnect($db);
         return false;
     }
+    return false;
+}
 
 
-    function getFunciones($rol) {
-        $db = connect();
-        if ($db != NULL) {
-            // insert command specification
-            $query="SELECT DISTINCT idFuncion FROM rol_funcion WHERE idRol = ?";
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("s", $rol)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Get results
-            $results = $statement->get_result();
-            $funciones = array();
-            if (mysqli_num_rows($results) > 0)  {
-                // it releases the associated results
-                while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
-                    $funciones[] = $fila['idFuncion'];
-                }
-                mysqli_free_result($results);
-                disconnect($db);
-                return $funciones;
-            }
-            disconnect($db);
-            return false;
+function getFunciones($rol) {
+    $db = connect();
+    if ($db != NULL) {
+        // insert command specification
+        $query="SELECT DISTINCT idFuncion FROM rol_funcion WHERE idRol = ?";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
+        // Binding statement params
+        if (!$statement->bind_param("s", $rol)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+        $funciones = array();
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+                $funciones[] = $fila['idFuncion'];
+            }
+            mysqli_free_result($results);
+            disconnect($db);
+            return $funciones;
+        }
+        disconnect($db);
         return false;
     }
+    return false;
+}
 
 function getDonadores() {
     $db = connect();
@@ -250,22 +250,22 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
 }
 
 function addRol($idRol, $Nombre){
-        $db = connect();
-        if($db != NULL){
-            $query = 'INSERT INTO `rol`(`IdRol`, `Nombre`)
+    $db = connect();
+    if($db != NULL){
+        $query = 'INSERT INTO `rol`(`IdRol`, `Nombre`)
                       VALUES ("'.$idRol.'", "'.$Nombre.'")';
 
-            if (mysqli_query($db, $query)) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $query . "<br>" . mysqli_error($db);
-            }
-
-            disconnect($db);
-
-            return true;
+        if (mysqli_query($db, $query)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
-        return false;
+
+        disconnect($db);
+
+        return true;
+    }
+    return false;
 }
 
 function getUsuarios() {
@@ -327,7 +327,7 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
         if (!$statement->bind_param("ssss", $url, $nombre, $id_noticia, $t_url)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
-         // Executing the statement
+        // Executing the statement
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         }
@@ -342,7 +342,7 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
 function getGaleriaGestor() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Filepath, ThumbnailUrl FROM archivomultimedia';
+        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -353,8 +353,8 @@ function getGaleriaGestor() {
                 echo '
                 <div class="col">
                     <div class="show-image">
-                        <a href="javascript:preview('.$row['Filepath'].');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                        <button onclick="showDelete('.$row['Filepath'].')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
+                        <a href="javascript:preview(\''.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                        <button onclick="showDelete(\"'.$row['Filepath'].'\")" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>';
                 $i++;
