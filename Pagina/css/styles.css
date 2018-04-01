@@ -218,11 +218,16 @@ div.desc {
     line-height: 3em;
     padding-top: 2em;
     padding-bottom: 2em;
+    min-height: 95%;
+}
+html, body
+{
+    height: 100%;
 }
 
 .asog-r1 {
     text-transform: uppercase;
-    font-size: 10em;
+    font-size: 15em;
     font-weight: 700;
     line-height: 1.1em;
 }
