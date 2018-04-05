@@ -358,22 +358,31 @@ function eliminarImagen($url) {
     $db = connect();
     if ($db != NULL) {
 
-        // insert command specification
-        $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("s", $url)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
+        $file = $url;
+        $thurl = substr_replace($url, "thurl/", 16, 0);
+        $thurl=substr($thurl,0,-4);
 
-        mysqli_free_result($results);
+        if (!unlink($file) || !unlink($thurl))//no se elimina el thurl
+        {
+            echo ("Error deleting $file or $thurl");
+        }
+        else
+        {
+            // insert command specification
+            $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("s", $url)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+            // Executing the statement
+            if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+            }
+        }
         disconnect($db);
         return true;
     }
