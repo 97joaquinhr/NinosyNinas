@@ -423,7 +423,7 @@ function getGaleriaPagina() {
             <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">';
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo '<img src="../GestorV2/'.$row['ThumbnailUrl'].'" data-full="../GestorV2/'.$row['Filepath'].'" class="m-p-g__thumbs-img" />';
+                echo '<img src="../GestorV2/'.$row['Filepath'].'" data-full="../GestorV2/'.$row['Filepath'].'" class="m-p-g__thumbs-img" />';
             }
         }
         echo '</div>
@@ -505,8 +505,6 @@ function make_thumb($file, $dest)
             } else {
                 echo "Error updating record: " . mysqli_error($db);
             }
-
-
         }
     }
 
