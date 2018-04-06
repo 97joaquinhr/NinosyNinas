@@ -20,19 +20,19 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre(s) *</label>
-                        <input class="form-control" name="nombre" id="nombre" aria-describedby="nombreHelp" placeholder="Carlos">
+                        <input class="form-control" name="nombre" id="nombre" aria-describedby="nombreHelp" placeholder="Carlos" required>
                     </div>
                     <div class="form-group">
                         <label for="apellidoP">Apellido paterno *</label>
-                        <input class="form-control" name="apellidoP" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez">
+                        <input class="form-control" name="apellidoP" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez" required>
                     </div>
                     <div class="form-group">
                         <label for="apellidoM">Apellido materno *</label>
-                        <input class="form-control" name="apellidoM" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo">
+                        <input class="form-control" name="apellidoM" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo" required>
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono o Celular *</label>
-                        <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111">
+                        <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111" required>
                     </div>
                     <label for="fechaN">Fecha de nacimiento</label>
                     <input id="datepicker" name="fechaN" placeholder="dd/mm/aaaa">
@@ -56,7 +56,7 @@
                         <input class="form-control" name="cfdi" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
                     </div>
                     <p>* Campos Obligatorios</p>
-                    <button type="submit" class="btn bg-pink text-white shadow">Guardar cambios</button>
+                    <button type="submit" class="btn bg-pink text-white shadow" onclick="validateForm()">Guardar cambios</button>
                 </form>
             </div>
         </div>

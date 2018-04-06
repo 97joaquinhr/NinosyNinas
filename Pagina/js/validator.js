@@ -15,11 +15,25 @@ function compareFields() {
 }
 
 function validateForm() {
-  var email1 = document.forms["DonadorRecurrente"]["email"].value;
-  var email2 = document.forms["DonadorRecurrente"]["emailD2"].value;
-  if(email1==email2){
+  var email1 = document.getElementById("email").value;
+  var email2 = document.getElementByID("emailD2").value;
+  var rfc = document.getElementByID("rfc").value;
+  var rfcValid = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
+  let validado = rfc.match(rfcValid);
+  if(email1!=email2){
     alert("Los correos no coinciden");
     return false;
+  }
+  if(rfc.length!=0){
+    if(rfc.lenght==13){
+      if(!validado){
+        alert("El rfc es inválido");
+        return false;
+      }
+    }else{
+      alert("El rfc es inválido");
+      return false;
+    }
   }
 }
 
