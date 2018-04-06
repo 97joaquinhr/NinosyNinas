@@ -364,7 +364,7 @@ function eliminarImagen($url) {
 
         if (!unlink($file) || !unlink($thurl))//no se elimina el thurl
         {
-            echo ("Error deleting $file or $thurl");
+            die("Error deleting $file or $thurl");
         }
         else
         {
