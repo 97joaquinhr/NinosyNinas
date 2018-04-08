@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar">Eliminar</button>
+                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar" onclick="generateEliminar()">Eliminar</button>
                 <button type="button" data-target="#edit" data-toggle="modal" class="btn btn-primary" onclick="generateEdit()">Editar</button>
             </div>
         </div>
@@ -229,12 +229,16 @@
                 ¿Borrar?
             </div>
             <div class="modal-body">
-                ¿Estas seguro que quieres eliminar este registro de la base de datos?
+                ¿Estas seguro que quieres eliminar a este donador de la base de datos? <br>Con el email:
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Borrar</button>
+            <form action="eliminarDonador.php" method="post">
+                <input name="c_email">
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-danger mr-auto">Borrar</button>
+
                 <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

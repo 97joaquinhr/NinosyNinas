@@ -1,19 +1,9 @@
 <?php
 
     function connect() {
-<<<<<<< HEAD
-        $env = "prod";
-        if ($env == "dev") {
-            $mysql = mysqli_connect("127.0.0.1","Linetes","cesarb13","NinosyNinas", 8889);
-        } else if ($env == "prod") {
-            $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
-        }
 
-
-=======
         //$mysql = mysqli_connect("localhost","root","","ninos");
         $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
->>>>>>> 7f8aa51ce4b76e438d0053d1e7fb036103214861
         $mysql->set_charset("utf8");
 
         return $mysql;
@@ -534,13 +524,13 @@ function make_thumb($file, $dest)
         $db = connect();
         if ($db != NULL) {
             $query = 'DELETE FROM donadores
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             $query2 = 'DELETE FROM donadores_metodopago
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             $query3 = 'DELETE FROM donadores_usocfdi
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             if (mysqli_query($db, $query3)) {
                 echo "Record 3 updated successfully";

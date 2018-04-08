@@ -6,7 +6,7 @@
             <div class="card-body">
                 <form action="addDonador.php" method="post" onsubmit="return validateForm()" name="DonadorRecurrente">
                     <div class="form-group">
-                        <label for="emailD">Correo electronico *</label>
+                        <label for="email">Correo electronico *</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
                         <small id="emailHelp" class="form-text text-muted">No compartiremos esto con nadie más.</small>
                     </div>
@@ -35,13 +35,13 @@
                         <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111">
                     </div>
                     <label for="fechaN">Fecha de nacimiento</label>
-                    <input id="datepicker" name="fechaN" placeholder="dd/mm/aaaa">
+                    <input type="date" id="fechaN" name="fechaN" placeholder="dd/mm/aaaa">
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
                         <input class="form-control" name="direccion" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
                     </div>
                     <label for="MetodoPago">Metodo de pago</label>
-                    <select name="MetodoPago" class="form-control">
+                    <select id="MetodoPago" name="MetodoPago" class="form-control">
                         <option value="M01">Tarjeta de crédito</option>
                         <option value="M02">Transferencia</option>
                         <option value="M03">Cheque</option>
