@@ -16,24 +16,32 @@ function compareFields() {
 
 function validateForm() {
   var email1 = document.getElementById("email").value;
-  var email2 = document.getElementByID("emailD2").value;
-  var rfc = document.getElementByID("rfc").value;
-  var rfcValid = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
-  let validado = rfc.match(rfcValid);
+  var email2 = document.getElementById("emailD2").value;
   if(email1!=email2){
     alert("Los correos no coinciden");
     return false;
   }
-  if(rfc.length!=0){
-    if(rfc.lenght==13){
-      if(!validado){
-        alert("El rfc es inválido");
-        return false;
-      }
-    }else{
-      alert("El rfc es inválido");
+  var rfc = document.getElementById("rfc").value;
+  var rfcValid = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
+  let validado = rfcValid.exec(rfc);
+  if(rfc!=null){
+    if(validado==null){
+      alert("El RFC es inválido");
       return false;
     }
+  }
+  var phoneNumber = document.getElementById("telefono").value;
+  var phoneValid = phoneNumberParser(phoneNumber);
+  if(!phoneValid){
+    alert("El número de teléfono es inválido");
+    return false;
+  }
+  var date = document.getElementById("datepicker").value;
+  let datedmy = date.split("/");
+  var usoCFDI = document.getElementById("usoCFDI").value;
+  if(usoCFDI.length!=3){
+    alert("El uso de CFDI es incorrecto");
+    return false;
   }
 }
 
@@ -55,7 +63,7 @@ function quantity() {
 
 
 $('#datepicker').datepicker({
-	uiLibrary: 'bootstrap4'
+uiLibrary: 'bootstrap4'
 });
 
 function date() {
