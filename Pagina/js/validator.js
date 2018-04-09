@@ -37,7 +37,52 @@ function validateForm() {
     return false;
   }
   var date = document.getElementById("datepicker").value;
+  console.log(date);
   let datedmy = date.split("/");
+  let day = datedmy[0].split('');
+  let month = datedmy[1].split('');
+  let year = datedmy[2].split('');
+  console.log(day);
+  console.log(month);
+  console.log(year);
+  //Se revisa el día
+  if(day[0]>=0 && day[0]<=3){
+    if(day[0]==3){
+      if(day[1]>=0 && day[1]<=1){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }else{
+      if(day[1]>=0 && day[1]<=9){
+      }else{
+        return false;
+      }
+    }
+  }else{
+    return false;
+  }
+  //Se revisa el mes
+  if(month[0]>=0 && month[0]<=1){
+    if(month[0]==1){
+      if(month[1]>=0 && month[1]<=2){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }else{
+      if(month[1]>=0 && month[1]<=9){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }
+  }else{
+    alert("La fecha es incorrecta");
+    return false;
+  }
+  //Se revisa el año
+  if(year[0]>=1 && year[0]<=2)
   var usoCFDI = document.getElementById("usoCFDI").value;
   if(usoCFDI.length!=3){
     alert("El uso de CFDI es incorrecto");
