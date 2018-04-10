@@ -15,10 +15,77 @@ function compareFields() {
 }
 
 function validateForm() {
-  var email1 = document.forms["DonadorRecurrente"]["email"].value;
-  var email2 = document.forms["DonadorRecurrente"]["emailD2"].value;
-  if(email1==email2){
+  var email1 = document.getElementById("email").value;
+  var email2 = document.getElementById("emailD2").value;
+  if(email1!=email2){
     alert("Los correos no coinciden");
+    return false;
+  }
+  var rfc = document.getElementById("rfc").value;
+  var rfcValid = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
+  let validado = rfcValid.exec(rfc);
+  if(rfc!=null){
+    if(validado==null){
+      alert("El RFC es inválido");
+      return false;
+    }
+  }
+  var phoneNumber = document.getElementById("telefono").value;
+  var phoneValid = phoneNumberParser(phoneNumber);
+  if(!phoneValid){
+    alert("El número de teléfono es inválido");
+    return false;
+  }
+  var date = document.getElementById("datepicker").value;
+  console.log(date);
+  let datedmy = date.split("/");
+  let day = datedmy[0].split('');
+  let month = datedmy[1].split('');
+  let year = datedmy[2].split('');
+  console.log(day);
+  console.log(month);
+  console.log(year);
+  //Se revisa el día
+  if(day[0]>=0 && day[0]<=3){
+    if(day[0]==3){
+      if(day[1]>=0 && day[1]<=1){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }else{
+      if(day[1]>=0 && day[1]<=9){
+      }else{
+        return false;
+      }
+    }
+  }else{
+    return false;
+  }
+  //Se revisa el mes
+  if(month[0]>=0 && month[0]<=1){
+    if(month[0]==1){
+      if(month[1]>=0 && month[1]<=2){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }else{
+      if(month[1]>=0 && month[1]<=9){
+      }else{
+        alert("La fecha es incorrecta");
+        return false;
+      }
+    }
+  }else{
+    alert("La fecha es incorrecta");
+    return false;
+  }
+  //Se revisa el año
+  if(year[0]>=1 && year[0]<=2)
+  var usoCFDI = document.getElementById("usoCFDI").value;
+  if(usoCFDI.length!=3){
+    alert("El uso de CFDI es incorrecto");
     return false;
   }
 }
@@ -41,7 +108,7 @@ function quantity() {
 
 
 $('#datepicker').datepicker({
-	uiLibrary: 'bootstrap4'
+uiLibrary: 'bootstrap4'
 });
 
 function date() {
