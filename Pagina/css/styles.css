@@ -286,6 +286,21 @@ div.desc {
 	margin-top: 5em;
     background: linear-gradient(rgba(218,218,218,1), rgba(218,218,218,1), rgba(218,218,218,0)); /* Standard syntax (must be last) */
 }
+.responsiveCal {
 
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
 
+}
 
+.responsiveCal iframe {
+
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
