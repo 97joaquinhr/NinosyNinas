@@ -157,11 +157,11 @@ function getDonadores() {
 
         $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
-                ORDER BY Nombre ASC 
+                AND Validado = 1
+                ORDER BY Nombre ASC
                 LIMIT 10 ';
         $results = $db->query($query);
 
@@ -169,8 +169,9 @@ function getDonadores() {
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
 
-            $html .= '                   
-                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+            $html .= '
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'"
+                            onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
                              <div class="media-body">
                               <div class="row">
                                 <div class="col-sm">
@@ -200,10 +201,10 @@ function getDonadores2() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
+                AND Validado = 1
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -211,7 +212,8 @@ function getDonadores2() {
 
             while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
                 $html.= '
-                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'"
+                 onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
                  <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
                  <td>'. $row["Telefono"] .'</td>
                  <td>'. $row["Email"] .'</td>
@@ -356,22 +358,31 @@ function eliminarImagen($url) {
     $db = connect();
     if ($db != NULL) {
 
-        // insert command specification
-        $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("s", $url)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
+        $file = $url;
+        $thurl = substr_replace($url, "thurl/", 16, 0);
+        $thurl=substr($thurl,0,-4);
 
-        mysqli_free_result($results);
+        if (!unlink($file) || !unlink($thurl))//no se elimina el thurl
+        {
+            die("Error deleting $file or $thurl");
+        }
+        else
+        {
+            // insert command specification
+            $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("s", $url)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+            // Executing the statement
+            if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+            }
+        }
         disconnect($db);
         return true;
     }
@@ -417,24 +428,17 @@ function getGaleriaPagina() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-        $i = 0;
-        echo '<div class="row">';
+        echo '<div class="m-p-g">
+            <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">';
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo '
-                <div class="col">
-                    <div class="show-image">
-                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                    </div>
-                </div>';
-                $i++;
-                if ($i == 4) {
-                    echo '</div><div class="row">';
-                    $i = 0;
-                }
+                echo '<img src="../GestorV2/'.$row['Filepath'].'" data-full="../GestorV2/'.$row['Filepath'].'" class="m-p-g__thumbs-img" />';
             }
         }
-        echo '</div>';
+        echo '</div>
+
+            <div class="m-p-g__fullscreen"></div>
+        </div>';
         mysqli_free_result($result);
         disconnect($db);
         return true;
@@ -510,8 +514,6 @@ function make_thumb($file, $dest)
             } else {
                 echo "Error updating record: " . mysqli_error($db);
             }
-
-
         }
     }
 
