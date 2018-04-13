@@ -44,6 +44,9 @@ a:hover {
 .bg-gray {
     background-color: #dadada !important;
 }
+.bg-dark {
+    background-color: gray !important;
+}
 .bg-gray2 {
     background-color: #b4b4b4 !important;
 }
