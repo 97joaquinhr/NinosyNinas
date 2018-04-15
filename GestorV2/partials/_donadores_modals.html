@@ -177,10 +177,6 @@
                                 <label for="emailD">Correo Electrónico</label>
                                 <input type="email" class="form-control" name="email" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx" required>
                             </div>
-                            <div class="form-group">
-                                <label for="ocupacion">Ocupacion</label>
-                                <input type="text" class="form-control" id="ocupacion" name="ocupacion" aria-describedby="ocupacionHelp" placeholder="Bombero">
-                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -232,7 +228,7 @@
                 ¿Estas seguro que quieres eliminar a este donador de la base de datos? <br>Con el email:
             </div>
             <form action="eliminarDonador.php" method="post">
-                <input name="c_email">
+                <input name="c_email" readonly>
                 <div class="modal-footer">
                 <button type="submit" class="btn btn-danger mr-auto">Borrar</button>
 

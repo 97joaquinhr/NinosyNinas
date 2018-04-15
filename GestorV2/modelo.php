@@ -2,8 +2,8 @@
 
     function connect() {
 
-        //$mysql = mysqli_connect("localhost","root","","ninos");
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+        $mysql = mysqli_connect("localhost","root","","ninos");
+         // $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
 
         return $mysql;
@@ -227,10 +227,42 @@ function getDonadores2() {
     return false;
 }
 
+function getDonadoresNV() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 0 
+                ORDER BY Nombre ASC ';
+
+        $results = $db->query($query);
+        $html = '';
+
+        while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+            $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
+                 <td>'. $row["Telefono"] .'</td>
+                 <td>'. $row["Email"] .'</td>
+                 <td>'. $row["Fecha"] .'</td>
+                 </tr>';
+        }
+        echo $html;
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
 function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direccion,$telefono, $ocupacion,$validado, $mp,$observaciones,$cfdi){
     $db = connect();
     if ($db != NULL) {
         //Deberiamos usar prepared staments pare evitar SQL Injection
+
+
         $query = 'INSERT INTO `donadores`(`Email`,`RFC`,`Nombre`, `ApellidoPaterno`,`ApellidoMaterno`,`FechadeNacimiento`, `Direccion`,`Telefono`,`Ocupacion`,`Validado`)
                       VALUES ("'.$email.'", "'.$rfc.'", "'.$nombre.'", "'.$apellidoP.'", "'.$apellidoM.'", "'.$fechaN.'","'.$direccion.'","'.$telefono.'","'.$ocupacion.'","'.$validado.'")';
 
@@ -241,22 +273,22 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
                     VALUES("'.$email.'", "'.$cfdi.'", "'.$fechaN.'")';
 
         if (mysqli_query($db, $query)) {
-            echo "New record created successfully";
+            if (mysqli_query($db, $query2)) {
+                if (mysqli_query($db, $query3)) {
+                } else {
+                    echo "Error: " . $query3 . "<br>" . mysqli_error($db);
+                }
+            } else {
+                echo "Error: " . $query2 . "<br>" . mysqli_error($db);
+            }
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
+        echo $validado;
 
-        if (mysqli_query($db, $query2)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query2 . "<br>" . mysqli_error($db);
-        }
 
-        if (mysqli_query($db, $query3)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query3 . "<br>" . mysqli_error($db);
-        }
+
+
         disconnect($db);
         return true;
     }
