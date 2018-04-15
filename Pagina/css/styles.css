@@ -376,3 +376,8 @@ div.desc {
           transform: scale3D(0, 0, 1);
       }
 }
+
+.vertical-center {
+    padding-top: 19vh;
+    padding-bottom: 19vh;
+}
