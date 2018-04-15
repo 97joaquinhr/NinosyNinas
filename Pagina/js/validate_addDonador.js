@@ -2,23 +2,23 @@ var email1 = document.getElementById("email");
 var email2 = document.getElementById("emailD2");
 email2.addEventListener("blur", validateEmail, true);
 var rfc = document.getElementById("rfc");
-rfc.addEventListener("blur", validateRFC, true);
-var name = document.getElementById("nombre");
-name.addEventListener("blur", myBlurFunction, true);
-var appellidoP = document.getElementById("apellidoP");
-apellidoP.addEventListener("blur", myBlurFunction, true);
-var appellidoM = document.getElementById("apellidoM");
-apellidoM.addEventListener("blur", myBlurFunction, true);
+//rfc.addEventListener("blur", validateRFC, true);
+//var name = document.getElementById("nombre");
+//name.addEventListener("blur", myBlurFunction, true);
+//var appellidoP = document.getElementById("apellidoP");
+//apellidoP.addEventListener("blur", myBlurFunction, true);
+//var appellidoM = document.getElementById("apellidoM");
+//apellidoM.addEventListener("blur", myBlurFunction, true);
 var phoneNumber = document.getElementById("telefono");
-phoneNumber.addEventListener("blur", myBlurFunction, true);
-var date = document.getElementById("fechaN");
-date.addEventListener("blur", myBlurFunction, true);
-var address = document.getElementById("direccion");
-address.addEventListener("blur", myBlurFunction, true);
-var obsv = document.getElementById("observaciones");
-obsv.addEventListener("blur", myBlurFunction, true);
+phoneNumber.addEventListener("blur", validatePhone, true);
+//var date = document.getElementById("fechaN");
+//date.addEventListener("blur", myBlurFunction, true);
+//var address = document.getElementById("direccion");
+//address.addEventListener("blur", myBlurFunction, true);
+//var obsv = document.getElementById("observaciones");
+//obsv.addEventListener("blur", myBlurFunction, true);
 var cfdi = document.getElementById("usoCFDI");
-cfdi.addEventListener("blur", myBlurFunction, true);
+cfdi.addEventListener("blur", validateCFDI, true);
 
 function validateEmail() {
   if(email2.value!=email.value){
@@ -33,5 +33,19 @@ function validateRFC() {
     if(validado==null){
       alert("El RFC es inválido");
     }
+  }
+}
+
+function validatePhone() {
+  var phoneValid = phoneNumberParser(phoneNumber);
+  if(!phoneValid){
+    alert("El número de teléfono es inválido");
+  }
+}
+
+function validateCFDI() {
+  if(cfdi.length!=3){
+    alert("El uso de CFDI es incorrecto");
+    return false;
   }
 }
