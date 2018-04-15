@@ -6,8 +6,13 @@
             <div class="card-body">
                 <form action="addDonador.php" method="post" onsubmit="return validateForm()" name="DonadorRecurrente">
                     <div class="form-group">
+<<<<<<< HEAD
                         <label for="emailD">Correo electronico *</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@ejemplo.com" required>
+=======
+                        <label for="email">Correo electronico *</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
+>>>>>>> marcelo/avance4
                         <small id="emailHelp" class="form-text text-muted">No compartiremos esto con nadie más.</small>
                     </div>
                     <div class="form-group">
@@ -35,13 +40,13 @@
                         <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111">
                     </div>
                     <label for="fechaN">Fecha de nacimiento</label>
-                    <input id="datepicker" name="fechaN" placeholder="dd/mm/aaaa">
+                    <input type="date" id="fechaN" name="fechaN" placeholder="dd/mm/aaaa">
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
                         <input class="form-control" name="direccion" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
                     </div>
-                    <label for="MetodoPago">Metodo de pago</label>
-                    <select name="MetodoPago" class="form-control">
+                    <label for="metodoPago">Metodo de pago</label>
+                    <select id="metodoPago" name="metodoPago" class="form-control">
                         <option value="M01">Tarjeta de crédito</option>
                         <option value="M02">Transferencia</option>
                         <option value="M03">Cheque</option>
