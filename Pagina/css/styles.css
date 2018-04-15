@@ -381,3 +381,16 @@ div.desc {
     padding-top: 19vh;
     padding-bottom: 19vh;
 }
+#logo{
+    width: 60%;
+    height: auto;
+}
+.logo_big {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    opacity: 0;
+    z-index: 5;
+    height: 90%;
+    width: 100%;
+}
