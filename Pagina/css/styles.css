@@ -225,7 +225,7 @@ div.desc {
 
 .asog-r1 {
     text-transform: uppercase;
-    font-size: 10em;
+    font-size: 15vw;
     font-weight: 700;
     line-height: 1.1em;
 }
@@ -234,7 +234,7 @@ div.desc {
     font-family: Lora, serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 2.7em;
+    font-size: 4vw;
     display: inline-block;
     position: relative;
     mix-blend-mode: overlay;
