@@ -72,7 +72,7 @@ a:hover {
 }
 
 .bg-purple {
-    background-color: #663f86 !important;
+    background-color: #60367f !important;
 }
 
 .bg-purple-light {
@@ -212,15 +212,14 @@ div.desc {
 }
 
 .asog {
-    color: #fff;
-    text-align: center;
-    background-image: url();
+    /*color: #fff;*/
+    /*text-align: center;*/
     background-size: cover;
-    background-color: #f0ae93;
-    font-family: PT Sans, sans-serif;
-    line-height: 3em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    /*background-color: #f0ae93;*/
+    /*font-family: PT Sans, sans-serif;*/
+    /*line-height: 3em;*/
+    /*padding-top: 2em;*/
+    /*padding-bottom: 2em;*/
 }
 
 .asog-r1 {
@@ -382,7 +381,7 @@ div.desc {
     padding-bottom: 19vh;
 }
 #logo{
-    width: 60%;
+    width: 100%;
     height: auto;
 }
 .logo_big {
