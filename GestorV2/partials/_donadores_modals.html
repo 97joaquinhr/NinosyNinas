@@ -25,7 +25,6 @@
                                         <li class="list-group-item"><strong>Teléfono</strong><span id="prev_tel" class="card-text float-right"></span></li>
                                         <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span id="prev_fechaN" class="card-text float-right"></span></li>
                                     </ul>
-                                    <div class="card-footer small text-muted">creado en: </div>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +43,6 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong id="prev_usoCFDI"></strong><span class="card-text float-right" id="prev_cfDesc"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                         <div class="card mt-4">
                             <div class="card-header">Datos de Donación</div>
@@ -53,7 +51,6 @@
                                 <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right" id="prev_metodo"></span>
                                 <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right" id="prev_obs"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                     </div>
                 </div>
@@ -114,13 +111,13 @@
                                 <input class="form-control" id="ed_telefono" name="ed_tel" aria-describedby="telefonoHelp" value="442 235 5641">
                             </div>
                             <label for="fechaN">Fecha de nacimiento</label>
-                            <input name="ed_fechaN" id="datepicker" value="12/01/1950">
+                            <input type="date" name="ed_fechaN" value="12/01/1950">
                             <label for="MetodoPago">Metodo de pago</label>
                             <select class="form-control" name="ed_metodoPago">
                                 <option value="M01">Tarjeta de crédito</option>
                                 <option value="M02">Transferencia</option>
                                 <option value="M03">Cheque</option>
-                                <option value="M04">Otro</option>
+                                <option value="M05">Otro</option>
                             </select>
                             <div class="form-group">
                                 <label for="observaciones">Observaciones</label>

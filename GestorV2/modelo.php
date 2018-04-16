@@ -543,7 +543,7 @@ function make_thumb($file, $dest)
                       Direccion = "' . $dir . '",
                       Telefono = "' . $tel . '",
                       Email = "' . $email . '",
-                      Ocupacion = "' . $ocupacion . '"
+                      Ocupacion = "' . $ocupacion . '",
                       RFC = "' . $rfc . '"
                       WHERE Email = "' . $email . '" ';
 
@@ -576,6 +576,7 @@ function make_thumb($file, $dest)
 
         }
     }
+
 
     function eliminarDonador($email)
     {
