@@ -31,6 +31,7 @@
                 <script src="js/modals.js"></script>';
         // Required Scripts and end of file
         include("partials/_end.html");
+        include ("partials/_eventosModals.html");
     } else {
         $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
         header("location: index.php");

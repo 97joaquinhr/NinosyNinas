@@ -1,9 +1,10 @@
 <?php
 
     function connect() {
-        //$mysql = mysqli_connect("localhost","root","","ninos");
+
         $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
+
         return $mysql;
     }
 
@@ -225,10 +226,42 @@ function getDonadores2() {
     return false;
 }
 
+function getDonadoresNV() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 0 
+                ORDER BY Nombre ASC ';
+
+        $results = $db->query($query);
+        $html = '';
+
+        while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+            $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
+                 <td>'. $row["Telefono"] .'</td>
+                 <td>'. $row["Email"] .'</td>
+                 <td>'. $row["Fecha"] .'</td>
+                 </tr>';
+        }
+        echo $html;
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
 function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direccion,$telefono, $ocupacion,$validado, $mp,$observaciones,$cfdi){
     $db = connect();
     if ($db != NULL) {
         //Deberiamos usar prepared staments pare evitar SQL Injection
+
+
         $query = 'INSERT INTO `donadores`(`Email`,`RFC`,`Nombre`, `ApellidoPaterno`,`ApellidoMaterno`,`FechadeNacimiento`, `Direccion`,`Telefono`,`Ocupacion`,`Validado`)
                       VALUES ("'.$email.'", "'.$rfc.'", "'.$nombre.'", "'.$apellidoP.'", "'.$apellidoM.'", "'.$fechaN.'","'.$direccion.'","'.$telefono.'","'.$ocupacion.'","'.$validado.'")';
 
@@ -239,22 +272,22 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
                     VALUES("'.$email.'", "'.$cfdi.'", "'.$fechaN.'")';
 
         if (mysqli_query($db, $query)) {
-            echo "New record created successfully";
+            if (mysqli_query($db, $query2)) {
+                if (mysqli_query($db, $query3)) {
+                } else {
+                    echo "Error: " . $query3 . "<br>" . mysqli_error($db);
+                }
+            } else {
+                echo "Error: " . $query2 . "<br>" . mysqli_error($db);
+            }
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
+        echo $validado;
 
-        if (mysqli_query($db, $query2)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query2 . "<br>" . mysqli_error($db);
-        }
 
-        if (mysqli_query($db, $query3)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query3 . "<br>" . mysqli_error($db);
-        }
+
+
         disconnect($db);
         return true;
     }
@@ -284,7 +317,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, Telefono, Email FROM Usuario ORDER BY Nombre ASC';
+        $query='SELECT Nombre, Telefono, Email FROM usuario ORDER BY Nombre ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -306,9 +339,11 @@ function getUsuarios() {
 
 function getNoticias() {
     $db = connect();
+
     if ($db != NULL) {
-        $query='SELECT Titulo, Fecha FROM Noticia';
+        $query='SELECT Titulo, Fecha FROM noticia';
         $sql = $db->query($query);
+
 
         $result = mysqli_query($db,$query);
         disconnect($db);
@@ -520,13 +555,13 @@ function make_thumb($file, $dest)
         $db = connect();
         if ($db != NULL) {
             $query = 'DELETE FROM donadores
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             $query2 = 'DELETE FROM donadores_metodopago
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             $query3 = 'DELETE FROM donadores_usocfdi
-                       WHERE Email = $email ';
+                       WHERE Email = "'.$email.'" ';
 
             if (mysqli_query($db, $query3)) {
                 echo "Record 3 updated successfully";
@@ -546,5 +581,92 @@ function make_thumb($file, $dest)
 
         }
     }
+
+    //Acerca de Nosotros
+
+    function obtenerTitulo($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Titulo"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerDesc($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Descripcion"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+function obtenerDescObjetivos($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaBlue($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaPink($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
 
 ?>
