@@ -61,6 +61,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar" onclick="generateEliminar()">Eliminar</button>
                 <button type="button" data-target="#edit" data-toggle="modal" class="btn btn-primary" onclick="generateEdit()">Editar</button>
+                <button type="button" class="btn btn-success " data-toggle="modal" data-target="#validar" onclick="generateValidar()">Validar</button>
             </div>
         </div>
     </div>
@@ -115,11 +116,11 @@
                             <label for="fechaN">Fecha de nacimiento</label>
                             <input name="ed_fechaN" id="datepicker" value="12/01/1950">
                             <label for="MetodoPago">Metodo de pago</label>
-                            <select class="form-control">
-                                <option>Tarjeta de crédito</option>
-                                <option>Transferencia</option>
-                                <option>Cheque</option>
-                                <option>Otro</option>
+                            <select class="form-control" name="ed_metodoPago">
+                                <option value="M01">Tarjeta de crédito</option>
+                                <option value="M02">Transferencia</option>
+                                <option value="M03">Cheque</option>
+                                <option value="M04">Otro</option>
                             </select>
                             <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
@@ -228,12 +229,40 @@
                 ¿Estas seguro que quieres eliminar a este donador de la base de datos? <br>Con el email:
             </div>
             <form action="eliminarDonador.php" method="post">
-                <input name="c_email" readonly>
-                <div class="modal-footer">
+                <div class="container container-fluid">
+                    <input name="c_email" readonly>
+                </div>
+                <p></p>
+
+                    <div class="modal-footer">
                 <button type="submit" class="btn btn-danger mr-auto">Borrar</button>
 
                 <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
             </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="validar" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                ¿Validar?
+            </div>
+            <div class="modal-body">
+                ¿Quieres validar a este donador? <br>Con el email:
+            </div>
+            <form action="ValidarDonador.php" method="post">
+                <div    class="container container-fluid">
+                    <input name="v_email" readonly>
+                </div>
+                <p></p>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success mr-auto">Validar</button>
+
+                    <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>

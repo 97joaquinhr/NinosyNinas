@@ -2,8 +2,8 @@
 
     function connect() {
 
-        $mysql = mysqli_connect("localhost","root","","ninos");
-         // $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+       // $mysql = mysqli_connect("localhost","root","","ninos");
+        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
         $mysql->set_charset("utf8");
 
         return $mysql;
@@ -295,6 +295,30 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
     return false;
 }
 
+function validarDonador($email)
+{
+    $db = connect();
+    if ($db != NULL) {
+        //Deberiamos usar prepared staments pare evitar SQL Injection
+
+        $validado = 1;
+
+        $query = 'UPDATE donadores
+                       SET validado = "' . $validado . '"
+                       WHERE email = "' . $email . '"
+                       ';
+
+        if (mysqli_query($db, $query)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
 function addRol($idRol, $Nombre){
     $db = connect();
     if($db != NULL){
@@ -507,7 +531,7 @@ function make_thumb($file, $dest)
     return true;
 }
 
-    function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi)
+    function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi,$rfc)
     {
         $db = connect();
         if ($db != NULL) {
@@ -520,6 +544,7 @@ function make_thumb($file, $dest)
                       Telefono = "' . $tel . '",
                       Email = "' . $email . '",
                       Ocupacion = "' . $ocupacion . '"
+                      RFC = "' . $rfc . '"
                       WHERE Email = "' . $email . '" ';
 
             $query2 = 'UPDATE donadores_metodopago
@@ -529,6 +554,7 @@ function make_thumb($file, $dest)
 
             $query3 = 'UPDATE donadores_usocfdi
                        SET IdCFDI = "' . $idCfdi . '"
+                       WHERE Email = "' . $email . '"
                        ';
 
             if (mysqli_query($db, $query3)) {
