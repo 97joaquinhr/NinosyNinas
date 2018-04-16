@@ -19,6 +19,7 @@ var obsv = document.getElementById("observaciones");
 //obsv.addEventListener("blur", myBlurFunction, true);
 var cfdi = document.getElementById("usoCFDI");
 cfdi.addEventListener("blur", validateCFDI, true);
+var ocupacion = "";
 
 function validateEmail() {
   if(email2.value!=email.value){
@@ -61,6 +62,7 @@ $_POST["email"], $_POST["rfc"], $_POST["nombre"], $_POST["apellidoP"], $_POST["a
  $_POST["observaciones"],$_POST["cfdi"]
 
 function validate_donadores() {
+  var metodoPago = document.getElementById("metodoPago").value;
   $.post('addDonador.php',{
     email: email1,
     rfc: rfc,
@@ -70,7 +72,7 @@ function validate_donadores() {
     fechaN: date,
     direccion: inputs(direccion),
     telefono: telefono,
-    ocupacion: inputs(ocupacion),
+    ocupacion: ocupacion,
     metodoPago: metodoPago,
     observaciones: inputs(obsv),
     cfdi: cfdi
