@@ -43,4 +43,11 @@ function generateEdit(){
 
 }
 
+function generateEliminar(){
+    $('input[name="c_email"]').val(email);
+    $('input[name="c_donador"]').val(nombre);
+}
 
+function generateValidar(){
+    $('input[name="v_email"]').val(email);
+}
