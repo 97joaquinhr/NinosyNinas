@@ -11,18 +11,51 @@ function disconnect($mysql) {
     mysqli_close($mysql);
 }
 
-function login($email, $passwd) {
+function login($userid) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query="SELECT email FROM usuario WHERE Email = ? AND Pswd = ?";
+        $query="SELECT * FROM usuario WHERE id = ?";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("ss", $email, $passwd)) {
+        if (!$statement->bind_param("s", $userid)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        disconnect($db);
+        return false;
+    }
+    return false;
+}
+
+function signup($userid, $name, $email) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query="INSERT INTO usuario (id, email, name) values (?, ?, ?)";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sss", $userid, $email, $name)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -286,7 +319,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, Telefono, Email FROM Usuario ORDER BY Nombre ASC';
+        $query='SELECT * FROM usuario ORDER BY name ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -294,13 +327,34 @@ function getUsuarios() {
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
+                echo "<a data-toggle='modal' data-target='#usuarioInfo' onclick='genereateUsuario();>";
                 echo "<tr class=''>";
-                echo "<td>" . $row["Nombre"] . "</td>";
-                echo "<td>" . $row["Telefono"] . "</td>";
-                echo "<td>" . $row["Email"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
                 echo "</tr>";
+                echo "</a>";
             }
         }
+        return true;
+    }
+    return false;
+}
+
+function getAllUsuarios() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT (DATE(Fecha)), COUNT(Email) FROM donadores_usocfdi GROUP BY (DATE(Fecha))';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        
+        $array = array();
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                // $array[] = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+            }
+        }
+        disconnect($db);
         return true;
     }
     return false;
