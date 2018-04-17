@@ -7,6 +7,6 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - WebBrowser:
-            url: http://localhost:8080/NinosyNinas/GestorV2/
+        - PhpBrowser:
+            url: http://niyni.tk/dev/GestorV2
         - \Helper\Acceptance

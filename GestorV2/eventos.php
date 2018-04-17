@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["usuario"]) ) {
+    if(isset($_SESSION["usuario"]) && ($_SESSION["rol"] == "R01" || $_SESSION["rol"] == "R02" || $_SESSION["rol"] == "R04")) {
         $user = $_SESSION["usuario"];
         $nombre = $_SESSION["nombre"];
         $rol = $_SESSION["rol"];
@@ -31,6 +31,7 @@
                 <script src="js/modals.js"></script>';
         // Required Scripts and end of file
         include("partials/_end.html");
+        include ("partials/_eventosModals.html");
     } else {
         $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
         header("location: index.php");
