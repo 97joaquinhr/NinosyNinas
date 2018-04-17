@@ -621,10 +621,100 @@ function printDonadoresNV(){
         
         echo $row["total"];
 
+
         mysqli_free_result($results);
         disconnect($db);
         return true;
     }
     return false;
 }
-?>
+
+
+//Acerca de Nosotros
+
+    function obtenerTitulo($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Titulo"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerDesc($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Descripcion"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerDescObjetivos($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerTablaBlue($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerTablaPink($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
+
