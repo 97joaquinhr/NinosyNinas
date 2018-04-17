@@ -1,2 +1,9 @@
-# Ninos y Ninas
-Repositorio del proyecto de DAW y BD para la fundación Ninos y ninas como servicio social.
+# Within Systems: Página web Niños y Niñas de México A.C.
+Bienvenido al repositorio de la página web de Niños y Niñas de México A.C.
+Este página fue desarrollada como un proyecto de servicio social por el equipo Within Systems, compuesto por:
+  - Juan Pablo Pino
+  - Marcelo Schonbrunn
+  - Dagoberto Prado
+  - César Buenfil
+  - Joaquín Herrera
+  
