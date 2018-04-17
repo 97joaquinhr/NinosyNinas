@@ -3,7 +3,7 @@
     require_once("modelo.php");
     date_default_timezone_set("UTC");
 
-    if(isset($_SESSION["usuario"]) && $_SESSION["rol"] != "R04" && $_SESSION["rol"] != "R06") {
+    if(isset($_SESSION["usuario"])) {
         if(isset($_POST["nombre"]) != NULL ) {
             unset($_SESSION["error_archivo"]);
             $target_dir = "uploads/gallery/";
@@ -28,7 +28,7 @@
                 $uploadOk = 0;
             }
             // Check file size
-            if ($_FILES["imagen"]["size"] > 2000000) {
+            if ($_FILES["imagen"]["size"] > 20000000) {
                 $_SESSION["error_archivo"] =  "El archivo es demasiado grande.";
                 $uploadOk = 0;
             }

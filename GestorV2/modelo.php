@@ -11,18 +11,51 @@ function disconnect($mysql) {
     mysqli_close($mysql);
 }
 
-function login($email, $passwd) {
+function login($userid) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query="SELECT email FROM usuario WHERE Email = ? AND Pswd = ?";
+        $query="SELECT * FROM usuario WHERE id = ?";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("ss", $email, $passwd)) {
+        if (!$statement->bind_param("s", $userid)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        disconnect($db);
+        return false;
+    }
+    return false;
+}
+
+function signup($userid, $name, $email) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query="INSERT INTO usuario (id, email, name) values (?, ?, ?)";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sss", $userid, $email, $name)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -157,11 +190,11 @@ function getDonadores() {
 
         $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
-                ORDER BY Nombre ASC 
+                AND Validado = 1
+                ORDER BY Nombre ASC
                 LIMIT 10 ';
         $results = $db->query($query);
 
@@ -169,8 +202,9 @@ function getDonadores() {
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
 
-            $html .= '                   
-                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+            $html .= '
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'"
+                            onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
                              <div class="media-body">
                               <div class="row">
                                 <div class="col-sm">
@@ -200,10 +234,10 @@ function getDonadores2() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
+                AND Validado = 1
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -211,7 +245,8 @@ function getDonadores2() {
 
             while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
                 $html.= '
-                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'"
+                 onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
                  <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
                  <td>'. $row["Telefono"] .'</td>
                  <td>'. $row["Email"] .'</td>
@@ -284,7 +319,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Nombre, Telefono, Email FROM Usuario ORDER BY Nombre ASC';
+        $query='SELECT * FROM usuario ORDER BY name ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -292,13 +327,34 @@ function getUsuarios() {
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
+                echo "<a data-toggle='modal' data-target='#usuarioInfo' onclick='genereateUsuario();>";
                 echo "<tr class=''>";
-                echo "<td>" . $row["Nombre"] . "</td>";
-                echo "<td>" . $row["Telefono"] . "</td>";
-                echo "<td>" . $row["Email"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
                 echo "</tr>";
+                echo "</a>";
             }
         }
+        return true;
+    }
+    return false;
+}
+
+function getAllUsuarios() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT (DATE(Fecha)), COUNT(Email) FROM donadores_usocfdi GROUP BY (DATE(Fecha))';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        
+        $array = array();
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                // $array[] = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+            }
+        }
+        disconnect($db);
         return true;
     }
     return false;
@@ -356,22 +412,31 @@ function eliminarImagen($url) {
     $db = connect();
     if ($db != NULL) {
 
-        // insert command specification
-        $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("s", $url)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
+        $file = $url;
+        $thurl = substr_replace($url, "thurl/", 16, 0);
+        $thurl=substr($thurl,0,-4);
 
-        mysqli_free_result($results);
+        if (!unlink($file) || !unlink($thurl))//no se elimina el thurl
+        {
+            die("Error deleting $file or $thurl");
+        }
+        else
+        {
+            // insert command specification
+            $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("s", $url)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+            // Executing the statement
+            if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+            }
+        }
         disconnect($db);
         return true;
     }
@@ -417,24 +482,17 @@ function getGaleriaPagina() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-        $i = 0;
-        echo '<div class="row">';
+        echo '<div class="m-p-g">
+            <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">';
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo '
-                <div class="col">
-                    <div class="show-image">
-                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                    </div>
-                </div>';
-                $i++;
-                if ($i == 4) {
-                    echo '</div><div class="row">';
-                    $i = 0;
-                }
+                echo '<img src="../GestorV2/'.$row['Filepath'].'" data-full="../GestorV2/'.$row['Filepath'].'" class="m-p-g__thumbs-img" />';
             }
         }
-        echo '</div>';
+        echo '</div>
+
+            <div class="m-p-g__fullscreen"></div>
+        </div>';
         mysqli_free_result($result);
         disconnect($db);
         return true;
@@ -510,8 +568,6 @@ function make_thumb($file, $dest)
             } else {
                 echo "Error updating record: " . mysqli_error($db);
             }
-
-
         }
     }
 
@@ -547,4 +603,90 @@ function make_thumb($file, $dest)
         }
     }
 
-?>
+//Acerca de Nosotros
+
+    function obtenerTitulo($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Titulo"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerDesc($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= $row["Descripcion"];
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerDescObjetivos($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerTablaBlue($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
+    function obtenerTablaPink($seccion) {
+        $db = connect();
+        if ($db != NULL) {
+            $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+            $result = mysqli_query($db,$sql);
+            disconnect($db);
+            $html = '';
+
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                }
+                echo $html;
+            }
+        }
+    }
+
