@@ -28,7 +28,7 @@
                 $uploadOk = 0;
             }
             // Check file size
-            if ($_FILES["imagen"]["size"] > 2000000) {
+            if ($_FILES["imagen"]["size"] > 20000000) {
                 $_SESSION["error_archivo"] =  "El archivo es demasiado grande.";
                 $uploadOk = 0;
             }
