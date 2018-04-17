@@ -1,11 +1,9 @@
 <?php
 
 function connect() {
-
-    // $mysql = mysqli_connect("localhost","root","","ninos");
+    //$mysql = mysqli_connect("localhost","root","","ninos");
     $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
     $mysql->set_charset("utf8");
-
     return $mysql;
 }
 
@@ -13,18 +11,52 @@ function disconnect($mysql) {
     mysqli_close($mysql);
 }
 
-function login($email, $passwd) {
+function login($userid) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query="SELECT email FROM usuario WHERE Email = ? AND Pswd = ?";
+        $query="SELECT * FROM usuario WHERE id = ?";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("ss", $email, $passwd)) {
+        if (!$statement->bind_param("s", $userid)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+
+        if (mysqli_num_rows($results) > 0)  {
+            // it releases the associated results
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        disconnect($db);
+        return false;
+    }
+    return false;
+}
+
+
+function signup($userid, $name, $email) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query="INSERT INTO usuario (id, email, name) values (?, ?, ?)";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sss", $userid, $email, $name)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -362,6 +394,26 @@ function getUsuarios() {
     return false;
 }
 
+function getAllUsuarios() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT (DATE(Fecha)), COUNT(Email) FROM donadores_usocfdi GROUP BY (DATE(Fecha))';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+
+        $array = array();
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                // $array[] = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+            }
+        }
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
 function getNoticias() {
     $db = connect();
 
@@ -627,4 +679,91 @@ function printDonadoresNV(){
     }
     return false;
 }
+
+function obtenerTitulo($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Titulo"];
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerDesc($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Descripcion"];
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerDescObjetivos($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaBlue($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaPink($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+
 ?>
