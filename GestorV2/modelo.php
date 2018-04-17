@@ -327,12 +327,11 @@ function getUsuarios() {
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<a data-toggle='modal' data-target='#usuarioInfo' onclick='genereateUsuario();>";
                 echo "<tr class=''>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
+                echo "<td><a class='btn btn-danger text-white' data-toggle = 'modal' data-target = '#usuarioInfo' onclick='deleteUserModal(".$row["id"].");'><i class='fas fa-trash-alt'></i></a></td>";
                 echo "</tr>";
-                echo "</a>";
             }
         }
         return true;
