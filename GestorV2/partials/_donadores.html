@@ -1,9 +1,36 @@
 <div class="container-fluid">
+    <h2>Donadores por Validar</h2>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-3">
+                <div class="card-header">
+
+                    <i class="fa fa-bell-o"></i>Donadores no validados
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Fecha de  Nacimiento</th>
+                    </tr>
+                    </thead>
+                    <tbody id="donadoresNV">
+                    <?php getDonadoresNV();?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
     <h2>Donadores</h2>
     <div class="row">
         <div class="col">
             <div class="card mb-3">
                 <div class="card-header">
+
                     <i class="fa fa-bell-o"></i>Donadores
                     <form class="form-inline">
                         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
@@ -15,7 +42,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Registrado Desde</th>
+                        <th scope="col">Fecha de  Nacimiento</th>
                     </tr>
                     </thead>
                     <tbody id="myTable">
@@ -38,3 +65,4 @@
 
 <script type="text/javascript" src="js/ajax.js"></script>
 
+</div>
