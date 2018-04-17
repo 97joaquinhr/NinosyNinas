@@ -3,23 +3,8 @@
         <div class="card-header">Iniciar Sesión</div>
         <div class="card-body">
             <img src="images/logo_notext.png" class="img img-fluid">
-            <form action="login.php" method="post">
-                <div class="form-group">
-
-                    <label for="exampleInputEmail1">Correo Electrónico</label>
-                    <input name="usuario" class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="ejemplo@mail.com" required>
-
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input name="password" class="form-control" id="password" type="password" placeholder="******" required>
-                </div>
-
-                <input type="submit" class="btn btn-primary btn-block" value="Enviar">
-
-            </form>
-            <div class="text-center">
-                <a class="d-block small mt-3" href="forgot-password.html">Olvidé mi contraseña</a>
+            <div class="row justify-content-center align-items-center py-4 mt-4">
+                <div class="mx-auto" id="my-signin2"></div>
             </div>
         </div>
         <?php if (isset($_SESSION["error"])): ?>

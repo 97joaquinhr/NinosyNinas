@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["usuario"]) && ($_SESSION["rol"] == "R01" || $_SESSION["rol"] == "R02" || $_SESSION["rol"] == "R04")) {
+    if(isset($_SESSION["usuario"])) {
         $user = $_SESSION["usuario"];
         $nombre = $_SESSION["nombre"];
         $rol = $_SESSION["rol"];
