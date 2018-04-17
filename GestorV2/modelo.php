@@ -405,7 +405,6 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         }
 
-        mysqli_free_result($results);
         disconnect($db);
         return true;
     }
@@ -431,7 +430,6 @@ function eliminarImagen($url) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         }
 
-        mysqli_free_result($results);
         disconnect($db);
         return true;
     }
@@ -610,4 +608,7 @@ function make_thumb($file, $dest)
         }
     }
 
+    function printDonadoresNV(){
+        echo '2';
+    }
 ?>

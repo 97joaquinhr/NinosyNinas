@@ -123,10 +123,31 @@
                                 <label for="observaciones">Observaciones</label>
                                 <input class="form-control" name="ed_obs" id="ed_observaciones" aria-describedby="observacionesHelp" value="Fecha de vencimiento: 06/18">
                             </div>
-                            <div class="form-group">
-                                <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" id="ed_usoCFDI" name="ed_usoCFDI" aria-describedby="usoCFDIHelp" value="G03">
-                            </div>
+                            <label for="usoCFDI">Uso CFDI</label>
+                            <select id="ed_usoCFDI" name="ed_usoCFDI" class="form-control">
+                                <option value="G01">G01 - Adquisición de mercancías</option>
+                                <option value="G02">G02 - Devoluciones, descuentos o bonificaciones</option>
+                                <option value="G03">G03 - Gastos Generales</option>
+                                <option value="I01">I01 - Construcciones</option>
+                                <option value="I02">I02 - Mobiliario y equipo de oficina por inversiones</option>
+                                <option value="I03">I03 - Equipo de transporte</option>
+                                <option value="I04">I04 - Equipo de computo y accesorios</option>
+                                <option value="I05">I05 - Dados, troqueles, moldes, matrices y herrramientas</option>
+                                <option value="I06">I06 - Comunicaciones telefonicas</option>
+                                <option value="I07">I07 - Comunicaciones satelitales</option>
+                                <option value="I08">I08 - Otra maquinaria y equipo</option>
+                                <option value="D01">D01 - Honorarios médicos, dentales y gastos hosiptalarios</option>
+                                <option value="D02">D02 - Gastos médicos por incapacidad o discapacidad</option>
+                                <option value="D03">D03 - Gastos funerales</option>
+                                <option value="D04">D04 - Donativos</option>
+                                <option value="D05">D05 - Intereses reales efectivamente pagados por créditos hipotecarios</option>
+                                <option value="D06">D06 - Aportaciones voluntarias al SAR</option>
+                                <option value="D07">D07 - Primas por seguros de gastos médiocs</option>
+                                <option value="D08">D08 - Gastos de transportación escolar obligatoria</option>
+                                <option value="D09">D09 - Depositos en cuentas para el ahorro...</option>
+                                <option value="D10">D10 - Pagos por servicios educativos</option>
+                                <option value="P01">P01 - Por Definir</option>
+                            </select>
                         </div>
                     </div>
                 </div>
