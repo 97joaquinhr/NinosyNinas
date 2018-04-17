@@ -673,12 +673,14 @@ function printDonadoresNV(){
         
         echo $row["total"];
 
+
         mysqli_free_result($results);
         disconnect($db);
         return true;
     }
     return false;
 }
+
 
 function obtenerTitulo($seccion) {
     $db = connect();

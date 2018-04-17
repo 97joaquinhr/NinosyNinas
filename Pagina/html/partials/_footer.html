@@ -1,3 +1,8 @@
+<?php
+require_once ("../GestorV2/modelo.php");
+?>
+<!--Footer-->
+
 <footer class="page-footer font-small blue pt-4 mt-4 bg-gray2 shadow">
 
 	<!--Footer Links-->
@@ -8,7 +13,7 @@
 			<div class="col-1"></div>
 			<div class="col-md-5">
 				<h5><img src="img/logo_notext.png" style="height: 20px"> Niños y Niñas de A.C.</h5>
-				<p>Mision : "Generamos un programa de formación integral con las niñas, niños y adolescentes que junto con su famlia han hecho de la calle su lugar de trabajo; para desarrollar sus capacidades básicas y construir alternativas que les permitan mejorar sus oportunidades de vida."</p>
+				<p><?php obtenerTitulo('Mision') ?><br>"<?php obtenerDesc('Mision') ?>"</p>
 			</div>
 		</div>
 	</div>
@@ -17,12 +22,13 @@
 	<!--Copyright-->
 	<div class="footer-copyright py-3 text-center shadow">
 		© 2018 Copyright:
-		<a class="bg-gray2" href=""> Within Systems </a>
+		<a class="bg-gray2" href="https://www.facebook.com/ninosyninasdemexicoqro/">Niños y Niñas de México A.C.</a>
 	</div>
 	<!--/.Copyright-->
 
 </footer>
 <!--/.Footer-->
+</body>
 
 
 		<!-- Bootstrap core JavaScript

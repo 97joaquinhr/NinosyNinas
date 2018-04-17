@@ -1,312 +1,210 @@
 <html>
-    
     <section id="content" class="container">
         <header>
             <h2 class="sr-only">Acerca de nosotros</h2>
         </header>
-            <article class="py-4">
-                <div id="intro" class="container-fluid anchor"></div>
-                <!-- Main component for a primary marketing message or call to action -->
-                <div class="jumbotron2 bg-gray shadow">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" data-toggle="tab" href="#Nosotros">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" data-toggle="tab" href="#AreasDeAtencion">Áreas de Atención</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" data-toggle="tab" href="#Logros">Logros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-gray" data-toggle="tab" href="#Needs">¿Que hace falta?</a>
-                        </li>
-                    </ul>
-                </div>
+        <article class="py-4">
+            <div id="intro" class="container-fluid anchor"></div>
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron2 bg-gray shadow">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#AreasDeAtencion">Áreas de Atención</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Logros">Logros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Needs">¿Que hace falta?</a>
+                    </li>
+                </ul>
+            </div>
 
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="Nosotros">
-                        <div class="jumbotron bg-dark text-white shadow">
-                            <div class="row">
-                                <div class="col">
-                                    <header>
-                                        <h2 class="font text-white">Nosotros</h2>
-                                        <h5 class="text-white">¿Quiénes somos?</h5>
-                                    </header>
-                                </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="Nosotros">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('QuienesSomos') ?></h2>
+                                </header>
                             </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <p class="lead pt-5 pb-1 text-white">Somos un grupo de personas comprometidas con mejorar las condiciones de marginación en que viven muchos niños y sus familias, al hacer de la calle, su lugar de trabajo. </p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="container-fluid">
-                                        <img src="img/donation-3.png" class="img img-fluid" alt="Heart and us">
-                                    </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QuienesSomos') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/donation-3.png" class="img img-fluid" alt="Heart and us">
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="row py-4">
+                    <div class="row py-4">
+                        <div class="col-sm-3">
+                            <div class="container-fluid">
+                                <img src="img/library-2.png" class="img-fluid img" alt="Office">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="container mt-2">
+                                <p class="lead"><?php obtenerDesc('Constitucion') ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="py-4">Patronato</h2>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <div class="card-deck">
+                                <div class="card text-white bg-cyan shadow">
+                                    <?php obtenerTablaBlue('Patronato') ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+
+                    <h2 class="py-4 mt-4">Misión</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <blockquote class="blockquote text-center mt-4">
+                                    <p class="mb-0"><em><?php obtenerDesc('Mision') ?></em></p>
+                                </blockquote>
+                            </div>
                             <div class="col-sm-3">
                                 <div class="container-fluid">
-                                    <img src="img/library-2.png" class="img-fluid img" alt="Office">
+                                    <img src="img/library.png" class="img-fluid img" alt="Books">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="py-4 mt-4">Visión</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/mortgage-1.png" class="img-fluid img" alt="House and us">
                                 </div>
                             </div>
                             <div class="col-md-9">
-                                <div class="container mt-2">
-                                    <p class="lead">Nos constituimos legalmente como una asociación civil sin fines de lucro, e iniciamos operaciones en Querétaro en 1998. Contamos con un equipo base de trabajo, responsable del desarrollo de los programas. Nos organizamos a través de un patronato, cuya tarea es velar por el buen funcionamiento de la institución.</p>
-                                </div>
+                                <blockquote class="blockquote text-center mt-3">
+                                    <p class="mb-0"><em><?php obtenerDesc('Vision') ?></em></p>
+                                </blockquote>
                             </div>
                         </div>
-
-
-                        <h2 class="py-4">Patronato</h2>
-
-                        <div class="row">
-                            <div class="col-1"></div>
-                            <div class="col-10">
-                                <div class="card-deck">
-                                    <div class="card text-white bg-cyan shadow">
-                                        <div class="card-body text-white">
-                                            <h3>Presidenta</h3><p class="card-text text-white">Ana María Larragain González</p>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item bg-cyan text-white"><h5>Secretario</h5><p class="card-text text-white">José Luís Martínez Diez</p></li>
-                                            <li class="list-group-item bg-cyan text-white"><h5>Tesorero</h5><p class="card-text text-white">Enrique Rubín Colea</p></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="card text-white bg-pink shadow">
-                                        <div class="card-body text-white">
-                                            <h3>Vocales</h3>
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item bg-pink text-white"><p class="card-text text-white">Beatriz López Venero</p></li>
-                                            <li class="list-group-item bg-pink"><p class="card-text text-white">Angélica Malagón Paulín</p></li>
-                                            <li class="list-group-item bg-pink"><p class="card-text text-white">Ana Isabel Niembro González</p></li>
-                                            <li class="list-group-item bg-pink"><p class="card-text text-white">María Rosa Rodríguez Segón</p></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-1"></div>
-                        </div>
-
-                        <!-- <div class="container">
-                            <div class="lta">
-                                <div class="lta-wrapper">
-                                    <h2 class="lta-r1"><span class="lta-source">John F. Kennedy</span>Los niños son el</h2>
-                                    <h2 class="lta-r2">recurso más importante del mundo</h2>
-                                    <h2 class="lta-r3">y la mejor esperanza para el futuro.</h2>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <h2 class="py-4 mt-4">Misión</h2>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <blockquote class="blockquote text-center mt-4">
-                                        <p class="mb-0"><em>Generamos un programa de formación integral con las niñas, niños y adolescentes que junto con su famlia han hecho de la calle su lugar de trabajo; para desarrollar sus capacidades básicas y construir alternativas que les permitan mejorar sus oportunidades de vida.</em></p>
-                                    </blockquote>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="container-fluid">
-                                        <img src="img/library.png" class="img-fluid img" alt="Books">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="py-4 mt-4">Visión</h2>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="container-fluid">
-                                        <img src="img/mortgage-1.png" class="img-fluid img" alt="House and us">
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <blockquote class="blockquote text-center mt-3">
-                                        <p class="mb-0"><em>Queremos ser un espacio en donde niños y niñas que viven en condiciones adversas por la marginación, encuentren opciones de desarrollo intelectual, emocional y social. Una oportunidad que les facilite una mejor calidad de vida y una opción laboral distinta a la calle.</em></p>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="py-4 mt-4">Objetivos</h2>
-                        <blockquote class="blockquote mt-3">
-                            <ul class="list-group-flush text-center">
-                                <li class="list-group-item shadow"><p><em>Llevar a cabo con los niños en situación de calle, un programa de desarrollo integral, que promueva alternativas, disminuya su marginación y mejore sus condiciones de vida.</em></p></li>
-                                <li class="list-group-item shadow"><p><em>Fomentar el acceso a alguna modalidad educativa para toda la familia.</em></p></li>
-                                <li class="list-group-item shadow"><p><em>Sensibilizar y difundir en nuestra sociedad la importancia de participar en la formación y desarrollo de los niños que trabajan en la calle, así como el respeto y dignificación de éstos.</em></p></li>
-                                <li class="list-group-item shadow"><p><em>Promover acciones que les permitan a estas familias el acceso a bienes y servicios públicos.</em></p></li>
-                            </ul>
-                        </blockquote>
                     </div>
-                    <div class="tab-pane fade" id="AreasDeAtencion">
-                        <div class="jumbotron bg-dark text-white shadow">
-                            <div class="row">
-                                <div class="col">
-                                    <header>
-                                        <h2 class="font text-white">Áreas de Atención</h2>
-                                    </header>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <p class="lead pt-5 pb-1 text-white">La atención que brindamos esta organizada en tres áreas:<br>
-                                    Area de Promoción Social<br>
-                                    Area de Educación<br>
-                                    Area de Desarrollo Institucional<br>
-                                    </p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="container-fluid">
-                                        <img src="img/pizarra.png" class="img img-fluid" alt="Blackboard">
-                                    </div>
-                                </div>
+
+                    <h2 class="py-4 mt-4">Objetivos</h2>
+                    <blockquote class="blockquote mt-3">
+                        <ul class="list-group-flush text-center">
+                            <?php obtenerDescObjetivos('Objetivos') ?>
+                        </ul>
+                    </blockquote>
+                </div>
+                <div class="tab-pane fade" id="AreasDeAtencion">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('AreasdeAtencion') ?></h2>
+                                </header>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-lg-4 col-md-4">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('AreasdeAtencion') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/pizarra.png" class="img img-fluid" alt="Blackboard">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="card text-white bg-cyan shadow">
+                                <?php obtenerTablaBlue('PromocionSocial') ?>
+                            </div>
+                            <br>
+                            <div>
                                 <div class="card text-white bg-cyan shadow">
-                                    <div class="card-body text-white">
-                                        <h3>Promocion Social</h3>
-                                    </div>
-                                    <hr>
-                                    <div class="container container-fluid">
-                                        <p class="text-white">Esta área favorece la formación, información y orientación a padres y niños.</p>
-                                    </div>                                    
-                                    <br>
+                                    <?php obtenerTablaBlue('ProgramasSocial') ?>
                                 </div>
                                 <br>
-                                <div class="card shadow">
-                                    <div class="container container fluid">
-                                        <br>
-                                        <p><strong>Programas</strong></p>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><p class="card-text text-gray">Nutrición, alimentación y seguimiento de peso y talla</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Salud preventiva y atención en nuestro centro y en diferentes instituciones de salud pública</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Acceso a Servicios de salud pública: Hospitalización, Esquema de Vacunación, Desparacitación, Salud Bucal, Cartilla de la Mujer, Detección temprana de cáncer, seguimiento de Embarazo y salud Reproductiva.</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Asesoría legal, familiar, psicológica y/o educativa para niños y padres</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Apoyo para transporte</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Talleres de capacitación.</p></li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                </div>
                             </div>
-                            <div class="col-12 col-lg-4 col-md-4">
-                                <div class="card text-white bg-pink shadow">
-                                    <div class="card-body text-white">
-                                        <h3>Desarrollo Institucional</h3>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item bg-pink"><p class="card-text text-white">Promovemos el desarrollo, la sustentabilidad y la transparencia institucional, mediante la difusión y publicidad de la organización.</p></li>
-                                        <li class="list-group-item bg-pink"><p class="card-text text-white">Promovemos el fortalecimiento Institucional a través de relaciones con Fundaciones e Instituciones Gubernamentales y Civiles.</p></li>
-                                        <li class="list-group-item bg-pink"><p class="card-text text-white"><strong class="text-white">NOTA:</strong> Estamos autorizados para expedir recibos deducibles de impuestos.</p></li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="card text-white bg-pink shadow">
+                                <?php obtenerTablaPink('DesarrolloInstitucional') ?>
                             </div>
-                            <div class="col-12 col-lg-4 col-md-4">
-                                 <div class="card text-white bg-cyan shadow">
-                                    <div class="card-body text-white">
-                                        <h3>Educación</h3>
-                                    </div>
-                                    <hr>
-                                    <div class="container container-fluid">
-                                        <p class="text-white">Esta área apoya y fortalece el acceso a alguna modalidad educativa para toda la familia.<br>Motivamos el interés tanto de los niños como de los padres por la escuela, a fin de lograr su incorporación y permanencia en la misma.</p>
-                                    </div>
-                                    <br>
+                        </div>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="card text-white bg-cyan shadow">
+                                <?php obtenerTablaBlue('Education') ?>
+                            </div>
+                            <br>
+                            <div>
+                                <div class="card text-white bg-cyan shadow">
+                                    <?php obtenerTablaBlue('ProgramasSocial') ?>
                                 </div>
                                 <br>
-                                <div class="card shadow">
-                                    <div class="container container fluid">
-                                        <br>
-                                        <p><strong>Programas</strong></p>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item"><p class="card-text text-gray">Programa de Estimulación Psicopedagógica</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Programa de Integración y Desarrollo Humano</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Programa de Formación Preescolar</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">"Ayúdame a estudiar" Apoyo académico a niñas escolarizados</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Programa 10-14 para niños desertores de la escuela</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Alfabetización y educación básica para niños y adultos no escolarizados</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Taller de Computación</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Actividades Deportivas</p></li>
-                                            <li class="list-group-item"><p class="card-text text-gray">Actividades de Verano</p></li>
-                                        </ul>
-                                    </div>
-                                    <br>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="Logros">
-                        <div class="jumbotron bg-dark text-white shadow">
-                            <div class="row">
-                                <div class="col">
-                                    <header>
-                                        <h2 class="font text-white">Logros</h2>
-                                    </header>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <p class="lead pt-5 pb-1 text-white">A más de 12 años de labores, atendemos a 104 niños de 35 familias, impactamos a 189 personas desde nuestros diferentes programas.<br>
-                                    <br>
-                                    El 100% de los niños está inscrito en alguna modalidad eductavia oficial.<br>
-                                    El 100% de los niños lleva un seguimiento del esquema de vacunación oficial.<br>
-                                    Se da seguimiento de peso y talla a 40 niños, apoyándolos con una papilla reforzada.<br>
-                                    Se desparasita al 100% de los niños cada 6 meses.<br>
-                                    Atendemos un promedio de 35 consultas médicas por mes.<br>
-                                    29 madres de familia se han capacitado en nuestros talleres.<br>
-                                    Contamos con un edificio propio y un vehículo.
-                                    </p>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="container-fluid">
-                                        <img src="img/diploma.png" class="img img-fluid" alt="Achivement">
-                                    </div>
-                                </div>
+                </div>
+                <div class="tab-pane fade" id="Logros">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('Logros') ?></h2>
+                                </header>
                             </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="Needs">
-                        <div class="jumbotron bg-dark text-white shadow">
-                            <div class="container">
-                                <div class="row">
-                                        <div class="col">
-                                    <header>
-                                        <h2 class="font text-white">¿Qué necesitamos?</h2>
-                                    </header>
-                                </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <p class="lead pt-5 pb-1 text-white"><strong class="text-white">Profesionistas voluntarios</strong> que nos brinden sus servicios para ayudar a nuestros beneficiarios.<br>
-                                            <strong class="text-white">Computadoras</strong> para capacitar a nuestros niños.<br>
-                                            <strong class="text-white">Alimentos preparados</strong> para brindarle a nuestros niños una buena alimentación.<br>
-                                            <strong class="text-white">Becas Escolares</strong> para promover la permanencia en la escuela.<br>
-                                            <strong class="text-white">Donativos económicos</strong> para el desarrollo de los programas y la atención de problemas específicos.<br>
-                                            <strong class="text-white">Materiales didácticos</strong> y <strong class="text-white">mobiliario escolar</strong> para el área de educación.
-                                        </p>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="container-fluid">
-                                            <img src="img/campana.png" class="img img-fluid" alt="Bell">
-                                        </div>
-                                    </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('Logros') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/diploma.png" class="img img-fluid" alt="Achivement">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-            </article>
-
-            
+                <div class="tab-pane fade" id="Needs">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('QueNecesitamos') ?></h2>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QueNecesitamos') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/campana.png" class="img img-fluid" alt="Bell">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
-
 </html>
