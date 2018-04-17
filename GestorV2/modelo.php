@@ -612,12 +612,14 @@ function printDonadoresNV(){
     $db = connect();
     if ($db != NULL) {
 
-        $query='SELECT COUNT (*) AS total
-                    FROM donadores 
-                    WHERE Validado = 0;
-                     ';
+        $query='SELECT COUNT(*) AS total
+                FROM donadores 
+                WHERE Validado = 0';
         $results = $db->query($query);
-        echo mysqli_num_rows($results);
+        
+        $row =  mysqli_fetch_assoc($results);
+        
+        echo $row["total"];
 
         mysqli_free_result($results);
         disconnect($db);

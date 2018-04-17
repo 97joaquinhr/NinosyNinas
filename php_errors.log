@@ -338,3 +338,63 @@ Stack trace:
 [17-Apr-2018 17:54:51 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/galeria.php:22
 [17-Apr-2018 17:54:51 UTC] PHP   3. getGaleriaGestor() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_galeria.html:20
 [17-Apr-2018 17:54:51 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:470
+[17-Apr-2018 19:27:31 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 620
+[17-Apr-2018 19:27:31 UTC] PHP Stack trace:
+[17-Apr-2018 19:27:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:27:31 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:27:31 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:27:31 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:620
+[17-Apr-2018 19:27:31 UTC] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 622
+[17-Apr-2018 19:27:31 UTC] PHP Stack trace:
+[17-Apr-2018 19:27:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:27:31 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:27:31 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:27:31 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:622
+[17-Apr-2018 19:29:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 621
+[17-Apr-2018 19:29:48 UTC] PHP Stack trace:
+[17-Apr-2018 19:29:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:29:48 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:29:48 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:29:48 UTC] PHP   4. mysqli_fetch_assoc() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:621
+[17-Apr-2018 19:29:48 UTC] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 625
+[17-Apr-2018 19:29:48 UTC] PHP Stack trace:
+[17-Apr-2018 19:29:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:29:48 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:29:48 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:29:48 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:625
+[17-Apr-2018 19:29:50 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 621
+[17-Apr-2018 19:29:50 UTC] PHP Stack trace:
+[17-Apr-2018 19:29:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:29:50 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:29:50 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:29:50 UTC] PHP   4. mysqli_fetch_assoc() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:621
+[17-Apr-2018 19:29:50 UTC] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 625
+[17-Apr-2018 19:29:50 UTC] PHP Stack trace:
+[17-Apr-2018 19:29:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:29:50 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:29:50 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:29:50 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:625
+[17-Apr-2018 19:30:09 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 620
+[17-Apr-2018 19:30:09 UTC] PHP Stack trace:
+[17-Apr-2018 19:30:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:30:09 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:30:09 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:30:09 UTC] PHP   4. mysqli_fetch_assoc() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:620
+[17-Apr-2018 19:30:09 UTC] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 624
+[17-Apr-2018 19:30:09 UTC] PHP Stack trace:
+[17-Apr-2018 19:30:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:30:09 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:30:09 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:30:09 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:624
+[17-Apr-2018 19:30:11 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 620
+[17-Apr-2018 19:30:11 UTC] PHP Stack trace:
+[17-Apr-2018 19:30:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:30:11 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:30:11 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:30:11 UTC] PHP   4. mysqli_fetch_assoc() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:620
+[17-Apr-2018 19:30:11 UTC] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 624
+[17-Apr-2018 19:30:11 UTC] PHP Stack trace:
+[17-Apr-2018 19:30:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[17-Apr-2018 19:30:11 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
+[17-Apr-2018 19:30:11 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
+[17-Apr-2018 19:30:11 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:624
