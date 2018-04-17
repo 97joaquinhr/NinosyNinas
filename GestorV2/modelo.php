@@ -77,6 +77,34 @@ function signup($userid, $name, $email) {
     return false;
 }
 
+function deleteUser($userid) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query="DELETE FROM usuario WHERE id = ?";
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("s", $userid)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Get results
+        $results = $statement->get_result();
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
 function getNombre($email) {
     $db = connect();
     if ($db != NULL) {
@@ -330,7 +358,7 @@ function getUsuarios() {
                 echo "<tr class=''>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-                echo "<td><a class='btn btn-danger text-white' data-toggle = 'modal' data-target = '#usuarioInfo' onclick='deleteUserModal(".$row["id"].");'><i class='fas fa-trash-alt'></i></a></td>";
+                echo "<td><a class='btn btn-danger text-white' data-toggle='modal' data-target='#usuarioInfo' onclick='deleteUserModal(".$row["id"].");'><i class='fas fa-trash-alt'></i></a></td>";
                 echo "</tr>";
             }
         }
