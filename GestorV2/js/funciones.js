@@ -44,3 +44,6 @@ function generateEdit(){
 }
 
 
+function deleteUserModal(id) {
+    
+}
