@@ -1,220 +1,210 @@
 <html>
-
-<section id="content" class="container">
-    <header>
-        <h2 class="sr-only">Acerca de nosotros</h2>
-    </header>
-    <article class="py-4">
-        <div id="intro" class="container-fluid anchor"></div>
-        <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron2 bg-gray shadow">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link text-gray" data-toggle="tab" href="#Nosotros">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-gray" data-toggle="tab" href="#AreasDeAtencion">Áreas de Atención</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-gray" data-toggle="tab" href="#Logros">Logros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-gray" data-toggle="tab" href="#Needs">¿Que hace falta?</a>
-                </li>
-            </ul>
-        </div>
-
-
-        <div class="tab-content">
-            <div class="tab-pane fade show active" id="Nosotros">
-                <div class="jumbotron bg-dark text-white shadow">
-                    <div class="row">
-                        <div class="col">
-                            <header>
-                                <h2 class="font text-white"><?php obtenerTitulo('QuienesSomos') ?></h2>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QuienesSomos') ?></p>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/donation-3.png" class="img img-fluid" alt="Heart and us">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row py-4">
-                    <div class="col-sm-3">
-                        <div class="container-fluid">
-                            <img src="img/library-2.png" class="img-fluid img" alt="Office">
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="container mt-2">
-                            <p class="lead"><?php obtenerDesc('Constitucion') ?></p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <h2 class="py-4">Patronato</h2>
-
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">
-                        <div class="card-deck">
-                            <div class="card text-white bg-cyan shadow">
-                                <?php obtenerTablaBlue('Patronato') ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3"></div>
-                </div>
-
-                <h2 class="py-4 mt-4">Misión</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <blockquote class="blockquote text-center mt-4">
-                                <p class="mb-0"><em><?php obtenerDesc('Mision') ?></em></p>
-                            </blockquote>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/library.png" class="img-fluid img" alt="Books">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="py-4 mt-4">Visión</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/mortgage-1.png" class="img-fluid img" alt="House and us">
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <blockquote class="blockquote text-center mt-3">
-                                <p class="mb-0"><em><?php obtenerDesc('Vision') ?></em></p>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-
-                <h2 class="py-4 mt-4">Objetivos</h2>
-                <blockquote class="blockquote mt-3">
-                    <ul class="list-group-flush text-center">
-                        <?php obtenerDescObjetivos('Objetivos') ?>
-                    </ul>
-                </blockquote>
+    <section id="content" class="container">
+        <header>
+            <h2 class="sr-only">Acerca de nosotros</h2>
+        </header>
+        <article class="py-4">
+            <div id="intro" class="container-fluid anchor"></div>
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron2 bg-gray shadow">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#AreasDeAtencion">Áreas de Atención</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Logros">Logros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" data-toggle="tab" href="#Needs">¿Que hace falta?</a>
+                    </li>
+                </ul>
             </div>
-            <div class="tab-pane fade" id="AreasDeAtencion">
-                <div class="jumbotron bg-dark text-white shadow">
-                    <div class="row">
-                        <div class="col">
-                            <header>
-                                <h2 class="font text-white"><?php obtenerTitulo('AreasdeAtencion') ?></h2>
-                            </header>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="Nosotros">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('QuienesSomos') ?></h2>
+                                </header>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('AreasdeAtencion') ?></p>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/pizarra.png" class="img img-fluid" alt="Blackboard">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QuienesSomos') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/donation-3.png" class="img img-fluid" alt="Heart and us">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <div class="card text-white bg-cyan shadow">
-                            <?php obtenerTablaBlue('PromocionSocial') ?>
-                        </div>
-                        <br>
-                        <div>
-                            <div class="card text-white bg-cyan shadow">
-                                <?php obtenerTablaBlue('ProgramasSocial') ?>
 
+                    <div class="row py-4">
+                        <div class="col-sm-3">
+                            <div class="container-fluid">
+                                <img src="img/library-2.png" class="img-fluid img" alt="Office">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="container mt-2">
+                                <p class="lead"><?php obtenerDesc('Constitucion') ?></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="py-4">Patronato</h2>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <div class="card-deck">
+                                <div class="card text-white bg-cyan shadow">
+                                    <?php obtenerTablaBlue('Patronato') ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+
+                    <h2 class="py-4 mt-4">Misión</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <blockquote class="blockquote text-center mt-4">
+                                    <p class="mb-0"><em><?php obtenerDesc('Mision') ?></em></p>
+                                </blockquote>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/library.png" class="img-fluid img" alt="Books">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="py-4 mt-4">Visión</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/mortgage-1.png" class="img-fluid img" alt="House and us">
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <blockquote class="blockquote text-center mt-3">
+                                    <p class="mb-0"><em><?php obtenerDesc('Vision') ?></em></p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="py-4 mt-4">Objetivos</h2>
+                    <blockquote class="blockquote mt-3">
+                        <ul class="list-group-flush text-center">
+                            <?php obtenerDescObjetivos('Objetivos') ?>
+                        </ul>
+                    </blockquote>
+                </div>
+                <div class="tab-pane fade" id="AreasDeAtencion">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('AreasdeAtencion') ?></h2>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('AreasdeAtencion') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/pizarra.png" class="img img-fluid" alt="Blackboard">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="card text-white bg-cyan shadow">
+                                <?php obtenerTablaBlue('PromocionSocial') ?>
                             </div>
                             <br>
+                            <div>
+                                <div class="card text-white bg-cyan shadow">
+                                    <?php obtenerTablaBlue('ProgramasSocial') ?>
+                                </div>
+                                <br>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <div class="card text-white bg-pink shadow">
-                            <?php obtenerTablaPink('DesarrolloInstitucional') ?>
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="card text-white bg-pink shadow">
+                                <?php obtenerTablaPink('DesarrolloInstitucional') ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-4">
-                        <div class="card text-white bg-cyan shadow">
-                            <?php obtenerTablaBlue('Education') ?>
-                        </div>
-                        <br>
-                        <div>
+                        <div class="col-12 col-lg-4 col-md-4">
                             <div class="card text-white bg-cyan shadow">
-                                <?php obtenerTablaBlue('ProgramasSocial') ?>
+                                <?php obtenerTablaBlue('Education') ?>
                             </div>
                             <br>
+                            <div>
+                                <div class="card text-white bg-cyan shadow">
+                                    <?php obtenerTablaBlue('ProgramasSocial') ?>
+                                </div>
+                                <br>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="tab-pane fade" id="Logros">
-                <div class="jumbotron bg-dark text-white shadow">
-                    <div class="row">
-                        <div class="col">
-                            <header>
-                                <h2 class="font text-white"><?php obtenerTitulo('Logros') ?></h2>
-                            </header>
+                <div class="tab-pane fade" id="Logros">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('Logros') ?></h2>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('Logros') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/diploma.png" class="img img-fluid" alt="Achivement">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('Logros') ?></p>
+                </div>
+                <div class="tab-pane fade" id="Needs">
+                    <div class="jumbotron bg-dark text-white shadow">
+                        <div class="row">
+                            <div class="col">
+                                <header>
+                                    <h2 class="font text-white"><?php obtenerTitulo('QueNecesitamos') ?></h2>
+                                </header>
+                            </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/diploma.png" class="img img-fluid" alt="Achivement">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QueNecesitamos') ?></p>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="container-fluid">
+                                    <img src="img/campana.png" class="img img-fluid" alt="Bell">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="Needs">
-                <div class="jumbotron bg-dark text-white shadow">
-                    <div class="row">
-                        <div class="col">
-                            <header>
-                                <h2 class="font text-white"><?php obtenerTitulo('QueNecesitamos') ?></h2>
-                            </header>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <p class="lead pt-5 pb-1 text-white"><?php obtenerDesc('QueNecesitamos') ?></p>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="container-fluid">
-                                <img src="img/campana.png" class="img img-fluid" alt="Bell">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </article>
-
-
-</section>
-
+        </article>
+    </section>
 </html>
