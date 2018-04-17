@@ -609,6 +609,20 @@ function make_thumb($file, $dest)
     }
 
     function printDonadoresNV(){
-        echo '2';
+        $db = connect();
+        if ($db != NULL) {
+
+            $query='SELECT COUNT (*) AS total
+                    FROM donadores 
+                    WHERE Validado = 0;
+                     ';
+            $results = $db->query($query);
+            echo mysqli_num_rows($results);
+
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        }
+        return false;
     }
 ?>
