@@ -345,6 +345,8 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
             echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
         echo $validado;
+//        echo "<script>alert('Registro exitoso');</script>";
+
 
 
 
