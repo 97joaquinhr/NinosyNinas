@@ -465,7 +465,7 @@ function getMetodos_graph() {
             }
         }
         disconnect($db);
-        return array('labels' => $fechas, 'data' => $n);;
+        return array('labels' => $fechas, 'data' => $n);
     }
     return false;
 }

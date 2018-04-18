@@ -635,3 +635,6 @@ Stack trace:
 [18-Apr-2018 15:39:56 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:22
 [18-Apr-2018 15:39:56 UTC] PHP   3. getNoticias() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_noticias.html:19
 [18-Apr-2018 15:39:56 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:484
+[18-Apr-2018 16:41:51 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 468
+[18-Apr-2018 16:41:51 UTC] PHP Stack trace:
+[18-Apr-2018 16:41:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
