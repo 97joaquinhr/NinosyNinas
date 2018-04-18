@@ -10,8 +10,10 @@ var date = document.getElementById("fechaN");
 var ocupacion = "";
 
 function validateEmail() {
-  if(email2.value!=email.value){
-    alert("Los emails no coinciden");
+  if(email1.value!=""){
+    if(email2.value!=email.value){
+      alert("Los emails no coinciden");
+    }
   }
 }
 
