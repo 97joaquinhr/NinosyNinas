@@ -4,62 +4,81 @@
         <div class="card card-register mx-auto mt-5 shadow">
             <div class="card-header">Registro de Donador</div>
             <div class="card-body">
-                <form>
+                <form action="addDonador.php" method="post" onsubmit="return validateForm()" name="DonadorRecurrente">
                     <div class="form-group">
-                        <label for="emailD">Correo electronico *</label>
-                        <input type="email" class="form-control" id="emailD" aria-describedby="emailHelp" placeholder="example@example.com">
+                        <label for="email">Correo electronico *</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
                         <small id="emailHelp" class="form-text text-muted">No compartiremos esto con nadie más.</small>
                     </div>
                     <div class="form-group">
                         <label for="emailD2">Confirmar correo *</label>
-                        <input type="email" class="form-control" id="emailD2" aria-describedby="emailHelp" placeholder="example@example.com">
+                        <input type="email" class="form-control" name="emailD2" id="emailD2" aria-describedby="emailHelp" placeholder="example@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="rfc">RFC</label>
-                        <input class="form-control" id="rfc" aria-describedby="rfcHelp" placeholder="AAAA0000001A1">
+                        <input class="form-control" name="rfc" id="rfc" aria-describedby="rfcHelp" placeholder="AAAA0000001A1">
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre(s) *</label>
-                        <input class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Carlos">
+                        <input class="form-control" name="nombre" id="nombre" required aria-describedby="nombreHelp" placeholder="Carlos">
                     </div>
                     <div class="form-group">
                         <label for="apellidoP">Apellido paterno *</label>
-                        <input class="form-control" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez">
+                        <input class="form-control" required name="apellidoP" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez">
                     </div>
                     <div class="form-group">
                         <label for="apellidoM">Apellido materno *</label>
-                        <input class="form-control" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono o Celular *</label>
-                        <input class="form-control" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111">
+                        <input class="form-control" required name="apellidoM" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo">
                     </div>
                     <label for="fechaN">Fecha de nacimiento</label>
-                    <input id="datepicker" placeholder="dd/mm/aaaa">
-
+                    <input type="date" id="fechaN" name="fechaN" placeholder="dd/mm/aaaa">
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
+                        <input class="form-control" name="direccion" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
                     </div>
-                    <div class="form-group">
-                        <label for="direccion">Direccion</label>
-                        <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="Privada Arboledas">
-                    </div>
-                    <label for="MetodoPago">Metodo de pago</label>
-                    <select class="form-control">
-                        <option>Tarjeta de crédito</option>
-                        <option>Transferencia</option>
-                        <option>Cheque</option>
-                        <option>Otro</option>
+                    <label for="metodoPago">Metodo de pago</label>
+                    <select id="metodoPago" name="metodoPago" class="form-control">
+                        <option value="M01">Tarjeta de crédito</option>
+                        <option value="M02">Transferencia</option>
+                        <option value="M03">Cheque</option>
+                        <option value="M04">Otro</option>
                     </select>
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
-                        <input class="form-control" id="observaciones" aria-describedby="observacionesHelp" placeholder="Me gustaría obtener más informes">
+                        <input class="form-control" name="observaciones" id="observaciones" aria-describedby="observacionesHelp" placeholder="Me gustaría obtener más informes">
                     </div>
+
+                    <label for="usoCFDI">Uso CFDI *</label>
+                    <select id="usoCFDI" name="cfdi" class="form-control">
+                        <option value="G01">G01 - Adquisición de mercancías</option>
+                        <option value="G02">G02 - Devoluciones, descuentos o bonificaciones</option>
+                        <option value="G03">G03 - Gastos Generales</option>
+                        <option value="I01">I01 - Construcciones</option>
+                        <option value="I02">I02 - Mobiliario y equipo de oficina por inversiones</option>
+                        <option value="I03">I03 - Equipo de transporte</option>
+                        <option value="I04">I04 - Equipo de computo y accesorios</option>
+                        <option value="I05">I05 - Dados, troqueles, moldes, matrices y herrramientas</option>
+                        <option value="I06">I06 - Comunicaciones telefonicas</option>
+                        <option value="I07">I07 - Comunicaciones satelitales</option>
+                        <option value="I08">I08 - Otra maquinaria y equipo</option>
+                        <option value="D01">D01 - Honorarios médicos, dentales y gastos hosiptalarios</option>
+                        <option value="D02">D02 - Gastos médicos por incapacidad o discapacidad</option>
+                        <option value="D03">D03 - Gastos funerales</option>
+                        <option value="D04">D04 - Donativos</option>
+                        <option value="D05">D05 - Intereses reales efectivamente pagados por créditos hipotecarios</option>
+                        <option value="D06">D06 - Aportaciones voluntarias al SAR</option>
+                        <option value="D07">D07 - Primas por seguros de gastos médiocs</option>
+                        <option value="D08">D08 - Gastos de transportación escolar obligatoria</option>
+                        <option value="D09">D09 - Depositos en cuentas para el ahorro...</option>
+                        <option value="D10">D10 - Pagos por servicios educativos</option>
+                        <option value="P01">P01 - Por Definir</option>
+                    </select>
+
                     <div class="form-group">
-                        <label for="usoCFDI">Uso CFDI</label>
-                        <input class="form-control" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                        <label for="telefono">Teléfono o Celular *</label>
+                        <input class="form-control" name="telefono" id="telefono" aria-describedby="telefonoHelp" required placeholder="+52 4421111111">
                     </div>
+
                     <p>* Campos Obligatorios</p>
                     <button type="submit" class="btn bg-pink text-white shadow">Guardar cambios</button>
                 </form>
@@ -72,5 +91,6 @@
     <br>
     <br>
 </div>
-
 <script src=“https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js” type=“text/javascript”></script>
+<script src="js/demo-compiled.js"></script>
+<script src="js/validate_addDonador.js"></script>
