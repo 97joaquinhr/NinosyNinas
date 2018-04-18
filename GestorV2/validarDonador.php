@@ -1,4 +1,6 @@
 <?php
 require_once("modelo.php");
-validarDonador($_POST["v_email"]);
-header("Location:donadores.php");
+if(isset($_SESSION["usuario"])) {
+    validarDonador($_POST["v_email"]);
+    header("Location:donadores.php");
+}

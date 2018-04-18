@@ -470,6 +470,44 @@ function getMetodos_graph() {
     return false;
 }
 
+function getMetodos() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT IdMetodo, Descripcion FROM metodopago';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+       
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<option value=\"".$row["IdMetodo"]."\">".$row["Descripcion"]."</option>";
+            }
+        }
+        disconnect($db);
+        return array('labels' => $fechas, 'data' => $n);;
+    }
+    return false;
+}
+
+function getUSOCFDI() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT IdCFDI, Nombre FROM usocfdi';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+       
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<option value=\"".$row["IdCFDI"]."\">".$row["IdCFDI"]." - ".$row["Nombre"]."</option>";
+            }
+        }
+        disconnect($db);
+        return array('labels' => $fechas, 'data' => $n);;
+    }
+    return false;
+}
+
 function getNoticias() {
     $db = connect();
 

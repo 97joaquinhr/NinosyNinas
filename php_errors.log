@@ -593,3 +593,45 @@ Stack trace:
 [17-Apr-2018 19:30:11 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:22
 [17-Apr-2018 19:30:11 UTC] PHP   3. printDonadoresNV() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_dashboard.html:26
 [17-Apr-2018 19:30:11 UTC] PHP   4. mysqli_free_result() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:624
+[18-Apr-2018 14:42:34 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 484
+[18-Apr-2018 14:42:34 UTC] PHP Stack trace:
+[18-Apr-2018 14:42:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:0
+[18-Apr-2018 14:42:34 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:22
+[18-Apr-2018 14:42:34 UTC] PHP   3. getNoticias() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_noticias.html:19
+[18-Apr-2018 14:42:34 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:484
+[18-Apr-2018 14:42:40 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 411
+[18-Apr-2018 14:42:40 UTC] PHP Stack trace:
+[18-Apr-2018 14:42:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:0
+[18-Apr-2018 14:42:40 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:18
+[18-Apr-2018 14:42:40 UTC] PHP   3. getUsuarios() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_usuario.html:20
+[18-Apr-2018 14:42:40 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:411
+[18-Apr-2018 14:42:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 411
+[18-Apr-2018 14:42:42 UTC] PHP Stack trace:
+[18-Apr-2018 14:42:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:0
+[18-Apr-2018 14:42:42 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:18
+[18-Apr-2018 14:42:42 UTC] PHP   3. getUsuarios() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_usuario.html:20
+[18-Apr-2018 14:42:42 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:411
+[18-Apr-2018 14:42:50 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 411
+[18-Apr-2018 14:42:50 UTC] PHP Stack trace:
+[18-Apr-2018 14:42:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:0
+[18-Apr-2018 14:42:50 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/usuario.php:18
+[18-Apr-2018 14:42:50 UTC] PHP   3. getUsuarios() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_usuario.html:20
+[18-Apr-2018 14:42:50 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:411
+[18-Apr-2018 14:53:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 484
+[18-Apr-2018 14:53:44 UTC] PHP Stack trace:
+[18-Apr-2018 14:53:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:0
+[18-Apr-2018 14:53:44 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:22
+[18-Apr-2018 14:53:44 UTC] PHP   3. getNoticias() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_noticias.html:19
+[18-Apr-2018 14:53:44 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:484
+[18-Apr-2018 15:16:24 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 484
+[18-Apr-2018 15:16:24 UTC] PHP Stack trace:
+[18-Apr-2018 15:16:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:0
+[18-Apr-2018 15:16:24 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:22
+[18-Apr-2018 15:16:24 UTC] PHP   3. getNoticias() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_noticias.html:19
+[18-Apr-2018 15:16:24 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:484
+[18-Apr-2018 15:39:56 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 484
+[18-Apr-2018 15:39:56 UTC] PHP Stack trace:
+[18-Apr-2018 15:39:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:0
+[18-Apr-2018 15:39:56 UTC] PHP   2. include() /home/ubuntu/workspace/NinosyNinas/GestorV2/noticias.php:22
+[18-Apr-2018 15:39:56 UTC] PHP   3. getNoticias() /home/ubuntu/workspace/NinosyNinas/GestorV2/partials/_noticias.html:19
+[18-Apr-2018 15:39:56 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:484
