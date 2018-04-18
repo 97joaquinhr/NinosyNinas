@@ -1,117 +1,35 @@
-<HTML>
-  <body>
-    <br>
-    <br>
-      <div class="container-fluid shadow round bg-gray" id="galleria">
-          <br>
-          <br>
-          <div class="row">
-              <div class="col-6">
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
+<body onload="loadGallery()">
+<div id="loader" class="sk-cube-grid">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+</div>
 
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
+<div class="row">
 
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
+    <div style="display: none;" id="gallery" class="container mt-4">
+        <div  class='embedsocial-album'
+             data-ref="045581c50b6b6af415472a18476b19669a8af4c8">
+        </div>
+        <script>
+            (function (d, s, id) {
+                var js;
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://embedsocial.com/embedscript/ei.js";
+                d.getElementsByTagName("head")[0].appendChild(js);
+            }(document, "script", "EmbedSocialScript"));
 
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-
-                  <div class="gallery shadow">
-                    <a href="fjords.jpg">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-
-                  <div class="gallery shadow">
-                    <a href="">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                    <div class="desc">Yawui</div>
-                  </div>
-              </div>
-
-
-              <div class="col-5">
-                  <div class="gallery-large shadow">
-                    <a href="imagen.php">
-                      <img src="img/Yawui.jpg" alt="Fjords" width="300" height="200">
-                    </a>
-                  </div>
-              </div>
-          </div>
-          <br />
-          <br />
-          <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                  <li class="page-item">
-                      <a class="page-link text-gray" href="#" tabindex="-1">Anterior</a>
-                  </li>
-                  <li class="page-item"><a class="page-link text-gray" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link text-gray" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link text-gray" href="#">3</a></li>
-                  <li class="page-item">
-                      <a class="page-link text-gray" href="#">Siguiente</a>
-                  </li>
-              </ul>
-          </nav>
-          <br>
-          <br>
-      </div>
-      <br>
-      <br>
-      </div>
-  </body>
-</HTML>
+        </script>
+    </div>
+</div>
+</body>

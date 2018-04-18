@@ -3,11 +3,19 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 // -- Area Chart Example
+
+
+
+var data1 = {
+  "labels" : ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+  "data" : [10, 30, 26, 18, 18, 28, 31, 33, 25, 24, 32, 31, 38]
+}
+
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: data1.labels,
     datasets: [{
       label: "Donadores",
       lineTension: 0.3,
@@ -20,7 +28,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 20,
       pointBorderWidth: 2,
-      data: [10, 30, 26, 18, 18, 28, 31, 33, 25, 24, 32, 31, 38],
+      data: data1.data,
     }],
   },
   options: {
@@ -52,17 +60,24 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+var data2 = {
+  "labels" : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+  "data" : [4215, 5312, 6251, 7841, 9821, 14984]
+}
+
 // -- Bar Chart Example
 var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+    labels: data2.labels,
     datasets: [{
       label: "Visitas",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: data2.data,
     }],
   },
   options: {
@@ -94,14 +109,22 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
+
+
+var data3 = {
+  "labels" : ["Transferencia", "Tarjetos", "Cheque", "Otro"],
+  "data" : [12.21, 100.58, 11.25, 8.32]
+}
+
+
 // -- Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Transferencia", "Tarjeta", "Cheque", "Otro"],
+    labels: data3.labels,
     datasets: [{
-      data: [12.21, 15.58, 11.25, 8.32],
+      data: data3.data,
       backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
     }],
   },

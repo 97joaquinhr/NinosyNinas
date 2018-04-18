@@ -1,3 +1,6 @@
-<?php include("html/partials/_header.html")?>
-<?php include("html/galeria.html")?>
-<?php include("html/partials/_footer.html")?>
+<?php
+include("html/partials/_header.html");
+include("html/galeria.html");
+echo   '<script src="js/loader.js"></script>';
+include("html/partials/_footer.html");
+?>
