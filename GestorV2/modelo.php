@@ -862,4 +862,23 @@ function obtenerTablaPink($seccion) {
 }
 
 
-?>
+function modificarporID($id, $seccion, $titulo, $descripcion){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Seccion=$seccion, Titulo=$titulo, Descripcion=$descripcion' WHERE idInfo = '".$id."'";
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
+
