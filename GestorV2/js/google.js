@@ -73,8 +73,10 @@ function onSignup(googleUser) {
     
     $.post( "signup.php", { 'id_token': id_token_s })
         .done(function( data ) {
-            signOut();
-            window.location.replace("usuario.php");
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.disconnect().then(function () {
+                window.location.replace("usuario.php");
+            });
         });
 }
 

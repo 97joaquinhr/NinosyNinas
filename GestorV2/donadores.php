@@ -6,7 +6,7 @@
         $nombre = $_SESSION["nombre"];
         $view = "donadores";
 
-    // Head and body tag
+ // Head and body tag
     include("partials/_header.html");
     // Top Navbar
     include("partials/_navbar.html");
@@ -17,7 +17,7 @@
     // Content
      include("partials/_donadores.html");
     // Content Footer
-    // include("partials/_footer.html");
+    //  include("partials/_footer.html");
     // Tag to close content wrapper
     include("partials/_page_content_wrapper_end.html");
     // Additional Scripts and Modals can be included here
@@ -29,8 +29,8 @@
                 <script src="js/funciones.js"></script>
                 ';
     echo   '<script>
-                $("#footer").addClass("footer");
-            </script>';
+                    $("#footer").addClass("footer");
+                </script>';
     // Required Scripts and end of file
     include("partials/_end.html");
 } else {

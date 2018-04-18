@@ -25,14 +25,13 @@
                                         <li class="list-group-item"><strong>Teléfono</strong><span id="prev_tel" class="card-text float-right"></span></li>
                                         <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span id="prev_fechaN" class="card-text float-right"></span></li>
                                     </ul>
-                                    <div class="card-footer small text-muted">creado en: </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col text-center my-4 py-4">
                                 <span>
-                                    <button type="button" class="btn btn-primary btn-circle btn-xl shadow" href="mailto:"><i class="fas fa-envelope"></i></button>
+                                    <button type="button" class="btn btn-primary btn-circle btn-xl shadow"><i class="fas fa-envelope"></i></button>
                                 </span>
                             </div>
                         </div>
@@ -44,7 +43,6 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><strong id="prev_usoCFDI"></strong><span class="card-text float-right" id="prev_cfDesc"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                         <div class="card mt-4">
                             <div class="card-header">Datos de Donación</div>
@@ -53,14 +51,14 @@
                                 <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right" id="prev_metodo"></span>
                                 <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right" id="prev_obs"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar">Eliminar</button>
+                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar" onclick="generateEliminar()">Eliminar</button>
                 <button type="button" data-target="#edit" data-toggle="modal" class="btn btn-primary" onclick="generateEdit()">Editar</button>
+                <button type="button" class="btn btn-success " data-toggle="modal" data-target="#validar" onclick="generateValidar()">Validar</button>
             </div>
         </div>
     </div>
@@ -86,8 +84,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
-                                <label for="apellidoP">Apellido paterno</label>
-                                <input class="form-control" name="ed_apellidoP" id="ed_apellidoP" aria-describedby="apellidoPHelp" value="Garzón">
+                                    <label for="apellidoP">Apellido paterno</label>
+                                    <input class="form-control" name="ed_apellidoP" id="ed_apellidoP" aria-describedby="apellidoPHelp" value="Garzón">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -113,22 +111,19 @@
                                 <input class="form-control" id="ed_telefono" name="ed_tel" aria-describedby="telefonoHelp" value="442 235 5641">
                             </div>
                             <label for="fechaN">Fecha de nacimiento</label>
-                            <input name="ed_fechaN" id="datepicker" value="12/01/1950">
+                            <input type="date" name="ed_fechaN" value="12/01/1950">
                             <label for="MetodoPago">Metodo de pago</label>
-                            <select class="form-control">
-                                <option>Tarjeta de crédito</option>
-                                <option>Transferencia</option>
-                                <option>Cheque</option>
-                                <option>Otro</option>
+                            <select class="form-control" name="ed_metodoPago">
+                                <?php getMetodos(); ?>
                             </select>
                             <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
                                 <input class="form-control" name="ed_obs" id="ed_observaciones" aria-describedby="observacionesHelp" value="Fecha de vencimiento: 06/18">
                             </div>
-                            <div class="form-group">
-                                <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" id="ed_usoCFDI" name="ed_usoCFDI" aria-describedby="usoCFDIHelp" value="G03">
-                            </div>
+                            <label for="usoCFDI">Uso CFDI</label>
+                            <select id="ed_usoCFDI" name="ed_usoCFDI" class="form-control">
+                                <?php getUSOCFDI(); ?>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -177,10 +172,6 @@
                                 <label for="emailD">Correo Electrónico</label>
                                 <input type="email" class="form-control" name="email" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx" required>
                             </div>
-                            <div class="form-group">
-                                <label for="ocupacion">Ocupacion</label>
-                                <input type="text" class="form-control" id="ocupacion" name="ocupacion" aria-describedby="ocupacionHelp" placeholder="Bombero">
-                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -195,10 +186,7 @@
                             <input type="date"  name="fechaN" id="fechaN" placeholder="12/01/1950">
                             <label for="metodoPago">Metodo de pago</label>
                             <select class="form-control" name="metodoPago" id="MetodoPago">
-                                <option value="M01">Tarjeta de crédito</option>
-                                <option value="M02">Transferencia</option>
-                                <option value="M03">Cheque</option>
-                                <option value="M04">Otro</option>
+                                <?php getMetodos(); ?>
                             </select>
                             <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
@@ -206,7 +194,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" name="cfdi" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                                <select id="usoCFDI" name="cfdi" class="form-control" aria-describedby="usoCFDIHelp">
+                                    <?php getUSOCFDI(); ?>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -229,12 +219,44 @@
                 ¿Borrar?
             </div>
             <div class="modal-body">
-                ¿Estas seguro que quieres eliminar este registro de la base de datos?
+                ¿Estas seguro que quieres eliminar a este donador de la base de datos? <br>Con el email:
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Borrar</button>
-                <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+            <form action="eliminarDonador.php" method="post">
+                <div class="container container-fluid">
+                    <input name="c_email" readonly>
+                </div>
+                <p></p>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger mr-auto">Borrar</button>
+
+                    <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="validar" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                ¿Validar?
             </div>
+            <div class="modal-body">
+                ¿Quieres validar a este donador? <br>Con el email:
+            </div>
+            <form action="validarDonador.php" method="post">
+                <div    class="container container-fluid">
+                    <input name="v_email" readonly>
+                </div>
+                <p></p>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success mr-auto">Validar</button>
+
+                    <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
