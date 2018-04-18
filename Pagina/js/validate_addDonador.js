@@ -7,8 +7,6 @@ var phoneNumber = document.getElementById("telefono");
 phoneNumber.addEventListener("blur", validatePhone, true);
 var date = document.getElementById("fechaN");
 //date.addEventListener("blur", myBlurFunction, true);
-var cfdi = document.getElementById("usoCFDI");
-cfdi.addEventListener("blur", validateCFDI, true);
 var ocupacion = "";
 
 function validateEmail() {
@@ -31,11 +29,5 @@ function validatePhone() {
   var phoneValid = phoneNumberParser(phoneNumber);
   if(!phoneValid){
     alert("El número de teléfono es inválido");
-  }
-}
-
-function validateCFDI() {
-  if(cfdi.length!=3){
-    alert("El uso de CFDI es incorrecto");
   }
 }
