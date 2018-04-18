@@ -411,9 +411,11 @@ function getUsuarios() {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "<tr class=''>";
+
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
                 echo "<td><a class='btn btn-danger text-white' data-toggle='modal' data-target='#usuarioInfo' onclick='deleteUserModal(\"".$row["id"]."\");'><i class='fas fa-trash-alt'></i></a></td>";
+
                 echo "</tr>";
             }
         }
@@ -665,12 +667,21 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
             echo "Record 3 updated successfully";
         } else {
             echo "Error updating record 3: " . mysqli_error($db);
+<<<<<<< HEAD
         }
         if (mysqli_query($db, $query2)) {
             echo "Record 2 updated successfully";
         } else {
             echo "Error updating record 2: " . mysqli_error($db);
         }
+=======
+        }
+        if (mysqli_query($db, $query2)) {
+            echo "Record 2 updated successfully";
+        } else {
+            echo "Error updating record 2: " . mysqli_error($db);
+        }
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
         if (mysqli_query($db, $query)) {
             echo "Record updated successfully";
         } else {
@@ -680,6 +691,7 @@ function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $
 
     }
 }
+<<<<<<< HEAD
 
 
 function eliminarDonador($email)
@@ -695,6 +707,23 @@ function eliminarDonador($email)
         $query3 = 'DELETE FROM donadores_usocfdi
                        WHERE Email = "'.$email.'" ';
 
+=======
+
+
+function eliminarDonador($email)
+{
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'DELETE FROM donadores
+                       WHERE Email = "'.$email.'" ';
+
+        $query2 = 'DELETE FROM donadores_metodopago
+                       WHERE Email = "'.$email.'" ';
+
+        $query3 = 'DELETE FROM donadores_usocfdi
+                       WHERE Email = "'.$email.'" ';
+
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
         if (mysqli_query($db, $query3)) {
             echo "Record 3 updated successfully";
         } else {
@@ -781,6 +810,8 @@ function obtenerDescObjetivos($seccion) {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+<<<<<<< HEAD
+=======
             }
             echo $html;
         }
@@ -798,12 +829,39 @@ function obtenerTablaBlue($seccion) {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
             }
             echo $html;
         }
     }
 }
 
+<<<<<<< HEAD
+function obtenerTablaBlue($seccion) {
+=======
+function obtenerTablaPink($seccion) {
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+<<<<<<< HEAD
+                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+=======
+                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
+            }
+            echo $html;
+        }
+    }
+}
+
+<<<<<<< HEAD
 function obtenerTablaPink($seccion) {
     $db = connect();
     if ($db != NULL) {
@@ -821,5 +879,7 @@ function obtenerTablaPink($seccion) {
     }
 }
 
+=======
+>>>>>>> adf378ea16f7d2b4d4e8bed9537c64c459d38f3f
 
 ?>
