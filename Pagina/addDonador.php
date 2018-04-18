@@ -45,5 +45,5 @@
         addDonador($_POST["email"], $_POST["rfc"], inputs($_POST["nombre"]), inputs($_POST["apellidoP"]), inputs($_POST["apellidoM"]), $_POST["fechaN"], inputs($_POST["direccion"]),$_POST["telefono"], $_POST["ocupacion"],0,$_POST["metodoPago"],inputs($_POST["observaciones"]),$_POST["cfdi"]);
       }
     }
-    header("Location: index.php");
+    header("Location: inicio.php");
     ?>
