@@ -402,7 +402,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT id, name, email FROM usuario ORDER BY Nombre ASC';
+        $query='SELECT id, name, email FROM usuario ORDER BY name ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
