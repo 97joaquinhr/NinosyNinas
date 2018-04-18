@@ -16,7 +16,7 @@
     }
 
     function validateRFC($rfc) {
-      $rfcValid = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
+      $rfcValid = "/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/";
       $validado = $rfcValid.exec($rfc);
       if($rfc!=''){
         if($validado==null){
@@ -24,14 +24,6 @@
         }else{
           return true;
         }
-      }else{
-        return true;
-      }
-    }
-
-    function validateCFDI($cfdi) {
-      if($cfdi!=3){
-        return false;
       }else{
         return true;
       }
@@ -45,12 +37,13 @@
     }
 
     if(validateEmail($_POST["email"],$_POST["emailD2"])){
-      if(validateRFC($_POST["rfc"])){
-        if(validateCFDI($_POST["cfdi"])){
+      if($_POST["rfc"]!=""){
+        if(validateRFC($_POST["rfc"])){
           addDonador($_POST["email"], $_POST["rfc"], inputs($_POST["nombre"]), inputs($_POST["apellidoP"]), inputs($_POST["apellidoM"]), $_POST["fechaN"], inputs($_POST["direccion"]),$_POST["telefono"], $_POST["ocupacion"],0,$_POST["metodoPago"],inputs($_POST["observaciones"]),$_POST["cfdi"]);
         }
+      }else{
+        addDonador($_POST["email"], $_POST["rfc"], inputs($_POST["nombre"]), inputs($_POST["apellidoP"]), inputs($_POST["apellidoM"]), $_POST["fechaN"], inputs($_POST["direccion"]),$_POST["telefono"], $_POST["ocupacion"],0,$_POST["metodoPago"],inputs($_POST["observaciones"]),$_POST["cfdi"]);
       }
     }
     header("Location: index.php");
     ?>
-
