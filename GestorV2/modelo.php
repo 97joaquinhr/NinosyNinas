@@ -1,11 +1,11 @@
 <?php
 
-    function connect() {
-        //$mysql = mysqli_connect("localhost","root","","ninos");
-        $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
-        $mysql->set_charset("utf8");
-        return $mysql;
-    }
+function connect() {
+    //$mysql = mysqli_connect("localhost","root","","ninos");
+    $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+    $mysql->set_charset("utf8");
+    return $mysql;
+}
 
 function disconnect($mysql) {
     mysqli_close($mysql);
@@ -43,6 +43,7 @@ function login($userid) {
     }
     return false;
 }
+
 
 function signup($userid, $name, $email) {
     $db = connect();
@@ -218,11 +219,11 @@ function getDonadores() {
 
         $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email
+                WHERE d.Email=dm.Email 
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1
-                ORDER BY Nombre ASC
+                AND Validado = 1 
+                ORDER BY Nombre ASC 
                 LIMIT 10 ';
         $results = $db->query($query);
 
@@ -230,9 +231,8 @@ function getDonadores() {
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
 
-            $html .= '
-                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'"
-                            onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+            $html .= '                   
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
                              <div class="media-body">
                               <div class="row">
                                 <div class="col-sm">
@@ -262,25 +262,54 @@ function getDonadores2() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email
+                WHERE d.Email=dm.Email 
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1
+                AND Validado = 1 
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
         $html = '';
 
-            while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
-                $html.= '
-                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'"
-                 onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+        while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+            $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
                  <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
                  <td>'. $row["Telefono"] .'</td>
                  <td>'. $row["Email"] .'</td>
                  <td>'. $row["Fecha"] .'</td>
                  </tr>';
-            }
+        }
+        echo $html;
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function getDonadoresNV() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+                FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
+                WHERE d.Email=dm.Email 
+                AND m.Idmetodo = dm.IdMetodo
+                AND du.Email = d.Email
+                AND Validado = 0 
+                ORDER BY Nombre ASC ';
+
+        $results = $db->query($query);
+        $html = '';
+
+        while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
+            $html.= '
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
+                 <td>'. $row["Telefono"] .'</td>
+                 <td>'. $row["Email"] .'</td>
+                 <td>'. $row["Fecha"] .'</td>
+                 </tr>';
+        }
         echo $html;
         disconnect($db);
         return true;
@@ -292,6 +321,8 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
     $db = connect();
     if ($db != NULL) {
         //Deberiamos usar prepared staments pare evitar SQL Injection
+
+
         $query = 'INSERT INTO `donadores`(`Email`,`RFC`,`Nombre`, `ApellidoPaterno`,`ApellidoMaterno`,`FechadeNacimiento`, `Direccion`,`Telefono`,`Ocupacion`,`Validado`)
                       VALUES ("'.$email.'", "'.$rfc.'", "'.$nombre.'", "'.$apellidoP.'", "'.$apellidoM.'", "'.$fechaN.'","'.$direccion.'","'.$telefono.'","'.$ocupacion.'","'.$validado.'")';
 
@@ -302,28 +333,52 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
                     VALUES("'.$email.'", "'.$cfdi.'", "'.$fechaN.'")';
 
         if (mysqli_query($db, $query)) {
-            echo "New record created successfully";
+            if (mysqli_query($db, $query2)) {
+                if (mysqli_query($db, $query3)) {
+                } else {
+                    echo "Error: " . $query3 . "<br>" . mysqli_error($db);
+                }
+            } else {
+                echo "Error: " . $query2 . "<br>" . mysqli_error($db);
+            }
         } else {
             echo "Error: " . $query . "<br>" . mysqli_error($db);
         }
+        echo $validado;
 
-        if (mysqli_query($db, $query2)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query2 . "<br>" . mysqli_error($db);
-        }
 
-        if (mysqli_query($db, $query3)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $query3 . "<br>" . mysqli_error($db);
-        }
+
+
         disconnect($db);
         return true;
     }
     return false;
 }
 
+function validarDonador($email)
+{
+    $db = connect();
+    if ($db != NULL) {
+        //Deberiamos usar prepared staments pare evitar SQL Injection
+
+        $validado = 1;
+
+        $query = 'UPDATE donadores
+                       SET validado = "' . $validado . '"
+                       WHERE email = "' . $email . '"
+                       ';
+
+        if (mysqli_query($db, $query)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
 function addRol($idRol, $Nombre){
     $db = connect();
     if($db != NULL){
@@ -347,7 +402,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT * FROM usuario ORDER BY name ASC';
+        $query='SELECT id, name, email FROM usuario ORDER BY name ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -374,9 +429,11 @@ function getUsuarios_graph() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
+
         
         $fechas = array();
         $n = array();
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $fechas[] = $row["Fechag"];
@@ -413,9 +470,11 @@ function getMetodos_graph() {
 
 function getNoticias() {
     $db = connect();
+
     if ($db != NULL) {
-        $query='SELECT Titulo, Fecha FROM Noticia';
+        $query='SELECT Titulo, Fecha FROM noticia';
         $sql = $db->query($query);
+
 
         $result = mysqli_query($db,$query);
         disconnect($db);
@@ -452,7 +511,6 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         }
 
-        mysqli_free_result($results);
         disconnect($db);
         return true;
     }
@@ -463,31 +521,21 @@ function eliminarImagen($url) {
     $db = connect();
     if ($db != NULL) {
 
-        $file = $url;
-        $thurl = substr_replace($url, "thurl/", 16, 0);
-        $thurl=substr($thurl,0,-4);
+        // insert command specification
+        $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("s", $url)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
 
-        if (!unlink($file) || !unlink($thurl))//no se elimina el thurl
-        {
-            die("Error deleting $file or $thurl");
-        }
-        else
-        {
-            // insert command specification
-            $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("s", $url)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-        }
         disconnect($db);
         return true;
     }
@@ -533,17 +581,24 @@ function getGaleriaPagina() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-        echo '<div class="m-p-g">
-            <div class="m-p-g__thumbs" data-google-image-layout data-max-height="350">';
+        $i = 0;
+        echo '<div class="row">';
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo '<img src="../GestorV2/'.$row['Filepath'].'" data-full="../GestorV2/'.$row['Filepath'].'" class="m-p-g__thumbs-img" />';
+                echo '
+                <div class="col">
+                    <div class="show-image">
+                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                    </div>
+                </div>';
+                $i++;
+                if ($i == 4) {
+                    echo '</div><div class="row">';
+                    $i = 0;
+                }
             }
         }
-        echo '</div>
-
-            <div class="m-p-g__fullscreen"></div>
-        </div>';
+        echo '</div>';
         mysqli_free_result($result);
         disconnect($db);
         return true;
@@ -580,11 +635,11 @@ function make_thumb($file, $dest)
     return true;
 }
 
-    function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi)
-    {
-        $db = connect();
-        if ($db != NULL) {
-            $query = 'UPDATE donadores
+function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi,$rfc)
+{
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'UPDATE donadores
                       SET Nombre = "' . $nombre . '",
                       ApellidoPaterno = "' . $apellidoPaterno . '",
                       ApellidoMaterno = "' . $apellidoMaterno . '",
@@ -592,66 +647,179 @@ function make_thumb($file, $dest)
                       Direccion = "' . $dir . '",
                       Telefono = "' . $tel . '",
                       Email = "' . $email . '",
-                      Ocupacion = "' . $ocupacion . '"
+                      Ocupacion = "' . $ocupacion . '",
+                      RFC = "' . $rfc . '"
                       WHERE Email = "' . $email . '" ';
 
-            $query2 = 'UPDATE donadores_metodopago
+        $query2 = 'UPDATE donadores_metodopago
                        SET Observaciones = "' . $obs . '",
                        IdMetodo = "' . $idMetodo . '"
                        WHERE Email = "' . $email . '"';
 
-            $query3 = 'UPDATE donadores_usocfdi
+        $query3 = 'UPDATE donadores_usocfdi
                        SET IdCFDI = "' . $idCfdi . '"
+                       WHERE Email = "' . $email . '"
                        ';
 
-            if (mysqli_query($db, $query3)) {
-                echo "Record 3 updated successfully";
-            } else {
-                echo "Error updating record 3: " . mysqli_error($db);
+        if (mysqli_query($db, $query3)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query2)) {
+            echo "Record 2 updated successfully";
+        } else {
+            echo "Error updating record 2: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($db);
+        }
+
+
+    }
+}
+
+
+function eliminarDonador($email)
+{
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'DELETE FROM donadores
+                       WHERE Email = "'.$email.'" ';
+
+        $query2 = 'DELETE FROM donadores_metodopago
+                       WHERE Email = "'.$email.'" ';
+
+        $query3 = 'DELETE FROM donadores_usocfdi
+                       WHERE Email = "'.$email.'" ';
+
+        if (mysqli_query($db, $query3)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query2)) {
+            echo "Record 2 updated successfully";
+        } else {
+            echo "Error updating record 2: " . mysqli_error($db);
+        }
+        if (mysqli_query($db, $query)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($db);
+        }
+
+    }
+}
+
+function printDonadoresNV(){
+    $db = connect();
+    if ($db != NULL) {
+
+        $query='SELECT COUNT(*) AS total
+                FROM donadores 
+                WHERE Validado = 0';
+        $results = $db->query($query);
+        
+        $row =  mysqli_fetch_assoc($results);
+        
+        echo $row["total"];
+
+
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+
+function obtenerTitulo($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Titulo"];
             }
-            if (mysqli_query($db, $query2)) {
-                echo "Record 2 updated successfully";
-            } else {
-                echo "Error updating record 2: " . mysqli_error($db);
-            }
-            if (mysqli_query($db, $query)) {
-                echo "Record updated successfully";
-            } else {
-                echo "Error updating record: " . mysqli_error($db);
-            }
+            echo $html;
         }
     }
+}
 
-    function eliminarDonador($email)
-    {
-        $db = connect();
-        if ($db != NULL) {
-            $query = 'DELETE FROM donadores
-                       WHERE Email = $email ';
+function obtenerDesc($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
 
-            $query2 = 'DELETE FROM donadores_metodopago
-                       WHERE Email = $email ';
-
-            $query3 = 'DELETE FROM donadores_usocfdi
-                       WHERE Email = $email ';
-
-            if (mysqli_query($db, $query3)) {
-                echo "Record 3 updated successfully";
-            } else {
-                echo "Error updating record 3: " . mysqli_error($db);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Descripcion"];
             }
-            if (mysqli_query($db, $query2)) {
-                echo "Record 2 updated successfully";
-            } else {
-                echo "Error updating record 2: " . mysqli_error($db);
-            }
-            if (mysqli_query($db, $query)) {
-                echo "Record updated successfully";
-            } else {
-                echo "Error updating record: " . mysqli_error($db);
-            }
-
+            echo $html;
         }
     }
+}
+
+function obtenerDescObjetivos($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaBlue($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
+function obtenerTablaPink($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+            }
+            echo $html;
+        }
+    }
+}
+
 
 ?>
