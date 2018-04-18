@@ -45,5 +45,6 @@ function generateEdit(){
 
 
 function deleteUserModal(id) {
+    console.log(id);
     $('#user_id').attr('value', id)
 }  

@@ -29,11 +29,12 @@
             </div>
             <form action="delete_user.php" method="post">
                 <div class="modal-body">
-                    <input class="input" type="text" name="user_id" id="user_id" value=""/>
+                    <p>¿Estás seguro que deseas eliminar a este usuario?</p>
+                    <input type="hidden" name="user_id" id="user_id" value="" />
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <input type="submit" name="Enviar" class="btn btn-primary"/>
+                    <input type="submit" name="Eliminar" class="btn btn-danger" value="Eliminar"/>
                 </div>
             </form>
         </div>

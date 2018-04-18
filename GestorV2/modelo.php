@@ -358,7 +358,7 @@ function getUsuarios() {
                 echo "<tr class=''>";
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-                echo "<td><a class='btn btn-danger text-white' data-toggle='modal' data-target='#usuarioInfo' onclick='deleteUserModal(".$row["id"].");'><i class='fas fa-trash-alt'></i></a></td>";
+                echo "<td><a class='btn btn-danger text-white' data-toggle='modal' data-target='#usuarioInfo' onclick='deleteUserModal(\"".$row["id"]."\");'><i class='fas fa-trash-alt'></i></a></td>";
                 echo "</tr>";
             }
         }
@@ -367,22 +367,46 @@ function getUsuarios() {
     return false;
 }
 
-function getAllUsuarios() {
+function getUsuarios_graph() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT (DATE(Fecha)), COUNT(Email) FROM donadores_usocfdi GROUP BY (DATE(Fecha))';
+        $query='SELECT (DATE(Fecha)) as Fechag, COUNT(Email) as Emailg FROM donadores_usocfdi GROUP BY (DATE(Fecha))';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
         
-        $array = array();
+        $fechas = array();
+        $n = array();
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                // $array[] = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+                $fechas[] = $row["Fechag"];
+                $n[] = $row["Emailg"];
             }
         }
         disconnect($db);
-        return true;
+        return array('labels' => $fechas, 'data' => $n);;
+    }
+    return false;
+}
+
+function getMetodos_graph() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT Descripcion, COUNT(Email) as Emailg FROM donadores_metodopago D, metodopago M WHERE D.IdMetodo = M.IdMetodo GROUP BY Descripcion';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        
+        $fechas = array();
+        $n = array();
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $fechas[] = $row["Descripcion"];
+                $n[] = $row["Emailg"];
+            }
+        }
+        disconnect($db);
+        return array('labels' => $fechas, 'data' => $n);;
     }
     return false;
 }
