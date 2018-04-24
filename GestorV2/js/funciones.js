@@ -43,4 +43,17 @@ function generateEdit(){
 
 }
 
+function generateEliminar(){
+    $('input[name="c_email"]').val(email);
+    $('input[name="c_donador"]').val(nombre);
+}
+
+function deleteUserModal(id) {
+    console.log(id);
+    $('#user_id').attr('value', id)
+}  
+
+function generateValidar(){
+    $('input[name="v_email"]').val(email);
+}
 
