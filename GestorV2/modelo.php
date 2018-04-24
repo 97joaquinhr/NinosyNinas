@@ -534,12 +534,12 @@ function getNoticias() {
     return false;
 }
 
-function registrarImagen($url, $nombre, $id_noticia, $t_url) {
+function registrarImagen($url, $nombre) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query='INSERT INTO archivomultimedia (Filepath,Nombre,IdNoticia,ThumbnailUrl) VALUES (?,?,?,?) ';
+        $query='INSERT INTO archivomultimedia (Filepath,Nombre) VALUES (?,?) ';
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -587,7 +587,7 @@ function eliminarImagen($url) {
 function getGaleriaGestor() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
+        $query='SELECT Filepath,Nombre FROM archivomultimedia';//ya quedo
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -598,7 +598,7 @@ function getGaleriaGestor() {
                 echo '
                 <div class="col">
                     <div class="show-image">
-                        <a href="javascript:preview(\''.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
+                        <a href="javascript:preview(\''.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../'.$row['Filepath'].'" class="img img-thumbnail"></a>
                         <button onclick="showDelete(\''.$row['Filepath'].'\')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>';
@@ -619,28 +619,31 @@ function getGaleriaGestor() {
 function getGaleriaPagina() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
+        $query='SELECT Filepath,Nombre FROM archivomultimedia';//ya quedo
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
         $i = 0;
-        echo '<div class="row">';
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo '
-                <div class="col">
-                    <div class="show-image">
-                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                    </div>
-                </div>';
-                $i++;
-                if ($i == 4) {
-                    echo '</div><div class="row">';
-                    $i = 0;
+                if($i==0){
+                    echo '<div class="carousel-item active">
+                      <img src="'.$row['Filepath'].'" alt="'.$row['Nombre'].'" width="1100" height="500">
+                  </div>';
                 }
+                else{
+                    echo '<div class="carousel-item">
+                      <img src="'.$row['Filepath'].'" alt="'.$row['Nombre'].'" width="1100" height="500">
+                  </div>';
+                }
+
+                $i++;
+//                if ($i == 4) {
+//                    echo '</div><div class="row">';
+//                    $i = 0;
+//                }
             }
         }
-        echo '</div>';
         mysqli_free_result($result);
         disconnect($db);
         return true;
