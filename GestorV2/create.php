@@ -6,8 +6,8 @@
     if(isset($_SESSION["usuario"])) {
         if(isset($_POST["nombre"]) != NULL ) {
             unset($_SESSION["error_archivo"]);
-            $target_dir = "../img/";
-            $target_file = $target_dir  . time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
+            $dirBD="img/".time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
+            $target_file = $dirBD;
 //            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"];
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
