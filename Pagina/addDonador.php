@@ -1,5 +1,7 @@
 <?php
-    require_once ("modelo.php");
+    require_once ("../GestorV2/modelo.php");
+    session_start();
+
     function test_input($data) {
       $data = trim($data);
       $data = stripslashes($data);
@@ -39,11 +41,13 @@
     if(validateEmail($_POST["email"],$_POST["emailD2"])){
       if($_POST["rfc"]!=""){
         if(validateRFC($_POST["rfc"])){
+            $_SESSION["alert"]="Registro exitoso.";
           addDonador($_POST["email"], $_POST["rfc"], inputs($_POST["nombre"]), inputs($_POST["apellidoP"]), inputs($_POST["apellidoM"]), $_POST["fechaN"], inputs($_POST["direccion"]),$_POST["telefono"], $_POST["ocupacion"],0,$_POST["metodoPago"],inputs($_POST["observaciones"]),$_POST["cfdi"]);
         }
       }else{
+          $_SESSION["alert"]="Registro exitoso.";
         addDonador($_POST["email"], $_POST["rfc"], inputs($_POST["nombre"]), inputs($_POST["apellidoP"]), inputs($_POST["apellidoM"]), $_POST["fechaN"], inputs($_POST["direccion"]),$_POST["telefono"], $_POST["ocupacion"],0,$_POST["metodoPago"],inputs($_POST["observaciones"]),$_POST["cfdi"]);
       }
     }
-    header("Location: inicio.php");
+    header("Location: index.php");
     ?>
