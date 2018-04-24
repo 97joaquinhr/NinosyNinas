@@ -2,7 +2,7 @@
 
 function connect() {
     //$mysql = mysqli_connect("localhost","root","","ninos");
-    $mysql = mysqli_connect("niyni.tk","dev","1A2b3c4d5e","Niyni");
+    $mysql = mysqli_connect("ninosyninas.org","ninosyninas1998","educando2006","Ninosyninas");
     $mysql->set_charset("utf8");
     return $mysql;
 }
