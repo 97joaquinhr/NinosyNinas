@@ -565,29 +565,26 @@ function eliminarImagen($url)
     if ($db != NULL) {
         $file =$url;
 
-        if (!unlink($file))//no se elimina el thurl
-        {
-            echo("Error deleting $file");
-        } else {
-            // insert command specification
-            $query = 'DELETE FROM archivomultimedia WHERE Filepath = ?';
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("s", $url)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            // Executing the statement
-            if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-            }
-            disconnect($db);
-            return true;
+        unlink($file);//no se elimina el thurl
+
+        // insert command specification
+        $query = 'DELETE FROM archivomultimedia WHERE Filepath = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
-        return false;
+        // Binding statement params
+        if (!$statement->bind_param("s", $url)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        disconnect($db);
+        return true;
     }
+    return false;
 }
 
 function getGaleriaGestor()
