@@ -864,10 +864,10 @@ function obtenerTablaPink($seccion) {
 }
 
 
-function modificarporID($id, $seccion, $titulo, $descripcion){
+function modificarporID($id, $titulo, $descripcion){
     $db = connect();
     if ($db != NULL) {
-        $sql = "UPDATE informacion SET Seccion=$seccion, Titulo=$titulo, Descripcion=$descripcion WHERE idInfo = '".$id."'";
+        $sql = "UPDATE informacion SET Titulo='".$titulo."', Descripcion='".$descripcion."' WHERE idInfo = $id";
 
         if (mysqli_query($db,$sql)) {
             echo "Modificado Exitosamente";
