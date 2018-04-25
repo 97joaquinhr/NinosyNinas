@@ -9,7 +9,7 @@
    // Tag to open content wrapper
    include("partials/_page_content_wrapper_start.html");
    // Content
-    include("partials/_aboutUs.html");
+    include("partials/_editLogros.html");
    // Content Footer
    //  include("partials/_footer.html");
    // Tag to close content wrapper
