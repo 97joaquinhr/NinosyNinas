@@ -352,3 +352,6 @@ article div.anchor {
   border: 0.3em solid #000;
   text-align: center;
 }
+#fb{
+	z-index: 5;
+}
