@@ -937,12 +937,19 @@ function registrarNoticia($titulo, $cuerpo, $imagen){
 
 
         $query = 'INSERT INTO `noticias`(`titulo`,`cuerpo`,`imagen`)
-                      VALUES ("'.$titulo.'", "'.$cuerpo.'", "'.$imagen.'")';
-
-        if (mysqli_query($db, $query)) {
-            } else{
-                echo "Error: " . $query . "<br>" . mysqli_error($db);
-            }
+                      VALUES (?,?,?)';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sss", $titulo, $cuerpo, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
         disconnect($db);
         return true;
     }
@@ -955,18 +962,25 @@ function modificarNoticia($titulo, $cuerpo, $imagen, $id)
     $db = connect();
     if ($db != NULL) {
         $query = 'UPDATE noticias
-                  SET titulo = "' . $titulo . '",
-                  cuerpo = "' . $cuerpo . '",
-                  imagen = "' . $imagen . '",
-                  WHERE idNoticia = "' . $id . '" ';
-
-
-        if (mysqli_query($db, $query)) {
-            echo "Record 3 updated successfully";
-        } else {
-            echo "Error updating record 3: " . mysqli_error($db);
+                  SET titulo = ?,
+                  cuerpo = ?,
+                  imagen = ?,
+                  WHERE idNoticia = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
+        // Binding statement params
+        if (!$statement->bind_param("sssi", $titulo, $cuerpo, $imagen, $id)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        disconnect($db);
 
         return true;
     }
+    return false;
 }
