@@ -347,10 +347,6 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
         echo $validado;
 //        echo "<script>alert('Registro exitoso');</script>";
 
-
-
-
-
         disconnect($db);
         return true;
     }
@@ -454,7 +450,7 @@ function getUsuarios_graph() {
 
         $result = mysqli_query($db,$query);
 
-        
+
         $fechas = array();
         $n = array();
 
@@ -477,7 +473,7 @@ function getMetodos_graph() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-        
+
         $fechas = array();
         $n = array();
         if(mysqli_num_rows($result) > 0){
@@ -491,9 +487,9 @@ function getMetodos_graph() {
         if ($db != NULL) {
             $query='SELECT color FROM metodopago ORDER BY Descripcion';
             $sql = $db->query($query);
-    
+
             $result = mysqli_query($db,$query);
-            
+
             $color = array();
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
@@ -508,14 +504,14 @@ function getMetodos_graph() {
     return false;
 }
 
-function getMetodos() {
+function getMetodos($fechas) {
     $db = connect();
     if ($db != NULL) {
         $query='SELECT IdMetodo, Descripcion FROM metodopago';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-       
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "<option value=\"".$row["IdMetodo"]."\">".$row["Descripcion"]."</option>";
@@ -534,7 +530,7 @@ function getUSOCFDI() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-       
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "<option value=\"".$row["IdCFDI"]."\">".$row["IdCFDI"]." - ".$row["Nombre"]."</option>";
@@ -809,7 +805,7 @@ function printDonadoresNV()
             FROM donadores 
             WHERE Validado = 0';
         $results = $db->query($query);
-        
+
         $row = mysqli_fetch_assoc($results);
 
         mysqli_free_result($results);
@@ -856,30 +852,8 @@ function obtenerDesc($seccion)
     }
 }
 
-<<<<<<< HEAD
+
 function obtenerTabla($seccion) {
-=======
-function obtenerDescObjetivos($seccion)
-{
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
-        $result = mysqli_query($db, $sql);
-        disconnect($db);
-        $html = '';
-
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item shadow"><p><em>' . $row["Descripcion"] . '</em></p></li>';
-            }
-            echo $html;
-        }
-    }
-}
-
-function obtenerTablaBlue($seccion)
-{
->>>>>>> 6c1e641c8ea5399c07f64dd8dfb99df3fdea6981
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
@@ -887,29 +861,18 @@ function obtenerTablaBlue($seccion)
         disconnect($db);
         $html = '';
 
-<<<<<<< HEAD
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<tr class=\'\'>
                           <td><h3>'. $row["Titulo"] .'</h3><p>'. $row["Descripcion"] .'</p></td>
                           </tr>';
-=======
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item bg-cyan text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
->>>>>>> 6c1e641c8ea5399c07f64dd8dfb99df3fdea6981
             }
             echo $html;
         }
     }
 }
 
-<<<<<<< HEAD
 function obtenerTablaWhite($seccion) {
-=======
-function obtenerTablaPink($seccion)
-{
->>>>>>> 6c1e641c8ea5399c07f64dd8dfb99df3fdea6981
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
@@ -917,17 +880,11 @@ function obtenerTablaPink($seccion)
         disconnect($db);
         $html = '';
 
-<<<<<<< HEAD
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<tr class=\'\'>
                           <td><h3 class="text-white">'. $row["Titulo"] .'</h3><p class="text-white"    >'. $row["Descripcion"] .'</p></td>
                           </tr>';
-=======
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item bg-pink text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
->>>>>>> 6c1e641c8ea5399c07f64dd8dfb99df3fdea6981
             }
             echo $html;
         }
@@ -977,8 +934,7 @@ function registrarNoticia($titulo, $cuerpo, $imagen){
 
 }
 
-function modificarNoticia($titulo, $cuerpo, $imagen, $id)
-{
+function modificarNoticia($titulo, $cuerpo, $imagen, $id){
     $db = connect();
     if ($db != NULL) {
         $query = 'UPDATE noticias
