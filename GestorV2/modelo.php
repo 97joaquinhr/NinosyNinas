@@ -798,7 +798,7 @@ function obtenerTitulo($seccion) {
 function modificarTitulo($seccion,$titulo) {
     $db = connect();
     if ($db != NULL) {
-        $sql = "UPDATE informacion SET Titulo=$titulo WHERE Seccion = '".$seccion."'";
+        $sql = "UPDATE informacion SET Titulo='".$titulo."' WHERE Seccion LIKE '%".$seccion."%'";
 
         if (mysqli_query($db,$sql)) {
             echo "Modificado Exitosamente";
@@ -831,10 +831,10 @@ function obtenerDesc($seccion) {
     }
 }
 
-function modificarDesc($seccion,$desc) {
+function obtenerDesc2($seccion) {
     $db = connect();
     if ($db != NULL) {
-        $sql = "UPDATE informacion SET Descripcion=$desc WHERE Seccion = '".$seccion."'";
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
         $result = mysqli_query($db,$sql);
         disconnect($db);
         $html = '';
@@ -843,8 +843,32 @@ function modificarDesc($seccion,$desc) {
             while($row = mysqli_fetch_assoc($result)){
                 $html .= $row["Descripcion"];
             }
+            $order=array("<br>","</br>","<br />","<br/>");
+            $html = str_replace($order,"\n",$html);
             echo $html;
         }
+    }
+}
+
+function modificarDesc($seccion,$desc) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Descripcion='".$desc."' WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
     }
 }
 

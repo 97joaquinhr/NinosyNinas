@@ -2,11 +2,11 @@
        session_start();
        require_once("modelo.php");
 
-    //   if(isset($_SESSION["usuario"])) {
-           // $user = $_SESSION["usuario"];
-           // $nombre = $_SESSION["nombre"];
-           // $rol = $_SESSION["rol"];
-           // $funciones = $_SESSION["funciones"];
+      if(isset($_SESSION["usuario"])) {
+           $user = $_SESSION["usuario"];
+           $nombre = $_SESSION["nombre"];
+           $rol = $_SESSION["rol"];
+           $funciones = $_SESSION["funciones"];
            // $view = "dashboard";
 
 
@@ -32,8 +32,8 @@
                    <script src="js/comportamiento.js"></script>';
            // Required Scripts and end of file
            include("partials/_end.html");
-       // } else {
-       //     $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
-       //     header("location: index.php");
-       // }
+       } else {
+           $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
+           header("location: index.php");
+       }
    ?>
