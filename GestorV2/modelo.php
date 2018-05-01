@@ -883,4 +883,6 @@ function modificarporID($id, $titulo, $descripcion){
     }
 }
 
+// modificarporID(50, 'Nuestros beneficiarios', nl2br('El 85%'));
+
 
