@@ -219,11 +219,11 @@ function getDonadores() {
 
         $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
-                ORDER BY Nombre ASC 
+                AND Validado = 1
+                ORDER BY Nombre ASC
                 LIMIT 10 ';
         $results = $db->query($query);
 
@@ -231,7 +231,7 @@ function getDonadores() {
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
 
-            $html .= '                   
+            $html .= '
                             <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
                              <div class="media-body">
                               <div class="row">
@@ -262,10 +262,10 @@ function getDonadores2() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
+                AND Validado = 1
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -292,10 +292,10 @@ function getDonadoresNV() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 0 
+                AND Validado = 0
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -434,7 +434,7 @@ function getUsuarios_graph() {
 
         $result = mysqli_query($db,$query);
 
-        
+
         $fechas = array();
         $n = array();
 
@@ -457,7 +457,7 @@ function getMetodos_graph() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-        
+
         $fechas = array();
         $n = array();
         if(mysqli_num_rows($result) > 0){
@@ -479,7 +479,7 @@ function getMetodos() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-       
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "<option value=\"".$row["IdMetodo"]."\">".$row["Descripcion"]."</option>";
@@ -498,7 +498,7 @@ function getUSOCFDI() {
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
-       
+
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "<option value=\"".$row["IdCFDI"]."\">".$row["IdCFDI"]." - ".$row["Nombre"]."</option>";
@@ -761,12 +761,12 @@ function printDonadoresNV(){
     if ($db != NULL) {
 
         $query='SELECT COUNT(*) AS total
-                FROM donadores 
+                FROM donadores
                 WHERE Validado = 0';
         $results = $db->query($query);
-        
+
         $row =  mysqli_fetch_assoc($results);
-        
+
         echo $row["total"];
 
 
@@ -795,10 +795,46 @@ function obtenerTitulo($seccion) {
     }
 }
 
+function modificarTitulo($seccion,$titulo) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Titulo=$titulo WHERE Seccion = '".$seccion."'";
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
 function obtenerDesc($seccion) {
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Descripcion"];
+            }
+            echo $html;
+        }
+    }
+}
+
+function modificarDesc($seccion,$desc) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Descripcion=$desc WHERE Seccion = '".$seccion."'";
         $result = mysqli_query($db,$sql);
         disconnect($db);
         $html = '';
@@ -882,5 +918,3 @@ function modificarporID($id, $seccion, $titulo, $descripcion){
         disconnect($db);
     }
 }
-
-

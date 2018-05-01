@@ -1,0 +1,27 @@
+<div class="jumbotron bg-dark text-white shadow">
+  <form mthod="POST" action="modificarInfo.php">
+    <div class="form-group">
+      <div class="row">
+          <div class="col-md-3">
+              <header>
+                  <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Logros') ?></textarea>
+              </header>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-md-9">
+              <textarea class="form-control" rows="20" name="desc"><?php obtenerDesc('Logros') ?></textarea>
+          </div>
+          <div class="col-sm-3">
+              <div class="container-fluid">
+                  <img src="../Pagina/img/diploma.png" class="img img-fluid" alt="Achivement">
+              </div>
+          </div>
+      </div>
+      <br>
+      <input type="hidden" name="seccion" value="Logros">
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+  </form>
+</div>

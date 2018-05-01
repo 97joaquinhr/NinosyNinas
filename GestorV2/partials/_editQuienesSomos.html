@@ -1,0 +1,25 @@
+<div class="jumbotron bg-dark text-white shadow">
+  <form method="POST" action="modificarInfo.php">
+    <div class="form-group">
+      <div class="row">
+          <div class="col-md-3">
+              <header>
+                <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('QuienesSomos') ?></textarea>
+              </header>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-9">
+            <textarea class="form-control" id="exampleTextarea" name="desc" rows="12" value="hola"><?php obtenerDesc('QuienesSomos') ?></textarea>
+          </div>
+          <div class="col-sm-3">
+              <div class="container-fluid">
+                  <img src="img/donation-3.png" class="img img-fluid" alt="Heart and us">
+              </div>
+          </div>
+      </div>
+      <input type="hidden" name="seccion" value="QuienesSomos">
+      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+  </form>
+</div>
