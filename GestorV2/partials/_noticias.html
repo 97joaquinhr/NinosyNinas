@@ -1,38 +1,18 @@
 <!-- Navbar -->
 <div class="container-fluid">
-     <h2>Noticias</h2>
-     <div class="row">
-         <div class="col-8 col-lg-9">
-             <div class="card mb-3">
-                 <div class="card-header">
-                     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
-                 </div>
-                 <div class="card-body">
-                     <table class="table">
-                         <thead>
-                         <tr>
-                             <th scope="col">Título</th>
-                             <th scope="col">Fecha</th>
-                         </tr>
-                         </thead>
-                         <tbody id="myTable">
-                         <?php getNoticias();?>
-                         </tbody>
-                     </table>
-                 </div>
-             </div>
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva publicación</button>
-         </div>
-         <div class="col-4 col-lg-3">
-             <div class="card text-center">
-                 <div class="card-header">
-                     Reciente
-                 </div>
-                 <div class="card-body">
-                     <img class="img-fluid" alt="tweets" src="http://www.ashokraja.me/image.axd?picture=image_thumb_24.png"></img>
-                 </div>
-                 <div class="card-footer"></div>
-             </div>
-         </div>
-     </div>
+    <div class="row">
+        <div class="col-10">
+            <h2>Noticias</h2>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrar"><i class="fas fa-plus"></i> Nueva noticia</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="card-columns">
+                <?php getNoticiasGestor(); ?>
+            </div>
+        </div>
+    </div>
 </div>

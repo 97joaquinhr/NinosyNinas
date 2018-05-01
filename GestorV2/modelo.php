@@ -575,7 +575,7 @@ function getNoticiasGestor() {
     if ($db != NULL) {
 
         //Specification of the SQL query
-        $query="SELECT idNoticia, titulo, cuerpo, cast(fecha as date) as 'date_cast' FROM noticias";
+        $query="SELECT idNoticia, titulo, imagen, cuerpo, cast(fecha as date) as 'date_cast' FROM noticias";
         // idNoticia titulo cuerpo imagen fecha
 
         // Query execution; returns identifier of the result group
@@ -592,7 +592,7 @@ function getNoticiasGestor() {
                                 <button onclick=\"\" class=\"card-btn btn btn-primary ml-auto\">Editar</button>
                                 <button onclick=\"\" class=\"card-btn btn btn-danger ml-auto\">Eliminar</button>
                             </div>
-                            <img class=\"card-img-top\" src=\"../img/noticias/".$["imagen"]."\" alt=\"Image\">
+                            <img class=\"card-img-top\" src=\"".$fila["imagen"]."\" alt=\"Image\">
                             <div class=\"card-body\">
                                 <h5 class=\"card-title\">".$fila["titulo"]."</h5>
                                 <p class=\"card-text text-muted mr-auto\">Creada el día ".$fila["date_cast"]."</p>

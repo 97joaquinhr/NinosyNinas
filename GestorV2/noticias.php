@@ -30,6 +30,7 @@
         echo   '<script src="https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
                 <script src="js/comportamiento.js"></script>
                 <script src="js/modals.js"></script>';
+        echo   '<script src="js/file_input.js"></script>';
         echo   '<script>
                     $("#footer").addClass("footer");
                 </script>';
