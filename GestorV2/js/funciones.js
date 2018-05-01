@@ -71,4 +71,18 @@ function ajaxPatronato(id){
     idInfo: document.getElementById(id+"a").value,
     input: document.getElementById(id+"i").value
   })
+  .done(function(data){
+    document.getElementById("TablaPatronato").innerHTML = data;
+    alert("Cambio Exitoso");
+  });
+}
+
+function eliminarVocal(id){
+  $.post("deleteVocal.php", {
+    idInfo: document.getElementById(id+"a").value
+  })
+  .done(function(data){
+    document.getElementById("TablaPatronato").innerHTML = data;
+    alert("Cambio Exitoso");
+  });
 }

@@ -944,7 +944,11 @@ function obtenerTablaBlue2($seccion) {
                 $html .=      ")'>
                               <i class='fas fa-pencil-alt'></i>
                             </button>
-                            <button class='btn btn-danger'>
+                            <button class='btn btn-danger' onclick='eliminarVocal(";
+                $html .=      '"';
+                $html .=      "".$row['idInfo']."";
+                $html .=      '"';
+                $html .=      ")'>
                               <i class='fas fa-trash-alt'></i>
                             </button>
                           </li>";
@@ -963,18 +967,14 @@ function modificarPatronato($idInfo, $input) {
         $sql = "UPDATE informacion SET Descripcion='".$input."' WHERE idInfo LIKE '%".$idInfo."%'";
         $result = mysqli_query($db,$sql);
         disconnect($db);
-        $html = '';
+    }
+}
 
-        if (mysqli_query($db,$sql)) {
-            echo "Modificado Exitosamente";
-            disconnect($db);
-            return true;
-
-        } else {
-            echo "Error: " .$sql . "<br>" . mysqli_error($db);
-            disconnect($db);
-            return false;
-        }
+function eliminarVocales($idInfo) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "DELETE FROM informacion WHERE idInfo LIKE '%".$idInfo."%'";
+        $result = mysqli_query($db,$sql);
         disconnect($db);
     }
 }
