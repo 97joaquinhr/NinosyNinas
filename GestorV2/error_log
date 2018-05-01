@@ -1,0 +1,299 @@
+[20-Apr-2018 18:48:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:48:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:48:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:54:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:54:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:55:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:55:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:57:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 18:59:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:05:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:08:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(18): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:08:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(18): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:09:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:09:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:09:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:16:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:17:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:18:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('113239478533054...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:18:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('113239478533054...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:19:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:20:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('113239478533054...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:20:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('113239478533054...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:34:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:33
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/login.php(13): login('102928741796831...')
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 33
+[20-Apr-2018 19:39:45 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:39:45 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:40:30 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 69
+[20-Apr-2018 19:40:37 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:40:37 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:40:37 UTC] PHP Warning:  mysqli_connect(): (HY000/1130): Host 'ip-107-180-2-200.ip.secureserver.net' is not allowed to connect to this MySQL server in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 5
+[20-Apr-2018 19:40:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on boolean in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php:6
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php(760): connect()
+#1 /home/uzqtvfwd08cs/public_html/GestorV2/partials/_dashboard.html(26): printDonadoresNV()
+#2 /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php(22): include('/home/uzqtvfwd0...')
+#3 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 6
+[20-Apr-2018 19:40:41 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:40:41 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:41:16 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 69
+[20-Apr-2018 19:41:23 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:41:23 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:42:41 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 69
+[20-Apr-2018 19:42:42 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:42:42 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:42:49 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 69
+[20-Apr-2018 19:42:54 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:42:54 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:42:59 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:42:59 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:43:02 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/noticias.php on line 8
+[20-Apr-2018 19:43:02 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/noticias.php on line 9
+[20-Apr-2018 19:43:02 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 524
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:04 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:06 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/noticias.php on line 8
+[20-Apr-2018 19:43:06 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/noticias.php on line 9
+[20-Apr-2018 19:43:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 524
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:07 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:08 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:43:08 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:10 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:13 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:43:13 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:23 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[20-Apr-2018 19:43:23 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:26 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[20-Apr-2018 19:43:30 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 14:47:17 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[24-Apr-2018 14:47:17 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[24-Apr-2018 15:45:12 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[24-Apr-2018 15:45:12 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:16 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:53 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[24-Apr-2018 15:45:53 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 489
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: fechas in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 15:45:54 UTC] PHP Notice:  Undefined variable: n in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 508
+[24-Apr-2018 18:59:17 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[24-Apr-2018 18:59:17 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[24-Apr-2018 18:59:22 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 18:59:22 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 18:59:29 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 18:59:29 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:01:03 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 548
+[24-Apr-2018 19:01:11 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:01:11 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:01:13 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:01:13 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:16:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:57 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:17:13 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:22:22 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:22:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:31:09 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 8
+[24-Apr-2018 19:31:09 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/dashboard.php on line 9
+[24-Apr-2018 19:31:14 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:31:14 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:31:26 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 548
+[24-Apr-2018 19:31:32 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:31:32 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:31:34 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:31:34 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:31:40 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:31:40 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:39:37 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:39:37 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:39:53 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 548
+[24-Apr-2018 19:39:59 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:39:59 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:40:01 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:40:01 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:44:23 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 548
+[24-Apr-2018 19:46:56 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:46:56 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:47:03 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:47:03 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:47:22 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/uzqtvfwd08cs/public_html/GestorV2/create.php on line 17
+[24-Apr-2018 19:47:22 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:47:22 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:49:50 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:49:50 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:49:56 UTC] PHP Warning:  unlink(../img/1524599242grupo.png): No such file or directory in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 568
+[24-Apr-2018 19:49:56 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:49:56 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:50:01 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:50:01 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:51:22 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:51:22 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:51:28 UTC] PHP Warning:  unlink(../img/1524599242grupo.png): No such file or directory in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 568
+[24-Apr-2018 19:51:28 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:51:28 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:52:05 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:52:05 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:54:47 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:54:47 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:54:53 UTC] PHP Warning:  unlink(../img/1524599242grupo.png): No such file or directory in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 568
+[24-Apr-2018 19:54:53 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:54:53 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:58:19 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:58:19 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:58:22 UTC] PHP Warning:  unlink(img/1524599242grupo.png): No such file or directory in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 568
+[24-Apr-2018 19:58:22 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:58:22 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:58:25 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:58:25 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 19:58:30 UTC] PHP Warning:  unlink(img/1524599242grupo.png): No such file or directory in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 568
+[24-Apr-2018 19:58:30 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 19:58:30 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 20:00:23 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 20:00:23 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9
+[24-Apr-2018 20:00:41 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/uzqtvfwd08cs/public_html/GestorV2/create.php on line 17
+[24-Apr-2018 20:00:41 UTC] PHP Notice:  Undefined index: rol in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 8
+[24-Apr-2018 20:00:41 UTC] PHP Notice:  Undefined index: funciones in /home/uzqtvfwd08cs/public_html/GestorV2/galeria.php on line 9

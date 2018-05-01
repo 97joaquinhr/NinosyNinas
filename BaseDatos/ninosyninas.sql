@@ -1114,3 +1114,19 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+CREATE TABLE `archivomultimedia` (
+  `Filepath` varchar(254) NOT NULL,
+  `Nombre` varchar(50) DEFAULT NULL,
+  `Fecha` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `archivomultimedia` (`Filepath`, `Nombre`, `Fecha`) VALUES
+('img/foto 1.png', 'foto 1', '2018-01-02 00:00:00'),
+('img/foto 2.png', 'foto 2', '2009-11-06 00:00:00'),
+('img/foto 3.png', 'foto 3', '2008-12-10 00:00:00');
+
+ALTER TABLE `archivomultimedia`
+  ADD PRIMARY KEY (`Filepath`);

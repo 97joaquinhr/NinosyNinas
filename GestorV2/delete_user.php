@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("modelo.php");
-    if(isset($_SESSION["usuario"])) {
+    if(isset($_SESSION["usuario"]) && $_SESSION["rol"] == "R01") {
         
         deleteUser($_POST["user_id"]);
         

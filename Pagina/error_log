@@ -1,0 +1,227 @@
+[19-Apr-2018 22:26:59 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[19-Apr-2018 22:26:59 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[19-Apr-2018 23:16:16 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[19-Apr-2018 23:16:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 00:05:41 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 00:05:41 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:25:34 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:25:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:36:59 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:36:59 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:37:05 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 01:37:05 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:03:56 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[20-Apr-2018 02:03:56 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[20-Apr-2018 02:04:05 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:05 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:13 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:13 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:24 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 02:04:24 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 02:04:27 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:27 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:31 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:04:31 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:05:15 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:05:15 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:05:58 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:05:58 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:49:08 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 02:49:08 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:12:54 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:12:54 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:13:10 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 06:13:10 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 06:13:14 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:13:14 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:13:16 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:13:16 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:15:15 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:15:15 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:15:54 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:15:54 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:16:01 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:16:01 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:16:10 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 06:16:10 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 17:05:27 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 17:05:27 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 17:06:12 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:12 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:17 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:17 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:18 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 17:06:19 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 17:06:19 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:12:46 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:12:46 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:12:54 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:12:54 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:13:15 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:13:15 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:13:18 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:21 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:21 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:22 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:22 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/acerca.php on line 2
+[20-Apr-2018 18:13:28 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:13:28 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:55 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:55 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:58 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:58 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:59 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:24:59 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:07 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:07 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:22 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:22 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:30 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:30 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:48 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:25:48 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:33:26 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:33:26 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:33:32 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[20-Apr-2018 18:33:32 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 2
+[21-Apr-2018 03:55:00 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 03:55:00 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 06:23:34 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 06:23:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 10:19:29 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 10:19:29 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 12:40:36 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 12:40:36 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 13:09:06 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[21-Apr-2018 13:09:06 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 11:11:23 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 11:11:23 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 17:17:49 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 17:17:49 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 23:01:29 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[22-Apr-2018 23:01:29 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[23-Apr-2018 04:58:23 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[23-Apr-2018 04:58:23 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[23-Apr-2018 11:01:58 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[23-Apr-2018 11:01:58 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:02:41 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:02:41 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:02:44 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:02:44 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:08 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:08 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:18 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:18 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:22 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:22 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:24 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:03:24 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:38:00 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:38:00 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:38:27 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:38:27 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:45:26 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 15:45:26 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 16:15:34 UTC] PHP Warning:  require_once(../GestorV2/modelo.php): failed to open stream: No such file or directory in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 16:15:34 UTC] PHP Fatal error:  require_once(): Failed opening required '../GestorV2/modelo.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/uzqtvfwd08cs/public_html/registrarDonador.php on line 2
+[24-Apr-2018 19:15:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:15:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:15:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:15:39 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:14 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:16 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:29 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:16:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:17:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:17:26 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:17:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:19:56 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:19:58 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:19:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:16 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:20:42 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:21:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:25:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/uzqtvfwd08cs/public_html/GestorV2/modelo.php on line 909
+[24-Apr-2018 19:26:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:26:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:26:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:26:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:26:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:28:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:28:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/acerca.html:32
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/acerca.php(4): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/acerca.html on line 32
+[24-Apr-2018 19:28:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:28:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/acerca.html:32
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/acerca.php(4): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/acerca.html on line 32
+[24-Apr-2018 19:28:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html:16
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/galeria.php(5): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 16
+[24-Apr-2018 19:28:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html:16
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/noticias.php(4): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/partials/_footer.html on line 16
+[24-Apr-2018 19:28:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/acerca.html:32
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/acerca.php(4): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/acerca.html on line 32
+[24-Apr-2018 19:28:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
+[24-Apr-2018 19:28:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function obtenerTitulo() in /home/uzqtvfwd08cs/public_html/html/acerca.html:32
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/acerca.php(4): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/acerca.html on line 32
+[24-Apr-2018 19:28:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getGaleriaPagina() in /home/uzqtvfwd08cs/public_html/html/index.html:15
+Stack trace:
+#0 /home/uzqtvfwd08cs/public_html/index.php(10): include()
+#1 {main}
+  thrown in /home/uzqtvfwd08cs/public_html/html/index.html on line 15
