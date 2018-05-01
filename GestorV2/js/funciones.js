@@ -1,8 +1,8 @@
-var email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs;
+var email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs, color;
 
 
 
-function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs){
+function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs, color){
     this.email = email;
     this.nombre = nombre;
     this.apellidoP = apellidoP;
@@ -14,6 +14,7 @@ function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, i
     this.RFC = RFC;
     this.metodo = metodo;
     this.obs = obs;
+    this.color = color;
     generateModal();
 }
 function generateModal(){
@@ -25,6 +26,8 @@ function generateModal(){
     document.getElementById('prev_usoCFDI').innerHTML = idCFDI;
     document.getElementById('prev_RFC').innerHTML = RFC;
     document.getElementById('prev_metodo').innerHTML = metodo;
+    $("#prev_metodo").css("background-color", color);
+    console.log(color);
     document.getElementById('prev_obs').innerHTML = obs;
 
 }
