@@ -96,7 +96,7 @@ h1 {
 
 
 body, #sidenav, .social {
-	opacity: 0; !important
+	opacity: 1; !important
 }
 
 .logo_big {

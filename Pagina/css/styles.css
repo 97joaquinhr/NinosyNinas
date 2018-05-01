@@ -44,6 +44,9 @@ a:hover {
 .bg-gray {
     background-color: #dadada !important;
 }
+.bg-dark {
+    background-color: gray !important;
+}
 .bg-gray2 {
     background-color: #b4b4b4 !important;
 }
@@ -68,8 +71,12 @@ a:hover {
     background-color: #e2418d !important;
 }
 
+.bg-pink2 {
+    background-color: #e292c1 !important;
+}
+
 .bg-purple {
-    background-color: #663f86 !important;
+    background-color: #60367f !important;
 }
 
 .bg-purple-light {
@@ -88,8 +95,14 @@ a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.inshadow {
+    -moz-box-shadow:    inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.19);
+    box-shadow:         inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.19);
+}
+
 .transparent {
-    opacity: 0.95;
+    opacity: .95;
 }
 
 .number1 {
@@ -209,20 +222,19 @@ div.desc {
 }
 
 .asog {
-    color: #fff;
-    text-align: center;
-    background-image: url(http://tobiasahlin.com/images/typesource/mountains.jpg);
+    /*color: #fff;*/
+    /*text-align: center;*/
     background-size: cover;
-    background-color: #f0ae93;
-    font-family: PT Sans, sans-serif;
-    line-height: 3em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    /*background-color: #f0ae93;*/
+    /*font-family: PT Sans, sans-serif;*/
+    /*line-height: 3em;*/
+    /*padding-top: 2em;*/
+    /*padding-bottom: 2em;*/
 }
 
 .asog-r1 {
     text-transform: uppercase;
-    font-size: 10em;
+    font-size: 15vw;
     font-weight: 700;
     line-height: 1.1em;
 }
@@ -231,7 +243,7 @@ div.desc {
     font-family: Lora, serif;
     font-style: italic;
     font-weight: 400;
-    font-size: 2.7em;
+    font-size: 4vw;
     display: inline-block;
     position: relative;
     mix-blend-mode: overlay;
@@ -286,6 +298,112 @@ div.desc {
 	margin-top: 5em;
     background: linear-gradient(rgba(218,218,218,1), rgba(218,218,218,1), rgba(218,218,218,0)); /* Standard syntax (must be last) */
 }
+.responsiveCal {
 
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
 
+}
 
+.responsiveCal iframe {
+
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.font{
+    font-size: 2.5em;
+}
+
+#gallery{
+    position: relative;
+    top: -103px;
+}
+.sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 35% {
+          -webkit-transform: scale3D(0, 0, 1);
+          transform: scale3D(0, 0, 1);
+      }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 35% {
+          -webkit-transform: scale3D(0, 0, 1);
+          transform: scale3D(0, 0, 1);
+      }
+}
+
+.vertical-center {
+    padding-top: 19vh;
+    padding-bottom: 19vh;
+}
+#logo{
+    width: 100%;
+    height: auto;
+}
+.logo_big {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    opacity: 0;
+    z-index: 5;
+    height: 90%;
+    width: 100%;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}

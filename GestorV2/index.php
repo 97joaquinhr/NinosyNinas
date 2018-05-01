@@ -5,6 +5,7 @@
     } else {
         include("partials/_header.html");
         include("partials/_login_form.html");
+        include("partials/_common_js.html");
         include("partials/_end.html");
     }
 ?>

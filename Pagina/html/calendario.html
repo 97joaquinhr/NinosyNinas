@@ -1,8 +1,21 @@
-<HTML>
-  <br>
-  <br>
-  <div class="container">
-    <img class="d-block w-100 shadow round" src="img/cal.png" alt="img">
-  </div>
-  <br>
-</HTML>
+<body onload="loadCalendar()">
+<div id="loader" class="sk-cube-grid">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+</div>
+<div style="display: none;" id="calendar">
+    <div class="row py-3 px-5">
+        <div class="col">
+        <div class="responsiveCal">
+            <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23dadada&amp;src=o3keu4lhr6sc5hbqinip2k9arg%40group.calendar.google.com&amp;color=%23e2418d&amp;ctz=America%2FMexico_City" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>
+        </div>
+    </div>
+</div>
+</body>
