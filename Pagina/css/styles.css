@@ -20,6 +20,10 @@ a:hover {
     color: #636363;
 }
 
+.lead {
+    font-size: 16px !important;
+}
+
 .trans:hover {
     background-color: #a83169 !important;
 }
@@ -69,6 +73,10 @@ a:hover {
 
 .bg-pink {
     background-color: #e2418d !important;
+}
+
+.bg-pink2 {
+    background-color: #e292c1 !important;
 }
 
 .bg-purple {
