@@ -50,10 +50,25 @@ function generateEliminar(){
 
 function deleteUserModal(id) {
     console.log(id);
-    $('#user_id').attr('value', id)
-}  
+    $('#user_id').attr('value', id);
+}
 
 function generateValidar(){
     $('input[name="v_email"]').val(email);
 }
 
+function editarPatronato(id) {
+  var idi = id+"i";
+  var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
+  document.getElementById(id).innerHTML = data;
+  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").onclick = function () { ajaxPatronato(id); };
+  //document.getElementById(id+"h").type = "submit";
+}
+
+function ajaxPatronato(id){
+  $.post("editar.php", {
+    idInfo: document.getElementById(id+"a").value,
+    input: document.getElementById(id+"i").value
+  })
+}

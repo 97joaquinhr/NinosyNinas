@@ -906,6 +906,79 @@ function obtenerTablaBlue($seccion) {
     }
 }
 
+function obtenerTablaBlue2($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion, idInfo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '<div id="Patronato">';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+              if($row["Titulo"]!="Vocal"){
+                $html .= "<li class='list-group-item bg-cyan'>
+                            <h5>". $row["Titulo"] ."</h5>
+                            <p id='".$row["Descripcion"]."' class='card-text'>
+                              '". $row["Descripcion"] ."'
+                            </p>
+                            <input type='hidden' value='".$row["idInfo"]."' id='".$row["Descripcion"]."".'a'."'>
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                $html .=      '"';
+                $html .=      "".$row['Descripcion']."";
+                $html .=      '"';
+                $html .=      ")'>
+                              <i class='fas fa-pencil-alt'></i>
+                            </button>
+                          </li>";
+              }else{
+                $html .= "<li class='list-group-item bg-cyan'>
+                            <h5>". $row["Titulo"] ."</h5>
+                            <p id='".$row["Descripcion"]."' class='card-text'>
+                              '". $row["Descripcion"] ."'
+                            </p>
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                $html .=      '"';
+                $html .=      "".$row['Descripcion']."";
+                $html .=      '"';
+                $html .=      ")'>
+                              <i class='fas fa-pencil-alt'></i>
+                            </button>
+                            <button class='btn btn-danger'>
+                              <i class='fas fa-trash-alt'></i>
+                            </button>
+                          </li>";
+              }
+
+            }
+            $html .= "</div>";
+            echo $html;
+        }
+    }
+}
+
+function modificarPatronato($idInfo, $input) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Descripcion='".$input."' WHERE idInfo LIKE '%".$idInfo."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
 function obtenerTablaPink($seccion) {
     $db = connect();
     if ($db != NULL) {
