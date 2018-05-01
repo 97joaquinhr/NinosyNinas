@@ -968,3 +968,57 @@ function modificarporID($id, $seccion, $titulo, $descripcion)
         disconnect($db);
     }
 }
+
+function registrarNoticia($titulo, $cuerpo, $imagen){
+    $db = connect();
+    if ($db != NULL) {
+
+
+        $query = 'INSERT INTO `noticias`(`titulo`,`cuerpo`,`imagen`)
+                      VALUES (?,?,?)';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sss", $titulo, $cuerpo, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        disconnect($db);
+        return true;
+    }
+    return false;
+
+}
+
+function modificarNoticia($titulo, $cuerpo, $imagen, $id)
+{
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'UPDATE noticias
+                  SET titulo = ?,
+                  cuerpo = ?,
+                  imagen = ?,
+                  WHERE idNoticia = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sssi", $titulo, $cuerpo, $imagen, $id)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        disconnect($db);
+
+        return true;
+    }
+    return false;
+}
