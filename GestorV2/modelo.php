@@ -930,3 +930,43 @@ function modificarporID($id, $seccion, $titulo, $descripcion)
         disconnect($db);
     }
 }
+
+function registrarNoticia($titulo, $cuerpo, $imagen){
+    $db = connect();
+    if ($db != NULL) {
+
+
+        $query = 'INSERT INTO `noticias`(`titulo`,`cuerpo`,`imagen`)
+                      VALUES ("'.$titulo.'", "'.$cuerpo.'", "'.$imagen.'")';
+
+        if (mysqli_query($db, $query)) {
+            } else{
+                echo "Error: " . $query . "<br>" . mysqli_error($db);
+            }
+        disconnect($db);
+        return true;
+    }
+    return false;
+
+}
+
+function modificarNoticia($titulo, $cuerpo, $imagen, $id)
+{
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'UPDATE noticias
+                  SET titulo = "' . $titulo . '",
+                  cuerpo = "' . $cuerpo . '",
+                  imagen = "' . $imagen . '",
+                  WHERE idNoticia = "' . $id . '" ';
+
+
+        if (mysqli_query($db, $query)) {
+            echo "Record 3 updated successfully";
+        } else {
+            echo "Error updating record 3: " . mysqli_error($db);
+        }
+
+        return true;
+    }
+}
