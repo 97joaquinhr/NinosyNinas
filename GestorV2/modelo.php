@@ -570,18 +570,18 @@ function getNoticias() {
     return false;
 }
 
-function registrarImagen($url, $nombre, $id_noticia, $t_url) {
+function registrarImagen($url, $nombre) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query='INSERT INTO archivomultimedia (Filepath,Nombre,IdNoticia,ThumbnailUrl) VALUES (?,?,?,?) ';
+        $query='INSERT INTO archivomultimedia (Filepath,Nombre) VALUES (?,?) ';
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("ssss", $url, $nombre, $id_noticia, $t_url)) {
+        if (!$statement->bind_param("ss", $url, $nombre)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -595,12 +595,16 @@ function registrarImagen($url, $nombre, $id_noticia, $t_url) {
     return false;
 }
 
-function eliminarImagen($url) {
+function eliminarImagen($url)
+{
     $db = connect();
     if ($db != NULL) {
+        $file =$url;
+
+        unlink($file);//no se elimina el thurl
 
         // insert command specification
-        $query='DELETE FROM archivomultimedia WHERE Filepath = ?';
+        $query = 'DELETE FROM archivomultimedia WHERE Filepath = ?';
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -613,31 +617,31 @@ function eliminarImagen($url) {
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         }
-
         disconnect($db);
         return true;
     }
     return false;
 }
 
-function getGaleriaGestor() {
+function getGaleriaGestor()
+{
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
+        $query = 'SELECT Filepath,Nombre FROM archivomultimedia';//ya quedo
         $sql = $db->query($query);
 
-        $result = mysqli_query($db,$query);
+        $result = mysqli_query($db, $query);
         $i = 0;
         echo '<div class="row">';
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo '
-                <div class="col">
-                    <div class="show-image">
-                        <a href="javascript:preview(\''.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                        <button onclick="showDelete(\''.$row['Filepath'].'\')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
-                    </div>
-                </div>';
+            <div class="col">
+                <div class="show-image">
+                    <a href="javascript:preview(\'' . $row['Filepath'] . '\',\'' . $row['Nombre'] . '\');"><img src="' . $row['Filepath'] . '" class="img img-thumbnail"></a>
+                    <button onclick="showDelete(\'' . $row['Filepath'] . '\')" class="delete btn btn-danger shadow"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>';
                 $i++;
                 if ($i == 4) {
                     echo '</div><div class="row">';
@@ -652,31 +656,35 @@ function getGaleriaGestor() {
     }
     return false;
 }
-function getGaleriaPagina() {
+
+function getGaleriaPagina()
+{
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Filepath,Nombre,ThumbnailUrl FROM archivomultimedia';//ya quedo
+        $query = 'SELECT Filepath,Nombre FROM archivomultimedia';//ya quedo
         $sql = $db->query($query);
 
-        $result = mysqli_query($db,$query);
+        $result = mysqli_query($db, $query);
         $i = 0;
-        echo '<div class="row">';
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo '
-                <div class="col">
-                    <div class="show-image">
-                        <a href="javascript:preview(\'../GestorV2/'.$row['Filepath'].'\',\''.$row['Nombre'].'\');"><img src="../GestorV2/'.$row['ThumbnailUrl'].'" class="img img-thumbnail"></a>
-                    </div>
-                </div>';
-                $i++;
-                if ($i == 4) {
-                    echo '</div><div class="row">';
-                    $i = 0;
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                if ($i == 0) {
+                    echo '<div class="carousel-item active">
+                  <img src="GestorV2/' . $row['Filepath'] . '" alt="' . $row['Nombre'] . '" width="1100" height="500">
+              </div>';
+                } else {
+                    echo '<div class="carousel-item">
+                  <img src="GestorV2/' . $row['Filepath'] . '" alt="' . $row['Nombre'] . '" width="1100" height="500">
+              </div>';
                 }
+
+                $i++;
+//                if ($i == 4) {
+//                    echo '</div><div class="row">';
+//                    $i = 0;
+//                }
             }
         }
-        echo '</div>';
         mysqli_free_result($result);
         disconnect($db);
         return true;
@@ -713,31 +721,31 @@ function make_thumb($file, $dest)
     return true;
 }
 
-function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi,$rfc)
+function modificarDonador($email, $nombre, $apellidoPaterno, $apellidoMaterno, $fechaN, $dir, $tel, $ocupacion, $idMetodo, $obs, $idCfdi, $rfc)
 {
     $db = connect();
     if ($db != NULL) {
         $query = 'UPDATE donadores
-                      SET Nombre = "' . $nombre . '",
-                      ApellidoPaterno = "' . $apellidoPaterno . '",
-                      ApellidoMaterno = "' . $apellidoMaterno . '",
-                      FechadeNacimiento = "' . $fechaN . '",
-                      Direccion = "' . $dir . '",
-                      Telefono = "' . $tel . '",
-                      Email = "' . $email . '",
-                      Ocupacion = "' . $ocupacion . '",
-                      RFC = "' . $rfc . '"
-                      WHERE Email = "' . $email . '" ';
+                  SET Nombre = "' . $nombre . '",
+                  ApellidoPaterno = "' . $apellidoPaterno . '",
+                  ApellidoMaterno = "' . $apellidoMaterno . '",
+                  FechadeNacimiento = "' . $fechaN . '",
+                  Direccion = "' . $dir . '",
+                  Telefono = "' . $tel . '",
+                  Email = "' . $email . '",
+                  Ocupacion = "' . $ocupacion . '",
+                  RFC = "' . $rfc . '"
+                  WHERE Email = "' . $email . '" ';
 
         $query2 = 'UPDATE donadores_metodopago
-                       SET Observaciones = "' . $obs . '",
-                       IdMetodo = "' . $idMetodo . '"
-                       WHERE Email = "' . $email . '"';
+                   SET Observaciones = "' . $obs . '",
+                   IdMetodo = "' . $idMetodo . '"
+                   WHERE Email = "' . $email . '"';
 
         $query3 = 'UPDATE donadores_usocfdi
-                       SET IdCFDI = "' . $idCfdi . '"
-                       WHERE Email = "' . $email . '"
-                       ';
+                   SET IdCFDI = "' . $idCfdi . '"
+                   WHERE Email = "' . $email . '"
+                   ';
 
         if (mysqli_query($db, $query3)) {
             echo "Record 3 updated successfully";
@@ -765,13 +773,13 @@ function eliminarDonador($email)
     $db = connect();
     if ($db != NULL) {
         $query = 'DELETE FROM donadores
-                       WHERE Email = "'.$email.'" ';
+                   WHERE Email = "' . $email . '" ';
 
         $query2 = 'DELETE FROM donadores_metodopago
-                       WHERE Email = "'.$email.'" ';
+                   WHERE Email = "' . $email . '" ';
 
         $query3 = 'DELETE FROM donadores_usocfdi
-                       WHERE Email = "'.$email.'" ';
+                   WHERE Email = "' . $email . '" ';
 
         if (mysqli_query($db, $query3)) {
             echo "Record 3 updated successfully";
@@ -792,16 +800,17 @@ function eliminarDonador($email)
     }
 }
 
-function printDonadoresNV(){
+function printDonadoresNV()
+{
     $db = connect();
     if ($db != NULL) {
 
-        $query='SELECT COUNT(*) AS total
-                FROM donadores 
-                WHERE Validado = 0';
+        $query = 'SELECT COUNT(*) AS total
+            FROM donadores 
+            WHERE Validado = 0';
         $results = $db->query($query);
         
-        $row =  mysqli_fetch_assoc($results);
+        $row = mysqli_fetch_assoc($results);
 
         mysqli_free_result($results);
         disconnect($db);
@@ -811,16 +820,17 @@ function printDonadoresNV(){
 }
 
 
-function obtenerTitulo($seccion) {
+function obtenerTitulo($seccion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
+        $sql = "SELECT Titulo FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
         disconnect($db);
         $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 $html .= $row["Titulo"];
             }
             echo $html;
@@ -828,16 +838,17 @@ function obtenerTitulo($seccion) {
     }
 }
 
-function obtenerDesc($seccion) {
+function obtenerDesc($seccion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
         disconnect($db);
         $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 $html .= $row["Descripcion"];
             }
             echo $html;
@@ -845,51 +856,54 @@ function obtenerDesc($seccion) {
     }
 }
 
-function obtenerDescObjetivos($seccion) {
+function obtenerDescObjetivos($seccion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
         disconnect($db);
         $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $html .= '<li class="list-group-item shadow"><p><em>' . $row["Descripcion"] . '</em></p></li>';
             }
             echo $html;
         }
     }
 }
 
-function obtenerTablaBlue($seccion) {
+function obtenerTablaBlue($seccion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
         disconnect($db);
         $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $html .= '<li class="list-group-item bg-cyan text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
             }
             echo $html;
         }
     }
 }
 
-function obtenerTablaPink($seccion) {
+function obtenerTablaPink($seccion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
         disconnect($db);
         $html = '';
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $html .= '<li class="list-group-item bg-pink text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
             }
             echo $html;
         }
@@ -897,23 +911,22 @@ function obtenerTablaPink($seccion) {
 }
 
 
-function modificarporID($id, $seccion, $titulo, $descripcion){
+function modificarporID($id, $seccion, $titulo, $descripcion)
+{
     $db = connect();
     if ($db != NULL) {
-        $sql = "UPDATE informacion SET Seccion=$seccion, Titulo=$titulo, Descripcion=$descripcion' WHERE idInfo = '".$id."'";
+        $sql = "UPDATE informacion SET Seccion=$seccion, Titulo=$titulo, Descripcion=$descripcion' WHERE idInfo = '" . $id . "'";
 
-        if (mysqli_query($db,$sql)) {
+        if (mysqli_query($db, $sql)) {
             echo "Modificado Exitosamente";
             disconnect($db);
             return true;
 
         } else {
-            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            echo "Error: " . $sql . "<br>" . mysqli_error($db);
             disconnect($db);
             return false;
         }
         disconnect($db);
     }
 }
-
-

@@ -6,9 +6,9 @@
     if(isset($_SESSION["usuario"]) && $_SESSION["rol"] != "R04" && $_SESSION["rol"] != "R06") {
         if(isset($_POST["nombre"]) != NULL ) {
             unset($_SESSION["error_archivo"]);
-            $target_dir = "uploads/gallery/";
-            $target_file = $target_dir  . time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
-            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"];
+            $dirBD="img/".time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
+            $target_file = $dirBD;
+//            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"];
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             // Check if image file is a actual image or fake image
@@ -56,8 +56,8 @@
                 $_SESSION["error_archivo"] = "Si se esta procesando el archivo";
                 header("location:galeria.php");
             }
-            make_thumb($target_file, $thumb_target_file, 100);
-            registrarImagen($target_file, $_POST["nombre"], 'NULL', $thumb_target_file);
+//            make_thumb($target_file, $thumb_target_file, 100);
+            registrarImagen($target_file, $_POST["nombre"]);
             header("location:galeria.php");
         } else {
             $_SESSION["error_archivo"] = "No se esta procesando el archivo";
