@@ -66,6 +66,12 @@ function editarPatronato(id) {
   //document.getElementById(id+"h").type = "submit";
 }
 
+function addVocal() {
+  data= '<textarea id="'+idi+'" class="form-control" rows="1" placeholder="Juan Carlos Espíndola Canuto"></textarea>
+        '
+  document.getElementById("añadir").innerHTML = data;
+}
+
 function ajaxPatronato(id){
   $.post("editar.php", {
     idInfo: document.getElementById(id+"a").value,
