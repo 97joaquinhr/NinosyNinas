@@ -3,7 +3,7 @@
     require_once("modelo.php");
     date_default_timezone_set("UTC");
 
-    if(isset($_SESSION["usuario"])) {
+    if(isset($_SESSION["usuario"]) && $_SESSION["rol"] != "R04" && $_SESSION["rol"] != "R06") {
         if(isset($_POST["nombre"]) != NULL ) {
             unset($_SESSION["error_archivo"]);
             $dirBD="img/".time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));

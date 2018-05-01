@@ -17,6 +17,8 @@
                 $_SESSION['apellido'] = $payload['family_name'];
                 $_SESSION['email'] = $payload['email'];
                 $_SESSION['image'] = $payload['picture'];
+                $_SESSION['rol'] = getRol($payload['sub']);
+                $_SESSION['funciones'] = getFunciones($_SESSION['rol']);
                 echo "SUCCESS";
             } else {
                 // ID token not registered

@@ -45,18 +45,18 @@ function login($userid) {
 }
 
 
-function signup($userid, $name, $email) {
+function signup($userid, $name, $email, $rol) {
     $db = connect();
     if ($db != NULL) {
 
         // insert command specification
-        $query="INSERT INTO usuario (id, email, name) values (?, ?, ?)";
+        $query="CALL signup(?, ?, ?, ?)";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("sss", $userid, $email, $name)) {
+        if (!$statement->bind_param("ssss", $userid, $email, $name, $rol)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -83,7 +83,7 @@ function deleteUser($userid) {
     if ($db != NULL) {
 
         // insert command specification
-        $query="DELETE FROM usuario WHERE id = ?";
+        $query="CALL deleteUser(?)";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -142,17 +142,17 @@ function getNombre($email) {
     return false;
 }
 
-function getRol($email) {
+function getRol($id) {
     $db = connect();
     if ($db != NULL) {
         // insert command specification
-        $query="SELECT IdRol FROM usuario_rol WHERE Email = ?";
+        $query="SELECT IdRol FROM usuario_rol WHERE id = ?";
         // Preparing the statement
         if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
         }
         // Binding statement params
-        if (!$statement->bind_param("s", $email)) {
+        if (!$statement->bind_param("s", $id)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
         }
         // Executing the statement
@@ -217,7 +217,7 @@ function getDonadores() {
     $db = connect();
     if ($db != NULL) {
 
-        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+        $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones, color
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
                 WHERE d.Email=dm.Email 
                 AND m.Idmetodo = dm.IdMetodo
@@ -232,7 +232,7 @@ function getDonadores() {
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
 
             $html .= '                   
-                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\' )" >
+                            <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\',\''.$fila["color"].'\' )" >
                              <div class="media-body">
                               <div class="row">
                                 <div class="col-sm">
@@ -260,7 +260,7 @@ function getDonadores() {
 function getDonadores2() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones, color
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
                 WHERE d.Email=dm.Email 
                 AND m.Idmetodo = dm.IdMetodo
@@ -273,7 +273,7 @@ function getDonadores2() {
 
         while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
             $html.= '
-                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\',\''.$row["color"].'\' )">
                  <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
                  <td>'. $row["Telefono"] .'</td>
                  <td>'. $row["Email"] .'</td>
@@ -290,10 +290,10 @@ function getDonadores2() {
 function getDonadoresNV() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones
+        $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones, color
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
                 WHERE d.Email=dm.Email 
-                AND m.Idmetodo = dm.IdMetodo
+                AND m.IdMetodo = dm.IdMetodo
                 AND du.Email = d.Email
                 AND Validado = 0 
                 ORDER BY Nombre ASC ';
@@ -303,7 +303,7 @@ function getDonadoresNV() {
 
         while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
             $html.= '
-                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\' )">
+                 <tr  data-toggle = "modal" data-target = "#donadorInfo" name="'.$row["Email"].'" id="'.$row["Email"].'" onclick="javascript:setCurrentVars(\''.$row["Email"].'\', \''.$row["Nombre"].'\', \''.$row["ApellidoPaterno"].'\', \''.$row["ApellidoMaterno"].'\', \''.$row["Telefono"].'\', \''.$row["Direccion"].'\',\''.$row["FechadeNacimiento"].'\',\''.$row["IdCFDI"].'\',\''.$row["RFC"].'\',\''.$row["Descripcion"].'\',\''.$row["Observaciones"].'\',\''.$row["color"].'\' )">
                  <td>'. $row["Nombre"] .' '. $row["ApellidoPaterno"] .' '. $row["ApellidoMaterno"] .'</td>
                  <td>'. $row["Telefono"] .'</td>
                  <td>'. $row["Email"] .'</td>
@@ -404,7 +404,7 @@ function addRol($idRol, $Nombre){
 function getUsuarios() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT id, name, email FROM usuario ORDER BY name ASC';
+        $query='SELECT U.id, name, email, Nombre FROM usuario U, usuario_rol UR, rol R WHERE U.id = UR.id AND UR.IdRol = R.IdRol ORDER BY name ASC';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -416,9 +416,29 @@ function getUsuarios() {
 
                 echo "<td>" . $row["name"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["Nombre"] . "</td>";
                 echo "<td><a class='btn btn-danger text-white' data-toggle='modal' data-target='#usuarioInfo' onclick='deleteUserModal(\"".$row["id"]."\");'><i class='fas fa-trash-alt'></i></a></td>";
 
                 echo "</tr>";
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+function getRoles() {
+    $db = connect();
+    if ($db != NULL) {
+        $query='SELECT IdRol, Nombre FROM rol ORDER BY IdRol ASC';
+        $sql = $db->query($query);
+
+        $result = mysqli_query($db,$query);
+        disconnect($db);
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "<option value=\"" . $row["IdRol"] . "\">" . $row["Nombre"] . "</option>";
             }
         }
         return true;
@@ -453,7 +473,7 @@ function getUsuarios_graph() {
 function getMetodos_graph() {
     $db = connect();
     if ($db != NULL) {
-        $query='SELECT Descripcion, COUNT(Email) as Emailg FROM donadores_metodopago D, metodopago M WHERE D.IdMetodo = M.IdMetodo GROUP BY Descripcion';
+        $query='SELECT Descripcion, COUNT(Email) as Emailg FROM donadores_metodopago D, metodopago M WHERE D.IdMetodo = M.IdMetodo GROUP BY Descripcion ORDER BY Descripcion';
         $sql = $db->query($query);
 
         $result = mysqli_query($db,$query);
@@ -467,7 +487,23 @@ function getMetodos_graph() {
             }
         }
         disconnect($db);
-        return array('labels' => $fechas, 'data' => $n);
+        $db = connect();
+        if ($db != NULL) {
+            $query='SELECT color FROM metodopago ORDER BY Descripcion';
+            $sql = $db->query($query);
+    
+            $result = mysqli_query($db,$query);
+            
+            $color = array();
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $color[] = $row["color"];
+                }
+            }
+            disconnect($db);
+            return array('labels' => $fechas, 'data' => $n, 'colors' => $color);
+        }
+        return false;
     }
     return false;
 }
@@ -773,15 +809,12 @@ function printDonadoresNV()
             FROM donadores 
             WHERE Validado = 0';
         $results = $db->query($query);
-
+        
         $row = mysqli_fetch_assoc($results);
-
-        echo $row["total"];
-
 
         mysqli_free_result($results);
         disconnect($db);
-        return true;
+        return $row["total"];
     }
     return false;
 }
