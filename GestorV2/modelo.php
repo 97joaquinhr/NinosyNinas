@@ -812,24 +812,7 @@ function obtenerDesc($seccion) {
     }
 }
 
-function obtenerDescObjetivos($seccion) {
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
-        disconnect($db);
-        $html = '';
-
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item shadow"><p><em>'. $row["Descripcion"] .'</em></p></li>';
-            }
-            echo $html;
-        }
-    }
-}
-
-function obtenerTablaBlue($seccion) {
+function obtenerTabla($seccion) {
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
@@ -839,14 +822,16 @@ function obtenerTablaBlue($seccion) {
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item bg-cyan text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                $html .= '<tr class=\'\'>
+                          <td><h3>'. $row["Titulo"] .'</h3><p>'. $row["Descripcion"] .'</p></td>
+                          </tr>';
             }
             echo $html;
         }
     }
 }
 
-function obtenerTablaPink($seccion) {
+function obtenerTablaWhite($seccion) {
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
@@ -856,7 +841,9 @@ function obtenerTablaPink($seccion) {
 
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
-                $html .= '<li class="list-group-item bg-pink text-white"><h5>'. $row["Titulo"] .'</h5><p class="card-text text-white">'. $row["Descripcion"] .'</p></li>';
+                $html .= '<tr class=\'\'>
+                          <td><h3 class="text-white">'. $row["Titulo"] .'</h3><p class="text-white"    >'. $row["Descripcion"] .'</p></td>
+                          </tr>';
             }
             echo $html;
         }

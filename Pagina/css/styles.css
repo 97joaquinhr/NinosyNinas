@@ -20,6 +20,10 @@ a:hover {
     color: #636363;
 }
 
+.lead {
+    font-size: 16px !important;
+}
+
 .trans:hover {
     background-color: #a83169 !important;
 }
