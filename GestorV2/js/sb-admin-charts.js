@@ -124,12 +124,6 @@ var myLineChart = new Chart(ctx, {
 });
 
 
-var data3 = {
-  "labels" : ["Transferencia", "Tarjetos", "Cheque", "Otro"],
-  "data" : [12.21, 100.58, 11.25, 8.32]
-}
-
-
 $.ajax({
     url: "graph_metodos.php",
     dataType: "JSON",
@@ -143,10 +137,23 @@ $.ajax({
             labels: json.labels,
             datasets: [{
               data: json.data,
-              backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#D85596'],
+              backgroundColor: json.colors,
             }],
           },
         });
     }
 });
 
+var date = new Date();
+var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+$.ajax({
+    url: "https://www.googleapis.com/calendar/v3/calendars/o3keu4lhr6sc5hbqinip2k9arg@group.calendar.google.com/events?key=AIzaSyBfK9TC6BZsEbxOPaxoy5hnfQTbg8THejM&timeMax=" + lastDay.toISOString() + "&timeMin=" + firstDay.toISOString(),
+    dataType: "JSON",
+    success: function(json){
+      // console.log(json);
+      // Get events this month
+      $("#google-events").html(json.items.length);
+    }
+});
