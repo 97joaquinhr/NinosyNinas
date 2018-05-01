@@ -1,8 +1,8 @@
-<div id="preview" class="modal fade" tabindex="-1" role="dialog">
+<div id="donadorInfo" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Juan Carlos Garzón Rincón</h5>
+                <h5 class="modal-title" id="prev_nom"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -20,12 +20,11 @@
                                         </div>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><strong>Correo</strong><span class="card-text float-right">jgarzon@marhnos.com.mx</span></li>
-                                        <li class="list-group-item"><strong>Dirección</strong><span class="card-text float-right">Calle Laureles #221, Colonia Jurica, 76060, Querétaro.</span></li>
-                                        <li class="list-group-item"><strong>Teléfono</strong><span class="card-text float-right">+52 (442) 235 5641</span></li>
-                                        <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span class="card-text float-right">12/01/1950</span></li>
+                                        <li class="list-group-item"><strong>Correo</strong><span id="prev_email" class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Dirección</strong><span id="prev_dir"  class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Teléfono</strong><span id="prev_tel" class="card-text float-right"></span></li>
+                                        <li class="list-group-item"><strong>Fecha de Nacimiento</strong><span id="prev_fechaN" class="card-text float-right"></span></li>
                                     </ul>
-                                    <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                                 </div>
                             </div>
                         </div>
@@ -42,26 +41,24 @@
                             <div class="card-header">UsoCFDI</div>
                             <div class="card-body">Registro de preferencias de donación</div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>G03</strong><span class="card-text float-right">Alimentos</span></li>
+                                <li class="list-group-item"><strong id="prev_usoCFDI"></strong><span class="card-text float-right" id="prev_cfDesc"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                         <div class="card mt-4">
                             <div class="card-header">Datos de Donación</div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right">GARJ500112MP4</span></li>
-                                <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right">Tarjeta</span><span class="badge badge-primary mx-1 float-right">Transferencia</span></li>
-                                <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right">Blah blah blah...</span></li>
+                                <li class="list-group-item"><strong>RFC</strong><span class="card-text float-right" id="prev_RFC"></span></li>
+                                <li class="list-group-item"><strong>Método de pago</strong><span class="badge badge-danger float-right" id="prev_metodo"></span>
+                                <li class="list-group-item"><strong>Observaciones</strong><span class="card-text float-right" id="prev_obs"></span></li>
                             </ul>
-                            <div class="card-footer small text-muted">Actualizado hace 5 minutos</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button><!-- Hay que moverlo a la derecha -->
-                <button type="button" class="btn btn-primary" onclick="edit()">Editar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger mr-auto" data-toggle="modal" data-target="#confirmar-borrar" onclick="generateEliminar()">Eliminar</button>
+                <button type="button" data-target="#edit" data-toggle="modal" class="btn btn-primary" onclick="generateEdit()">Editar</button>
+                <button type="button" class="btn btn-success " data-toggle="modal" data-target="#validar" onclick="generateValidar()">Validar</button>
             </div>
         </div>
     </div>
@@ -77,70 +74,61 @@
                 </button>
             </div>
 
-            <form>
+            <form method="post" action="modificarDonador.php">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="nombre">Nombre(s)</label>
-                                <input class="form-control" id="nombre" aria-describedby="nombreHelp" value="Juan Carlos">
+                                <input class="form-control" name="ed_nom" id="ed_nom" aria-describedby="nombreHelp" value="">
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
-                                <label for="apellidoP">Apellido paterno</label>
-                                <input class="form-control" id="apellidoP" aria-describedby="apellidoPHelp" value="Garzón">
+                                    <label for="apellidoP">Apellido paterno</label>
+                                    <input class="form-control" name="ed_apellidoP" id="ed_apellidoP" aria-describedby="apellidoPHelp" value="Garzón">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="apellidoM">Apellido materno</label>
-                                <input class="form-control" id="apellidoM" aria-describedby="apellidoMHelp" value="Rincón Gallardo">
+                                <input class="form-control" name="ed_apellidoM" id="ed_apellidoM" aria-describedby="apellidoMHelp" value="Rincón Gallardo">
                             </div>
                             <div class="form-group">
                                 <label for="rfc">RFC</label>
-                                <input class="form-control" id="rfc" aria-describedby="rfcHelp" value="GARJ500112MP4">
+                                <input class="form-control" name="ed_RFC" id="ed_rfc" aria-describedby="rfcHelp" value="GARJ500112MP4">
                             </div>
                             <div class="form-group">
                                 <label for="emailD">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="emailD" aria-describedby="emailHelp" value="jgarzon@marhnos.com.mx">
+                                <input type="email" class="form-control" id="ed_email" name="ed_email" aria-describedby="emailHelp" value="jgarzon@marhnos.com.mx">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="direccion">Direccion</label>
-                                <input class="form-control" id="direccion" aria-describedby="direccionHelp" value="Calle Laureles #221, Colonia Jurica, 76060, Querétaro.">
+                                <input class="form-control" id="ed_direccion" name="ed_dir" aria-describedby="direccionHelp" value="Calle Laureles #221, Colonia Jurica, 76060, Querétaro.">
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono o Celular</label>
-                                <input class="form-control" id="telefono" aria-describedby="telefonoHelp" value="442 235 5641">
+                                <input class="form-control" id="ed_telefono" name="ed_tel" aria-describedby="telefonoHelp" value="442 235 5641">
                             </div>
                             <label for="fechaN">Fecha de nacimiento</label>
-                            <input id="datepicker" value="12/01/1950">
+                            <input type="date" name="ed_fechaN" value="12/01/1950">
                             <label for="MetodoPago">Metodo de pago</label>
-                            <select class="form-control">
-                                <option>Tarjeta de crédito</option>
-                                <option>Transferencia</option>
-                                <option>Cheque</option>
-                                <option>Otro</option>
+                            <select class="form-control" name="ed_metodoPago">
+                                <?php getMetodos(); ?>
                             </select>
                             <div class="form-group">
-                                <label for="numeroC">Número de cuenta</label>
-                                <input class="form-control" id="numeroC" aria-describedby="numeroCHelp" value="5491 3888 7544 7025">
-                            </div>
-                            <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
-                                <input class="form-control" id="observaciones" aria-describedby="observacionesHelp" value="Fecha de vencimiento: 06/18">
+                                <input class="form-control" name="ed_obs" id="ed_observaciones" aria-describedby="observacionesHelp" value="Fecha de vencimiento: 06/18">
                             </div>
-                            <div class="form-group">
-                                <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" id="usoCFDI" aria-describedby="usoCFDIHelp" value="G03">
-                            </div>
+                            <label for="usoCFDI">Uso CFDI</label>
+                            <select id="ed_usoCFDI" name="ed_usoCFDI" class="form-control">
+                                <?php getUSOCFDI(); ?>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
-                    <a class="btn btn-primary" href="php/Donadores/editarD.php" role="button">Guardar</a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button role="submit" type="submit" class="btn btn-primary" >Guardar</button>
                 </div>
 
             </form>
@@ -184,10 +172,6 @@
                                 <label for="emailD">Correo Electrónico</label>
                                 <input type="email" class="form-control" name="email" id="emailD" aria-describedby="emailHelp" placeholder="jgarzon@marhnos.com.mx" required>
                             </div>
-                            <div class="form-group">
-                                <label for="ocupacion">Ocupacion</label>
-                                <input type="text" class="form-control" id="ocupacion" name="ocupacion" aria-describedby="ocupacionHelp" placeholder="Bombero">
-                            </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -202,10 +186,7 @@
                             <input type="date"  name="fechaN" id="fechaN" placeholder="12/01/1950">
                             <label for="metodoPago">Metodo de pago</label>
                             <select class="form-control" name="metodoPago" id="MetodoPago">
-                                <option value="M0">Tarjeta de crédito</option>
-                                <option value="M02">Transferencia</option>
-                                <option value="M03">Cheque</option>
-                                <option value="M04">Otro</option>
+                                <?php getMetodos(); ?>
                             </select>
                             <div class="form-group">
                                 <label for="observaciones">Observaciones</label>
@@ -213,7 +194,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="usoCFDI">Uso CFDI</label>
-                                <input class="form-control" name="cfdi" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                                <select id="usoCFDI" name="cfdi" class="form-control" aria-describedby="usoCFDIHelp">
+                                    <?php getUSOCFDI(); ?>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -223,6 +206,56 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
 
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirmar-borrar" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                ¿Borrar?
+            </div>
+            <div class="modal-body">
+                ¿Estas seguro que quieres eliminar a este donador de la base de datos? <br>Con el email:
+            </div>
+            <form action="eliminarDonador.php" method="post">
+                <div class="container container-fluid">
+                    <input name="c_email" readonly>
+                </div>
+                <p></p>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger mr-auto">Borrar</button>
+
+                    <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="validar" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                ¿Validar?
+            </div>
+            <div class="modal-body">
+                ¿Quieres validar a este donador? <br>Con el email:
+            </div>
+            <form action="validarDonador.php" method="post">
+                <div    class="container container-fluid">
+                    <input name="v_email" readonly>
+                </div>
+                <p></p>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success mr-auto">Validar</button>
+
+                    <button class="btn btn-primary btn-ok" data-dismiss="modal">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>

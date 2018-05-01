@@ -4,62 +4,57 @@
         <div class="card card-register mx-auto mt-5 shadow">
             <div class="card-header">Registro de Donador</div>
             <div class="card-body">
-                <form>
+                <form action="addDonador.php" method="post" onsubmit="return validateForm()" name="DonadorRecurrente">
                     <div class="form-group">
-                        <label for="emailD">Correo electronico *</label>
-                        <input type="email" class="form-control" id="emailD" aria-describedby="emailHelp" placeholder="example@example.com">
+                        <label for="email">Correo electronico *</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="example@example.com" required>
                         <small id="emailHelp" class="form-text text-muted">No compartiremos esto con nadie más.</small>
                     </div>
                     <div class="form-group">
                         <label for="emailD2">Confirmar correo *</label>
-                        <input type="email" class="form-control" id="emailD2" aria-describedby="emailHelp" placeholder="example@example.com">
+                        <input type="email" class="form-control" name="emailD2" id="emailD2" aria-describedby="emailHelp" placeholder="example@example.com" required>
                     </div>
                     <div class="form-group">
                         <label for="rfc">RFC</label>
-                        <input class="form-control" id="rfc" aria-describedby="rfcHelp" placeholder="AAAA0000001A1">
+                        <input class="form-control" name="rfc" id="rfc" aria-describedby="rfcHelp" placeholder="AAAA0000001A1">
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre(s) *</label>
-                        <input class="form-control" id="nombre" aria-describedby="nombreHelp" placeholder="Carlos">
+                        <input class="form-control" name="nombre" id="nombre" required aria-describedby="nombreHelp" placeholder="Carlos">
                     </div>
                     <div class="form-group">
                         <label for="apellidoP">Apellido paterno *</label>
-                        <input class="form-control" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez">
+                        <input class="form-control" required name="apellidoP" id="apellidoP" aria-describedby="apellidoPHelp" placeholder="Jimenez">
                     </div>
                     <div class="form-group">
                         <label for="apellidoM">Apellido materno *</label>
-                        <input class="form-control" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono o Celular *</label>
-                        <input class="form-control" id="telefono" aria-describedby="telefonoHelp" placeholder="+52 4421111111">
+                        <input class="form-control" required name="apellidoM" id="apellidoM" aria-describedby="apellidoMHelp" placeholder="Trejo">
                     </div>
                     <label for="fechaN">Fecha de nacimiento</label>
-                    <input id="datepicker" placeholder="dd/mm/aaaa">
-
+                    <input type="date" id="fechaN" name="fechaN" placeholder="dd/mm/aaaa">
                     <div class="form-group">
                         <label for="direccion">Direccion</label>
-                        <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
+                        <input class="form-control" name="direccion" id="direccion" aria-describedby="direccionHelp" placeholder="calle Escobedo 111">
                     </div>
-                    <div class="form-group">
-                        <label for="direccion">Direccion</label>
-                        <input class="form-control" id="direccion" aria-describedby="direccionHelp" placeholder="Privada Arboledas">
-                    </div>
-                    <label for="MetodoPago">Metodo de pago</label>
-                    <select class="form-control">
-                        <option>Tarjeta de crédito</option>
-                        <option>Transferencia</option>
-                        <option>Cheque</option>
-                        <option>Otro</option>
+                    <label for="metodoPago">Metodo de pago</label>
+                    <select id="metodoPago" name="metodoPago" class="form-control">
+                        <?php getMetodos(); ?>
                     </select>
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
-                        <input class="form-control" id="observaciones" aria-describedby="observacionesHelp" placeholder="Me gustaría obtener más informes">
+                        <input class="form-control" name="observaciones" id="observaciones" aria-describedby="observacionesHelp" placeholder="Me gustaría obtener más informes">
                     </div>
+
+                    <label for="usoCFDI">Uso CFDI *</label>
+                    <select id="usoCFDI" name="cfdi" class="form-control">
+                        <?php getUSOCFDI(); ?>
+                    </select>
+
                     <div class="form-group">
-                        <label for="usoCFDI">Uso CFDI</label>
-                        <input class="form-control" id="usoCFDI" aria-describedby="usoCFDIHelp" placeholder="G03">
+                        <label for="telefono">Teléfono o Celular *</label>
+                        <input class="form-control" type="tel" name="telefono" id="telefono" aria-describedby="telefonoHelp" required placeholder="52 1 4421012151">
                     </div>
+
                     <p>* Campos Obligatorios</p>
                     <button type="submit" class="btn bg-pink text-white shadow">Guardar cambios</button>
                 </form>
@@ -72,5 +67,6 @@
     <br>
     <br>
 </div>
-
 <script src=“https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js” type=“text/javascript”></script>
+<script src="js/demo-compiled.js"></script>
+<script src="js/validate_addDonador.js"></script>

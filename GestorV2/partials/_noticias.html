@@ -5,31 +5,20 @@
          <div class="col-8 col-lg-9">
              <div class="card mb-3">
                  <div class="card-header">
-                     Búsqueda
+                     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
                  </div>
                  <div class="card-body">
-                    <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Título</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-toggle="modal" data-target="#myModal">
-                            <td colspan="2">Precampañas 2018</td>
-                            <td>13/02/18</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Niños y Niñas de México, la mejor fundación</td>
-                            <td>01/01/18</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">The Pope in México</td>
-                            <td>12/05/16</td>
-                        </tr>
-                    </tbody>
-                    </table>
+                     <table class="table">
+                         <thead>
+                         <tr>
+                             <th scope="col">Título</th>
+                             <th scope="col">Fecha</th>
+                         </tr>
+                         </thead>
+                         <tbody id="myTable">
+                         <?php getNoticias();?>
+                         </tbody>
+                     </table>
                  </div>
              </div>
              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva publicación</button>
