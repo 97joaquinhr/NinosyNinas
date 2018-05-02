@@ -60,3 +60,29 @@ function generateValidar(){
     $('input[name="v_email"]').val(email);
 }
 
+
+function replaceHtml( string_to_replace ) {
+    return string_to_replace.replace(/&nbsp;/g, ' ').replace(/<br.*?>/g, '\n');
+}
+
+function eliminarNoticia(id, titulo, imagen) {
+    $("#idNoticia").val(id);
+    $("#imagenNoticia").val(imagen);
+    $("#tituloNoticia").html(titulo);
+    $('#eliminarNoticia').modal('show');
+}
+function modificarNoticia(id, titulo, imagen, cuerpo) {
+    $("#idNoticia_edit").val(id);
+    $("#tituloNoticia_edit").val(titulo);
+    $("#imagenNoticia_edit").attr("src",imagen);
+    $("#cuerpoNoticia_edit").val(replaceHtml(cuerpo));
+    $('#modificarNoticia').modal('show');
+    $("#update-image").prop('required',false);
+}
+
+function deleteImageFromForm() {
+    $("#current-image").addClass("sr-only");
+    $("#image-input").removeClass("sr-only");
+    $("#update-image").prop('required',true);
+}
+

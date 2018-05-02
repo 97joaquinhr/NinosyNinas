@@ -1,17 +1,26 @@
-<!-- Navbar -->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-10">
-            <h2>Noticias</h2>
-        </div>
-        <div class="col-2">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrar"><i class="fas fa-plus"></i> Nueva noticia</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <div class="card-columns">
-                <?php getNoticiasGestor(); ?>
+<div class="container-fluid" style="height: 85%;">
+    <h2>Noticias</h2>
+    <div class="row h-100">
+        <div class="col h-100">
+            <div id="archivos" class="card h-100">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <i class="fas fa-fw fa-images"></i> Noticias
+                        </div>
+                        <div class="col">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrar"><i class="fas fa-plus"></i> Nueva noticia</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="gestor-galeria">
+                    <div class="container-fluid">
+                        <?php getNoticiasGestor(); ?>
+                    </div>
+                </div>
+                <!--<div class="card-footer small text-muted">Actualizado hace 5 minutos</div>-->
             </div>
         </div>
     </div>
