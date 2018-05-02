@@ -1,10 +1,17 @@
 <?php
-    session_start();
-    require_once("modelo.php");
-    date_default_timezone_set("UTC");
+session_start();
+require_once("modelo.php");
+date_default_timezone_set("UTC");
 
-    if(isset($_SESSION["usuario"]) && $_SESSION["rol"] != "R04" && $_SESSION["rol"] != "R06") {
-        if(isset($_POST["titulo"]) && isset($_POST["cuerpo"])) {
+if(isset($_SESSION["usuario"]) && ($_SESSION["rol"] == "R01" || $_SESSION["rol"] == "R02"  || $_SESSION["rol"] == "R03")) {
+    if(isset($_POST["idNoticia"]) && isset($_POST["titulo"]) && isset($_POST["cuerpo"])) {
+        if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name'])) {
+            $cuerpo = nl2br($_POST["cuerpo"]);
+            $cuerpo = str_replace("\t", '', $cuerpo); // remove tabs
+            $cuerpo = str_replace("\n", '', $cuerpo); // remove new lines
+            $cuerpo = str_replace("\r", '', $cuerpo); // remove carriage returns
+            modificarNoticiaNoImagen($_POST["idNoticia"],$_POST["titulo"],$cuerpo);
+        } else {
             unset($_SESSION["error_archivo"]);
             $target_file = "img/noticias/".time()."_".strtolower(basename($_FILES["imagen"]["name"]));
             $uploadOk = 1;
@@ -56,17 +63,22 @@
                 $_SESSION["error_archivo"] = "No se esta subiendo el archivo";
                 header("location:noticias.php");
             }
+            unlink(getImagen($_POST["idNoticia"]));
+            
             $cuerpo = nl2br($_POST["cuerpo"]);
             $cuerpo = str_replace("\t", '', $cuerpo); // remove tabs
             $cuerpo = str_replace("\n", '', $cuerpo); // remove new lines
             $cuerpo = str_replace("\r", '', $cuerpo); // remove carriage returns
-            registrarNoticia($_POST["titulo"], $cuerpo, $target_file);
-            header("location:noticias.php");
-        } else {
-            $_SESSION["error_archivo"] = "No se esta procesando el archivo";
+            modificarNoticia($_POST["idNoticia"],$_POST["titulo"],$cuerpo, $target_file);
             header("location:noticias.php");
         }
     } else {
-        header("location:index.php");
+        $_SESSION["error"] = "No se ha podido subir el archivo";
     }
+    header("location: noticias.php");
+} else {
+    $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
+    header("location: login.php");
+}
+
 ?>
