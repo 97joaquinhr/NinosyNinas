@@ -1,5 +1,6 @@
 {
     "require-dev": {
-        "codeception/codeception": "^2.4"
+        "codeception/codeception": "^2.4",
+        "google/apiclient": "^2.0"
     }
 }

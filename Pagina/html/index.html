@@ -1,51 +1,81 @@
 <HTML>
           <link href='https://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
           <link href='https://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
-          <div class="asog">
-              <h1 class="asog-r1">Pequeñas</h1>
-              <br>
-              <h1 class="asog-r1"> Acciones</h1>
-              <h1 class="asog-r2">Grandes Cambios</h1>
+          <div id="demo" class="carousel slide" data-ride="carousel">
+
+              <!-- Indicators -->
+              <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                  <?php getGaleriaPagina(); ?>
+                  <!--<div class="carousel-item active">-->
+                      <!--<img src="https://raw.githubusercontent.com/97joaquinhr/NinosyNinas/joaquin/avance5/Pagina/img/foto%201.png" alt="Los Angeles" width="1100" height="500">-->
+                  <!--</div>-->
+                  <!--<div class="carousel-item">-->
+                      <!--<img src="https://raw.githubusercontent.com/97joaquinhr/NinosyNinas/joaquin/avance5/Pagina/img/foto%202.png" alt="Chicago" width="1100" height="500">-->
+                  <!--</div>-->
+                  <!--<div class="carousel-item">-->
+                      <!--<img src="https://raw.githubusercontent.com/97joaquinhr/NinosyNinas/joaquin/avance5/Pagina/img/foto%203.png" alt="New York" width="1100" height="500">-->
+                  <!--</div>-->
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+              </a>
           </div>
-          <br>
-          <div class="jumbotron jumbotron-fluid bg-cyan shadow round">
-              <br>
-              <br>
-              <div class="row">
-                  <div class="col-1"></div>
-                  <div class="col-12 col-lg-4 col-md-4">
-                      <h1 class="display-4 text-white">Únete a Nosotros</h1>
-                      <br>
-                      <br>
-                      <form class="form-inline">
-                          <div class="form-group mx-sm-0 mb-2">
-                              <label for="inputPassword2" class="sr-only">Ingresa tu correo electrónico</label>
-                              <input type="text"  style="width: 400px; height: 50px" class="form-control shadow" id="inputPassword2" placeholder="Ingresa tu correo electrónico">
-                          </div>
-                          <button type="submit" style="width: 150px; height: 50px" class="btn btn-dark mb-2 shadow">Únete</button>
-                      </form>
-                  </div>
-                  <div class="col-2"></div>
-                  <div class="col-12 col-lg-4 col-md-4">
-                      <div class="jumbotron jumbotron-fluid bg-pink shadow round">
-                          <div class="container-center">
-                              <h1 class="display-4 text-center text-white">Dona Hoy</h1>
-                              <form class="form-inline justify-content-center">
-                                  <div class="form-group mx-sm-3 mb-4">
-                                      <label for="inputPassword2" class="sr-only">Cantidad a Donar</label>
-                                      <input type="text"  style="width: 300px; height: 50px" class="form-control shadow" id="inputPassword2" placeholder="Cantidad a Donar">
+          <!--</div>-->
+          <!--<div class="asog">-->
+              <!--<img id="logo" class="shadow" src="https://raw.githubusercontent.com/97joaquinhr/NinosyNinas/joaquin/avance5/Pagina/img/foto%201.png">-->
+              <!--&lt;!&ndash;<div id="lineDrawing" class="mx-4">&ndash;&gt;-->
+                  <!--&lt;!&ndash;<svg viewBox="-0.5 -0.5 198 120" class="mb-4">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<g fill="none" fill-rule="evenodd" stroke-width="1" class="lines">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#00b2bf" class="cls-1" d="M103.12,196.4a48.89,48.89,0,0,1-18.27-94.19l2.45,6.07a42.32,42.32,0,1,0,33.52.75,39.75,39.75,0,0,0-8.11-2.87l1.44-6.39a46.56,46.56,0,0,1,9.4,3.31,48.9,48.9,0,0,1-20.43,93.32Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#00b2bf" class="cls-1" d="M95.32,124.46q-.81,0-1.6-.08a14.1,14.1,0,0,1-12.15-11.74,12.46,12.46,0,0,1,3.25-10.17,19.56,19.56,0,0,1,13.36-5.84,44.86,44.86,0,0,1,16.44,3.28L112.25,106A38.5,38.5,0,0,0,98,103.17a13.44,13.44,0,0,0-8.33,3.71,5.93,5.93,0,0,0-1.57,5,7.57,7.57,0,0,0,6.28,6c3.2.31,6.83-1,10.78-3.78,6-4.29,12.56-12.55,11.26-21.72l6.49-.91c1.4,9.94-4.07,20.92-13.94,28C104.24,122.76,99.67,124.46,95.32,124.46Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<circle stroke="#00b2bf" class="cls-1" cx="86.6" cy="156.59" r="3.07" transform="translate(-91.9 -63.69) rotate(-15)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<circle stroke="#00b2bf" class="cls-1" cx="121.71" cy="147.18" r="3.07" transform="matrix(0.97, -0.26, 0.26, 0.97, -88.27, -54.93)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#e2418d" class="cls-2" d="M196.49,196.29a48.87,48.87,0,1,1,47-35.43h0A49,49,0,0,1,196.49,196.29Zm0-91.2a42.35,42.35,0,1,0,11.63,1.64A42.4,42.4,0,0,0,196.53,105.09ZM240.34,160h0Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<circle stroke="#e2418d" class="cls-2" cx="177.91" cy="146.75" r="3.07" transform="translate(-66.45 185.97) rotate(-74.03)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<circle stroke="#e2418d" class="cls-2" cx="212.85" cy="156.75" r="3.07" transform="translate(-50.74 226.82) rotate(-74.03)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#e2418d" class="cls-2" d="M237.46,209.26a3.23,3.23,0,0,1-.9-.13c-3.31-.95-5.85-4.52-7-9.8a33.05,33.05,0,0,1,.73-15.68L245,132.24a3.27,3.27,0,0,1,6.3,1.8l-14.71,51.41c-2.7,9.44.16,16.91,1.75,17.38a3.28,3.28,0,0,1-.9,6.42Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#00b2bf" class="cls-1" d="M104.62,182.53a32.93,32.93,0,0,1-24.37-10.8,1.42,1.42,0,1,1,2.09-1.91,30.25,30.25,0,0,0,51.93-14.11,1.42,1.42,0,0,1,2.77.59,33.16,33.16,0,0,1-32.43,26.24Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<path stroke="#e2418d" class="cls-2" d="M180.05,177.78a32.93,32.93,0,0,1-15.64-21.58,1.42,1.42,0,1,1,2.77-.6,30.25,30.25,0,0,0,52,13.89,1.42,1.42,0,0,1,2.1,1.9,33.16,33.16,0,0,1-41.22,6.39Z" transform="translate(-54.33 -91.44)"/>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</g>&ndash;&gt;-->
+                  <!--&lt;!&ndash;</svg>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--&lt;!&ndash;<img src="img/logo_notext.png" class="img logo_big mx-4" alt="">&ndash;&gt;-->
+          <!--</div>-->
+          <div class="jumbotron jumbotron-fluid bg-cyan inshadow">
+              <div class="container">
+
+                      <div class="card-deck">
+                          <div class="card bg-pink shadow round">
+                              <div class="card-body">
+                                  <div class="card-title h1 text-white">
+                                      Donar
                                   </div>
-                              </form>
-                              <div class="form-group mx-sm-3 mb-2 form-inline justify-content-center">
-                                  <button type="submit" style="width: 300px; height: 50px; button-centered" class="btn btn-dark mb-2 shadow">Únete</button>
+                                  <p class="card-text text-white">Apoyanos donando a través de Paypal.</p>
+                                  <a class="btn bg-purple text-white shadow ml-auto mr-3 botrosa" target="_blank" href="https://paypal.me/ninosyninas" role="button">Dona</a>
+                              </div>
+                          </div>
+                          <div class="card bg-pink shadow round">
+                              <div class="card-body">
+                                  <div class="card-title h1 text-white">
+                                      Regístrate para donar
+                                  </div>
+                                  <p class="card-text text-white">Déjanos tus datos y nos pondremos en contacto contigo.</p>
+                                  <a class="btn bg-purple text-white shadow ml-auto mr-3 botrosa" href="registrarDonador.php" role="button">Regístrate</a>
                               </div>
                           </div>
                       </div>
-                  </div>
-                  <div class="col-1"></div>
               </div>
-              <br>
-              <br>
           </div>
-
 </HTML>

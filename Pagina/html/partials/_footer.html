@@ -1,6 +1,9 @@
+<?php
+require_once ("../GestorV2/modelo.php");
+?>
 <!--Footer-->
-</body>
-<footer class="page-footer font-small blue pt-4 mt-4 bg-gray2 shadow">
+
+<footer class="page-footer font-small blue pt-4 mt-4 bg-gray2 inshadow">
 
 	<!--Footer Links-->
 	<div class="container-fluid text-center text-md-left">
@@ -10,33 +13,8 @@
 			<div class="col-1"></div>
 			<div class="col-md-5">
 				<h5><img src="img/logo_notext.png" style="height: 20px"> Niños y Niñas de A.C.</h5>
-				<p>Mision : "Generamos un programa de formación integral con las niñas, niños y adolescentes que junto con su famlia han hecho de la calle su lugar de trabajo; para desarrollar sus capacidades básicas y construir alternativas que les permitan mejorar sus oportunidades de vida."</p>
+				<p><?php obtenerTitulo('Mision') ?><br>"<?php obtenerDesc('Mision') ?>"</p>
 			</div>
-			<!--/.First column-->
-
-			<!--Second column-->
-			<div class="col-2"></div>
-			<div class="col-4 right">
-				<h5 class="text-uppercase">Acerca de Nosotros</h5>
-				<ul class="list-unstyled">
-					<li>
-						<a class="bg-gray2" href="acerca.php#general">Información General</a>
-					</li>
-					<li>
-						<a class="bg-gray2" href="acerca.php#atencion">Áreas de Atención</a>
-					</li>
-					<li>
-						<a class="bg-gray2" href="acerca.php#servicio">Voluntariado y Servicio Social</a>
-					</li>
-					<li>
-						<a class="bg-gray2" href="acerca.php#civil">Asociación Civil</a>
-					</li>
-					<li>
-						<a class="bg-gray2" href="acerca.php#contacto">Contacto</a>
-					</li>
-				</ul>
-			</div>
-			<!--/.Second column-->
 		</div>
 	</div>
 	<!--/.Footer Links-->
@@ -44,24 +22,24 @@
 	<!--Copyright-->
 	<div class="footer-copyright py-3 text-center shadow">
 		© 2018 Copyright:
-		<a class="bg-gray2" href=""> Within Systems </a>
+		<a class="bg-gray2" href="https://www.facebook.com/ninosyninasdemexicoqro/">Niños y Niñas de México A.C.</a>
 	</div>
 	<!--/.Copyright-->
 
 </footer>
 <!--/.Footer-->
+</body>
 
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/atatanasov/gijgo@1.7.3/dist/combined/js/gijgo.min.js" type="text/javascript"></script>
-        <script src="../js/comportamiento.js"></script>
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="js/comportamiento.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="js/fb.js"></script>
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 	</body>
 </html>

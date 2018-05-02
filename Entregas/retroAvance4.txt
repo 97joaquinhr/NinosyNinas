@@ -1,0 +1,11 @@
+-Nombre de los requisitos funcionales (representativos)
+-Feedbacks (espera)
+------------------------------------------------------------------------------
+---------------------------!IMPORTANTE----------------------------------------
+-Mejorar uso de spreadsheets for requisitos (actualizar)
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+-Introduccion para futuras presentaciones
+-Trabajo que no se va a hacer (N/A)
+-Gestion de requisitos a lo largo del proyecto (trabajar por prioridades)
+-PENSAR ANTES DE HABLAR** IMPORTANTE IGUAL :P --FOR CESAR

@@ -1,0 +1,99 @@
+<!-- /#wrapper -->
+
+<!--$event = new Google_Service_Calendar_Event(array(-->
+<!--'summary' => 'Google I/O 2015',-->
+<!--'location' => '800 Howard St., San Francisco, CA 94103',-->
+<!--'description' => 'A chance to hear more about Google\'s developer products.',-->
+<!--'start' => array(-->
+<!--'dateTime' => '2018-05-01T09:00:00-07:00',-->
+<!--'timeZone' => 'America/Los_Angeles',-->
+<!--),-->
+<!--'end' => array(-->
+<!--'dateTime' => '2018-05-01T17:00:00-07:00',-->
+<!--'timeZone' => 'America/Los_Angeles',-->
+<!--),-->
+<!--'recurrence' => array(-->
+<!--'RRULE:FREQ=DAILY;COUNT=2'-->
+<!--),-->
+<!--'attendees' => array(-->
+<!--array('email' => 'lpage@example.com'),-->
+<!--array('email' => 'sbrin@example.com'),-->
+<!--),-->
+<!--'reminders' => array(-->
+<!--'useDefault' => FALSE,-->
+<!--'overrides' => array(-->
+<!--array('method' => 'email', 'minutes' => 24 * 60),-->
+<!--array('method' => 'popup', 'minutes' => 10),-->
+<!--),-->
+<!--),-->
+<!--));-->
+<!--titulo,lugar,descripcion,fecha inicio,hora inicio,fecha fin,hora fin,-->
+
+<div id="preview" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-images"></i> <span id="prev_nombre">Nombre</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="prev_imagen" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="delete" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliminar imagen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Seguro que quieres eliminar el archivo "<span id="del_nombre">NOMBRE</span>"?</p>
+            </div>
+            <div class="modal-footer">
+                <span id="del_button"><button type="button" class="btn btn-danger">Eliminar</button></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="create.php" method="POST" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-images"></i> Agregar imagen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" type="text" name="nombre" class="form-control" required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input name="imagen" type="file" class="custom-file-input" id="inputGroupFile01" required>
+                            <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Registrar">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

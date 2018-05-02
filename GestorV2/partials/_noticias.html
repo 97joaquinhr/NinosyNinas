@@ -1,49 +1,27 @@
-<!-- Navbar -->
-<div class="container-fluid">
-     <h2>Noticias</h2>
-     <div class="row">
-         <div class="col-8 col-lg-9">
-             <div class="card mb-3">
-                 <div class="card-header">
-                     Búsqueda
-                 </div>
-                 <div class="card-body">
-                    <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Título</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-toggle="modal" data-target="#myModal">
-                            <td colspan="2">Precampañas 2018</td>
-                            <td>13/02/18</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Niños y Niñas de México, la mejor fundación</td>
-                            <td>01/01/18</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">The Pope in México</td>
-                            <td>12/05/16</td>
-                        </tr>
-                    </tbody>
-                    </table>
-                 </div>
-             </div>
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newArticle">Nueva publicación</button>
-         </div>
-         <div class="col-4 col-lg-3">
-             <div class="card text-center">
-                 <div class="card-header">
-                     Reciente
-                 </div>
-                 <div class="card-body">
-                     <img class="img-fluid" alt="tweets" src="http://www.ashokraja.me/image.axd?picture=image_thumb_24.png"></img>
-                 </div>
-                 <div class="card-footer"></div>
-             </div>
-         </div>
-     </div>
+<div class="container-fluid" style="height: 85%;">
+    <h2>Noticias</h2>
+    <div class="row h-100">
+        <div class="col h-100">
+            <div id="archivos" class="card h-100">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col mt-2">
+                            <i class="fas fa-fw fa-images"></i> Noticias
+                        </div>
+                        <div class="col">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registrar"><i class="fas fa-plus"></i> Nueva noticia</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="gestor-galeria">
+                    <div class="container-fluid">
+                        <?php getNoticiasGestor(); ?>
+                    </div>
+                </div>
+                <!--<div class="card-footer small text-muted">Actualizado hace 5 minutos</div>-->
+            </div>
+        </div>
+    </div>
 </div>
