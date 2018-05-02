@@ -1065,10 +1065,6 @@ function modificarDesc($seccion,$desc) {
     $db = connect();
     if ($db != NULL) {
         $sql = "UPDATE informacion SET Descripcion='".$desc."' WHERE Seccion LIKE '%".$seccion."%'";
-        $result = mysqli_query($db,$sql);
-        disconnect($db);
-        $html = '';
-
         if (mysqli_query($db,$sql)) {
             echo "Modificado Exitosamente";
             disconnect($db);
@@ -1076,6 +1072,24 @@ function modificarDesc($seccion,$desc) {
 
         } else {
             echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
+function modificarporID($id, $titulo, $descripcion){
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Titulo='".$titulo."', Descripcion='".$descripcion."' WHERE idInfo = $id";
+        if (mysqli_query($db, $sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($db);
             disconnect($db);
             return false;
         }
@@ -1200,24 +1214,6 @@ function addVocales($desc) {
     if ($db != NULL) {
         $sql = "INSERT INTO informacion (seccion, titulo, Descripcion) VALUES ('Patronato','Vocal','{$desc}')";
         $result = mysqli_query($db,$sql);
-        disconnect($db);
-    }
-}
-
-function modificarporID($id, $titulo, $descripcion){
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "UPDATE informacion SET Titulo='".$titulo."', Descripcion='".$descripcion."' WHERE idInfo = $id";
-        if (mysqli_query($db, $sql)) {
-            echo "Modificado Exitosamente";
-            disconnect($db);
-            return true;
-
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($db);
-            disconnect($db);
-            return false;
-        }
         disconnect($db);
     }
 }
