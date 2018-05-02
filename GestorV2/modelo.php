@@ -219,17 +219,18 @@ function getDonadores() {
 
         $query='SELECT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones, color
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
-                ORDER BY Nombre ASC 
+                AND Validado = 1
+                ORDER BY Nombre ASC
                 LIMIT 10 ';
         $results = $db->query($query);
 
         $html = '';
 
         while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+
 
             $html .= '                   
                             <a class="list-group-item list-group-item-action" data-toggle = "modal" data-target = "#donadorInfo" name="'.$fila["Email"].'" id="'.$fila["Email"].'" onclick="javascript:generateModal(\''.$fila["Email"].'\', \''.$fila["Nombre"].'\', \''.$fila["ApellidoPaterno"].'\', \''.$fila["ApellidoMaterno"].'\', \''.$fila["Telefono"].'\', \''.$fila["Direccion"].'\',\''.$fila["FechadeNacimiento"].'\',\''.$fila["IdCFDI"].'\',\''.$fila["RFC"].'\',\''.$fila["Descripcion"].'\',\''.$fila["Observaciones"].'\',\''.$fila["color"].'\' )" >
@@ -262,10 +263,10 @@ function getDonadores2() {
     if ($db != NULL) {
         $query='SELECT DISTINCT Nombre, ApellidoPaterno, ApellidoMaterno, Telefono, d.Email, Validado, dm.Fecha, Direccion, FechadeNacimiento, IdCFDI, RFC, Descripcion, Observaciones, color
                 FROM donadores d, donadores_metodopago dm, donadores_usocfdi du, metodopago m
-                WHERE d.Email=dm.Email 
+                WHERE d.Email=dm.Email
                 AND m.Idmetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 1 
+                AND Validado = 1
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -295,7 +296,7 @@ function getDonadoresNV() {
                 WHERE d.Email=dm.Email 
                 AND m.IdMetodo = dm.IdMetodo
                 AND du.Email = d.Email
-                AND Validado = 0 
+                AND Validado = 0
                 ORDER BY Nombre ASC ';
 
         $results = $db->query($query);
@@ -970,7 +971,6 @@ function printDonadoresNV()
 {
     $db = connect();
     if ($db != NULL) {
-
         $query = 'SELECT COUNT(*) AS total
             FROM donadores 
             WHERE Validado = 0';
@@ -1004,8 +1004,27 @@ function obtenerTitulo($seccion)
     }
 }
 
-function obtenerDesc($seccion)
-{
+
+function modificarTitulo($seccion,$titulo) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Titulo='".$titulo."' WHERE Seccion LIKE '%".$seccion."%'";
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
+
+function obtenerDesc($seccion) {
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
@@ -1022,6 +1041,47 @@ function obtenerDesc($seccion)
     }
 }
 
+//Cambiar Nombre de Funcion obtenerDescGestor
+function obtenerDesc2($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= $row["Descripcion"];
+            }
+            $order=array("<br>","</br>","<br />","<br/>");
+            $html = str_replace($order,"\n",$html);
+            echo $html;
+        }
+    }
+}
+
+function modificarDesc($seccion,$desc) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Descripcion='".$desc."' WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '';
+
+        if (mysqli_query($db,$sql)) {
+            echo "Modificado Exitosamente";
+            disconnect($db);
+            return true;
+
+        } else {
+            echo "Error: " .$sql . "<br>" . mysqli_error($db);
+            disconnect($db);
+            return false;
+        }
+        disconnect($db);
+    }
+}
 
 function obtenerTabla($seccion) {
     $db = connect();
@@ -1043,7 +1103,7 @@ function obtenerTabla($seccion) {
 }
 
 function obtenerTablaWhite($seccion) {
-    $db = connect();
+      $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
         $result = mysqli_query($db, $sql);
@@ -1053,11 +1113,94 @@ function obtenerTablaWhite($seccion) {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 $html .= '<tr class=\'\'>
-                          <td><h3 class="text-white">'. $row["Titulo"] .'</h3><p class="text-white"    >'. $row["Descripcion"] .'</p></td>
+                          <td><h3 class="text-white">'. $row["Titulo"] .'</h3><p class="text-white">'. $row["Descripcion"] .'</p></td>
                           </tr>';
             }
             echo $html;
         }
+    }
+}
+
+//Cambiar Nombre de Funcion obtenerTablaGestor
+function obtenerTablaBlue2($seccion) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion, idInfo FROM informacion WHERE Seccion LIKE '%".$seccion."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+        $html = '<div id="Patronato">';
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+              if($row["Titulo"]!="Vocal"){
+                $html .= "<li class='list-group-item'>
+                            <h5>". $row["Titulo"] ."</h5>
+                            <p id='".$row["Descripcion"]."' class='card-text'>
+                              '". $row["Descripcion"] ."'
+                            </p>
+                            <input type='hidden' value='".$row["idInfo"]."' id='".$row["Descripcion"]."".'a'."'>
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                $html .=      '"';
+                $html .=      "".$row['Descripcion']."";
+                $html .=      '"';
+                $html .=      ")'>
+                              <i class='fas fa-pencil-alt'></i>
+                            </button>
+                          </li>";
+              }else{
+                $html .= "<li class='list-group-item'>
+                            <h5>". $row["Titulo"] ."</h5>
+                            <p id='".$row["Descripcion"]."' class='card-text'>
+                              '". $row["Descripcion"] ."'
+                            </p>
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                $html .=      '"';
+                $html .=      "".$row['Descripcion']."";
+                $html .=      '"';
+                $html .=      ")'>
+                              <i class='fas fa-pencil-alt'></i>
+                            </button>
+                            <button class='btn btn-danger' onclick='eliminarVocal(";
+                $html .=      '"';
+                $html .=      "".$row['idInfo']."";
+                $html .=      '"';
+                $html .=      ")'>
+                              <i class='fas fa-trash-alt'></i>
+                            </button>
+                          </li>";
+              }
+
+            }
+            $html .= "</div>";
+            echo $html;
+        }
+    }
+}
+
+function modificarPatronato($idInfo, $input) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "UPDATE informacion SET Descripcion='".$input."' WHERE idInfo LIKE '%".$idInfo."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+    }
+}
+
+function eliminarVocales($idInfo) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "DELETE FROM informacion WHERE idInfo LIKE '%".$idInfo."%'";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+    }
+}
+
+function addVocales($desc) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = "INSERT INTO informacion (seccion, titulo, Descripcion) VALUES ('Patronato','Vocal','{$desc}')";
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
     }
 }
 
@@ -1078,7 +1221,6 @@ function modificarporID($id, $titulo, $descripcion){
         disconnect($db);
     }
 }
-// modificarporID(50, 'Nuestros beneficiarios', nl2br('El 85%'));
 
 function registrarNoticia($titulo, $cuerpo, $imagen){
     $db = connect();
@@ -1101,5 +1243,4 @@ function registrarNoticia($titulo, $cuerpo, $imagen){
         return true;
     }
     return false;
-
 }

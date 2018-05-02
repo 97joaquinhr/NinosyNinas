@@ -53,13 +53,59 @@ function generateEliminar(){
 
 function deleteUserModal(id) {
     console.log(id);
-    $('#user_id').attr('value', id)
-}  
+    $('#user_id').attr('value', id);
+}
 
 function generateValidar(){
     $('input[name="v_email"]').val(email);
 }
 
+function editarPatronato(id) {
+  var idi = id+"i";
+  var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
+  document.getElementById(id).innerHTML = data;
+  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").onclick = function () { ajaxPatronato(id); };
+  //document.getElementById(id+"h").type = "submit";
+}
+
+function addVocal() {
+  data= '<textarea id="nuevoVocal" class="form-control" rows="1" placeholder="Juan Carlos Espíndola Canuto"></textarea>'
+  document.getElementById("añadir").innerHTML = data;
+  document.getElementById("addbutton").innerHTML = "Guardar cambios";
+  document.getElementById("addbutton").onclick = function () { añadirVocal(); };
+}
+
+function ajaxPatronato(id){
+  $.post("editar.php", {
+    idInfo: document.getElementById(id+"a").value,
+    input: document.getElementById(id+"i").value
+  })
+  .done(function(data){
+    document.getElementById("TablaPatronato").innerHTML = data;
+    alert("Cambio Exitoso");
+  });
+}
+
+function añadirVocal(){
+  $.post("addVocal.php", {
+    Descripcion: document.getElementById("nuevoVocal").value
+  })
+  .done(function(data){
+    document.getElementById("TablaPatronato").innerHTML = data;
+    alert("Cambio Exitoso");
+  });
+}
+
+function eliminarVocal(id){
+  $.post("deleteVocal.php", {
+    idInfo: id
+  })
+  .done(function(data){
+    document.getElementById("TablaPatronato").innerHTML = data;
+    alert("Cambio Exitoso");
+  });
+}
 
 function replaceHtml( string_to_replace ) {
     return string_to_replace.replace(/&nbsp;/g, ' ').replace(/<br.*?>/g, '\n');

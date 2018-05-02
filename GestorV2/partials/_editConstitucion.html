@@ -1,0 +1,19 @@
+<div class="row py-4">
+  <form method="POST" action="modificarInfo.php">
+    <div class="form-group">
+        <div class="col-sm-3">
+            <div class="container-fluid">
+                <img src="img/library-2.png" class="img-fluid img" alt="Office">
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="container mt-2">
+                <textarea type="hidden" class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Constitucion') ?></textarea>
+                <textarea class="form-control" id="exampleTextarea" name="desc" rows="12" value="hola"><?php obtenerDesc2('Constitucion') ?></textarea>
+            </div>
+        </div>
+        <input type="hidden" name="seccion" value="Constitucion">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+  </form>
+</div>
