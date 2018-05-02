@@ -546,28 +546,66 @@ function getUSOCFDI() {
     return false;
 }
 
-function getNoticias() {
+// function getNoticias() {
+//     $db = connect();
+
+//     if ($db != NULL) {
+//         $query='SELECT Titulo, Fecha FROM noticia';
+//         $sql = $db->query($query);
+
+
+//         $result = mysqli_query($db,$query);
+//         disconnect($db);
+
+//         if(mysqli_num_rows($result) > 0){
+//             while($row = mysqli_fetch_assoc($result)){
+//                 echo "<tr class='' data-toggle=\"modal\" data-target=\"#myModal\">";
+//                 echo "<td>" . $row["Titulo"] . "</td>";
+//                 echo "<td>" . $row["Fecha"] . "</td>";
+//                 echo "</tr>";
+//             }
+//         }
+//         return true;
+//     }
+//     return false;
+// }
+
+function getNoticiasGestor() {
     $db = connect();
-
     if ($db != NULL) {
-        $query='SELECT Titulo, Fecha FROM noticia';
-        $sql = $db->query($query);
 
+        //Specification of the SQL query
+        $query="SELECT idNoticia, titulo, imagen, cuerpo, cast(fecha as date) as 'date_cast' FROM noticias";
+        // idNoticia titulo cuerpo imagen fecha
 
-        $result = mysqli_query($db,$query);
-        disconnect($db);
-
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class='' data-toggle=\"modal\" data-target=\"#myModal\">";
-                echo "<td>" . $row["Titulo"] . "</td>";
-                echo "<td>" . $row["Fecha"] . "</td>";
-                echo "</tr>";
-            }
+        // Query execution; returns identifier of the result group
+        $results = $db->query($query);
+        
+        // cycle to explode every line of the results
+        $html = '';
+        while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+            // Options: MYSQLI_NUM to use only numeric indexes
+            // MYSQLI_ASSOC to use only name (string) indexes
+            // MYSQLI_BOTH, to use both
+            $html .=   "<div class=\"card mb-3\">
+                            <div class=\"card-btn-group\">
+                                <button onclick=\"\" class=\"card-btn btn btn-primary ml-auto\">Editar</button>
+                                <button onclick=\"\" class=\"card-btn btn btn-danger ml-auto\">Eliminar</button>
+                            </div>
+                            <img class=\"card-img-top\" src=\"".$fila["imagen"]."\" alt=\"Image\">
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">".$fila["titulo"]."</h5>
+                                <p class=\"card-text text-muted mr-auto\">Creada el día ".$fila["date_cast"]."</p>
+                            </div>
+                        </div>";
         }
+        echo $html;
+        // it releases the associated results
+        mysqli_free_result($results);
+        disconnect($db);
         return true;
     }
-    return false;
+    return true;
 }
 
 function registrarImagen($url, $nombre) {
