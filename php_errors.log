@@ -787,3 +787,144 @@ Stack trace:
 [28-Apr-2018 17:41:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/graph_metodos.php:0
 [28-Apr-2018 17:41:50 UTC] PHP   2. getMetodos_graph() /home/ubuntu/workspace/NinosyNinas/GestorV2/graph_metodos.php:6
 [28-Apr-2018 17:41:50 UTC] PHP   3. connect() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:474
+[01-May-2018 17:37:47 UTC] PHP Parse error:  syntax error, unexpected '[', expecting variable (T_VARIABLE) or '$' in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 595
+[01-May-2018 17:37:47 UTC] PHP Stack trace:
+[01-May-2018 17:37:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/dashboard.php:0
+[01-May-2018 17:40:38 UTC] PHP Warning:  require_once(GestorV2/modelo.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 17:40:38 UTC] PHP Stack trace:
+[01-May-2018 17:40:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 17:40:38 UTC] PHP Fatal error:  require_once(): Failed opening required 'GestorV2/modelo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 17:40:38 UTC] PHP Stack trace:
+[01-May-2018 17:40:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 17:40:40 UTC] PHP Warning:  require_once(GestorV2/modelo.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 17:40:40 UTC] PHP Stack trace:
+[01-May-2018 17:40:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 17:40:40 UTC] PHP Fatal error:  require_once(): Failed opening required 'GestorV2/modelo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 17:40:40 UTC] PHP Stack trace:
+[01-May-2018 17:40:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 18:10:06 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:10:06 UTC] PHP Stack trace:
+[01-May-2018 18:10:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:10:06 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 18:12:01 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:12:01 UTC] PHP Stack trace:
+[01-May-2018 18:12:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:12:01 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 18:14:58 UTC] PHP Warning:  move_uploaded_file(img/1525198498kjh.jpg): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php on line 46
+[01-May-2018 18:14:58 UTC] PHP Stack trace:
+[01-May-2018 18:14:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php:0
+[01-May-2018 18:14:58 UTC] PHP   2. move_uploaded_file() /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php:46
+[01-May-2018 18:14:58 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpWbrLP7' to 'img/1525198498kjh.jpg' in /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php on line 46
+[01-May-2018 18:14:58 UTC] PHP Stack trace:
+[01-May-2018 18:14:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php:0
+[01-May-2018 18:14:58 UTC] PHP   2. move_uploaded_file() /home/ubuntu/workspace/NinosyNinas/GestorV2/create.php:46
+[01-May-2018 18:17:42 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 15
+[01-May-2018 18:17:42 UTC] PHP Stack trace:
+[01-May-2018 18:17:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:17:42 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:15
+[01-May-2018 18:21:14 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 15
+[01-May-2018 18:21:14 UTC] PHP Stack trace:
+[01-May-2018 18:21:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:21:14 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:15
+[01-May-2018 18:23:29 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:23:29 UTC] PHP Stack trace:
+[01-May-2018 18:23:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:23:29 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 18:23:53 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:23:53 UTC] PHP Stack trace:
+[01-May-2018 18:23:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:23:53 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 18:26:55 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:26:55 UTC] PHP Stack trace:
+[01-May-2018 18:26:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:26:55 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 18:35:43 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 18:35:43 UTC] PHP Stack trace:
+[01-May-2018 18:35:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 18:35:43 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 20:46:54 UTC] PHP Warning:  unlink(img/noticias/1525199743_IMG_1727.JPG): No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 629
+[01-May-2018 20:46:54 UTC] PHP Stack trace:
+[01-May-2018 20:46:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:0
+[01-May-2018 20:46:54 UTC] PHP   2. eliminarNoticia() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:6
+[01-May-2018 20:46:54 UTC] PHP   3. unlink() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:629
+[01-May-2018 20:49:35 UTC] PHP Fatal error:  Call to undefined function str_tolower() in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 9
+[01-May-2018 20:49:35 UTC] PHP Stack trace:
+[01-May-2018 20:49:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 20:50:21 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 20:50:21 UTC] PHP Stack trace:
+[01-May-2018 20:50:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 20:50:21 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 20:52:06 UTC] PHP Warning:  unlink(img/noticias/1525207821_img_1727.jpg): No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 629
+[01-May-2018 20:52:06 UTC] PHP Stack trace:
+[01-May-2018 20:52:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:0
+[01-May-2018 20:52:06 UTC] PHP   2. eliminarNoticia() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:6
+[01-May-2018 20:52:06 UTC] PHP   3. unlink() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:629
+[01-May-2018 20:52:17 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 14
+[01-May-2018 20:52:17 UTC] PHP Stack trace:
+[01-May-2018 20:52:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 20:52:17 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:14
+[01-May-2018 20:53:45 UTC] PHP Warning:  unlink(img/noticias/1525207937_img_1719.jpg): No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 629
+[01-May-2018 20:53:45 UTC] PHP Stack trace:
+[01-May-2018 20:53:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:0
+[01-May-2018 20:53:45 UTC] PHP   2. eliminarNoticia() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:6
+[01-May-2018 20:53:45 UTC] PHP   3. unlink() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:629
+[01-May-2018 20:57:37 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 15
+[01-May-2018 20:57:37 UTC] PHP Stack trace:
+[01-May-2018 20:57:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 20:57:37 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:15
+[01-May-2018 20:57:49 UTC] PHP Warning:  unlink(img/noticias/1525208257_img_1719.jpg): No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 634
+[01-May-2018 20:57:49 UTC] PHP Stack trace:
+[01-May-2018 20:57:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:0
+[01-May-2018 20:57:49 UTC] PHP   2. eliminarNoticia() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:6
+[01-May-2018 20:57:49 UTC] PHP   3. unlink() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:634
+[01-May-2018 20:59:55 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php on line 15
+[01-May-2018 20:59:55 UTC] PHP Stack trace:
+[01-May-2018 20:59:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:0
+[01-May-2018 20:59:55 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/NinosyNinas/GestorV2/registrarNoticia.php:15
+[01-May-2018 21:00:04 UTC] PHP Warning:  unlink(img/noticias/1525208395_img_3536.jpg): No such file or directory in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 635
+[01-May-2018 21:00:04 UTC] PHP Stack trace:
+[01-May-2018 21:00:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:0
+[01-May-2018 21:00:04 UTC] PHP   2. eliminarNoticia() /home/ubuntu/workspace/NinosyNinas/GestorV2/eliminarNoticia.php:6
+[01-May-2018 21:00:04 UTC] PHP   3. unlink() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:635
+[01-May-2018 21:34:22 UTC] PHP Warning:  require_once(GestorV2/modelo.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 21:34:22 UTC] PHP Stack trace:
+[01-May-2018 21:34:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 21:34:22 UTC] PHP Fatal error:  require_once(): Failed opening required 'GestorV2/modelo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 21:34:22 UTC] PHP Stack trace:
+[01-May-2018 21:34:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 21:34:36 UTC] PHP Warning:  require_once(GestorV2/modelo.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php on line 2
+[01-May-2018 21:34:36 UTC] PHP Stack trace:
+[01-May-2018 21:34:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:34:36 UTC] PHP Fatal error:  require_once(): Failed opening required 'GestorV2/modelo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php on line 2
+[01-May-2018 21:34:36 UTC] PHP Stack trace:
+[01-May-2018 21:34:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:53:33 UTC] PHP Warning:  require_once(GestorV2/modelo.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 21:53:33 UTC] PHP Stack trace:
+[01-May-2018 21:53:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 21:53:33 UTC] PHP Fatal error:  require_once(): Failed opening required 'GestorV2/modelo.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/NinosyNinas/Pagina/index.php on line 4
+[01-May-2018 21:53:33 UTC] PHP Stack trace:
+[01-May-2018 21:53:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/index.php:0
+[01-May-2018 21:53:57 UTC] PHP Fatal error:  Cannot redeclare modificarNoticia() (previously declared in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:683) in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 1156
+[01-May-2018 21:53:57 UTC] PHP Stack trace:
+[01-May-2018 21:53:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:55:28 UTC] PHP Fatal error:  Cannot redeclare modificarNoticia() (previously declared in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:683) in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 1156
+[01-May-2018 21:55:28 UTC] PHP Stack trace:
+[01-May-2018 21:55:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:56:55 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 730
+[01-May-2018 21:56:55 UTC] PHP Stack trace:
+[01-May-2018 21:56:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:57:28 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 732
+[01-May-2018 21:57:28 UTC] PHP Stack trace:
+[01-May-2018 21:57:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 21:57:50 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 732
+[01-May-2018 21:57:50 UTC] PHP Stack trace:
+[01-May-2018 21:57:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/Pagina/noticias.php:0
+[01-May-2018 22:07:39 UTC] PHP Warning:  Missing argument 3 for modificarNoticiaNoImagen(), called in /home/ubuntu/workspace/NinosyNinas/GestorV2/modificarNoticia.php on line 9 and defined in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 660
+[01-May-2018 22:07:39 UTC] PHP Stack trace:
+[01-May-2018 22:07:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/modificarNoticia.php:0
+[01-May-2018 22:07:39 UTC] PHP   2. modificarNoticiaNoImagen() /home/ubuntu/workspace/NinosyNinas/GestorV2/modificarNoticia.php:9
+[01-May-2018 22:18:54 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php on line 719
+[01-May-2018 22:18:54 UTC] PHP Stack trace:
+[01-May-2018 22:18:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/NinosyNinas/GestorV2/modificarNoticia.php:0
+[01-May-2018 22:18:54 UTC] PHP   2. getImagen() /home/ubuntu/workspace/NinosyNinas/GestorV2/modificarNoticia.php:62
+[01-May-2018 22:18:54 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/NinosyNinas/GestorV2/modelo.php:719
