@@ -542,26 +542,195 @@ function getUSOCFDI() {
     return false;
 }
 
-function getNoticias() {
+
+function getNoticiasGestor() {
     $db = connect();
-
     if ($db != NULL) {
-        $query='SELECT Titulo, Fecha FROM noticia';
-        $sql = $db->query($query);
 
+        //Specification of the SQL query
+        $query="SELECT idNoticia, titulo, imagen, cuerpo, cast(fecha as date) as 'date_cast' FROM noticias";
+        // idNoticia titulo cuerpo imagen fecha
 
-        $result = mysqli_query($db,$query);
+        // Query execution; returns identifier of the result group
+        $results = $db->query($query);
+        
+        // cycle to explode every line of the results
+        $html = '<div class="card-deck">';
+        $i = 1;
+        while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+            // Options: MYSQLI_NUM to use only numeric indexes
+            // MYSQLI_ASSOC to use only name (string) indexes
+            // MYSQLI_BOTH, to use both
+            if ($i % 5 == 0) {
+                $html .= "</div><div class=\"card-deck\">";
+                $i = 1;
+            }
+            $html .=   "<div class=\"card mb-3\">
+                            <div class=\"card-btn-group\">
+                                <button onclick=\"modificarNoticia(".$fila["idNoticia"].",'".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."');\" class=\"card-btn btn btn-primary ml-auto\"><i class=\"fas fa-pencil-alt\"></i></button>
+                                <button onclick=\"eliminarNoticia(".$fila["idNoticia"].",'".$fila["titulo"]."','".$fila["imagen"]."');\" class=\"card-btn btn btn-danger ml-auto\"><i class=\"fas fa-trash-alt\"></i></button>
+                            </div>
+                            <img class=\"card-img-top\" src=\"".$fila["imagen"]."\" alt=\"Image\">
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">".$fila["titulo"]."</h5>
+                                <p class=\"card-text text-muted mr-auto\">Creada el día ".$fila["date_cast"]."</p>
+                            </div>
+                        </div>";
+            $i++;
+        }
+        echo $html."</div>";
+        // it releases the associated results
+        mysqli_free_result($results);
         disconnect($db);
+        return true;
+    }
+    return true;
+}
+function getNoticiasPagina() {
+    $db = connect();
+    if ($db != NULL) {
 
-        if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr class='' data-toggle=\"modal\" data-target=\"#myModal\">";
-                echo "<td>" . $row["Titulo"] . "</td>";
-                echo "<td>" . $row["Fecha"] . "</td>";
-                echo "</tr>";
+        //Specification of the SQL query
+        $query="SELECT idNoticia, titulo, imagen, cuerpo, cast(fecha as date) as 'date_cast' FROM noticias";
+        // idNoticia titulo cuerpo imagen fecha
+
+        // Query execution; returns identifier of the result group
+        $results = $db->query($query);
+        
+        // cycle to explode every line of the results
+        $html = '<div class="card-columns">';
+        $i = 1;
+        while ($fila = mysqli_fetch_array($results, MYSQLI_BOTH)) {
+            // Options: MYSQLI_NUM to use only numeric indexes
+            // MYSQLI_ASSOC to use only name (string) indexes
+            // MYSQLI_BOTH, to use both
+            // if ($i % 3 == 0) {
+            //     $html .= "</div><div class=\"card-deck\">";
+            //     $i = 1;
+            // }
+            $html .=   "<div class=\"card mb-3\">
+                            <img class=\"card-img-top\" src=\"../GestorV2/".$fila["imagen"]."\" alt=\"Image\">
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">".$fila["titulo"]."</h5>
+                                <p class=\"card-text text-muted mr-auto\">".$fila["date_cast"]."</p>
+                                <button onclick=\"visualizarNoticia('".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."')\" class=\"btn btn-primary\">Leer más</button>
+                            </div>
+                        </div>";
+            $i++;
+        }
+        echo $html."</div>";
+        // it releases the associated results
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    }
+    return true;
+}
+
+function eliminarNoticia($id, $file) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query = 'DELETE FROM noticias WHERE idNoticia = ? AND imagen = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("is", $id, $file)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        unlink($file);//no se elimina el thurl
+        
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function modificarNoticiaNoImagen($id, $titulo, $cuerpo) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query = 'UPDATE noticias SET titulo = ?, cuerpo = ? WHERE idNoticia = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("ssi", $titulo, $cuerpo, $id)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function modificarNoticia($id, $titulo, $cuerpo, $imagen) {
+    $db = connect();
+    if ($db != NULL) {
+
+        // insert command specification
+        $query = 'UPDATE noticias SET titulo = ?, cuerpo = ?, imagen = ? WHERE idNoticia = ?';
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("sssi", $titulo, $cuerpo, $imagen, $id)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        
+        disconnect($db);
+        return true;
+    }
+    return false;
+}
+
+function getImagen($id) {
+    $db = connect();
+    if ($db != NULL) {
+        $query = 'SELECT imagen FROM noticias WHERE idNoticia = ?';//ya quedo
+        // Preparing the statement
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params
+        if (!$statement->bind_param("i", $id)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        }
+
+        $result = $statement->get_result();
+        if (mysqli_num_rows($result) > 0) {
+            if($row = mysqli_fetch_assoc($result)) {
+                mysqli_free_result($result);
+                disconnect($db);
+                return $row["imagen"];
             }
         }
-        return true;
+        mysqli_free_result($result);
+        disconnect($db);
+        return false;
     }
     return false;
 }
@@ -652,6 +821,7 @@ function getGaleriaGestor()
     }
     return false;
 }
+
 
 function getGaleriaPagina()
 {
@@ -932,31 +1102,4 @@ function registrarNoticia($titulo, $cuerpo, $imagen){
     }
     return false;
 
-}
-
-function modificarNoticia($titulo, $cuerpo, $imagen, $id){
-    $db = connect();
-    if ($db != NULL) {
-        $query = 'UPDATE noticias
-                  SET titulo = ?,
-                  cuerpo = ?,
-                  imagen = ?,
-                  WHERE idNoticia = ?';
-        // Preparing the statement
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params
-        if (!$statement->bind_param("sssi", $titulo, $cuerpo, $imagen, $id)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        disconnect($db);
-
-        return true;
-    }
-    return false;
 }
