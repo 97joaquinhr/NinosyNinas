@@ -348,10 +348,6 @@ function addDonador($email, $rfc,$nombre, $apellidoP, $apellidoM,$fechaN,$direcc
         echo $validado;
 //        echo "<script>alert('Registro exitoso');</script>";
 
-
-
-
-
         disconnect($db);
         return true;
     }
@@ -492,9 +488,9 @@ function getMetodos_graph() {
         if ($db != NULL) {
             $query='SELECT color FROM metodopago ORDER BY Descripcion';
             $sql = $db->query($query);
-    
+
             $result = mysqli_query($db,$query);
-            
+
             $color = array();
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
@@ -509,7 +505,7 @@ function getMetodos_graph() {
     return false;
 }
 
-function getMetodos() {
+function getMetodos($fechas) {
     $db = connect();
     if ($db != NULL) {
         $query='SELECT IdMetodo, Descripcion FROM metodopago';
@@ -979,7 +975,7 @@ function printDonadoresNV()
             FROM donadores 
             WHERE Validado = 0';
         $results = $db->query($query);
-        
+
         $row = mysqli_fetch_assoc($results);
 
         mysqli_free_result($results);
@@ -1045,7 +1041,7 @@ function obtenerDesc($seccion) {
     }
 }
 
-
+//Cambiar Nombre de Funcion obtenerDescGestor
 function obtenerDesc2($seccion) {
     $db = connect();
     if ($db != NULL) {
@@ -1087,25 +1083,7 @@ function modificarDesc($seccion,$desc) {
     }
 }
 
-function obtenerDescObjetivos($seccion) {
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "SELECT Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
-        $result = mysqli_query($db, $sql);
-        disconnect($db);
-        $html = '';
-
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item shadow"><p><em>' . $row["Descripcion"] . '</em></p></li>';
-            }
-            echo $html;
-        }
-    }
-}
-
-function obtenerTablaBlue($seccion)
-{
+function obtenerTabla($seccion) {
     $db = connect();
     if ($db != NULL) {
         $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
@@ -1113,16 +1091,37 @@ function obtenerTablaBlue($seccion)
         disconnect($db);
         $html = '';
 
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item bg-cyan text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<tr class=\'\'>
+                          <td><h3>'. $row["Titulo"] .'</h3><p>'. $row["Descripcion"] .'</p></td>
+                          </tr>';
             }
             echo $html;
         }
     }
 }
 
+function obtenerTablaWhite($seccion) {
+      $db = connect();
+    if ($db != NULL) {
+        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
+        $result = mysqli_query($db, $sql);
+        disconnect($db);
+        $html = '';
 
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $html .= '<tr class=\'\'>
+                          <td><h3 class="text-white">'. $row["Titulo"] .'</h3><p class="text-white">'. $row["Descripcion"] .'</p></td>
+                          </tr>';
+            }
+            echo $html;
+        }
+    }
+}
+
+//Cambiar Nombre de Funcion obtenerTablaGestor
 function obtenerTablaBlue2($seccion) {
     $db = connect();
     if ($db != NULL) {
@@ -1134,7 +1133,7 @@ function obtenerTablaBlue2($seccion) {
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
               if($row["Titulo"]!="Vocal"){
-                $html .= "<li class='list-group-item bg-cyan'>
+                $html .= "<li class='list-group-item'>
                             <h5>". $row["Titulo"] ."</h5>
                             <p id='".$row["Descripcion"]."' class='card-text'>
                               '". $row["Descripcion"] ."'
@@ -1149,7 +1148,7 @@ function obtenerTablaBlue2($seccion) {
                             </button>
                           </li>";
               }else{
-                $html .= "<li class='list-group-item bg-cyan'>
+                $html .= "<li class='list-group-item'>
                             <h5>". $row["Titulo"] ."</h5>
                             <p id='".$row["Descripcion"]."' class='card-text'>
                               '". $row["Descripcion"] ."'
@@ -1205,30 +1204,10 @@ function addVocales($desc) {
     }
 }
 
-function obtenerTablaPink($seccion) {
+function modificarporID($id, $titulo, $descripcion){
     $db = connect();
     if ($db != NULL) {
-        $sql = "SELECT Titulo, Descripcion FROM informacion WHERE Seccion LIKE '%" . $seccion . "%'";
-        $result = mysqli_query($db, $sql);
-        disconnect($db);
-        $html = '';
-
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $html .= '<li class="list-group-item bg-pink text-white"><h5>' . $row["Titulo"] . '</h5><p class="card-text text-white">' . $row["Descripcion"] . '</p></li>';
-            }
-            echo $html;
-        }
-    }
-}
-
-
-function modificarporID($id, $seccion, $titulo, $descripcion)
-{
-    $db = connect();
-    if ($db != NULL) {
-        $sql = "UPDATE informacion SET Seccion=$seccion, Titulo=$titulo, Descripcion=$descripcion' WHERE idInfo = '" . $id . "'";
-
+        $sql = "UPDATE informacion SET Titulo='".$titulo."', Descripcion='".$descripcion."' WHERE idInfo = $id";
         if (mysqli_query($db, $sql)) {
             echo "Modificado Exitosamente";
             disconnect($db);
@@ -1246,8 +1225,6 @@ function modificarporID($id, $seccion, $titulo, $descripcion)
 function registrarNoticia($titulo, $cuerpo, $imagen){
     $db = connect();
     if ($db != NULL) {
-
-
         $query = 'INSERT INTO `noticias`(`titulo`,`cuerpo`,`imagen`)
                       VALUES (?,?,?)';
         // Preparing the statement
