@@ -568,7 +568,7 @@ function getNoticiasGestor() {
             }
             $html .=   "<div class=\"card mb-3\">
                             <div class=\"card-btn-group\">
-                                <button onclick=\"modificarNoticia(".$fila["idNoticia"].",'".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."');\" class=\"card-btn btn btn-primary ml-auto\"><i class=\"fas fa-pencil-alt\"></i></button>
+                                <button onclick=\"modificarNoticia(".$fila["idNoticia"].",'".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."');\" class=\"card-btn btn bg-cyan text-white ml-auto mr-3 botcyan ml-auto\"><i class=\"fas fa-pencil-alt\"></i></button>
                                 <button onclick=\"eliminarNoticia(".$fila["idNoticia"].",'".$fila["titulo"]."','".$fila["imagen"]."');\" class=\"card-btn btn btn-danger ml-auto\"><i class=\"fas fa-trash-alt\"></i></button>
                             </div>
                             <img class=\"card-img-top\" src=\"".$fila["imagen"]."\" alt=\"Image\">
@@ -614,7 +614,7 @@ function getNoticiasPagina() {
                             <div class=\"card-body\">
                                 <h5 class=\"card-title\">".$fila["titulo"]."</h5>
                                 <p class=\"card-text text-muted mr-auto\">".$fila["date_cast"]."</p>
-                                <button onclick=\"visualizarNoticia('".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."')\" class=\"btn btn-primary\">Leer más</button>
+                                <button onclick=\"visualizarNoticia('".$fila["titulo"]."','".$fila["imagen"]."','".$fila["cuerpo"]."')\" class=\"btn bg-cyan text-white ml-auto mr-3 botcyan\">Leer más</button>
                             </div>
                         </div>";
             $i++;
@@ -1153,7 +1153,7 @@ function obtenerTablaBlue2($seccion) {
                               '". $row["Descripcion"] ."'
                             </p>
                             <input type='hidden' value='".$row["idInfo"]."' id='".$row["Descripcion"]."".'a'."'>
-                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn bg-cyan text-white ml-auto mr-3 botcyan' onclick='editarPatronato(";
                 $html .=      '"';
                 $html .=      "".$row['Descripcion']."";
                 $html .=      '"';
@@ -1167,7 +1167,7 @@ function obtenerTablaBlue2($seccion) {
                             <p id='".$row["Descripcion"]."' class='card-text'>
                               '". $row["Descripcion"] ."'
                             </p>
-                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn btn-primary' onclick='editarPatronato(";
+                            <button type='button' id='".$row["Descripcion"]."".'h'."' class='btn bg-cyan text-white ml-auto mr-3 botcyan' onclick='editarPatronato(";
                 $html .=      '"';
                 $html .=      "".$row['Descripcion']."";
                 $html .=      '"';
