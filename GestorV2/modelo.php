@@ -979,6 +979,16 @@ function eliminarVocales($idInfo) {
     }
 }
 
+function addVocales($desc) {
+    $db = connect();
+    if ($db != NULL) {
+        $sql = 'INSERT INTO `informacion`(`Seccion`, `Titulo`,`Descripcion`)
+                      VALUES ('Patronato', 'Vocal',"'.$desc.'")';
+        $result = mysqli_query($db,$sql);
+        disconnect($db);
+    }
+}
+
 function obtenerTablaPink($seccion) {
     $db = connect();
     if ($db != NULL) {
