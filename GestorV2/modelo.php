@@ -982,8 +982,7 @@ function eliminarVocales($idInfo) {
 function addVocales($desc) {
     $db = connect();
     if ($db != NULL) {
-        $sql = 'INSERT INTO `informacion`(`Seccion`, `Titulo`,`Descripcion`)
-                      VALUES ('Patronato', 'Vocal',"'.$desc.'")';
+        $sql = "INSERT INTO informacion (seccion, titulo, Descripcion) VALUES ('Patronato','Vocal','{$desc}')";
         $result = mysqli_query($db,$sql);
         disconnect($db);
     }

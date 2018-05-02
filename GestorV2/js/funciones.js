@@ -69,7 +69,7 @@ function editarPatronato(id) {
 function addVocal() {
   data= '<textarea id="nuevoVocal" class="form-control" rows="1" placeholder="Juan Carlos Espíndola Canuto"></textarea>'
   document.getElementById("añadir").innerHTML = data;
-  document.getElementById("addbutton") = "Guardar cambios";
+  document.getElementById("addbutton").innerHTML = "Guardar cambios";
   document.getElementById("addbutton").onclick = function () { añadirVocal(); };
 }
 
@@ -84,8 +84,8 @@ function ajaxPatronato(id){
   });
 }
 
-function eliminarVocal(){
-  $.post("deleteVocal.php", {
+function añadirVocal(){
+  $.post("addVocal.php", {
     Descripcion: document.getElementById("nuevoVocal").value
   })
   .done(function(data){
@@ -96,7 +96,7 @@ function eliminarVocal(){
 
 function eliminarVocal(id){
   $.post("deleteVocal.php", {
-    idInfo: document.getElementById(id+"a").value
+    idInfo: id
   })
   .done(function(data){
     document.getElementById("TablaPatronato").innerHTML = data;
