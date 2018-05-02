@@ -1,8 +1,8 @@
-var email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs;
+var email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs, color;
 
 
 
-function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs){
+function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, idCFDI, RFC, metodo, obs, color){
     this.email = email;
     this.nombre = nombre;
     this.apellidoP = apellidoP;
@@ -14,6 +14,7 @@ function setCurrentVars(email, nombre, apellidoP, apellidoM, tel, dir, fechaN, i
     this.RFC = RFC;
     this.metodo = metodo;
     this.obs = obs;
+    this.color = color;
     generateModal();
 }
 function generateModal(){
@@ -25,6 +26,8 @@ function generateModal(){
     document.getElementById('prev_usoCFDI').innerHTML = idCFDI;
     document.getElementById('prev_RFC').innerHTML = RFC;
     document.getElementById('prev_metodo').innerHTML = metodo;
+    $("#prev_metodo").css("background-color", color);
+    console.log(color);
     document.getElementById('prev_obs').innerHTML = obs;
 
 }
@@ -103,3 +106,29 @@ function eliminarVocal(id){
     alert("Cambio Exitoso");
   });
 }
+
+function replaceHtml( string_to_replace ) {
+    return string_to_replace.replace(/&nbsp;/g, ' ').replace(/<br.*?>/g, '\n');
+}
+
+function eliminarNoticia(id, titulo, imagen) {
+    $("#idNoticia").val(id);
+    $("#imagenNoticia").val(imagen);
+    $("#tituloNoticia").html(titulo);
+    $('#eliminarNoticia').modal('show');
+}
+function modificarNoticia(id, titulo, imagen, cuerpo) {
+    $("#idNoticia_edit").val(id);
+    $("#tituloNoticia_edit").val(titulo);
+    $("#imagenNoticia_edit").attr("src",imagen);
+    $("#cuerpoNoticia_edit").val(replaceHtml(cuerpo));
+    $('#modificarNoticia').modal('show');
+    $("#update-image").prop('required',false);
+}
+
+function deleteImageFromForm() {
+    $("#current-image").addClass("sr-only");
+    $("#image-input").removeClass("sr-only");
+    $("#update-image").prop('required',true);
+}
+

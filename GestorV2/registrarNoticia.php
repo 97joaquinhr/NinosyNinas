@@ -4,23 +4,22 @@
     date_default_timezone_set("UTC");
 
     if(isset($_SESSION["usuario"]) && $_SESSION["rol"] != "R04" && $_SESSION["rol"] != "R06") {
-        if(isset($_POST["nombre"]) != NULL ) {
+        if(isset($_POST["titulo"]) && isset($_POST["cuerpo"])) {
             unset($_SESSION["error_archivo"]);
-            $dirBD="img/".time() . $_POST["nombre"] . "." . strtolower(pathinfo(basename($_FILES["imagen"]["name"]),PATHINFO_EXTENSION));
-            $target_file = $dirBD;
-//            $thumb_target_file = $target_dir . "thurl/" . time() . $_POST["nombre"];
+            $target_file = "img/noticias/".time()."_".strtolower(basename($_FILES["imagen"]["name"]));
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            $_SESSION["tipo_archivo"] = $imageFileType;
             // Check if image file is a actual image or fake image
 
-                $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-                if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
-                    $uploadOk = 1;
-                } else {
-                    $_SESSION["error_archivo"] = "El archivo no es una imagen";
-                    $uploadOk = 0;
-                }
+            $check = getimagesize($_FILES["imagen"]["tmp_name"]);
+            if($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                $_SESSION["error_archivo"] = "El archivo no es una imagen";
+                $uploadOk = 0;
+            }
 
             // Check if file already exists
             if (file_exists($target_file)) {
@@ -41,6 +40,7 @@
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
+                $_SESSION["error_archivo2"] =  "Sorry, there was an error uploading your file2!!!.";
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
@@ -53,15 +53,18 @@
 
             if(isset($_SESSION["error_archivo"])) {
                 echo $_SESSION["error_archivo"];
-                $_SESSION["error_archivo"] = "Si se esta procesando el archivo";
-                header("location:galeria.php");
+                $_SESSION["error_archivo"] = "No se esta subiendo el archivo";
+                header("location:noticias.php");
             }
-//            make_thumb($target_file, $thumb_target_file, 100);
-            registrarImagen($target_file, $_POST["nombre"]);
-            header("location:galeria.php");
+            $cuerpo = nl2br($_POST["cuerpo"]);
+            $cuerpo = str_replace("\t", '', $cuerpo); // remove tabs
+            $cuerpo = str_replace("\n", '', $cuerpo); // remove new lines
+            $cuerpo = str_replace("\r", '', $cuerpo); // remove carriage returns
+            registrarNoticia($_POST["titulo"], $cuerpo, $target_file);
+            header("location:noticias.php");
         } else {
             $_SESSION["error_archivo"] = "No se esta procesando el archivo";
-            header("location:galeria.php");
+            header("location:noticias.php");
         }
     } else {
         header("location:index.php");
