@@ -11,6 +11,7 @@ function preview() {
 }
 
 function edit() {
+    generateEdit();
     $('#preview').modal('hide');
     $('#edit').modal('show');
 }

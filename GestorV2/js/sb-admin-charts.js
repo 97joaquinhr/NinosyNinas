@@ -3,66 +3,94 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 // -- Area Chart Example
-var ctx = document.getElementById("myAreaChart");
-var myLineChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
-    datasets: [{
-      label: "Donadores",
-      lineTension: 0.3,
-      backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
-      pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
-      pointHoverRadius: 5,
-      pointHoverBackgroundColor: "rgba(2,117,216,1)",
-      pointHitRadius: 20,
-      pointBorderWidth: 2,
-      data: [10, 30, 26, 18, 18, 28, 31, 33, 25, 24, 32, 31, 38],
-    }],
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'date'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 7
+
+
+$.ajax({
+    url: "graph_donadores.php",
+    dataType: "JSON",
+    success: function(json){
+        //here inside json variable you've the json returned by your PHP
+        
+        var aux = new Array(json.data.length); 
+        var i;
+        
+        aux[0] = parseInt(json.data[0]);
+        
+        for (i=1; i<json.data.length; i++) {
+          aux[i] = aux[i-1] + parseInt(json.data[i]);
         }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 100,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          color: "rgba(0, 0, 0, .125)",
-        }
-      }],
-    },
-    legend: {
-      display: false
+        
+        var ctx = document.getElementById("myAreaChart");
+        var myLineChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: json.labels,
+            datasets: [{
+              label: "Donadores",
+              lineTension: 0.3,
+              backgroundColor: "rgba(2,117,216,0.2)",
+              borderColor: "rgba(2,117,216,1)",
+              pointRadius: 5,
+              pointBackgroundColor: "rgba(2,117,216,1)",
+              pointBorderColor: "rgba(255,255,255,0.8)",
+              pointHoverRadius: 5,
+              pointHoverBackgroundColor: "rgba(2,117,216,1)",
+              pointHitRadius: 20,
+              pointBorderWidth: 2,
+              data: aux,
+            }],
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                time: {
+                  unit: 'date'
+                },
+                gridLines: {
+                  display: false
+                },
+                ticks: {
+                  maxTicksLimit: 7
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  min: 0,
+                  max: Math.max(...aux) + 5,
+                  maxTicksLimit: 5
+                },
+                gridLines: {
+                  color: "rgba(0, 0, 0, .125)",
+                }
+              }],
+            },
+            legend: {
+              display: false
+            }
+          }
+        });
     }
-  }
 });
+
+
+
+
+var data2 = {
+  "labels" : ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+  "data" : [4215, 5312, 6251, 7841, 9821, 14984]
+}
+
 // -- Bar Chart Example
 var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"],
+    labels: data2.labels,
     datasets: [{
       label: "Visitas",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: data2.data,
     }],
   },
   options: {
@@ -94,15 +122,31 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
-// -- Pie Chart Example
-var ctx = document.getElementById("myPieChart");
-var myPieChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: ["Transferencia", "Tarjeta", "Cheque", "Otro"],
-    datasets: [{
-      data: [12.21, 15.58, 11.25, 8.32],
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
-    }],
-  },
+
+
+var data3 = {
+  "labels" : ["Transferencia", "Tarjetos", "Cheque", "Otro"],
+  "data" : [12.21, 100.58, 11.25, 8.32]
+}
+
+
+$.ajax({
+    url: "graph_metodos.php",
+    dataType: "JSON",
+    success: function(json){
+        //here inside json variable you've the json returned by your PHP
+        // -- Pie Chart Example
+        var ctx = document.getElementById("myPieChart");
+        var myPieChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: json.labels,
+            datasets: [{
+              data: json.data,
+              backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#D85596'],
+            }],
+          },
+        });
+    }
 });
+

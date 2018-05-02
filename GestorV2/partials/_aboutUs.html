@@ -1,0 +1,83 @@
+<div class="container container-fluid">
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Nosotros
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editNosotros.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Áreas de atención
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editAreas.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+                Logros
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <a type="button" class="btn btn-primary" href="editLogros.php">Editar</a>
+              </div>
+            </div>
+          </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              ¿Qué hace falta?
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editNeeds.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+  <br><br>
+</div>

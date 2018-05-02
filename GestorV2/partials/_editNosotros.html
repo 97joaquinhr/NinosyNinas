@@ -1,0 +1,123 @@
+<div class="container container-fluid">
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              ¿Quiénes somos?
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editQuienes.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Constitución
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editConst.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+                Patronato
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <a type="button" class="btn btn-primary" href="editPatronato.php">Editar</a>
+              </div>
+            </div>
+          </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Misión
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editMision.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+                Visión
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <a type="button" class="btn btn-primary" href="editVision.php">Editar</a>
+              </div>
+            </div>
+          </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Objetivos
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn btn-primary" href="editObjetivos.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+  <br><br>
+</div>
