@@ -7,7 +7,7 @@ if(isset($_SESSION["usuario"]) && $_SESSION["rol"] == "R01") {
     $nombre = $_SESSION["nombre"];
     $rol = $_SESSION["rol"];
     $funciones = $_SESSION["funciones"];
-    $view = "dashboard";
+    $view = "about_us";
 
 
     // Head and body tag
