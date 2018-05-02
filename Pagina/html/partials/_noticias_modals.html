@@ -1,0 +1,33 @@
+<div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="registrar" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nueva noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="registrarNoticia.php" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="titulo">Título</label>
+                        <input name="titulo" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Bazar, Colecta, Evento..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cuerpo">Cuerpo</label>
+                        <textarea class="form-control" id="cuerpo" name="cuerpo" rows="3" required></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input name="imagen" type="file" class="custom-file-input" id="inputGroupFile01" required>
+                            <label class="custom-file-label" for="inputGroupFile01">Escoger Archivo</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" name="collection" value="collection"><i class='fas fa-plus'></i> Registrar noticia</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
