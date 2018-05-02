@@ -28,6 +28,14 @@ a:hover {
     background-color: #a83169 !important;
 }
 
+.botcyan:hover {
+    background-color: #008490 !important;
+}
+
+.botcyan:active {
+    background-color: #00656e !important;
+}
+
 .botrosa:hover {
     background-color: #a83169 !important;
 }

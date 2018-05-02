@@ -8,6 +8,31 @@ font-family: 'Exo', sans-serif;
 font-family: 'Jaldi', sans-serif;
 font-family: 'Fjalla One', sans-serif;
 */
+
+.bg-cyan {
+    background-color: #00b2bf !important;
+}
+
+.bg-pink {
+    background-color: #e2418d !important;
+}
+
+.botcyan:hover {
+    background-color: #008490 !important;
+}
+
+.botcyan:active {
+    background-color: #00656e !important;
+}
+
+.botrosa:hover {
+    background-color: #a83169 !important;
+}
+
+.botrosa:active {
+    background-color: #832653 !important;
+}
+
 body {
     font-family: 'Quicksand' !important;
     padding-top: 2.5rem;

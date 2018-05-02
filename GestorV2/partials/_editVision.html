@@ -1,23 +1,28 @@
-<h2 class="py-4 mt-4">Visión</h2>
-<form method="POST" action="modificarInfo.php">
-  <div class="form-group">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="container-fluid">
-                    <img src="img/mortgage-1.png" class="img-fluid img" alt="House and us">
+<div class="jumbotron">
+    <h2 class="py-4 mt-4"><?php obtenerTitulo('Vision') ?></h2>
+    <form method="POST" action="modificarInfo.php">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <header>
+                        <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Vision') ?></textarea>
+                    </header>
                 </div>
             </div>
-            <div class="col-md-9">
-                <blockquote class="blockquote text-center mt-3">
-                  <textarea type="hidden" class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Vision') ?></textarea>
-                  <textarea class="form-control" id="exampleTextarea" name="desc" rows="12" value="hola"><?php obtenerDesc2('Vision') ?></textarea>
-                </blockquote>
+            <br>
+            <div class="row">
+                <div class="col-md-9">
+                    <textarea class="form-control" id="exampleTextarea" name="desc" rows="12"><?php obtenerDesc2('Vision') ?></textarea>
+                </div>
+                <div class="col-sm-3">
+                    <div class="container-fluid">
+                        <img src="../Pagina/img/mortgage-1.png" class="img img-fluid" alt="House and Us">
+                    </div>
+                </div>
             </div>
+            <input type="hidden" name="seccion" value="Vision">
+            <br>
+            <button type="submit" class="btn bg-cyan text-white ml-auto mr-3 botcyan">Guardar Cambios</button>
         </div>
-        <br>
-        <input type="hidden" name="seccion" value="Mision">
-        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-    </div>
-  </div>
-</form>
+    </form>
+</div>

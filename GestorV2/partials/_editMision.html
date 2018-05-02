@@ -1,23 +1,28 @@
-<h2 class="py-4 mt-4">Misión</h2>
-<form method="POST" action="modificarInfo.php">
-  <div class="form-group">
-    <div class="container">
+<div class="jumbotron">
+  <h2 class="py-4 mt-4"><?php obtenerTitulo('Mision') ?></h2>
+  <form method="POST" action="modificarInfo.php">
+    <div class="form-group">
       <div class="row">
-        <div class="col-md-9">
-          <blockquote class="blockquote text-center mt-4">
-            <textarea type="hidden" class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Mision') ?></textarea>
-            <textarea class="form-control" id="exampleTextarea" name="desc" rows="12" value="hola"><?php obtenerDesc2('Mision') ?></textarea>
-          </blockquote>
-        </div>
-        <div class="col-sm-3">
-          <div class="container-fluid">
-            <img src="img/library.png" class="img-fluid img" alt="Books">
-          </div>
+        <div class="col-md-3">
+          <header>
+            <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Mision') ?></textarea>
+          </header>
         </div>
       </div>
       <br>
+      <div class="row">
+        <div class="col-md-9">
+          <textarea class="form-control" id="exampleTextarea" name="desc" rows="12"><?php obtenerDesc2('Mision') ?></textarea>
+        </div>
+        <div class="col-sm-3">
+          <div class="container-fluid">
+            <img src="../Pagina/img/books.png" class="img img-fluid" alt="Library">
+          </div>
+        </div>
+      </div>
       <input type="hidden" name="seccion" value="Mision">
-      <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+      <br>
+      <button type="submit" class="btn bg-cyan text-white ml-auto mr-3 botcyan">Guardar Cambios</button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
