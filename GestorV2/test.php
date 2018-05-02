@@ -1,3 +1,4 @@
 <?php
 require_once("modelo.php");
-echo json_encode(getUsuarios_graph());
+session_start();
+echo $_SESSION["tipo_archivo"];
