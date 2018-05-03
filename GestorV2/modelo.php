@@ -505,7 +505,7 @@ function getMetodos_graph() {
     return false;
 }
 
-function getMetodos($fechas) {
+function getMetodos() {
     $db = connect();
     if ($db != NULL) {
         $query='SELECT IdMetodo, Descripcion FROM metodopago';
@@ -519,7 +519,7 @@ function getMetodos($fechas) {
             }
         }
         disconnect($db);
-        return array('labels' => $fechas, 'data' => $n);;
+        return true;
     }
     return false;
 }
