@@ -2,10 +2,20 @@
     <h2>Usuarios</h2>
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-bell-o"></i>Usuarios
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
-            </form>
+            <div class="row">
+                <div class="col mt-2">
+                    <i class="fa fa-bell-o"></i>Usuarios
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="myInput">
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="float-right">
+                        <button type="button" onclick="renderButton2();" class="btn bg-cyan text-white ml-auto mr-3 botcyan" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Nuevo usuario</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="list-group list-group-flush small">
             <table class="table">
@@ -25,6 +35,4 @@
     </div>
     <!--BOTON AGREGAR USUARIO
         Podría ser dark o secondary-->
-    <button type="button" onclick="renderButton2();" class="btn btn-primary" data-toggle="modal" data-target="#agregarUsuario" data-whatever="@mdo">Nuevo usuario</button>
-
 </div>
