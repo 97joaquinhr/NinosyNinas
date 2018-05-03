@@ -64,6 +64,25 @@
           <div class="row">
             <div class="col-sm-8">
               <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Ayudar
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a type="button" class="btn bg-cyan text-white ml-auto mr-3 botcyan" href="editNosotros.php">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
               ¿Qué hace falta?
             </div>
             <div class="col-sm-1"></div>
