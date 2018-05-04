@@ -8,8 +8,8 @@ if(isset($_SESSION["usuario"]) && $_SESSION["rol"] == "R01") {
     $rol = $_SESSION["rol"];
     $funciones = $_SESSION["funciones"];
     $view = "about_us";
-  modificarPatronato($_POST["idInfo"],$_POST["input"]);
-  echo obtenerTablaGestor('Patronato');
+  addObjetivos($_POST["Descripcion"]);
+  echo obtenerTabla2('Objetivos');
   //header("location: about_us.php");
 } else {
     $_SESSION["error"] = "Usuario y/o contraseña incorrectos";

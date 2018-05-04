@@ -1,0 +1,24 @@
+<div class="jumbotron bg-gray">
+    <div class="row py-4">
+        <div class="col-sm-3">
+            <div class="container-fluid">
+                <img src="../Pagina/img/library-1.png" class="img img-fluid" alt="Library">
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="container mt-2">
+              <form method="POST" action="modificarInfo.php">
+                <div class="form-group">
+                  <header>
+                      <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Hacemos') ?></textarea>
+                  </header>
+                  <textarea class="form-control" id="exampleTextarea" name="desc" rows="12"><?php obtenerDesc('Hacemos') ?></textarea>
+                  <input type="hidden" name="seccion" value="Hacemos">
+                  <br>
+                  <button type="submit" class="btn bg-cyan text-white ml-auto mr-3 botcyan">Guardar Cambios</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>

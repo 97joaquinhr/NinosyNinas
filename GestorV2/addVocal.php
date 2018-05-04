@@ -1,6 +1,18 @@
 <?php
-require_once ("modelo.php");
-addVocales($_POST["Descripcion"]);
-echo obtenerTablaBlue2('Patronato');
-//header("location: about_us.php");
+session_start();
+require_once("modelo.php");
+
+if(isset($_SESSION["usuario"]) && $_SESSION["rol"] == "R01") {
+    $user = $_SESSION["usuario"];
+    $nombre = $_SESSION["nombre"];
+    $rol = $_SESSION["rol"];
+    $funciones = $_SESSION["funciones"];
+    $view = "about_us";
+  addVocales($_POST["Descripcion"]);
+  echo obtenerTablaGestor('Patronato');
+  //header("location: about_us.php");
+} else {
+    $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
+    header("location: index.php");
+}
 ?>

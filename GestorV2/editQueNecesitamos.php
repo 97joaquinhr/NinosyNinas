@@ -19,7 +19,7 @@
         // Tag to open content wrapper
         include("partials/_page_content_wrapper_start.html");
         // Content
-        include("partials/_editNeeds.html");
+        include("partials/_editQueNecesitamos.html");
         // Content Footer
         include("partials/_footer.html");
         // Tag to close content wrapper
@@ -32,8 +32,8 @@
                 <script src="js/comportamiento.js"></script>';
         // Required Scripts and end of file
         include("partials/_end.html");
-    } else {
+   } else {
        $_SESSION["error"] = "Usuario y/o contraseña incorrectos";
        header("location: index.php");
-   }
+    }
 ?>
