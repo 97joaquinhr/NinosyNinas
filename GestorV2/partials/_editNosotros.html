@@ -119,5 +119,45 @@
           <?php endif; ?>
       </div>
     </div>
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+                ¿Qué hacemos?
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <a href="editHacemos.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
+              </div>
+            </div>
+          </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+      <div class="card mt-5 shadow">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-8">
+              <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+              Beneficiarios
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <a href="editBeneficiarios.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
+            </div>
+          </div>
+        </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
   <br><br>
 </div>

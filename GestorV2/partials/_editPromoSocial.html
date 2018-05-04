@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-12 col-lg-4 col-md-4 jumbotron bg-gray">
+        <div>
+            <table class="table round table-striped">
+                <tbody id="PromoSocial">
+                <?php obtenerTablaPromoSo('PromocionSocial') ?>
+                </tbody>
+            </table>
+        </div>
+        <script src="js/funciones.js"></script>
+        <br>
+        <div>
+            <table class="table round table-striped">
+                <tbody id="TablaProgramaSocial">
+                <?php obtenerTablaProgSo('ProgramasSocial') ?>
+                </tbody>
+            </table>
+            <br>
+            <div id="añadirProgSo">
+            </div>
+            <br>
+            <button id="addbuttonProgSo" type="button" class="btn bg-cyan text-white ml-auto mr-3 botcyan" onclick="addProgSo()"><i class="fas fa-plus-circle"></i> Añadir Programa</button>
+        </div>
+    </div>
+    <div class="col-12 col-lg-4 col-md-4 jumbotron bg-dark text-white">
+        <div>
+            <table class="table round table-striped">
+                <tbody id="DesarrolloInstitucional">
+                <?php obtenerTablaWhiteDI('DesarrolloInstitucional') ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-12 col-lg-4 col-md-4 jumbotron bg-gray">
+        <div>
+            <table id="Education" class="table round table-striped">
+                <tbody>
+                <?php obtenerTablaEdu('Education') ?>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="table round table-striped">
+                <tbody id="programaEdu">
+                <?php obtenerTablaProgEdu('ProgramasEducacion') ?>
+                </tbody>
+            </table>
+            <br>
+            <div id="añadirProgEdu">
+            </div>
+            <br>
+            <button id="addbuttonProgEdu" type="button" class="btn bg-cyan text-white ml-auto mr-3 botcyan" onclick="addProgEdu()"><i class="fas fa-plus-circle"></i> Añadir Programa</button>
+            <br>
+        </div>
+    </div>
+</div>

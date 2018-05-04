@@ -1,16 +1,15 @@
 <div class="container container-fluid">
-  <br>
     <div class="card-deck">
       <div class="card mt-5 shadow">
         <div class="card-body">
           <div class="row">
             <div class="col-sm-8">
               <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
-              General
+              ¿Qué necesitamos?
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-              <a href="editAreasAtencion.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
+              <a href="editQueNecesitamos.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
             </div>
           </div>
         </div>
@@ -25,14 +24,35 @@
           <div class="row">
             <div class="col-sm-8">
               <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
-              Tablas
+              ¿Cómo donar?
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3">
-              <a href="editPromoSocial.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
+              <a href="editDonar.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
             </div>
           </div>
         </div>
+          <?php if (isset($_SESSION["error"])): ?>
+          <div class="card-footer">
+              <span class="text-danger"><?=$_SESSION["error"] ?></span>
+          </div>
+          <?php endif; ?>
+      </div>
+    </div>
+    <div class="card-deck">
+      <div class="card mt-5 shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-8">
+                <img src="images/logo_notext.png" width="50" height="30" class="d-inline-block align-top">
+                Voluntariado y Servicio Social
+              </div>
+              <div class="col-sm-1"></div>
+              <div class="col-sm-3">
+                <a href="editVoluntariado.php" class="btn bg-cyan text-white ml-auto mr-3 botcyan"  role="button" aria-pressed="true">Editar</a>
+              </div>
+            </div>
+          </div>
           <?php if (isset($_SESSION["error"])): ?>
           <div class="card-footer">
               <span class="text-danger"><?=$_SESSION["error"] ?></span>

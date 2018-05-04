@@ -1,0 +1,22 @@
+<form method="POST" action="modificarInfo.php">
+  <div class="jumbotron bg-gray">
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="container-fluid">
+                  <img src="../Pagina/img/charity.png" class="img img-fluid" alt="Help">
+              </div>
+          </div>
+          <div class="col-md-9">
+              <header>
+                  <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('Donar') ?></textarea>
+              </header>
+              <textarea class="form-control" id="exampleTextarea" name="desc" rows="12"><?php obtenerDesc('Donar') ?></textarea>
+              <br>
+              <input type="hidden" name="seccion" value="Donar">
+              <br>
+              <button type="submit" class="btn bg-cyan text-white ml-auto mr-3 botcyan">Guardar Cambios</button>
+              <!--a href="donar.php" class="btn bg-pink text-white shadow ml-auto mr-3 botrosa"  role="button" aria-pressed="true">DONAR</a-->
+          </div>
+      </div>
+  </div>
+</form>

@@ -1,0 +1,20 @@
+<form method="POST" action="modificarInfo.php">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm-9">
+                <header>
+                    <textarea class="form-control" rows="1" name="titulo"><?php obtenerTitulo('QueNecesitamos') ?></textarea>
+                </header>
+                <textarea class="form-control" id="exampleTextarea" name="desc" rows="12"><?php obtenerDesc('QueNecesitamos') ?></textarea>
+                <input type="hidden" name="seccion" value="Hacemos">
+                <br>
+                <button type="submit" class="btn bg-cyan text-white ml-auto mr-3 botcyan">Guardar Cambios</button>
+            </div>
+            <div class="col-sm-3">
+                <div class="container-fluid">
+                    <img src="../Pagina/img/charity-1.png" class="img img-fluid" alt="Help">
+                </div>
+            </div>
+        </div>
+    </div>
+  </form>
