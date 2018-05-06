@@ -64,7 +64,7 @@ function editarPatronato(id) {
   var idi = id+"i";
   var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
   document.getElementById(id).innerHTML = data;
-  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").innerHTML = "Guardar";
   document.getElementById(id+"h").onclick = function () { ajaxPatronato(id); };
   //document.getElementById(id+"h").type = "submit";
 }
@@ -73,7 +73,7 @@ function editarObjetivos(id) {
   var idi = id+"i";
   var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
   document.getElementById(id).innerHTML = data;
-  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").innerHTML = "Guardar";
   document.getElementById(id+"h").onclick = function () { ajaxObjetivos(id); };
   //document.getElementById(id+"h").type = "submit";
 }
@@ -82,7 +82,7 @@ function editarProgramaSocial(id) {
   var idi = id+"i";
   var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
   document.getElementById(id).innerHTML = data;
-  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").innerHTML = "Guardar";
   document.getElementById(id+"h").onclick = function () { ajaxProgramaSocial(id); };
   //document.getElementById(id+"h").type = "submit";
 }
@@ -91,7 +91,7 @@ function editarProgramaEdu(id) {
   var idi = id+"i";
   var data = '<textarea id="'+idi+'" class="form-control" rows="1">'+id+'</textarea>';
   document.getElementById(id).innerHTML = data;
-  document.getElementById(id+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(id+"h").innerHTML = "Guardar";
   document.getElementById(id+"h").onclick = function () { ajaxProgramaEdu(id); };
   //document.getElementById(id+"h").type = "submit";
 }
@@ -103,7 +103,7 @@ function editarPromoSo(titulo, desc) {
   var data2 = '<textarea id="'+desci+'" class="form-control" rows="5">'+desc+'</textarea>';
   document.getElementById(titulo).innerHTML = data1;
   document.getElementById(desc).innerHTML = data2;
-  document.getElementById(desc+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(desc+"h").innerHTML = "Guardar";
   document.getElementById(desc+"h").onclick = function () { ajaxPromoSo(titulo,desc); };
   // document.getElementById(id+"h").type = "submit";
 }
@@ -115,7 +115,7 @@ function editarEdu(titulo, desc) {
   var data2 = '<textarea id="'+desci+'" class="form-control" rows="5">'+desc+'</textarea>';
   document.getElementById(titulo).innerHTML = data1;
   document.getElementById(desc).innerHTML = data2;
-  document.getElementById(desc+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(desc+"h").innerHTML = "Guardar";
   document.getElementById(desc+"h").onclick = function () { ajaxEdu(titulo,desc); };
   // document.getElementById(id+"h").type = "submit";
 }
@@ -127,7 +127,7 @@ function editarDI(titulo, desc) {
   var data2 = '<textarea id="'+desci+'" class="form-control" rows="5">'+desc+'</textarea>';
   document.getElementById(titulo).innerHTML = data1;
   document.getElementById(desc).innerHTML = data2;
-  document.getElementById(desc+"h").innerHTML = "Guardar Cambios";
+  document.getElementById(desc+"h").innerHTML = "Guardar";
   document.getElementById(desc+"h").onclick = function () { ajaxDI(titulo,desc); };
   // document.getElementById(id+"h").type = "submit";
 }
@@ -135,28 +135,28 @@ function editarDI(titulo, desc) {
 function addVocal() {
   data= '<textarea id="nuevoVocal" class="form-control" rows="1" placeholder="Juan Carlos Espíndola Canuto"></textarea>'
   document.getElementById("añadir").innerHTML = data;
-  document.getElementById("addbutton").innerHTML = "Guardar cambios";
+  document.getElementById("addbutton").innerHTML = "Guardar";
   document.getElementById("addbutton").onclick = function () { añadirVocal(); };
 }
 
 function addObjetivo() {
   data= '<textarea id="nuevoObjetivo" class="form-control" rows="1" placeholder="En 2020 ser la empresa con más ventas a nivel nacional"></textarea>'
   document.getElementById("añadir").innerHTML = data;
-  document.getElementById("addbutton").innerHTML = "Guardar cambios";
+  document.getElementById("addbutton").innerHTML = "Guardar";
   document.getElementById("addbutton").onclick = function () { añadirObjetivo(); };
 }
 
 function addProgSo() {
   data= '<textarea id="nuevoObjetivo" class="form-control" rows="1" placeholder="En 2020 ser la empresa con más ventas a nivel nacional"></textarea>'
   document.getElementById("añadirProgSo").innerHTML = data;
-  document.getElementById("addbuttonProgSo").innerHTML = "Guardar cambios";
+  document.getElementById("addbuttonProgSo").innerHTML = "Guardar";
   document.getElementById("addbuttonProgSo").onclick = function () { añadirProgSo(); };
 }
 
 function addProgEdu() {
   data= '<textarea id="nuevoPrograma" class="form-control" rows="1" placeholder="Talleres para pequeños genios"></textarea>'
   document.getElementById("añadirProgEdu").innerHTML = data;
-  document.getElementById("addbuttonProgEdu").innerHTML = "Guardar cambios";
+  document.getElementById("addbuttonProgEdu").innerHTML = "Guardar";
   document.getElementById("addbuttonProgEdu").onclick = function () { añadirProgEdu(); };
 }
 
